@@ -4,12 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "vite --config vite.config.ts --host 0.0.0.0",
-    "dev:server": "tsx watch server/index.ts",
-    "build": "npm run build:client",
-    "build:client": "vite build --config vite.config.ts",
-    "start": "node --enable-source-maps ./dist/index.mjs",
+    "dev": "vite --host",
+    "build": "vite build",
+    "start": "vite preview",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
