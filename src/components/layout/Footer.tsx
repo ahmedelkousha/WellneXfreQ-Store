@@ -16,6 +16,17 @@ export default function Footer() {
     }
   };
 
+  const scrollToPhilosophy = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (pathname === "/") {
+      const el = document.getElementById("philosophy");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      sessionStorage.setItem("pendingScroll", "philosophy");
+      navigate("/");
+    }
+  };
+
   const TechLinks = () => (
     <ul className="space-y-4">
       <li><Link to="/product/shaken-massager" className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> SHAKEN MASSAGER</Link></li>
@@ -30,6 +41,8 @@ export default function Footer() {
   const CompanyLinks = () => (
     <ul className="space-y-4">
       <li><a href="/" onClick={handleHomeClick} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> Home</a></li>
+      <li><a href="/#philosophy" onClick={scrollToPhilosophy} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> Philosophy</a></li>
+      <li><Link to="/about" className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> About</Link></li>
       <li><Link to="/blog" className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> Blog</Link></li>
       <li><Link to="/contact" className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> Contact</Link></li>
     </ul>
