@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, Loader2 } from "lucide-react";
+import { ArrowRight, Clock, Loader2, BookOpen } from "lucide-react";
 import { useBlogs } from "@/hooks/useBlogs";
+import blogCoverImg from "@assets/blog-cover.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -29,33 +30,43 @@ export default function Blog() {
 
   return (
     <div className="bg-background min-h-screen pb-20 md:pb-0">
-      {/* Hero */}
-      <section className="pt-32 pb-20 relative overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 blur-[150px] rounded-full" />
+      {/* BLOG HERO — cover image section */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full scale-150 transform -translate-y-1/2" />
+          <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-background via-background/90 to-transparent h-2/3" />
+          <img
+            src={blogCoverImg}
+            alt="Blog cover"
+            className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay grayscale"
+          />
         </div>
+
         <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6 backdrop-blur-md"
           >
-            Insights & Education
+            <BookOpen className="w-4 h-4" />
+            Insights &amp; Education
           </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-heading font-bold text-white mb-6"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6"
           >
             The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#00CED1]">Frequency</span> Journal
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-white/60 max-w-2xl mx-auto text-lg"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto font-light"
           >
             Science, performance, and the cellular edge. Deep-dives on PEMF, Terahertz frequency, recovery, and biohacking from 13+ years in the field.
           </motion.p>

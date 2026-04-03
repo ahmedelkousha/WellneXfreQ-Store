@@ -12,8 +12,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import heroImg from "@assets/IMG_6548-1_1775036665246.webp";
-import coachJumpImg from "@assets/jumpingoverwebready-e1774927545253_1775036665246.png";
+import heroImg from "@assets/hero1.jpg";
+import coachJumpImg from "@assets/intro.jpg";
 import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";
 
 const fadeIn = {
@@ -59,7 +59,7 @@ export default function Home() {
           <img
             src={heroImg}
             alt="PEMF Therapy"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover lg:object-center object-[85%]"
           />
         </motion.div>
 
@@ -306,6 +306,12 @@ export default function Home() {
                   This brand exists at the intersection of elite athletic coaching and quantum wellness. We don't just sell devices; we educate and empower you to take control of your cellular health.
                 </p>
               </motion.div>
+
+              <motion.div variants={fadeIn} className="pt-4">
+                <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-6 rounded-full shadow-[0_0_20px_rgba(126,255,212,0.2)] transition-all hover:scale-105 group">
+                  <Link to="/about">Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" /></Link>
+                </Button>
+              </motion.div>
             </motion.div>
 
             <motion.div
@@ -315,11 +321,11 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="relative h-[600px] rounded-3xl overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div>
+              {/* <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700"></div> */}
               <img
                 src={coachJumpImg}
                 alt="Coach jumping"
-                className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                className="w-full h-full object-cover object-center hover:grayscale-25 grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
               />
 
               {/* Floating card */}

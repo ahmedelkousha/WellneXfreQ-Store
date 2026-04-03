@@ -18,7 +18,7 @@ export interface BlogPost {
   };
 }
 
-import heroImg from "@assets/Untitled-design-47_1775036665244.png";
+import heroImg from "@assets/blog-cover.png";
 import coachJumpImg from "@assets/jumpingoverwebready-e1774927545253_1775036665246.png";
 import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";
 import natureRestImg from "@assets/Untitled-design-7_1775036665247.png";
