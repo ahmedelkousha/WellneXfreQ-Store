@@ -142,12 +142,27 @@ export default function AdminDashboard() {
     if (confirm("Permanently delete this blog article?")) await deleteBlog.mutateAsync(id);
   };
 
+  const generateSlug = (text: string) =>
+    text.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
   const handleChange = (field: keyof Product, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormData((prev) => {
+      const updates: Partial<Product> = { [field]: value };
+      if (field === "name" && editingId === "new") {
+        updates.slug = generateSlug(value);
+      }
+      return { ...prev, ...updates };
+    });
   };
 
   const handleBlogChange = (field: keyof Blog, value: string) => {
-    setBlogFormData(prev => ({ ...prev, [field]: value }));
+    setBlogFormData(prev => {
+      const updates: Partial<Blog> = { [field]: value };
+      if (field === "title" && editingBlogId === "new") {
+        updates.slug = generateSlug(value);
+      }
+      return { ...prev, ...updates };
+    });
   };
 
   const handleBlogContentChange = (field: 'intro' | 'conclusion', value: string) => {
