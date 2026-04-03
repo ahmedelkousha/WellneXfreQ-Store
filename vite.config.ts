@@ -8,7 +8,7 @@ const basePath = "/";
 
 export default defineConfig({
   base: basePath,
-  envPrefix: "PPV_",
+  envPrefix: "PPV_", // 👈 Change this to any prefix you want, e.g. "APP_" or "WNF_"
   plugins: [
     react(),
     tailwindcss()
