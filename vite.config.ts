@@ -2,19 +2,18 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 const port = process.env.PORT ? Number(process.env.PORT) : 5173;
-const basePath = process.env.BASE_PATH || "/";
+const basePath = "/";
 
 export default defineConfig({
   base: basePath,
   envPrefix: "PPV_", // 👈 Change this to any prefix you want, e.g. "APP_" or "WNF_"
   plugins: [
     react(),
-    tailwindcss(),
-    runtimeErrorOverlay()
+    tailwindcss()
   ],
+
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
@@ -22,11 +21,14 @@ export default defineConfig({
     },
     dedupe: ["react", "react-dom"],
   },
+
   root: path.resolve(import.meta.dirname),
+
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
+
   server: {
     port,
     host: "0.0.0.0",
@@ -36,6 +38,7 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+
   preview: {
     port,
     host: "0.0.0.0",
