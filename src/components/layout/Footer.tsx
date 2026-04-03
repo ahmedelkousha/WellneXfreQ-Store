@@ -78,14 +78,16 @@ export default function Footer() {
 
           {/* Desktop Links */}
           <div className="hidden md:block">
+            <h4 className="text-white font-heading font-semibold mb-6 tracking-wider">Company</h4>
+            <CompanyLinks />
+          </div>
+
+          <div className="hidden md:block">
             <h4 className="text-white font-heading font-semibold mb-6 tracking-wider">Technology</h4>
             <TechLinks />
           </div>
 
-          <div className="hidden md:block">
-            <h4 className="text-white font-heading font-semibold mb-6 tracking-wider">Company</h4>
-            <CompanyLinks />
-          </div>
+
 
           <div className="hidden md:block">
             <h4 className="text-white font-heading font-semibold mb-6 tracking-wider">Connect</h4>
@@ -95,19 +97,20 @@ export default function Footer() {
           {/* Mobile Accordion */}
           <div className="md:hidden col-span-1">
             <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="technology" className="border-white/10">
-                <AccordionTrigger className="text-white hover:no-underline font-heading font-semibold tracking-wider">Technology</AccordionTrigger>
-                <AccordionContent>
-                  <div className="pt-2 pb-4">
-                    <TechLinks />
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+
               <AccordionItem value="company" className="border-white/10">
                 <AccordionTrigger className="text-white hover:no-underline font-heading font-semibold tracking-wider">Company</AccordionTrigger>
                 <AccordionContent>
                   <div className="pt-2 pb-4">
                     <CompanyLinks />
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="technology" className="border-white/10">
+                <AccordionTrigger className="text-white hover:no-underline font-heading font-semibold tracking-wider">Technology</AccordionTrigger>
+                <AccordionContent>
+                  <div className="pt-2 pb-4">
+                    <TechLinks />
                   </div>
                 </AccordionContent>
               </AccordionItem>

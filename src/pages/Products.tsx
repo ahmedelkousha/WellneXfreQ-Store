@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useProducts } from "@/hooks/useProducts";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, ArrowRight, Zap, Target, Loader2 } from "lucide-react";
-import coachJumpImg from "@assets/jumpingoverwebready-e1774927545253_1775036665246.png";
+import coachJumpImg from "@assets/products-cover2.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
