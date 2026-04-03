@@ -36,6 +36,11 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   useEffect(() => {
     const pending = sessionStorage.getItem("pendingScroll");
     if (pending) {
@@ -101,11 +106,20 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-base shadow-[0_0_30px_rgba(126,255,212,0.3)] border border-primary/50 transition-all hover:scale-105">
-              <a href="#technology">Explore Technology</a>
+            <Button 
+              size="lg" 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-base shadow-[0_0_30px_rgba(126,255,212,0.3)] border border-primary/50 transition-all hover:scale-105 cursor-pointer"
+              onClick={() => scrollToSection("technology")}
+            >
+              Explore Technology
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-14 px-8 text-base border-white/20 text-white hover:bg-white/5 transition-all">
-              <a href="#philosophy">Our Philosophy</a>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="h-14 px-8 text-base border-white/20 text-white hover:bg-white/5 transition-all cursor-pointer"
+              onClick={() => scrollToSection("philosophy")}
+            >
+              Our Philosophy
             </Button>
           </motion.div>
         </div>
