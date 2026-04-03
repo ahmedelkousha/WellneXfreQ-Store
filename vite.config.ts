@@ -9,6 +9,7 @@ const basePath = process.env.BASE_PATH || "/";
 
 export default defineConfig({
   base: basePath,
+  envPrefix: "PPV_", // 👈 Change this to any prefix you want, e.g. "APP_" or "WNF_"
   plugins: [
     react(),
     tailwindcss(),
@@ -23,7 +24,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
   server: {
