@@ -37,6 +37,7 @@ export const products: Product[] = [
     whoItsFor: "Professionals who spend hours in front of screens, those struggling with sleep onset, and individuals looking for non-invasive recovery for eye fatigue.",
     science: "Increased microcirculation in the periorbital area helps remove metabolic waste, reduce inflammation, and deliver nutrients needed for tissue repair and rejuvenation.",
     image: shakenMassagerImg,
+    price: "$1,000",
   },
   {
     id: "2",
@@ -54,6 +55,7 @@ export const products: Product[] = [
     whoItsFor: "Serious biohackers, athletes requiring both systemic and localized treatment, and anyone committed to a comprehensive daily frequency wellness protocol.",
     science: "Combining PEMF and terahertz modalities creates a synergistic effect — PEMF recharges cellular voltage while terahertz activates dormant stem cells and clears meridian blockages simultaneously.",
     image: thzTeraP90PlusImg,
+    price: "$500",
   },
   {
     id: "3",
@@ -71,6 +73,7 @@ export const products: Product[] = [
     whoItsFor: "Those dealing with localized pain, inflammation, or looking to support their body's innate healing capabilities through targeted frequency application.",
     science: "Terahertz waves lie between microwave and infrared on the electromagnetic spectrum. Non-ionizing and safe, they resonate with healthy cells at 2-17 THz, strengthening them while unhealthy cells dissipate.",
     image: vitalityWandImg,
+    price: "$600",
   },
   {
     id: "4",
@@ -88,6 +91,7 @@ export const products: Product[] = [
     whoItsFor: "Athletes looking to reduce oxidative stress from training, anyone seeking anti-aging support, and those wanting to complement their frequency therapy protocol with optimal hydration.",
     science: "Molecular hydrogen (H2) selectively neutralizes cytotoxic reactive oxygen species (ROS), particularly the hydroxyl radical, without affecting beneficial cellular signaling molecules.",
     image: hPlusBarImg,
+    price: "$1,000",
   },
   {
     id: "5",
@@ -105,6 +109,7 @@ export const products: Product[] = [
     whoItsFor: "High-performers who prioritize recovery from screen fatigue, frequent travelers, and those wanting a premium daily ritual for eye health and relaxation.",
     science: "The combination of frequency resonance and pneumatic compression creates a pumping effect in lymphatic tissue, accelerating removal of metabolic waste and reducing periorbital congestion.",
     image: galaxyGOneImg,
+    price: "$500",
   },
   {
     id: "6",
@@ -122,5 +127,6 @@ export const products: Product[] = [
     whoItsFor: "Those who spend long hours on their feet, anyone seeking convenient daily PEMF without lying down, and individuals wanting to incorporate frequency therapy into their standing routine.",
     science: "The feet contain over 7,000 nerve endings. PEMF delivered through the plantar surface creates cascading electrical stimulation throughout the peripheral and central nervous system.",
     image: teraP90Img,
+    price: "$800",
   }
 ];
