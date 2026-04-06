@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -135,7 +135,7 @@ export default function Home() {
           style={{ y, opacity }}
           className="absolute inset-0 w-full h-full"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/45 to-background/40 z-10" />
+          <div className="absolute inset-0 bg-linear-to-b from-background/50 via-background/45 to-background/40 z-10" />
           {/* <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-background/5 to-background/60 z-10" /> */}
           <img
             src={heroImg}

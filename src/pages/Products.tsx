@@ -34,7 +34,7 @@ export default function Products() {
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full scale-150 transform -translate-y-1/2"></div>
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/90 to-transparent h-2/3"></div>
+          <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-background via-background/90 to-transparent h-2/3"></div>
           <img src={coachJumpImg} alt="Products Hero" className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay grayscale" />
         </div>
 
@@ -55,7 +55,7 @@ export default function Products() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6"
           >
-            {t("shop.hero.title")}<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#00CED1]">{t("shop.hero.title_highlight")}</span>
+            {t("shop.hero.title")}<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("shop.hero.title_highlight")}</span>
           </motion.h1>
 
           <motion.p

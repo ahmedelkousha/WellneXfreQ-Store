@@ -65,10 +65,10 @@ export default function ProductDetail() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative rounded-3xl overflow-hidden bg-card border border-white/5 aspect-[4/3] lg:aspect-square"
+            className="relative rounded-3xl overflow-hidden bg-card border border-white/5 aspect-4/3 lg:aspect-square"
           >
             <img src={product.image} alt={currentLang === "pl" ? (product.name_pl || product.name) : product.name} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent"></div>
           </motion.div>
 
           <motion.div
@@ -125,7 +125,7 @@ export default function ProductDetail() {
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center gap-4 bg-white/[0.03] border border-white/10 rounded-2xl p-5">
+                <div className="flex items-center gap-4 bg-white/3 border border-white/10 rounded-2xl p-5">
                   <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                     <MessageCircle className="w-5 h-5 text-primary" />
                   </div>
@@ -214,7 +214,7 @@ export default function ProductDetail() {
           variants={fadeIn}
           className="max-w-3xl mx-auto bg-card border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden"
         >
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-transparent via-primary to-transparent"></div>
 
           <div className="text-center mb-10">
             <h2 className="text-3xl font-heading font-bold text-white mb-4">{t("product_detail.inquiry.title")}</h2>

@@ -9,7 +9,7 @@ import Home from "@/pages/Home";
 import Products from "@/pages/Products";
 import ProductDetail from "@/pages/ProductDetail";
 import Contact from "@/pages/Contact";
-import Blog from "@/pages/Blog";
+// import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
@@ -57,7 +57,7 @@ function AppShell() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <ScrollToTop />
       {!isAdminRoute && <Navbar />}
-      <main className="flex-grow pb-16 md:pb-0">
+      <main className="grow pb-16 md:pb-0">
         <Routes>
           <Route path="/login" element={<Navigate to="/en/admin/login" replace />} />
           <Route path="/admin" element={<Navigate to="/en/admin" replace />} />
@@ -82,7 +82,7 @@ function AppShell() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </LanguageWrapper>} />
-          
+
           <Route path="*" element={<RootRedirect />} />
         </Routes>
       </main>

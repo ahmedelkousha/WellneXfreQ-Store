@@ -68,7 +68,7 @@ export default function Blog() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6"
           >
-            {t("blog.hero.title")}<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#00CED1]">{t("blog.hero.title_highlight")}</span>{t("blog.hero.title_suffix")}
+            {t("blog.hero.title")}<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("blog.hero.title_highlight")}</span>{t("blog.hero.title_suffix")}
           </motion.h1>
 
           <motion.p
@@ -101,8 +101,8 @@ export default function Blog() {
               >
                 <Link to={`/${currentLang}/blog/${featuredPost.slug}`} className="block group">
                   <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-white/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_0_60px_rgba(126,255,212,0.08)] bg-card">
-                    <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/50 z-10 lg:block hidden" />
+                    <div className="relative aspect-4/3 lg:aspect-auto overflow-hidden">
+                      <div className="absolute inset-0 bg-linear-to-r from-transparent to-card/50 z-10 lg:block hidden" />
                       <div className="absolute inset-0 bg-linear-to-t from-card/80 to-transparent z-10 lg:hidden block" />
                       <img
                         src={featuredPost.image}

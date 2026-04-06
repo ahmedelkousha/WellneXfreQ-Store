@@ -65,7 +65,7 @@ export default function BlogPost() {
     <div className="bg-background min-h-screen pb-20 md:pb-0">
       {/* Hero Image */}
       <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30 z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-background/30 z-10" />
         <img
           src={post.image}
           alt={currentLang === "pl" ? (post.title_pl || post.title) : post.title}

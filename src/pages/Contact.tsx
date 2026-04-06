@@ -92,7 +92,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="lg:col-span-2 bg-card border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative"
           >
-            <div className="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+            <div className="absolute top-0 left-10 right-10 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
             <h2 className="text-2xl font-heading font-bold text-white mb-8">{t("contact.form.title")}</h2>
             <ContactForm />
           </motion.div>

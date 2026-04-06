@@ -19,7 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useProducts } from "@/hooks/useProducts";
+// import { useProducts } from "@/hooks/useProducts";
 import { useAddInquiry } from "@/hooks/useInquiries";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
@@ -30,8 +30,8 @@ type ContactFormProps = {
 };
 
 export default function ContactForm({ defaultProduct }: ContactFormProps) {
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language.split("-")[0];
+  const { t } = useTranslation();
+  // const currentLang = i18n.language.split("-")[0];
   const { toast } = useToast();
   // const { data: products = [] } = useProducts();
 

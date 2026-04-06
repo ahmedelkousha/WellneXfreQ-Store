@@ -18,7 +18,7 @@ export default function NotFound() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="text-center max-w-lg mx-auto"
       >
-        <h1 className="text-9xl font-heading font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-white/20 mb-6 tracking-tighter">
+        <h1 className="text-9xl font-heading font-bold bg-clip-text text-transparent bg-linear-to-r from-primary via-primary/80 to-white/20 mb-6 tracking-tighter">
           404
         </h1>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t("not_found.title")}</h2>
