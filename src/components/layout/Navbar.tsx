@@ -1,17 +1,29 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useProducts } from "@/hooks/useProducts";
+// import { useProducts } from "@/hooks/useProducts";
 import { ChevronDown, Home, Cpu, BookOpen, Mail, Leaf } from "lucide-react";
-import logoImg from "@assets/logo.png";
+import logoImg from "@assets/logo-icon.png";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import Flag from "react-world-flags";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
-  const { data: products = [] } = useProducts();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language.split("-")[0]; // handle variants like en-US
+  // const { data: products = [] } = useProducts();
   const [activeSection, setActiveSection] = useState<string>("");
   const { pathname: location } = useLocation();
   const navigate = useNavigate();
+
+  const getPath = (path: string) => `/${currentLang}${path === "/" ? "" : path}`;
+  
+  const toggleLanguage = () => {
+    const nextLang = currentLang === "en" ? "pl" : "en";
+    const newPath = location.replace(`/${currentLang}`, `/${nextLang}`);
+    navigate(newPath);
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -25,7 +37,7 @@ export default function Navbar() {
 
   // IntersectionObserver to track active section for bottom nav highlight
   useEffect(() => {
-    if (location !== "/") {
+    if (!location.startsWith(`/${currentLang}/`) && location !== `/${currentLang}`) {
       setActiveSection("");
       return;
     }
@@ -50,7 +62,6 @@ export default function Navbar() {
       });
     }, 200);
 
-    // When user scrolls back near top, reset active section
     const handleScroll = () => {
       if (window.scrollY < 200) setActiveSection("");
     };
@@ -61,61 +72,61 @@ export default function Navbar() {
       observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [location]);
+  }, [location, currentLang]);
 
   const scrollToSection = (sectionId: string) => {
-    if (location === "/") {
+    if (location === `/${currentLang}` || location === `/${currentLang}/`) {
       const el = document.getElementById(sectionId);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
       sessionStorage.setItem("pendingScroll", sectionId);
-      navigate("/");
+      navigate(`/${currentLang}`);
     }
   };
 
   const handleHomeClick = () => {
-    if (location === "/") {
+    if (location === `/${currentLang}` || location === `/${currentLang}/`) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      navigate("/");
+      navigate(`/${currentLang}`);
     }
   };
 
-  const isHomeActive = location === "/" && !["technology", "philosophy", "blog"].includes(activeSection);
-  const isTechActive = activeSection === "technology" || location === "/products";
-  const isPhilActive = activeSection === "philosophy" || location === "/about"; // kept for IntersectionObserver tracking
-  const isBlogActive = activeSection === "blog" || location === "/blog";
-  const isContactActive = location === "/contact";
+  const isHomeActive = (location === `/${currentLang}` || location === `/${currentLang}/`) && !["technology", "philosophy", "blog"].includes(activeSection);
+  const isTechActive = activeSection === "technology" || location.includes("/products");
+  const isPhilActive = activeSection === "philosophy" || location.includes("/about");
+  const isBlogActive = activeSection === "blog" || location.includes("/blog");
+  const isContactActive = location.includes("/contact");
 
   const mobileNavItems = [
     {
-      label: "Home",
+      label: t("nav.home"),
       icon: Home,
       action: handleHomeClick,
-      active: isHomeActive && location === "/",
+      active: isHomeActive,
     },
     {
-      label: "Technology",
+      label: t("nav.technology"),
       icon: Cpu,
       action: () => scrollToSection("technology"),
       active: isTechActive,
     },
     {
-      label: "Philosophy",
+      label: t("nav.philosophy"),
       icon: Leaf,
       action: () => scrollToSection("philosophy"),
       active: isPhilActive,
     },
     {
-      label: "Blog",
+      label: t("nav.blog"),
       icon: BookOpen,
       action: () => scrollToSection("blog"),
       active: isBlogActive,
     },
     {
-      label: "Contact",
+      label: t("nav.contact"),
       icon: Mail,
-      href: "/contact",
+      href: getPath("/contact"),
       active: isContactActive,
     },
   ];
@@ -128,36 +139,29 @@ export default function Navbar() {
             : "bg-transparent py-5"
           }`}
       >
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between">
           <button onClick={handleHomeClick} className="flex items-center gap-2 z-50 relative">
             <img
               src={logoImg}
               alt="wellneXfreQ"
-              className="h-6 w-auto"
+              className={`md:h-16 h-12 w-auto`}
               style={{ mixBlendMode: "screen" }}
             />
           </button>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             <button
               onClick={handleHomeClick}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className={`text-sm font-medium transition-colors ${isHomeActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
             >
-              Home
+              {t("nav.home")}
             </button>
 
             <div className="relative">
-              <button
-                className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors py-2"
-                onClick={() => scrollToSection("technology")}
-                onMouseEnter={() => setProductsDropdownOpen(true)}
-                onMouseLeave={() => setProductsDropdownOpen(false)}
-              >
-                Technology <ChevronDown className="w-4 h-4" />
-              </button>
+             
 
-              <div
+              {/* <div
                 className={`absolute top-full left-1/2 -translate-x-1/2 w-64 bg-card border border-white/10 rounded-lg shadow-xl overflow-hidden transition-all duration-200 origin-top ${productsDropdownOpen
                     ? "opacity-100 scale-y-100 pointer-events-auto"
                     : "opacity-0 scale-y-0 pointer-events-none"
@@ -169,62 +173,94 @@ export default function Navbar() {
                   {products.map((product) => (
                     <Link
                       key={product.id}
-                      to={`/product/${product.slug}`}
+                      to={getPath(`/product/${product.slug}`)}
                       className="block px-4 py-2.5 text-sm hover:bg-white/5 hover:text-primary transition-colors font-medium"
                     >
-                      {product.name}
+                      {currentLang === "pl" ? (product.name_pl || product.name) : product.name}
                     </Link>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <button
               onClick={() => scrollToSection("philosophy")}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className={`text-sm font-medium transition-colors ${isPhilActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
             >
-              Philosophy
+              {t("nav.philosophy")}
             </button>
+             <button
+                className={`flex items-center gap-1 text-sm font-medium transition-colors py-2 ${isTechActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+                onClick={() => scrollToSection("technology")}
+                // onMouseEnter={() => setProductsDropdownOpen(true)}
+                // onMouseLeave={() => setProductsDropdownOpen(false)}
+              >
+                {t("nav.technology")} <ChevronDown className="w-4 h-4 hidden" />
+              </button>
 
             <button
               onClick={() => scrollToSection("blog")}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className={`text-sm font-medium transition-colors ${isBlogActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
             >
-              Blog
+              {t("nav.blog")}
             </button>
 
             <Link
-              to="/contact"
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              to={getPath("/contact")}
+              className={`text-sm font-medium transition-colors ${isContactActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
             >
-              Contact
+              {t("nav.contact")}
             </Link>
 
-            <Button
-              asChild
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              <Link to="/contact">Inquire Now</Link>
-            </Button>
+            <div className="flex items-center gap-3 ml-2">
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center justify-center hover:scale-110 transition-transform focus:outline-none shrink-0"
+                title={currentLang === "en" ? "Switch to Polish" : "Przełącz na Angielski"}
+              >
+                {currentLang === "en" ? (
+                  <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
+                ) : (
+                  <Flag code="US" className="w-6 h-4 rounded-sm shadow-sm" />
+                )}
+              </button>
+
+              <Button
+                asChild
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              >
+                <Link to={getPath("/contact")}>{t("nav.inquire")}</Link>
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile top: logo + Inquire Now only */}
-          <div className="md:hidden">
+          <div className="lg:hidden flex items-center gap-3">
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center justify-center focus:outline-none"
+            >
+              {currentLang === "en" ? (
+                <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
+              ) : (
+                <Flag code="US" className="w-6 h-4 rounded-sm shadow-sm" />
+              )}
+            </button>
             <Button
               asChild
               size="sm"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
-              <Link to="/contact">Inquire Now</Link>
+              <Link to={getPath("/contact")}>{t("nav.inquire")}</Link>
             </Button>
           </div>
         </div>
       </header>
 
       {/* Mobile Bottom Fixed Nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-white/10" style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-white/10" style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
         <div className="flex items-center justify-around py-2 px-1">
           {mobileNavItems.map((item) => {
             const Icon = item.icon;

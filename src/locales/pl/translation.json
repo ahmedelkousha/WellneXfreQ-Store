@@ -1,0 +1,648 @@
+{
+  "nav": {
+    "home": "Home",
+    "technology": "Technologia",
+    "philosophy": "Podróż",
+    "about": "O nas",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "inquire": "Zapytaj teraz"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Biohacking i witalność komórkowa",
+      "title1": "ZRESETUJ SWOJE",
+      "title1_highlight": "KOMÓRKI",
+      "title2": "PRZYWRÓĆ SWÓJ",
+      "title2_highlight": "RYTM",
+      "title3": "ODZYSKAJ SWOJĄ",
+      "title3_highlight": "WITALNOŚĆ",
+      "subtitle": "Biohacking szczytowej witalności z wykorzystaniem technologii PEMF i terahercowych. Twój codzienny rytuał na długowieczność.",
+      "cta_tech": "Poznaj technologię",
+      "cta_phil": "Zacznij swój rytuał"
+    },
+    "tech": {
+      "science_title": "Przyszłość ",
+      "science_title_italic": "Optymalizacji",
+      "science_subtitle": "Wykraczamy poza konwencjonalną regenerację. Wykorzystując specyficzne częstotliwości elektromagnetyczne i terahertzowe, oddziałujemy bezpośrednio na sieć komunikacji komórkowej Twojego ciała.",
+      "pemf_title": "Technologia PEMF (Ładowarka akumulatorów)",
+      "pemf_desc": "Terapia pulsującym polem elektromagnetycznym wykorzystuje częstotliwości naśladujące naturę, aby doładować naturalne napięcie Twoich komórek. To bezpieczne impulsy stymulujące ciało na poziomie komórkowym.",
+      "pemf_benefits": [
+        "Doładowuje baterię komórkową i naprawia napięcie",
+        "Redukuje stany zapalne i niweluje ból",
+        "Przyspiesza naturalny detoks i regenerację"
+      ],
+      "thz_title": "Rezonans Terahertzowy (Precyzyjny stroiciel)",
+      "thz_desc": "Fale Terahertzowe rezonują w harmonii ze zdrowymi ludzkimi komórkami, wnikając głęboko w tkanki, aby rozpuszczać blokady i przywracać naturalne wibracje komórkowe organizmu.",
+      "thz_benefits": [
+        "Bio-termiczna aktywacja bez promieniowania jonizującego",
+        "Rozpuszcza wewnętrzne blokady i wspomaga przepływ",
+        "Przywraca biologiczną spójność i siły witalne"
+      ],
+      "repair": "Naprawa komórkowa",
+      "repair_desc": "Przyspiesza regenerację komórek i gojenie tkanek.",
+      "recovery": "Głęboka regeneracja",
+      "recovery_desc": "Niweluje stany zapalne i redukuje stres fizyczny.",
+      "oxygenate": "Dotlenienie",
+      "oxygenate_desc": "Poprawia krążenie i dostarczanie składników odżywczych.",
+      "activate": "Aktywacja komórek",
+      "activate_desc": "Budzi mało wydajne komórki do szczytowej formy.",
+      "flow": "Wewnętrzny przepływ",
+      "flow_desc": "Wspiera mikrokrążenie i ścieżki energetyczne.",
+      "balance": "Równowaga biologiczna",
+      "balance_desc": "Wyrównuje naturalną spójność biologiczną organizmu."
+    },
+    "philosophy": {
+      "title": "Zbudowany, by się ",
+      "title_italic_1": "ruszać.",
+      "subtitle": "Stworzony, by ",
+      "subtitle_italic_2": "trwać.",
+      "title_3": "Zasilany u ",
+      "title_highlight_3": "źródła.",
+      "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z ponad 13-letnim doświadczeniem, pomagam ludziom odbudować ich ciała i stosować biohacking dla zdrowia. Jednak moje własne zmagania z przewlekłym bólem, wypaleniem i niskim poziomem energii uświadomiły mi, że wiele tradycyjnych podejść do zdrowia pomija coś fundamentalnego, działając obok ciała, zamiast z nim współpracować.",
+      "text2": "To odkrycie doprowadziło mnie do podwójnej technologii częstotliwości PEMF i terahercowych. Ten przełom otworzył nową perspektywę na uzdrawianie, której nie mogłem zignorować, a teraz z zaangażowaniem dzielę się tą głębszą ścieżką do dobrego samopoczucia z każdym, kto jest gotów odzyskać swoją witalność.",
+      "coach_text": "Moje dążenie do zdrowia, dobrego samopoczucia i długowieczności zaprowadziło mnie gdzieś, gdzie większość ludzi jeszcze nie zajrzała, i właśnie dlatego istnieje wellneXfreQ.",
+      "coach": "Patrycja W.",
+      "learn_more": "Dowiedz się więcej"
+    },
+    "products": {
+      "title": "Poznaj naszą ",
+      "title_highlight": "Technologię",
+      "subtitle": "Specyficzne częstotliwości dla konkretnych celów biologicznych. Elitarna wydajność, regeneracja komórkowa i kwantowy wellness.",
+      "view": "Zobacz produkt",
+      "view_all": "Zobacz całą technologię"
+    },
+    "blog": {
+      "title": "Z Laboratorium ",
+      "title_highlight": "Częstotliwości",
+      "subtitle": "Najnowsze spostrzeżenia na temat biohackingu, zdrowia komórkowego i nauki o medycynie częstotliwości.",
+      "read": "Czytaj artykuł",
+      "view_all": "Zobacz wszystkie artykuły"
+    },
+    "testimonials": {
+      "title": "Prawdziwi ludzie. ",
+      "title_highlight": "Prawdziwe efekty.",
+      "subtitle": "Technologia częstotliwości zmienia życie ludzi na całym świecie.",
+      "items": [
+        {
+          "name": "Maria",
+          "role": "Zweryfikowany użytkownik",
+          "quote": "Od trudności z wstaniem z łóżka przeszłam do chodzenia 5 km dziennie. P90+ nie tylko pomógł moim nogom. Przywrócił mi niezależność."
+        },
+        {
+          "name": "Mark J.",
+          "role": "Przedsiębiorca",
+          "quote": "Jako osoba o wysokiej wydajności myślałem, że zmęczenie to po prostu część pracy. Po 30 dniach z Tera P90+ moja klarowność umysłu jest na poziomie, którego nie czułem od dekady."
+        },
+        {
+          "name": "Sarah L.",
+          "role": "Zweryfikowany użytkownik",
+          "quote": "Największą niespodzianką nie była tylko ulga w bólu fizycznym. To był spokój. Mój układ nerwowy w końcu czuje się zresetowany. Śpię całą noc po raz pierwszy od lat."
+        },
+        {
+          "name": "Robert K.",
+          "role": "Senior / Pasjonat Ogrodnictwa",
+          "quote": "Sztywność stawów była moją codziennością, dopóki nie spróbowałem różdżki. To tak, jakby moje stawy zostały naoliwione. W końcu mogę znów cieszyć się ogrodnictwem bez bólu następnego dnia."
+        },
+        {
+          "name": "Elena S.",
+          "role": "Instruktorka Jogi",
+          "quote": "Używam urządzenia Terahertz jako części mojego rytuału po praktyce. Fale pomagają mi wejść w głębszy stan relaksu i jasności umysłu, którego nie osiągnęłam żadnym innym narzędziem."
+        },
+        {
+          "name": "Alex M.",
+          "role": "Zawodowy Sportowiec",
+          "quote": "Regeneracja to tajna broń w moim treningu. P90+ skrócił czas zakwasów o połowę. To absolutny przełom w moich przygotowaniach do zawodów."
+        }
+      ]
+    },
+    "faqs": {
+      "title": "Najczęściej Zadawane ",
+      "title_highlight": "Pytania o Częstotliwości",
+      "items": [
+        {
+          "question": "Jaka jest różnica między terapią PEMF a terapią częstotliwością Terahertz?",
+          "answer": "Terapia PEMF (Pulsacyjne Pole Elektromagnetyczne) wykorzystuje impulsy elektromagnetyczne o niskiej częstotliwości, które naśladują naturalne pole Ziemi, aby naładować napięcie komórkowe — to w zasadzie ładowarka dla Twoich komórek. Częstotliwość Terahertz operuje na wyższym paśmie, które rezonuje z naturalnymi wibracjami zdrowych ludzkich komórek, wnikając głęboko w tkanki, aby aktywować komórki macierzyste i odblokować meridiany. Działają one poprzez różne mechanizmy i potężnie się uzupełniają."
+        },
+        {
+          "question": "Od którego produktu powinienem zacząć?",
+          "answer": "To zależy od Twojego głównego celu. Dla ogólnoustrojowej regeneracji komórkowej i poprawy snu zacznij od maty do stóp TERA-P90 — to najwygodniejszy punkt wejścia. W przypadku punktowego bólu lub stanów zapalnych, VITALITY WAND jest najbardziej bezpośrednim narzędziem. Jeśli chcesz najbardziej kompleksowy system łączący PEMF i Terahertz w jednym, flagowym modelem jest THz TERA-P90+."
+        },
+        {
+          "question": "Jak szybko zauważę rezultaty?",
+          "answer": "Większość osób zauważa zmiany w jakości snu w ciągu pierwszych 3-7 dni konsekwentnego stosowania — głębszy sen, budzenie się z większą energią. Poziom energii i bólu zazwyczaj zmienia się zauważalnie w ciągu 2-3 tygodni. Efekty kumulują się; Twoje ciało odbudowuje napięcie komórkowe i oczyszcza nagromadzony stres. Im dłużej i bardziej konsekwentnie korzystasz z technologii, tym wyraźniejsze są efekty."
+        },
+        {
+          "question": "Czy mogę używać wielu urządzeń jednocześnie?",
+          "answer": "Tak — i aktywnie do tego zachęcamy. Na przykład: zacznij poranek od 20 minut na macie TERA-P90, aby naładować napięcie komórkowe przed dniem, użyj VITALITY WAND na obszarach objętych objawami po treningu, nawadniaj się wodą z H+ BAR w ciągu dnia, aby zarządzać stresem oksydacyjnym, i wycisz się z GALAXY G-ONE przed snem, aby wesprzeć regenerację układu nerwowego."
+        },
+        {
+          "question": "Czy terapia częstotliwościami jest bezpieczna dla osób z istniejącymi schorzeniami?",
+          "answer": "Nasze urządzenia wykorzystują niejonizujące częstotliwości, które są bezpieczne dla zdecydowanej większości ludzi. Terahertz i PEMF are nieinwazyjne i współpracują z naturalnymi częstotliwościami organizmu. Jak w przypadku każdej technologii wellness, osoby z rozrusznikami serca, wszczepionymi urządzeniami elektronicznymi lub kobiety w ciąży powinny skonsultować się z lekarzem przed użyciem."
+        },
+        {
+          "question": "Co wyróżnia wellneXfreQ na tle innych marek wellness?",
+          "answer": "wellneXfreQ istnieje na skrzyżowaniu elitarnych treningów sportowych i nauki o wellness kwantowym. Każdy produkt jest wybierany przez trenera siły i ruchu z ponad 13-letnim doświadczeniem w biohackingu — a nie przez zespół marketingowy. Nie sprzedajemy urządzeń dla samej sprzedaży. Edukujemy o nauce, zapewniamy model bezpośredniego zapytania i budujemy trwałe relacje z klientami, aby zapewnić rezultaty."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Gotowy na zasilanie u ",
+      "title_highlight": "źródła?",
+      "subtitle": "Dołącz do przyszłości wellness i rozpocznij swoją podróż optymalizacji komórkowej już dziś.",
+      "button": "Przejdź do Produktów"
+    }
+  },
+  "about": {
+    "hero": {
+      "tagline": "13+ lat doświadczenia",
+      "title": "Zbudowany, by się ",
+      "title_italic_1": "ruszać.",
+      "title_and": "Stworzony, by ",
+      "title_italic_2": "trwać.",
+      "title_highlight": "Zasilany u źródła.",
+      "subtitle": "Biohacking zdrowia i odbudowa od podstaw poprzez ruch i technologię częstotliwości."
+    },
+    "dual_tech_table": {
+      "badge": "Dlaczego podwójna technologia działa",
+      "title": "Przewaga ",
+      "title_highlight": "Podwójnego Działania",
+      "description": "Łącząc technologię PEMF i częstotliwości Terahertz, oddziałujemy na organizm na jego najbardziej podstawowym poziomie – komórce. Jedna z nich ładuje komórki, druga przywraca im naturalny rytm. Rezultatem jest efekt kumulacji, który optymalizuje biologiczne systemy elektryczne napędzające witalność, regenerację i długowieczność.",
+      "headers": {
+        "feature": "Cecha",
+        "pemf": "Technologia PEMF",
+        "terahertz": "Rezonans Terahertzowy"
+      },
+      "features": {
+        "primary_goal": "GŁÓWNY CEL",
+        "mechanism": "MECHANIZM",
+        "key_benefit": "KLUCZOWA KORZYŚĆ",
+        "analogy": "ANALOGIA"
+      },
+      "pemf_values": {
+        "primary_goal": "Doładowanie i naprawa komórek",
+        "mechanism": "Impulsy magnetyczne przywracają napięcie",
+        "key_benefit": "Niweluje stany zapalne i ból",
+        "analogy": "Ładowarka akumulatorów"
+      },
+      "terahertz_values": {
+        "primary_goal": "Bio-termiczna aktywacja",
+        "mechanism": "Fale dopasowane do wibracji zdrowych komórek",
+        "key_benefit": "Rozpuszcza blokady i wspomaga przepływ",
+        "analogy": "Precyzyjny stroiciel"
+      }
+    },
+    "story": {
+      "badge": "Trener",
+      "title": "Uwalnianie głowy. ",
+      "title_highlight": "Odbudowa od podstaw.",
+      "p1": "Jestem trenerem zdrowia, odnowy biologicznej i ruchu z ponad 13-letnim doświadczeniem w pomaganiu ludziom w stosowaniu biohackingu dla ich zdrowia, uwalnianiu się z własnych ograniczeń umysłowych, odzyskiwaniu sprawczości i odbudowie od samych podstaw.",
+      "p2": "Oznacza to pracę nad złymi nawykami żywieniowymi, brakiem samodyscypliny oraz brakiem połączenia między umysłem a ciałem poprzez budowanie silnych, odpornych ciał i naukę sztuki ruchu.",
+      "p3": "Jednak po własnych zmaganiach z przewlekłym bólem, wypaleniem i trwale niskim poziomem energii, uświadomiłem sobie, że w większości podejść do zdrowia brakuje czegoś fundamentalnego.",
+      "p4": "Działają one obok ciała, zamiast z nim współpracować. Odkrycie podwójnej technologii częstotliwości PEMF i terahercowych otworzyło perspektywę, której nie mogłem zignorować, a którą teraz dzielę się z każdym, kto szuka głębszej drogi do dobrego samopoczucia.",
+      "quote": "Moje dążenie do zdrowia, dobrego samopoczucia i długowieczności zaprowadziło mnie w miejsce, w które większość ludzi jeszcze nie spojrzała, i właśnie dlatego istnieje wellneXfreQ."
+    },
+    "tech": {
+      "badge": "Przewaga \"Dual Action Advantage\"",
+      "title": "Podwójne Działanie",
+      "title_highlight": "Przewaga",
+      "subtitle": "Łącząc technologię PEMF i częstotliwości Terahertz, oddziałujemy na organizm na jego najbardziej podstawowym poziomie – komórce. Jedna z nich ładuje komórki, druga przywraca im naturalny rytm. Rezultatem jest efekt kumulacji, który optymalizuje biologiczne systemy elektryczne napędzające witalność, regenerację i długowieczność.",
+      "technology_01": "Technologia 01",
+      "technology_01_subtitle": "Ładowarka Baterii",
+      "technology_02": "Technologia 02",
+      "technology_02_subtitle": "Precyzyjny Stroiciel",
+      "pemf_title": "PEMF DOŁADOWANIE KOMÓRKOWE",
+      "pemf_subtitle": "Zasilanie Twojego układu elektrycznego.",
+      "pemf_desc": "Pierwotnie opracowany przez NASA w celu wspierania zdrowia astronautów, PEMF wykorzystuje bezpieczne impulsy elektromagnetyczne o niskiej częstotliwości do stymulacji organizmu na poziomie komórkowym, podobnie jak ładowanie baterii. Wspomaga naprawę komórkową, wspiera naturalny detoks, redukuje stany zapalne, poprawia przepływ krwi i uśmierza ból.",
+      "pemf_nasa_badge": "WELLNESS OPARTY NA ENERGII WSPIERANY PRZEZ NASA",
+      "pemf_benefits": [
+        { "label": "Naprawa", "desc": "Przyspieszenie regeneracji komórkowej i gojenia tkanek." },
+        { "label": "Regeneracja", "desc": "Usuwanie stanów zapalnych i redukcja stresu fizycznego." },
+        { "label": "Dotlenienie", "desc": "Poprawa krążenia i dostarczenie składników odżywczych bogatych w tlen." }
+      ],
+      "thz_title": "AKTYWACJA TERAHERCOWA",
+      "thz_subtitle": "Przywracanie wibracji komórkowych.",
+      "thz_desc": "Częstotliwość terahercowa znajduje się między falami mikrofalowymi a podczerwonymi, znana jako Fala Życia, ponieważ wibruje w harmonii ze zdrowymi ludzkimi komórkami. Gdy Twój rytm komórkowy zostaje zaburzony, pojawia się brak równowagi. Fale te przywracają spójność, budzą wrodzony potencjał uzdrawiania i wzmacniają naturalną siłę życiową Twojego ciała.",
+      "thz_benefits": [
+        { "label": "Aktywacja", "desc": "Budzenie niewydolnych komórek dla osiągnięcia szczytowej wydajności." },
+        { "label": "Przepływ", "desc": "Wsparcie mikrokrążenia i wewnętrznych ścieżek energetycznych." },
+        { "label": "Równowaga", "desc": "Wyrównanie naturalnej spójności biologicznej Twojego ciała." }
+      ]
+    }
+  },
+  "shop": {
+    "hero": {
+      "badge": "Arsenał Biohackingu",
+      "title": "Nasza Pełna ",
+      "title_highlight": "Kolekcja",
+      "subtitle": "Przeglądaj naszą starannie dobraną ofertę profesjonalnych urządzeń PEMF i częstotliwości Terahertzowej, zaprojektowanych z myślą o całkowitym opanowaniu procesów komórkowych."
+    },
+    "list": {
+      "loading": "Ładowanie produktów...",
+      "empty": "Obecnie w katalogu nie ma dostępnych produktów.",
+      "badge": "Wysoka Technologia",
+      "button": "Poznaj możliwości"
+    },
+    "cta": {
+      "title": "Nie wiesz, która częstotliwość jest dla Ciebie?",
+      "subtitle": "Nasz zespół trenerów jest gotowy przeanalizować Twoje konkretne cele wellness, aby dopasować Cię do precyzyjnego protokołu urządzenia, którego potrzebujesz.",
+      "button": "Skonsultuj się z trenerem"
+    }
+  },
+  "blog": {
+    "hero": {
+      "badge": "Spostrzeżenia i Edukacja",
+      "title": "Dziennik ",
+      "title_highlight": "Częstotliwości",
+      "title_suffix": "",
+      "subtitle": "Nauka, wydajność i przewaga komórkowa. Dokładne analizy PEMF, częstotliwości Terahertzowej, regeneracji i biohackingu na podstawie ponad 13 lat doświadczenia w terenie."
+    },
+    "featured": {
+      "badge": "Wyróżnione",
+      "read_more": "Czytaj więcej"
+    },
+    "list": {
+      "read_more": "Czytaj więcej",
+      "loading": "Ładowanie artykułów..."
+    },
+    "categories": {
+      "Technology": "Technologia",
+      "Performance": "Wydajność",
+      "Coaching": "Coaching",
+      "Wellness": "Wellness",
+      "Getting Started": "Pierwsze kroki"
+    }
+  },
+  "product_detail": {
+    "loading": "Ładowanie szczegółów produktu...",
+    "breadcrumb": {
+      "home": "Start",
+      "tech": "Technologia"
+    },
+    "badge": "Technologia Kwantowa",
+    "headers": {
+      "benefits": "Kluczowe Korzyści",
+      "price": "Cena Detaliczna",
+      "pricing": "Cennik",
+      "how": "Jak to działa",
+      "who": "Dla kogo",
+      "science": "Nauka",
+      "gallery": "Galeria"
+    },
+    "pricing": {
+      "contact": "Zapytaj o cenę",
+      "fallback": "Dobierzemy dla Ciebie odpowiedni pakiet",
+      "direct": "Sprzedaż bezpośrednia"
+    },
+    "button": "Zapytaj o zakup",
+    "inquiry": {
+      "title": "Zapytanie o zakup",
+      "subtitle": "Nasze profesjonalne urządzenia są dostępne poprzez bezpośrednie zapytanie, aby zapewnić dobór odpowiedniej technologii do Twoich konkretnych potrzeb."
+    }
+  },
+  "blog_post": {
+    "loading": "Ładowanie wpisu...",
+    "not_found": "Nie znaleziono wpisu",
+    "back_to_blog": "Powrót do bloga",
+    "back_to_journal": "Powrót do dziennika",
+    "featured": "Wyróżnione",
+    "cta": {
+      "title": "Gotowy, by poczuć różnicę?",
+      "subtitle": "Poznaj naszą pełną gamę urządzeń wellness opartych na częstotliwościach.",
+      "view_tech": "Zobacz technologię",
+      "inquire": "Zapytaj teraz"
+    },
+    "nav": {
+      "prev": "Poprzedni",
+      "next": "Następny"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Połączmy się",
+      "subtitle": "Gotowy na poznanie technologii częstotliwości lub masz pytania o nasze produkty? Skontaktuj się z nami, a pomożemy Ci znaleźć odpowiednie rozwiązanie."
+    },
+    "info": {
+      "title": "Dane kontaktowe",
+      "email": "Email",
+      "phone": "Telefon",
+      "location": "Lokalizacja"
+    },
+    "help": {
+      "title": "Nie wiesz, od czego zacząć?",
+      "text": "Opowiedz nam o swoich obecnych wyzwaniach zdrowotnych lub celach wydolnościowych w wiadomości, a zarekomendujemy optymalny zestaw technologii dla Twoich konkretnych potrzeb."
+    },
+    "form": {
+      "title": "Wyślij zapytanie",
+      "labels": {
+        "interest": "Interesuje mnie"
+      },
+      "placeholders": {
+        "interest": "Wybierz opcję"
+      }
+    }
+  },
+  "common": {
+    "navigation": {
+      "back": "Wstecz",
+      "back_to_catalog": "Powrót do katalogu",
+      "back_to_journal": "Powrót do dziennika",
+      "view_products": "Zobacz nasze produkty",
+      "products": "Produkty"
+    },
+    "form": {
+      "labels": {
+        "name": "Imię i Nazwisko",
+        "email": "Adres Email",
+        "phone": "Numer Telefonu (Opcjonalnie)",
+        "product": "Produkt, którym jesteś zainteresowany",
+        "interest": "Interesuje mnie",
+        "message": "Wiadomość / Zapytanie",
+        "source": "Jak o nas usłyszałeś? (Opcjonalnie)"
+      },
+      "placeholders": {
+        "name": "Jan Kowalski",
+        "email": "jan@przyklad.pl",
+        "phone": "+48 000 000 000",
+        "product": "Wybierz produkt",
+        "interest": "Wybierz zainteresowanie",
+        "message": "Opowiedz nam o swoich celach zdrowotnych lub zadaj konkretne pytania...",
+        "source": "Wybierz opcję"
+      },
+      "options": {
+        "interests": {
+          "label": "Interesuje mnie",
+          "placeholder": "Wybierz zainteresowanie",
+          "general": "Zapytanie ogólne",
+          "buy": "Chcę kupić",
+          "consult": "Zarezerwuj konsultację",
+          "affiliate": "Zostań partnerem"
+        },
+        "sources": {
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "friend": "Znajomy / Polecenie",
+          "search": "Wyszukiwarka",
+          "other": "Inne"
+        }
+      },
+      "submit": "Wyślij zapytanie",
+      "success": {
+        "title": "Zapytanie wysłane pomyślnie",
+        "desc": "Otrzymaliśmy Twoją wiadomość, nasz zespół skontaktuje się z Tobą wkrótce."
+      },
+      "error": {
+        "title": "Błąd wysyłania",
+        "desc": "Wystąpił problem z wysłaniem zapytania. Spróbuj ponownie."
+      },
+      "validation": {
+        "name": "Imię musi mieć co najmniej 2 znaki.",
+        "email": "Niepoprawny adres email.",
+        "message": "Wiadomość musi mieć co najmniej 10 znaków."
+      }
+    },
+    "affiliate": {
+      "title": "Program Partnerski",
+      "hero_title": "Uwielbiasz tę technologię?",
+      "hero_highlight": "Dziel się i zarabiaj.",
+      "subtitle": "Dołącz do naszego programu partnerskiego i stań się częścią ruchu wellneXfreQ.",
+      "button": "Zostań partnerem",
+      "p1_title": "Wysoka prowizja",
+      "p1_desc": "Zarabiaj znaczące nagrody za każde udane polecenie.",
+      "p2_title": "Dołącz do ruchu",
+      "p2_desc": "Bądź częścią elitarnej społeczności ekspertów od witalności częstotliwościowej."
+    }
+  },
+  "footer": {
+    "tagline": "Biohacking zdrowia dzięki technologii PEMF i Terahertz. Twój codzienny rytuał długowieczności. Zbudowany, by się ruszać. Stworzony, by trwać. Zasilany u źródła.",
+    "company": "Firma",
+    "tech": "Technologia",
+    "connect": "Połącz się",
+    "serving": "Obsługiwane regiony",
+    "philosophy": "Podróż",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "about": "O nas"
+  },
+  "privacy": {
+    "title": "Polityka Prywatności",
+    "effective_date": "Data wejścia w życie: ",
+    "date": "1 kwietnia 2026",
+    "back_to_home": "Powrót do strony głównej",
+    "badge": "Prawne",
+    "intro": "wellneXfreQ (\"my\", \"nas\" lub \"nasz\") zobowiązuje się do ochrony Twoich danych osobowych. Niniejsza Polityka Prywatności wyjaśnia, w jaki sposób zbieramy, wykorzystujemy, ujawniamy i zabezpieczamy informacje, gdy odwiedzasz naszą stronę internetową lub przesyłasz zapytanie za pośrednictwem formularza kontaktowego.",
+    "footer_text": "wellneXfreQ © {{year}}. Wszelkie prawa zastrzeżone.",
+    "footer_link": "Skontaktuj się z nami w razie pytań",
+    "sections": [
+      {
+        "title": "Gromadzone informacje",
+        "body": "Gdy przesyłasz zapytanie za pośrednictwem naszego formularza kontaktowego, zbieramy następujące informacje: pełne imię i nazwisko, adres e-mail, numer telefonu (jeśli został podany), produkt lub usługę, którą jesteś zainteresowany, treść wiadomości oraz sposób, w jaki o nas usłyszałeś. Możemy również zbierać podstawowe dane analityczne, takie jak odwiedzone strony i czas spędzony w witrynie, za pomocą standardowych narzędzi analitycznych. Nie zbieramy informacji o płatnościach – wszystkie zakupy są obsługiwane poprzez bezpośrednie zapytanie, a nie przez koszyk online."
+      },
+      {
+        "title": "Jak wykorzystujemy Twoje informacje",
+        "body": "Podane przez Ciebie informacje są wykorzystywane wyłącznie w celu odpowiedzi na Twoje zapytanie, przekazania informacji o produktach oraz kontynuowania kontaktu w związku z Twoim zainteresowaniem naszą technologią wellness. Nie wykorzystujemy Twoich danych do automatycznych kampanii marketingowych bez Twojej zgody. Jeśli wyraziłeś chęć otrzymywania treści edukacyjnych lub aktualizacji od wellneXfreQ, możemy od czasu do czasu wysyłać wiadomości o nowych produktach, artykułach na blogu lub istotnych informacjach wellness. Możesz zrezygnować z subskrypcji w dowolnym momencie."
+      },
+      {
+        "title": "Udostępnianie informacji",
+        "body": "Nie sprzedajemy, nie handlujemy ani nie wynajmujemy Twoich danych osobowych stronom trzecim. Możemy udostępniać niezbędne informacje zaufanym dostawcom usług, którzy pomagają nam w prowadzeniu naszej strony internetowej lub działalności – na przykład dostawcom usług e-mail – pod warunkiem, że strony te zgodzą się zachować poufność Twoich informacji. Możemy ujawnić informacje, gdy jest to wymagane przez prawo lub w celu ochrony praw, własności lub bezpieczeństwa wellneXfreQ, naszych klientów lub innych osób."
+      },
+      {
+        "title": "Przechowywanie danych",
+        "body": "Przechowujemy Twoje dane osobowe tak długo, jak jest to konieczne do realizacji celów określonych w niniejszej polityce lub zgodnie z wymogami obowiązującego prawa. Dane z zapytań są przechowywane przez okres do 3 lat w celu wsparcia bieżących relacji z klientami i historii obsługi. Możesz zażądać usunięcia swoich danych w dowolnym momencie, kontaktując się z nami bezpośrednio pod adresem your@wellnexfreq.com."
+      },
+      {
+        "title": "Ciasteczka i śledzenie",
+        "body": "Nasza strona internetowa wykorzystuje ciasteczka (cookies) i podobne technologie śledzenia, aby poprawić komfort przeglądania. Niezbędne ciasteczka są wymagane do poprawnego działania witryny. Ciasteczka analityczne pomagają nam zrozumieć, w jaki sposób odwiedzający wchodzą w interakcję z naszymi treściami – dane te są zagregowane i anonimowe. Możesz kontrolować preferencje dotyczące ciasteczek w ustawieniach swojej przeglądarki. Wyłączenie niektórych ciasteczek może wpłynąć na funkcjonalność niektórych części serwisu."
+      },
+      {
+        "title": "Twoje prawa",
+        "body": "W zależności od lokalizacji, mogą przysługiwać Ci prawa wynikające z obowiązujących przepisów o ochronie danych, w tym: prawo do dostępu do Twoich danych osobowych, prawo do poprawiania nieścisłych informacji, prawo do żądania usunięcia danych, prawo do wycofania zgody na komunikację w dowolnym momencie oraz prawo do wniesienia skargi do właściwego organu nadzorczego. Aby skorzystać z któregokolwiek z tych praw, prosimy o kontakt pod adresem your@wellnexfreq.com."
+      },
+      {
+        "title": "Bezpieczeństwo",
+        "body": "Wdrażamy odpowiednie środki techniczne i organizacyjne, aby chronić Twoje dane osobowe przed nieuprawnionym dostępem, ujawnieniem, zmianą lub zniszczeniem. Choć poważnie traktujemy bezpieczeństwo Twoich danych, żadna metoda transmisji przez Internet ani elektronicznego przechowywania nie jest w 100% bezpieczna. Zachęcamy do zachowania ostrożności przy udostępnianiu danych osobowych online."
+      },
+      {
+        "title": "Linki stron trzecich",
+        "body": "Nasza strona internetowa może zawierać linki do stron internetowych osób trzecich, w tym platform mediów społecznościowych i zasobów zewnętrznych. Niniejsza Polityka Prywatności dotyczy wyłącznie informacji zbieranych na stronie wellneXfreQ. Nie ponosimy odpowiedzialności za praktyki ochrony prywatności stron zewnętrznych i zachęcamy do niezależnego zapoznania się z ich politykami prywatności."
+      },
+      {
+        "title": "Zmiany w niniejszej polityce",
+        "body": "Możemy od czasu do czasu aktualizować niniejszą Politykę Prywatności, aby odzwierciedlić zmiany w naszych praktykach lub obowiązującym prawie. W przypadku wprowadzenia istotnych zmian zaktualizujemy datę wejścia w życie na górze tej strony. Zachęcamy do okresowego przeglądania polityki. Dalsze korzystanie z naszej strony internetowej po wprowadzeniu jakichkolwiek zmian oznacza akceptację zaktualizowanej polityki."
+      },
+      {
+        "title": "Kontakt",
+        "body": "W razie jakichkolwiek pytań, wątpliwości lub próśb dotyczących niniejszej Polityki Prywatności lub postępowania z Twoimi danymi osobowymi, prosimy o kontakt pod adresem: your@wellnexfreq.com. Staramy się odpowiadać na wszystkie zapytania dotyczące prywatności w ciągu 10 dni roboczych."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Regulamin",
+    "effective_date": "Data wejścia w życie: ",
+    "date": "1 kwietnia 2026",
+    "back_to_home": "Powrót do strony głównej",
+    "badge": "Prawne",
+    "intro": "Witaj w wellneXfreQ. Uzyskując dostęp do naszej strony internetowej i korzystając z naszych usług, zgadzasz się na przestrzeganie poniższych warunków. Prosimy o uważne zapoznanie się z niniejszym regulaminem przed skorzystaniem z naszej witryny.",
+    "footer_text": "wellneXfreQ © {{year}}. Wszelkie prawa zastrzeżone.",
+    "footer_link": "Skontaktuj się z nami w razie pytań",
+    "sections": [
+      {
+        "title": "Zakres usług",
+        "body": "wellneXfreQ zapewnia dostęp do zaawansowanej technologii wellness częstotliwościowych oraz związanych z nią treści edukacyjnych. Nasze produkty są sprzedawane w modelu bezpośredniego zapytania i coachingu, aby zapewnić właściwe zastosowanie i edukację. Nie udzielamy porad medycznych ani nie prowadzimy leczenia."
+      },
+      {
+        "title": "Brak porad medycznych",
+        "body": "Treści na tej stronie oraz oferowane produkty służą wyłącznie celom edukacyjnym i wellness. Nie są one przeznaczone do diagnozowania, leczenia ani zapobiegania jakiejkolwiek chorobie. Zawsze zasięgnij porady lekarza lub innego wykwalifikowanego dostawcy usług zdrowotnych w przypadku jakichkolwiek pytań dotyczących stanu zdrowia. Nigdy nie lekceważ profesjonalnej porady medycznej ani nie zwlekaj z jej zasięgnięciem z powodu czegoś, co przeczytałeś na tej stronie."
+      },
+      {
+        "title": "Dostępność produktów",
+        "body": "Chociaż staramy się zachować dokładne opisy i dostępność produktów, zastrzegamy sobie prawo do ograniczenia ilości lub wycofania produktów w dowolnym momencie bez powiadomienia. Specyfikacje produktów mogą ulec zmianie w oparciu o postęp technologiczny."
+      },
+      {
+        "title": "Ceny i płatności",
+        "body": "Ceny naszych profesjonalnych urządzeń są podawane na zapytanie. Zastrzegamy sobie prawo do zmiany cen w dowolnym momencie. Wszystkie transakcje są obsługiwane bezpośrednio poprzez nasz bezpieczny proces fakturowania, a nie poprzez publiczny koszyk."
+      },
+      {
+        "title": "Własność intelektualna",
+        "body": "Wszelkie treści na tej stronie, w tym teksty, grafiki, logo, obrazy i oprogramowanie, są własnością wellneXfreQ lub jej dostawców treści i są chronione przez międzynarodowe prawo autorskie i prawo własności intelektualnej. Nieautoryzowane użycie jakichkolwiek materiałów jest surowo zabronione."
+      },
+      {
+        "title": "Zachowanie użytkownika",
+        "body": "Korzystając z naszej strony, zgadzasz się używać jej wyłącznie w celach zgodnych z prawem i nie podejmować żadnych działań, które mogłyby uszkodzić, wyłączyć lub osłabić funkcjonalność strony lub zakłócać dostęp innym użytkownikom."
+      },
+      {
+        "title": "Ograniczenie odpowiedzialności",
+        "body": "wellneXfreQ oraz jej urzędnicy, dyrektorzy i pracownicy nie ponoszą odpowiedzialności za jakiekolwiek szkody pośrednie, przypadkowe, szczególne lub wtórne wynikające z lub w związku z korzystaniem z naszej strony internetowej lub produktów."
+      },
+      {
+        "title": "Prawo właściwe",
+        "body": "Niniejsze warunki podlegają i będą interpretowane zgodnie z prawem jurysdykcji, w której działa wellneXfreQ, bez względu na konflikty zasad prawnych."
+      },
+      {
+        "title": "Rozwiązanie umowy",
+        "body": "Zastrzegamy sobie prawo do natychmiastowego zamknięcia lub zawieszenia dostępu do naszej strony i usług, bez uprzedniego powiadomienia, z jakiegokolwiek powodu, w tym bez ograniczeń w przypadku naruszenia przez Ciebie Regulaminu."
+      },
+      {
+        "title": "Kontakt",
+        "body": "Jeśli masz jakiekolwiek pytania dotyczące niniejszego Regulaminu, prosimy o kontakt pod adresem your@wellnexfreq.com."
+      }
+    ]
+  },
+  "not_found": {
+    "title": "Częstotliwość Nieodnaleziona",
+    "subtitle": "Strona, której szukasz, wypadła poza rezonans. Dostrójmy się z powrotem do głównego spektrum.",
+    "back": "Wróć",
+    "home": "Powróć do bazy"
+  },
+  "admin": {
+    "login": {
+      "title": "Portal Administratora",
+      "email": "Email",
+      "password": "Hasło",
+      "submit": "Zaloguj się",
+      "failed": "Logowanie nieudane"
+    },
+    "dashboard": {
+      "title": "Centrum Kontroli Administratora",
+      "status": "Uwierzytelnianie i ładowanie panelu...",
+      "go_to_site": "Przejdź do strony",
+      "logout": "Wyloguj się",
+      "tabs": {
+        "products": "Centrum Produktów",
+        "blogs": "Dziennik Bloga",
+        "inquiries": "Zapytania"
+      },
+      "products": {
+        "title": "Zarządzaj produktami",
+        "new": "Nowy produkt",
+        "edit": "Edytuj",
+        "delete": "Usuń",
+        "view_live": "Zobacz na żywo",
+        "no_products": "Nie znaleziono produktów. Utwórz nowy.",
+        "delete_confirm": "Czy na pewno chcesz usunąć ten produkt?"
+      },
+      "blogs": {
+        "title": "Zarządzaj artykułami",
+        "new": "Nowy artykuł",
+        "edit": "Edytuj",
+        "delete": "Usuń",
+        "view_live": "Zobacz na żywo",
+        "no_articles": "Nie znaleziono artykułów. Utwórz pierwszy wpis!",
+        "delete_confirm": "Czy na pewno chcesz usunąć ten artykuł na stałe?"
+      },
+      "inquiries": {
+        "title": "Zapytania klientów",
+        "active": "Aktywne zapytania",
+        "archived": "Zarchiwizowane",
+        "no_active": "Brak aktywnych zapytań. Wszystko załatwione!",
+        "no_archived": "Brak zarchiwizowane zapytań.",
+        "mark_read": "Oznacz jako przeczytane",
+        "mark_unread": "Oznacz jako nieprzeczytane",
+        "archive": "Archiwizuj",
+        "unarchive": "Przywróć z archiwum",
+        "delete": "Usuń",
+        "delete_confirm": "Czy na pewno chcesz usunąć to zapytanie na stałe?",
+        "new_badge": "Nowe"
+      },
+      "upload": {
+        "too_large": "Obraz przekracza limit 500KB.",
+        "failed": "Przesyłanie nieudane"
+      },
+      "error_title": "Błąd ładowania konfiguracji",
+      "error_message": "Wystąpił nieznany błąd. Upewnij się, że reguły Firestore są ustawione.",
+      "retry": "Spróbuj ponownie",
+      "modals": {
+        "product": {
+          "title_new": "Utwórz nowy produkt",
+          "title_edit": "Edytuj produkt",
+          "description": "Wypełnij szczegóły produktu i zoptymalizuj galerię obrazów.",
+          "labels": {
+            "main_img": "Główny obraz produktu (Maks. 500KB)",
+            "gallery_img": "Obrazy galerii (Maks. 4, po 500KB)",
+            "name": "Nazwa produktu",
+            "slug": "Slug URL (np. nazwa-produktu)",
+            "image_fallback": "Bezpośredni link do obrazu (zapasowy)",
+            "price": "Cena",
+            "tagline": "Krótki tagline",
+            "desc": "Główny opis",
+            "how": "Jak to działa",
+            "who": "Dla kogo",
+            "science": "Nauka",
+            "benefits": "Korzyści (oddzielone przecinkami)"
+          },
+          "placeholders": {
+            "benefits": "np. Regeneracja snu, napięcie mięśniowe..."
+          },
+          "buttons": {
+            "cancel": "Anuluj",
+            "save": "Zapisz zmiany",
+            "create": "Utwórz produkt"
+          }
+        },
+        "blog": {
+          "title_new": "Szkicuj nowy artykuł",
+          "title_edit": "Edytuj artykuł",
+          "description": "Wypełnij bogate dane treści dla swojego bloga. Miniatury muszą mieć mniej niż 500 KB.",
+          "labels": {
+            "header_img": "Obraz nagłówka (Maks. 500KB)",
+            "title": "Tytuł",
+            "slug": "Slug URL (np. dlaczego-czestotliwosc)",
+            "category": "Kategoria",
+            "date": "Format daty",
+            "read_time": "Czas czytania",
+            "excerpt": "Krótki fragment podsumowania",
+            "body_title": "Strategia treści",
+            "intro": "Akapity wprowadzające",
+            "sections": "Tablica sekcji artykułu",
+            "add_section": "Dodaj sekcję",
+            "section_heading": "Nagłówek sekcji",
+            "section_body": "Akapity treści sekcji",
+            "no_sections": "Nie dodano żadnych sekcji. Kliknij „+ Dodaj sekcję” powyżej, aby rozpocząć budowanie treści.",
+            "conclusion": "Podsumowanie końcowe"
+          }
+        }
+      }
+    }
+  }
+}
