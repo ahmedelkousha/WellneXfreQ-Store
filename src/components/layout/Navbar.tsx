@@ -9,7 +9,7 @@ import Flag from "react-world-flags";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  // const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language.split("-")[0]; // handle variants like en-US
   // const { data: products = [] } = useProducts();
@@ -31,9 +31,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setProductsDropdownOpen(false);
-  }, [location]);
+  // useEffect(() => {
+  //   setProductsDropdownOpen(false);
+  // }, [location]);
 
   // IntersectionObserver to track active section for bottom nav highlight
   useEffect(() => {
