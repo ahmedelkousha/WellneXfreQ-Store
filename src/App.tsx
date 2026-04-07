@@ -14,6 +14,7 @@ import BlogPost from "@/pages/BlogPost";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import About from "@/pages/About";
+import OrderNow from "@/pages/OrderNow";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -69,6 +70,7 @@ function AppShell() {
               <Route index element={<Home />} />
               <Route path="products" element={<Products />} />
               <Route path="product/:slug" element={<ProductDetail />} />
+              <Route path="order" element={<OrderNow />} />
               {/* DISABLED BLOG FEATURE */}
               <Route path="blog/*" element={<NotFound />} />
               <Route path="blog/:slug" element={<BlogPost />} />

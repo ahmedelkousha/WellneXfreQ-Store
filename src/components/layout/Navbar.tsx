@@ -97,6 +97,7 @@ export default function Navbar() {
   const isPhilActive = activeSection === "philosophy" || location.includes("/about");
   const isBlogActive = activeSection === "blog" || location.includes("/blog");
   const isContactActive = location.includes("/contact");
+  const isOrderActive = location.includes("/order");
 
   const mobileNavItems = [
     {
@@ -128,6 +129,12 @@ export default function Navbar() {
       icon: Mail,
       href: getPath("/contact"),
       active: isContactActive,
+    },
+    {
+      label: t("nav.order"),
+      icon: Cpu,
+      href: getPath("/order"),
+      active: isOrderActive,
     },
   ];
 
@@ -212,6 +219,13 @@ export default function Navbar() {
               {t("nav.contact")}
             </Link>
 
+            <Link
+              to={getPath("/order")}
+              className={`text-sm font-medium transition-colors ${isOrderActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+            >
+              {t("nav.order")}
+            </Link>
+
             <div className="flex items-center gap-3 ml-2">
               <button
                 onClick={toggleLanguage}
@@ -230,7 +244,7 @@ export default function Navbar() {
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               >
-                <Link to={getPath("/contact")}>{t("nav.inquire")}</Link>
+                <Link to={getPath("/order")}>{t("nav.order")}</Link>
               </Button>
             </div>
           </nav>
@@ -253,7 +267,7 @@ export default function Navbar() {
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
-              <Link to={getPath("/contact")}>{t("nav.inquire")}</Link>
+              <Link to={getPath("/order")}>{t("nav.order")}</Link>
             </Button>
           </div>
         </div>

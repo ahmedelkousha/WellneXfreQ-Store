@@ -6,7 +6,8 @@
     "about": "About",
     "blog": "Blog",
     "contact": "Contact",
-    "inquire": "Inquire Now"
+    "inquire": "Inquire Now",
+    "order": "Order Now"
   },
   "home": {
     "hero": {
@@ -429,6 +430,79 @@
       }
     }
   },
+  "order": {
+    "hero": {
+      "badge": "Direct Order Request",
+      "title": "Order Your Frequency Technology",
+      "subtitle": "Submit a direct purchase request for wellneXfreQ devices. Our team will confirm availability, P&H and final details with you personally before payment."
+    },
+    "form": {
+      "title": "Order Now",
+      "description": "Fill in your details and choose the technology you wish to purchase. This form sends a non-binding order request so we can confirm stock, shipping and payment details with you directly.",
+      "labels": {
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "id_number": "ID Number (EA-XXXXXX)",
+        "gender": "Gender",
+        "male": "Male",
+        "female": "Female",
+        "country": "Country",
+        "address": "Full Address",
+        "products": "Products to Order",
+        "quantity": "Qty",
+        "add_product": "Add Product",
+        "summary_subtotal": "Subtotal",
+        "summary_ph": "Packaging & Handling",
+        "summary_total": "Estimated Total",
+        "consent": "I understand this is an order request and that final confirmation, shipping timelines and payment details will be provided to me via email or WhatsApp.",
+        "submit": "Submit Order Request",
+        "submitting": "Submitting...",
+        "remove_line": "Remove line"
+      },
+      "placeholders": {
+        "product": "Select a product",
+        "search_product": "Search product...",
+        "no_product": "No product found.",
+        "search_country": "Search country...",
+        "no_country": "No country found."
+      }
+    },
+    "validation": {
+      "first_name": "First name is required.",
+      "last_name": "Last name is required.",
+      "email": "Valid email is required.",
+      "phone": "Phone number is required.",
+      "id_suffix": "ID must be 6 characters after EA- prefix.",
+      "gender": "Please select gender.",
+      "country": "Please select a country.",
+      "address": "Please enter your full address.",
+      "items": "Please select at least one product and quantity.",
+      "consent": "You must confirm you understand the purchasing methodology."
+    },
+    "methodology": {
+      "title": "How the Purchase Works",
+      "steps": [
+        "Submit your order request with your details and chosen devices.",
+        "Our team reviews your request, confirms availability, P&H and total, then contacts you via email or WhatsApp.",
+        "Once you confirm, we provide secure payment instructions and finalise shipping arrangements."
+      ],
+      "note": "All prices shown are indicative device prices in USD with +10% P&H added for each line. Final amount, currency and shipping timelines will be confirmed with you directly before payment."
+    },
+    "social": {
+      "title": "Validate & Connect",
+      "subtitle": "You can always confirm our presence, activity and updates through our official social channels and direct contact details below."
+    },
+    "success": {
+      "title": "Order Request Sent",
+      "desc": "Thank you. Your order request has been received. We will contact you shortly to confirm details and next steps."
+    },
+    "error": {
+      "title": "Order Request Failed",
+      "desc": "There was a problem sending your order request. Please try again or contact us directly."
+    }
+  },
   "footer": {
     "tagline": "Biohacking your health with PEMF and Terahertz technology. Your daily ritual for longevity. Built to move. Created to last. Powered at the source.",
     "affiliate": {
@@ -572,7 +646,8 @@
       "tabs": {
         "products": "Products Hub",
         "blogs": "Blog Journal",
-        "inquiries": "Inquiries"
+        "inquiries": "Inquiries",
+        "orders": "Orders"
       },
       "products": {
         "title": "Manage Products",
@@ -663,6 +738,26 @@
             "conclusion": "Conclusion Wrap-up"
           }
         }
+      },
+      "orders": {
+        "title": "Client Orders",
+        "active": "Active Inbox",
+        "archived": "Archived",
+        "no_active": "No active orders. You're all caught up!",
+        "no_archived": "No archived orders yet.",
+        "no_orders": "No orders have been placed yet.",
+        "mark_read": "Mark Read",
+        "mark_unread": "Mark Unread",
+        "archive": "Archive",
+        "unarchive": "Unarchive",
+        "delete": "Delete",
+        "delete_confirm": "Permanently delete this order?",
+        "new_badge": "New",
+        "total": "Total",
+        "line_total": "Line Total",
+        "summary_subtotal": "Devices subtotal",
+        "summary_ph": "P&H total",
+        "address": "Address"
       }
     }
   }

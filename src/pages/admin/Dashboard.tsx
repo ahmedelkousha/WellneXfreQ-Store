@@ -7,6 +7,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useProducts, useAddProduct, useUpdateProduct, useDeleteProduct } from "@/hooks/useProducts";
 import { useInquiries, useUpdateInquiryStatus, useDeleteInquiry } from "@/hooks/useInquiries";
 import { useBlogs, useAddBlog, useUpdateBlog, useDeleteBlog } from "@/hooks/useBlogs";
+import { useOrders, useUpdateOrderStatus, useDeleteOrder } from "@/hooks/useOrders";
 import { Product } from "@/data/products";
 import { Blog } from "@/types/blog";
 import { Inquiry } from "@/types/inquiry";
@@ -31,6 +32,9 @@ export default function AdminDashboard() {
   const deleteProduct = useDeleteProduct();
 
   const { data: inquiries = [], isLoading: loadingInquiries } = useInquiries();
+  const { data: orders = [], isLoading: loadingOrders } = useOrders();
+  const updateOrderStatus = useUpdateOrderStatus();
+  const deleteOrder = useDeleteOrder();
   const updateInquiry = useUpdateInquiryStatus();
   const deleteInquiry = useDeleteInquiry();
 
@@ -427,6 +431,14 @@ export default function AdminDashboard() {
                   </span>
                 )}
               </TabsTrigger>
+              <TabsTrigger value="orders" className="data-[state=active]:bg-primary data-[state=active]:text-black text-white/70 flex items-center gap-2 whitespace-nowrap">
+                {t("admin.dashboard.tabs.orders")}
+                {orders.filter((o) => (o as any).status === "new").length > 0 && (
+                  <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+                    {orders.filter((o) => (o as any).status === "new").length}
+                  </span>
+                )}
+              </TabsTrigger>
             </TabsList>
           </div>
 
@@ -584,6 +596,383 @@ export default function AdminDashboard() {
                       </div>
                     )}
                   </AnimatePresence>
+                </TabsContent>
+              </Tabs>
+            )}
+          </TabsContent>
+
+          <TabsContent value="orders">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-bold text-white">{t("admin.dashboard.orders.title")}</h2>
+            </div>
+            {loadingOrders ? (
+              <div className="flex py-10 items-center justify-center">
+                <Loader2 className="w-6 h-6 text-primary animate-spin" />
+              </div>
+            ) : orders.length === 0 ? (
+              <div className="text-center py-20 bg-white/5 rounded-2xl border border-white/10 text-white/50">
+                {t("admin.dashboard.orders.no_orders")}
+              </div>
+            ) : (
+              <Tabs defaultValue="active" className="w-full">
+                <TabsList className="bg-white/5 border border-white/10 mb-6 p-1">
+                  <TabsTrigger value="active" className="data-[state=active]:bg-primary data-[state=active]:text-black text-white/70">
+                    {t("admin.dashboard.orders.active")}
+                    {orders.filter((o) => (o as any).status === "new").length > 0 && (
+                      <span className="ml-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+                        {orders.filter((o) => (o as any).status === "new").length}
+                      </span>
+                    )}
+                  </TabsTrigger>
+                  <TabsTrigger value="archived" className="data-[state=active]:bg-white/20 data-[state=active]:text-white text-white/70">
+                    {t("admin.dashboard.orders.archived")}
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="active" className="grid gap-4 mt-0">
+                  {orders
+                    .filter((o) => (o as any).status !== "archived")
+                    .map((order) => {
+                  const items = Array.isArray(order.items) ? order.items : [];
+                  const subtotal = typeof order.subtotal === "number" ? order.subtotal : 0;
+                  const totalPh = typeof order.totalPh === "number" ? order.totalPh : 0;
+                  const total =
+                    typeof order.total === "number" ? order.total : subtotal + totalPh;
+                  const status = (order as any).status || "new";
+
+                  return (
+                  <motion.div
+                    key={order.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-5 rounded-2xl border border-white/10 bg-card flex flex-col gap-3"
+                  >
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">
+                          {order.firstName} {order.lastName}
+                        </h3>
+                        <p className="text-xs text-white/60">
+                          {new Intl.DateTimeFormat("en-US", {
+                            dateStyle: "medium",
+                            timeStyle: "short",
+                          }).format(new Date(order.createdAt))}
+                        </p>
+                        <div className="mt-2 flex items-center gap-2">
+                          {status === "new" && (
+                            <span className="bg-primary text-black text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                              {t("admin.dashboard.orders.new_badge")}
+                            </span>
+                          )}
+                          {status === "archived" && (
+                            <span className="bg-white/20 text-white/60 text-[10px] px-2 py-0.5 rounded uppercase tracking-wider">
+                              {t("admin.dashboard.orders.archived")}
+                            </span>
+                          )}
+                        </div>
+                        <p className="mt-1 text-xs text-white/70">
+                          <strong>Email:</strong>{" "}
+                          <a
+                            href={`mailto:${order.email}`}
+                            className="text-primary hover:underline"
+                          >
+                            {order.email}
+                          </a>
+                          {" • "}
+                          <strong>ID:</strong> {order.idNumber}
+                          {" • "}
+                          <strong>Phone:</strong> {order.phoneCountryCode} {order.phoneNumber}
+                        </p>
+                        <p className="mt-1 text-xs text-white/60">
+                          <strong>{t("admin.dashboard.orders.address")}:</strong> {order.addressLine}
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-end gap-2">
+                        <p className="text-xs text-white/60 uppercase tracking-[0.15em]">
+                          {t("admin.dashboard.orders.total")}
+                        </p>
+                        <p className="text-xl font-mono font-bold text-primary">
+                          {order.currency || "USD"}{" "}
+                          {total.toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}
+                        </p>
+
+                        <div className="flex flex-row md:flex-col gap-2 w-full md:w-auto">
+                          {status === "new" && (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="border-white/20 text-white/80 w-full"
+                              onClick={() => updateOrderStatus.mutateAsync({ id: order.id, status: "read" })}
+                            >
+                              <Eye className="w-3.5 h-3.5 mr-2" /> {t("admin.dashboard.orders.mark_read")}
+                            </Button>
+                          )}
+                          {status === "read" && (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="border-white/20 text-white/60 w-full"
+                              onClick={() => updateOrderStatus.mutateAsync({ id: order.id, status: "new" })}
+                            >
+                              <EyeOff className="w-3.5 h-3.5 mr-2" /> {t("admin.dashboard.orders.mark_unread")}
+                            </Button>
+                          )}
+                          {status !== "archived" ? (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="border-white/20 text-orange-400 hover:text-orange-300 w-full"
+                              onClick={() => updateOrderStatus.mutateAsync({ id: order.id, status: "archived" })}
+                            >
+                              <Archive className="w-3.5 h-3.5 mr-2" /> {t("admin.dashboard.orders.archive")}
+                            </Button>
+                          ) : (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="border-white/20 text-white/60 w-full"
+                              onClick={() => updateOrderStatus.mutateAsync({ id: order.id, status: "read" })}
+                            >
+                              {t("admin.dashboard.orders.unarchive")}
+                            </Button>
+                          )}
+                          <Button
+                            size="sm"
+                            variant="destructive"
+                            className="w-full"
+                            onClick={async () => {
+                              if (confirm(t("admin.dashboard.orders.delete_confirm"))) {
+                                await deleteOrder.mutateAsync(order.id);
+                              }
+                            }}
+                          >
+                            <Trash2 className="w-3.5 h-3.5 mr-2" /> {t("admin.dashboard.orders.delete")}
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-t border-white/10 pt-3 mt-1 text-xs text-white/80 space-y-1">
+                      {items.map((item: any) => {
+                        const qty = typeof item.quantity === "number" ? item.quantity : 0;
+                        const unitPrice = typeof item.unitPrice === "number" ? item.unitPrice : 0;
+                        const phPercent = typeof item.phPercent === "number" ? item.phPercent : 0;
+                        const linePhAmount =
+                          typeof item.linePhAmount === "number" ? item.linePhAmount : 0;
+                        const lineTotal = typeof item.lineTotal === "number" ? item.lineTotal : 0;
+
+                        return (
+                        <div
+                          key={`${order.id}-${item.productId}-${qty}-${unitPrice}`}
+                          className="flex flex-wrap justify-between gap-2"
+                        >
+                          <div>
+                            <span className="font-medium">{item.name}</span>{" "}
+                            <span className="text-white/60">
+                              × {qty} • ${unitPrice.toLocaleString()}
+                            </span>
+                          </div>
+                          <div className="text-right text-white/70">
+                            <div>
+                              {phPercent}% P&H: $
+                              {linePhAmount.toLocaleString(undefined, {
+                                maximumFractionDigits: 2,
+                              })}
+                            </div>
+                            <div className="font-semibold">
+                              {t("admin.dashboard.orders.line_total")}: $
+                              {lineTotal.toLocaleString(undefined, {
+                                maximumFractionDigits: 2,
+                              })}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                      })}
+                      <div className="flex justify-end gap-4 pt-2 text-[11px] text-white/60">
+                        <span>
+                          {t("admin.dashboard.orders.summary_subtotal")}: $
+                          {subtotal.toLocaleString(undefined, {
+                            maximumFractionDigits: 2,
+                          })}
+                        </span>
+                        <span>
+                          {t("admin.dashboard.orders.summary_ph")}: $
+                          {totalPh.toLocaleString(undefined, {
+                            maximumFractionDigits: 2,
+                          })}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+                })}
+                  {orders.filter((o) => (o as any).status !== "archived").length === 0 && (
+                    <div className="text-center py-20 bg-white/5 rounded-2xl border border-white/10 text-white/50">
+                      {t("admin.dashboard.orders.no_active")}
+                    </div>
+                  )}
+                </TabsContent>
+
+                <TabsContent value="archived" className="grid gap-4 mt-0">
+                  {orders
+                    .filter((o) => (o as any).status === "archived")
+                    .map((order) => {
+                      const items = Array.isArray(order.items) ? order.items : [];
+                      const subtotal = typeof order.subtotal === "number" ? order.subtotal : 0;
+                      const totalPh = typeof order.totalPh === "number" ? order.totalPh : 0;
+                      const total =
+                        typeof order.total === "number" ? order.total : subtotal + totalPh;
+                      const status = (order as any).status || "archived";
+
+                      return (
+                        <motion.div
+                          key={order.id}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="p-5 rounded-2xl border border-white/10 bg-card flex flex-col gap-3 opacity-80"
+                        >
+                          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                            <div>
+                              <h3 className="text-lg font-semibold text-white">
+                                {order.firstName} {order.lastName}
+                              </h3>
+                              <p className="text-xs text-white/60">
+                                {new Intl.DateTimeFormat("en-US", {
+                                  dateStyle: "medium",
+                                  timeStyle: "short",
+                                }).format(new Date(order.createdAt))}
+                              </p>
+                              <div className="mt-2 flex items-center gap-2">
+                                {status === "archived" && (
+                                  <span className="bg-white/20 text-white/60 text-[10px] px-2 py-0.5 rounded uppercase tracking-wider">
+                                    {t("admin.dashboard.orders.archived")}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="mt-1 text-xs text-white/70">
+                                <strong>Email:</strong>{" "}
+                                <a
+                                  href={`mailto:${order.email}`}
+                                  className="text-primary hover:underline"
+                                >
+                                  {order.email}
+                                </a>
+                                {" • "}
+                                <strong>ID:</strong> {order.idNumber}
+                                {" • "}
+                                <strong>Phone:</strong> {order.phoneCountryCode} {order.phoneNumber}
+                              </p>
+                              <p className="mt-1 text-xs text-white/60">
+                                <strong>{t("admin.dashboard.orders.address")}:</strong>{" "}
+                                {order.addressLine}
+                              </p>
+                            </div>
+                            <div className="flex flex-col items-end gap-2">
+                              <p className="text-xs text-white/60 uppercase tracking-[0.15em]">
+                                {t("admin.dashboard.orders.total")}
+                              </p>
+                              <p className="text-xl font-mono font-bold text-primary">
+                                {order.currency || "USD"}{" "}
+                                {total.toLocaleString(undefined, {
+                                  minimumFractionDigits: 2,
+                                  maximumFractionDigits: 2,
+                                })}
+                              </p>
+
+                              <div className="flex flex-row md:flex-col gap-2 w-full md:w-auto">
+                                <Button
+                                  size="sm"
+                                  variant="outline"
+                                  className="border-white/20 text-white/60 w-full"
+                                  onClick={() =>
+                                    updateOrderStatus.mutateAsync({ id: order.id, status: "read" })
+                                  }
+                                >
+                                  {t("admin.dashboard.orders.unarchive")}
+                                </Button>
+                                <Button
+                                  size="sm"
+                                  variant="destructive"
+                                  className="w-full"
+                                  onClick={async () => {
+                                    if (confirm(t("admin.dashboard.orders.delete_confirm"))) {
+                                      await deleteOrder.mutateAsync(order.id);
+                                    }
+                                  }}
+                                >
+                                  <Trash2 className="w-3.5 h-3.5 mr-2" />{" "}
+                                  {t("admin.dashboard.orders.delete")}
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="border-t border-white/10 pt-3 mt-1 text-xs text-white/80 space-y-1">
+                            {items.map((item: any) => {
+                              const qty = typeof item.quantity === "number" ? item.quantity : 0;
+                              const unitPrice =
+                                typeof item.unitPrice === "number" ? item.unitPrice : 0;
+                              const phPercent =
+                                typeof item.phPercent === "number" ? item.phPercent : 0;
+                              const linePhAmount =
+                                typeof item.linePhAmount === "number" ? item.linePhAmount : 0;
+                              const lineTotal =
+                                typeof item.lineTotal === "number" ? item.lineTotal : 0;
+
+                              return (
+                                <div
+                                  key={`${order.id}-${item.productId}-${qty}-${unitPrice}`}
+                                  className="flex flex-wrap justify-between gap-2"
+                                >
+                                  <div>
+                                    <span className="font-medium">{item.name}</span>{" "}
+                                    <span className="text-white/60">
+                                      × {qty} • ${unitPrice.toLocaleString()}
+                                    </span>
+                                  </div>
+                                  <div className="text-right text-white/70">
+                                    <div>
+                                      {phPercent}% P&H: $
+                                      {linePhAmount.toLocaleString(undefined, {
+                                        maximumFractionDigits: 2,
+                                      })}
+                                    </div>
+                                    <div className="font-semibold">
+                                      {t("admin.dashboard.orders.line_total")}: $
+                                      {lineTotal.toLocaleString(undefined, {
+                                        maximumFractionDigits: 2,
+                                      })}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                            <div className="flex justify-end gap-4 pt-2 text-[11px] text-white/60">
+                              <span>
+                                {t("admin.dashboard.orders.summary_subtotal")}: $
+                                {subtotal.toLocaleString(undefined, {
+                                  maximumFractionDigits: 2,
+                                })}
+                              </span>
+                              <span>
+                                {t("admin.dashboard.orders.summary_ph")}: $
+                                {totalPh.toLocaleString(undefined, {
+                                  maximumFractionDigits: 2,
+                                })}
+                              </span>
+                            </div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  {orders.filter((o) => (o as any).status === "archived").length === 0 && (
+                    <div className="text-center py-20 bg-white/5 rounded-2xl border border-white/10 text-white/50">
+                      {t("admin.dashboard.orders.no_archived")}
+                    </div>
+                  )}
                 </TabsContent>
               </Tabs>
             )}

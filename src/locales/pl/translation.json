@@ -6,7 +6,8 @@
     "about": "O nas",
     "blog": "Blog",
     "contact": "Kontakt",
-    "inquire": "Zapytaj teraz"
+    "inquire": "Zapytaj teraz",
+    "order": "Zamów teraz"
   },
   "home": {
     "hero": {
@@ -342,6 +343,79 @@
       }
     }
   },
+  "order": {
+    "hero": {
+      "badge": "Bezpośrednie zamówienie",
+      "title": "Złóż zamówienie na technologię częstotliwości",
+      "subtitle": "Wyślij bezpośrednie zapytanie zakupowe na urządzenia wellneXfreQ. Zanim przejdziesz do płatności, nasz zespół potwierdzi z Tobą dostępność, P&H oraz szczegóły zamówienia."
+    },
+    "form": {
+      "title": "Zamów teraz",
+      "description": "Uzupełnij swoje dane i wybierz technologię, którą chcesz zakupić. Ten formularz wysyła niewiążące zapytanie zamówieniowe, abyśmy mogli potwierdzić dostępność, wysyłkę i płatność bezpośrednio z Tobą.",
+      "labels": {
+        "first_name": "Imię",
+        "last_name": "Nazwisko",
+        "email": "Email",
+        "phone": "Numer telefonu",
+        "id_number": "Numer ID (EA-XXXXXX)",
+        "gender": "Płeć",
+        "male": "Mężczyzna",
+        "female": "Kobieta",
+        "country": "Kraj",
+        "address": "Pełny adres",
+        "products": "Produkty do zamówienia",
+        "quantity": "Ilość",
+        "add_product": "Dodaj produkt",
+        "summary_subtotal": "Suma urządzeń",
+        "summary_ph": "Pakowanie i obsługa (P&H)",
+        "summary_total": "Szacowana suma",
+        "consent": "Rozumiem, że jest to zapytanie o zamówienie i że ostateczne potwierdzenie, terminy wysyłki oraz szczegóły płatności zostaną przekazane mi mailowo lub przez WhatsApp.",
+        "submit": "Wyślij zapytanie zamówienia",
+        "submitting": "Wysyłanie...",
+        "remove_line": "Usuń pozycję"
+      },
+      "placeholders": {
+        "product": "Wybierz produkt",
+        "search_product": "Szukaj produktu...",
+        "no_product": "Nie znaleziono produktu.",
+        "search_country": "Szukaj kraju...",
+        "no_country": "Nie znaleziono kraju."
+      }
+    },
+    "validation": {
+      "first_name": "Imię jest wymagane.",
+      "last_name": "Nazwisko jest wymagane.",
+      "email": "Wymagany jest poprawny adres email.",
+      "phone": "Numer telefonu jest wymagany.",
+      "id_suffix": "ID musi mieć 6 znaków po prefiksie EA-.",
+      "gender": "Wybierz płeć.",
+      "country": "Wybierz kraj.",
+      "address": "Podaj swój pełny adres.",
+      "items": "Wybierz co najmniej jeden produkt i ilość.",
+      "consent": "Musisz potwierdzić, że rozumiesz metodologię zakupu."
+    },
+    "methodology": {
+      "title": "Jak wygląda proces zakupu",
+      "steps": [
+        "Wysyłasz zapytanie zamówieniowe ze swoimi danymi oraz wybranymi urządzeniami.",
+        "Nasz zespół weryfikuje zamówienie, potwierdza dostępność, P&H oraz sumę i kontaktuje się z Tobą mailowo lub przez WhatsApp.",
+        "Po potwierdzeniu z Twojej strony przekazujemy bezpieczne instrukcje płatności i finalizujemy szczegóły wysyłki."
+      ],
+      "note": "Wszystkie pokazane ceny to orientacyjne ceny urządzeń w USD, z doliczonym +10% P&H dla każdej pozycji. Ostateczna kwota, waluta i terminy wysyłki zostaną potwierdzone z Tobą bezpośrednio przed płatnością."
+    },
+    "social": {
+      "title": "Zweryfikuj i połącz się",
+      "subtitle": "Możesz zawsze potwierdzić naszą obecność, aktywność i aktualizacje poprzez oficjalne kanały społecznościowe i bezpośrednie dane kontaktowe poniżej."
+    },
+    "success": {
+      "title": "Zapytanie zamówieniowe wysłane",
+      "desc": "Dziękujemy. Twoje zapytanie zostało odebrane. Skontaktujemy się z Tobą wkrótce, aby potwierdzić szczegóły i kolejne kroki."
+    },
+    "error": {
+      "title": "Błąd wysyłania zamówienia",
+      "desc": "Wystąpił problem z wysłaniem zapytania zamówieniowego. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio."
+    }
+  },
   "common": {
     "navigation": {
       "back": "Wstecz",
@@ -551,7 +625,8 @@
       "tabs": {
         "products": "Centrum Produktów",
         "blogs": "Dziennik Bloga",
-        "inquiries": "Zapytania"
+        "inquiries": "Zapytania",
+        "orders": "Zamówienia"
       },
       "products": {
         "title": "Zarządzaj produktami",
@@ -642,6 +717,26 @@
             "conclusion": "Podsumowanie końcowe"
           }
         }
+      },
+      "orders": {
+        "title": "Zamówienia klientów",
+        "active": "Aktywne zamówienia",
+        "archived": "Zarchiwizowane",
+        "no_active": "Brak aktywnych zamówień. Wszystko załatwione!",
+        "no_archived": "Brak zarchiwizowanych zamówień.",
+        "no_orders": "Nie złożono jeszcze żadnych zamówień.",
+        "mark_read": "Oznacz jako przeczytane",
+        "mark_unread": "Oznacz jako nieprzeczytane",
+        "archive": "Archiwizuj",
+        "unarchive": "Przywróć z archiwum",
+        "delete": "Usuń",
+        "delete_confirm": "Czy na pewno chcesz usunąć to zamówienie na stałe?",
+        "new_badge": "Nowe",
+        "total": "Suma",
+        "line_total": "Suma pozycji",
+        "summary_subtotal": "Suma urządzeń",
+        "summary_ph": "Suma P&H",
+        "address": "Adres"
       }
     }
   }

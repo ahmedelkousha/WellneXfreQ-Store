@@ -73,6 +73,7 @@ export default function Footer() {
       <li><Link to={getPath("/about")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.about")}</Link></li>
       <li><Link to={getPath("/blog")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.blog")}</Link></li>
       <li><Link to={getPath("/contact")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.contact")}</Link></li>
+      <li><Link to={getPath("/order")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.order")}</Link></li>
     </ul>
   );
 
