@@ -6,6 +6,8 @@ import { CheckCircle2, ChevronRight, Tag, MessageCircle, ShieldCheck, Loader2, A
 import ContactForm from "@/components/ContactForm";
 import NotFound from "@/pages/not-found";
 import { useTranslation } from "react-i18next";
+import OrderForm from "@/components/sections/OrderForm";
+import OrderNow from "./OrderNow";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -204,9 +206,9 @@ export default function ProductDetail() {
             </div>
           </motion.div>
         )}
-
+        <OrderNow />
         {/* Inquiry Form */}
-        <motion.div
+        {/* <motion.div
           id="inquiry-form"
           initial="hidden"
           whileInView="visible"
@@ -224,7 +226,7 @@ export default function ProductDetail() {
           </div>
 
           <ContactForm defaultProduct={product.id} />
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </div>

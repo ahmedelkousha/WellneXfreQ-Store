@@ -8,7 +8,7 @@ export default function OrderNow() {
   return (
     <div className="pt-28 pb-24 bg-background text-foreground">
       <div className="container mx-auto px-4 lg:px-6 max-w-6xl">
-        <section className="mb-10">
+        {!location.pathname.includes("/product") && <section className="mb-10">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
             {t("order.hero.badge")}
           </p>
@@ -18,7 +18,7 @@ export default function OrderNow() {
           <p className="text-sm md:text-base text-white/70 max-w-2xl">
             {t("order.hero.subtitle")}
           </p>
-        </section>
+        </section>}
 
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.1fr)] items-start">
           <section className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-7 shadow-xl shadow-black/40">
