@@ -137,7 +137,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
                     <SelectItem value="none">{t("common.form.options.interests.general")}</SelectItem>
                     <SelectItem value="buy">{t("common.form.options.interests.buy")}</SelectItem>
                     <SelectItem value="consultation">{t("common.form.options.interests.consult")}</SelectItem>
-                    <SelectItem value="affiliate">{t("common.form.options.interests.affiliate")}</SelectItem>
+                    {/* <SelectItem value="affiliate">{t("common.form.options.interests.affiliate")}</SelectItem> */}
                     <div className="hidden">{/* Divider for products if needed */}</div>
                     {/* {products.map(p => (
                       <SelectItem key={p.id} value={p.id}>{currentLang === "pl" ? (p.name_pl || p.name) : p.name}</SelectItem>
@@ -168,7 +168,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
           )}
         />
 
-        <FormField
+        {/* <FormField
           control={form.control}
           name="source"
           render={({ field }) => (
@@ -192,7 +192,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
         <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base font-semibold group">
           {t("common.form.submit")}

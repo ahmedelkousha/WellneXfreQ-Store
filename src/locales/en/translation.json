@@ -360,7 +360,7 @@
         "phone": "Phone Number (Optional)",
         "product": "Product of Interest",
         "interest": "I Am Interested In",
-        "message": "Message / Query",
+        "message": "Message",
         "source": "How did you hear about us? (Optional)"
       },
       "placeholders": {
@@ -389,9 +389,9 @@
           "other": "Other"
         }
       },
-      "submit": "Send Inquiry",
+      "submit": "Send Message",
       "success": {
-        "title": "Inquiry Sent Successfully",
+        "title": "Message Sent Successfully",
         "desc": "We've received your message and our team will be in touch shortly."
       },
       "error": {

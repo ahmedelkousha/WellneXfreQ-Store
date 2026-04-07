@@ -431,7 +431,7 @@
         "phone": "Numer Telefonu (Opcjonalnie)",
         "product": "Produkt, którym jesteś zainteresowany",
         "interest": "Interesuje mnie",
-        "message": "Wiadomość / Zapytanie",
+        "message": "Wiadomość",
         "source": "Jak o nas usłyszałeś? (Opcjonalnie)"
       },
       "placeholders": {
@@ -460,9 +460,9 @@
           "other": "Inne"
         }
       },
-      "submit": "Wyślij zapytanie",
+      "submit": "Wyślij wiadomość",
       "success": {
-        "title": "Zapytanie wysłane pomyślnie",
+        "title": "Wiadomość wysłana pomyślnie",
         "desc": "Otrzymaliśmy Twoją wiadomość, nasz zespół skontaktuje się z Tobą wkrótce."
       },
       "error": {
