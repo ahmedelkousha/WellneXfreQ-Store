@@ -27,6 +27,7 @@ import coachBlankingImg from "@assets/patrycja-coach.png";
 import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";
 import bloodAnalysisVideo from "@assets/Livebloodanalysisfb.mp4";
 import videoPoster from "@assets/poster.png";
+import OrderNow from "./OrderNow";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -798,6 +799,7 @@ export default function Home() {
       </section>
 
       <AffiliateCTA />
+      <OrderNow />
     </div>
   );
 }

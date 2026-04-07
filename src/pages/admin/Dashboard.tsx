@@ -682,10 +682,14 @@ export default function AdminDashboard() {
                           <strong>ID:</strong> {order.idNumber}
                           {" • "}
                           <strong>Phone:</strong> {order.phoneCountryCode} {order.phoneNumber}
+                         
+                        
                         </p>
                         <p className="mt-1 text-xs text-white/60">
-                          <strong>{t("admin.dashboard.orders.address")}:</strong> {order.addressLine}
+                          <strong>{t("admin.dashboard.orders.address")}:</strong> {order.addressLine}<br/>
+                          <strong>Country:</strong> {order.country}
                         </p>
+                        
                       </div>
                       <div className="flex flex-col items-end gap-2">
                         <p className="text-xs text-white/60 uppercase tracking-[0.15em]">
