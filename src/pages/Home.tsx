@@ -89,7 +89,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" as const }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full -translate-y-24 md:-translate-y-8 border border-primary/30 bg-primary/10 text-primary text-sm font-medium backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full -translate-y-10 md:-translate-y-8 border border-primary/30 bg-primary/10 text-primary text-sm font-medium backdrop-blur-md"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -678,7 +678,7 @@ export default function Home() {
       </section> */}
 
       {/* CTA SECTION */}
-      <section className="py-32 relative overflow-hidden">
+      {/* <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={coachBoulderImg} alt="Background" className="w-full h-full object-cover object-center opacity-20 grayscale" />
           <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-background"></div>
@@ -705,7 +705,7 @@ export default function Home() {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* <AffiliateCTA /> */}
       <div id="contact">

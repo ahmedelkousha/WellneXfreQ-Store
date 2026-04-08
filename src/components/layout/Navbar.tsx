@@ -155,8 +155,8 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/90 backdrop-blur-md py-3"
-          : "bg-transparent py-5"
+          ? "bg-background/90 backdrop-blur-md py-2"
+          : "bg-transparent py-3"
           }`}
       >
         <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between">
@@ -249,13 +249,13 @@ export default function Navbar() {
             <div className="flex items-center gap-3 ml-2">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center justify-center hover:scale-110 transition-transform focus:outline-none shrink-0"
+                className="flex items-center justify-center hover:scale-105 transition-transform focus:outline-none shrink-0"
                 title={currentLang === "en" ? "Switch to Polish" : "Przełącz na Angielski"}
               >
                 {currentLang === "en" ? (
-                  <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
+                  <span className="w-4 h-4 text-xs rounded-sm shadow-sm text-primary hover:text-white">PL</span>
                 ) : (
-                  <Flag code="US" className="w-6 h-4 rounded-sm shadow-sm" />
+                  <span className="w-4 h-4 text-xs rounded-sm shadow-sm">EN</span>
                 )}
               </button>
 
@@ -276,10 +276,15 @@ export default function Navbar() {
               className="flex items-center justify-center focus:outline-none"
             >
               {currentLang === "en" ? (
+                <span className="w-4 h-4 text-xs rounded-sm shadow-sm text-white hover:text-primary">PL</span>
+              ) : (
+                <span className="w-4 h-4 text-xs rounded-sm text-white hover:text-primary shadow-sm">EN</span>
+              )}
+              {/* {currentLang === "en" ? (
                 <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
               ) : (
                 <Flag code="US" className="w-6 h-4 rounded-sm shadow-sm" />
-              )}
+              )} */}
             </button>
             <Button
               asChild
