@@ -16,6 +16,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import FloatingProductsCTA from "../sections/FloatingProductsCTA";
+import logo from "@assets/logo.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -55,22 +56,24 @@ export default function Footer() {
     { icon: Facebook, href: "#" },
   ];
 
-  const TechLinks = () => (
-    <ul className="space-y-4">
-      <li><Link to={getPath("/product/shaken-massager")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> SHAKEN MASSAGER</Link></li>
-      <li><Link to={getPath("/product/thz-tera-p90-plus")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> THz TERA-P90+</Link></li>
-      <li><Link to={getPath("/product/vitality-wand")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> VITALITY WAND</Link></li>
-      <li><Link to={getPath("/product/h-plus-bar")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> H+ BAR</Link></li>
-      <li><Link to={getPath("/product/galaxy-g-one")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> GALAXY G-ONE</Link></li>
-      <li><Link to={getPath("/product/tera-p90")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> TERA-P90</Link></li>
-    </ul>
-  );
+  // const TechLinks = () => (
+  //   <ul className="space-y-4">
+  //     <li><Link to={getPath("/product/shaken-massager")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> SHAKEN MASSAGER</Link></li>
+  //     <li><Link to={getPath("/product/thz-tera-p90-plus")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> THz TERA-P90+</Link></li>
+  //     <li><Link to={getPath("/product/vitality-wand")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> VITALITY WAND</Link></li>
+  //     <li><Link to={getPath("/product/h-plus-bar")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> H+ BAR</Link></li>
+  //     <li><Link to={getPath("/product/galaxy-g-one")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> GALAXY G-ONE</Link></li>
+  //     <li><Link to={getPath("/product/tera-p90")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> TERA-P90</Link></li>
+  //   </ul>
+  // );
 
   const CompanyLinks = () => (
     <ul className="space-y-4">
       <li><a href={getPath("/")} onClick={handleHomeClick} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.home")}</a></li>
+      {/* <li><Link to={getPath("/about")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.about")}</Link></li> */}
       <li><a href={`${getPath("/")}#philosophy`} onClick={scrollToPhilosophy} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("footer.philosophy")}</a></li>
-      <li><Link to={getPath("/about")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.about")}</Link></li>
+      <li><a href={`${getPath("/")}#technology`} onClick={scrollToPhilosophy} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.technology")}</a></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.products")}</Link></li>
       {/* <li><Link to={getPath("/blog")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.blog")}</Link></li> */}
       <li><Link to={getPath("/contact")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.contact")}</Link></li>
       <li><Link to={getPath("/order")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.order-footer")}</Link></li>
@@ -110,9 +113,7 @@ export default function Footer() {
             className="lg:col-span-1 space-y-8"
           >
             <Link to={`/${currentLang}`} className="inline-block">
-              <span className="text-3xl font-heading font-black tracking-tighter text-white italic scale-110 origin-left">
-                wellneX<span className="text-primary not-italic">freQ</span>
-              </span>
+              <img src={logo} alt="logo" className="h-8" />
             </Link>
             <p className="text-white/50 leading-relaxed text-sm max-w-xs">
               {t("footer.tagline")}
@@ -139,10 +140,10 @@ export default function Footer() {
             <CompanyLinks />
           </div>
 
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <h4 className="text-white font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.tech")}</h4>
             <TechLinks />
-          </div>
+          </div> */}
 
           <div className="hidden md:block">
             <h4 className="text-white font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.connect")}</h4>
@@ -160,14 +161,14 @@ export default function Footer() {
                   </div>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="technology" className="border-white/10">
+              {/* <AccordionItem value="technology" className="border-white/10">
                 <AccordionTrigger className="text-white hover:no-underline font-heading font-semibold tracking-wider text-xs uppercase">{t("footer.tech")}</AccordionTrigger>
                 <AccordionContent>
                   <div className="pt-2 pb-4">
                     <TechLinks />
                   </div>
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
               <AccordionItem value="connect" className="border-white/10">
                 <AccordionTrigger className="text-white hover:no-underline font-heading font-semibold tracking-wider text-xs uppercase">{t("footer.connect")}</AccordionTrigger>
                 <AccordionContent>

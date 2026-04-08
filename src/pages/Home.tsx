@@ -233,7 +233,7 @@ export default function Home() {
 
                 <div className="border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
                   <p className="text-md text-white/70 leading-relaxed">
-                    {t("home.philosophy.coach_text")}
+                    "{t("home.philosophy.coach_text")}"
                   </p>
                 </div>
 
@@ -379,7 +379,7 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-20"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.products.title")}<span className="text-primary italic">{t("home.products.title_highlight")}</span>
+              {t("home.products.title")}<br /><span className="text-primary italic">{t("home.products.title_highlight")}</span>
             </h2>
             <p className="text-lg text-white/60">
               {t("home.products.subtitle")}
