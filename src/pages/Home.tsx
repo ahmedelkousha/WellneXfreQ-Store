@@ -1,16 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-// import { useBlogs } from "@/hooks/useBlogs";
+import { useProducts } from "@/hooks/useProducts";
 import { useTranslation } from "react-i18next";
-import useEmblaCarousel from "embla-carousel-react";
 import DualTechPanel from '@/components/sections/DualAction';
 import DualTechFeatures from '@/components/sections/DualActionFeatures';
 import {
   ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   Star
 } from "lucide-react";
 import {
@@ -47,45 +44,17 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language.split("-")[0];
   const { scrollYProgress } = useScroll();
+  const { data: products = [] } = useProducts();
+  const featuredProduct = products.find(p => p.isFeatured) || products[0];
+
   // Blogs DISABLED
-  // const { data: blogs = [], isLoading: blogsLoading } = useBlogs();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  // Testimonials Embla Hook
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "start",
-    skipSnaps: false
-  });
-
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    setScrollSnaps(emblaApi.scrollSnapList());
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-  }, [emblaApi, onSelect]);
 
   useEffect(() => {
     const pending = sessionStorage.getItem("pendingScroll");
@@ -425,18 +394,25 @@ export default function Home() {
             {/* Background Image Setup */}
 
             {/* Desktop Image */}
-            {/* Desktop Image */}
-            <div className="hidden lg:block absolute inset-0 z-0 h-full w-full">
+            <div className="hidden xl:block absolute inset-0 z-0 h-full w-full">
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-              <img src={featuredProductImgLg} alt="OlyLife THz Tera-P90+" className="h-[940px] w-full object-cover object-[40%] transition-transform duration-1000 group-hover:scale-[1.03]" />
+              <img 
+                src={featuredProductImgLg} 
+                alt="OlyLife THz Tera-P90+" 
+                className="h-[940px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-[1.03]" 
+              />
             </div>
 
             {/* Mobile Image */}
-            <div className="lg:hidden block absolute inset-0 z-0 h-full w-full">
+            <div className="xl:hidden block absolute inset-0 z-0 h-full w-full">
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-              <img src={featuredProductImgSm} alt="OlyLife THz Tera-P90+" className="h-[940px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-[1.03]" />
+              <img 
+                src={featuredProductImgSm} 
+                alt="OlyLife THz Tera-P90+" 
+                className="h-[940px] w-full object-cover object-[80%] transition-transform duration-1000 group-hover:scale-[1.03]" 
+              />
             </div>
 
             {/* Content overlay */}
@@ -455,7 +431,7 @@ export default function Home() {
 
                 <div className="flex flex-col gap-6 items-start w-fit">
                   <Link
-                    to={`/${currentLang}/product/thz-tera-p90-plus`}
+                    to={featuredProduct ? `/${currentLang}/product/${featuredProduct.slug}` : `/${currentLang}/products`}
                     className="sm:px-10 sm:py-4 px-0 py-3 rounded-full bg-primary text-black font-bold uppercase tracking-widest text-[11px] sm:text-[13px] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_30px_rgba(102,248,219,0.3)] hover:shadow-[0_0_40px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-full sm:w-auto"
                   >
                     {t('home.products.learn_more')}
@@ -573,67 +549,68 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="relative group">
-            <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-              <div className="flex gap-8">
-                {(t("home.testimonials.items", { returnObjects: true }) as any[]).map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-1.33rem)] min-w-0 bg-card/40 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-primary/30 group"
-                  >
-                    <div className="flex gap-1 mb-6">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                      ))}
+          <div className="space-y-8">
+            {/* Top Row: 3 Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {(t("home.testimonials.items", { returnObjects: true }) as any[]).slice(0, 3).map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-card/40 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-primary/30 group transition-all flex flex-col h-full"
+                >
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-[#66F8DB] text-[#66F8DB]" />
+                    ))}
+                  </div>
+                  <p className="text-white/80 italic mb-8 leading-relaxed text-lg quote-marks">
+                    "{item.quote}"
+                  </p>
+                  <div className="flex items-center gap-4 mt-auto">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">
+                      {item.name[0]}
                     </div>
-                    <p className="text-white/80 italic mb-8 leading-relaxed text-lg quote-marks">
-                      "{item.quote}"
-                    </p>
-                    <div className="flex items-center gap-4 mt-auto">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                        {item.name[0]}
-                      </div>
-                      <div>
-                        <h4 className="text-white font-bold">{item.name}</h4>
-                        <p className="text-white/40 text-xs uppercase tracking-widest">{item.role}</p>
-                      </div>
+                    <div>
+                      <h4 className="text-white font-bold">{item.name}</h4>
+                      <p className="text-white/40 text-xs uppercase tracking-widest">{item.role}</p>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
 
-            {/* Testimonials Navigation */}
-            <div className="flex items-center justify-center gap-6 mt-12 pb-4">
-              <button
-                onClick={scrollPrev}
-                disabled={prevBtnDisabled}
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary disabled:opacity-30 transition-all hover:bg-white/10 active:scale-95"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
+            {/* Bottom Row: 2 Cards Centered */}
+            <div className="flex flex-col md:flex-row justify-center gap-8">
+              {(t("home.testimonials.items", { returnObjects: true }) as any[]).slice(3, 5).map((item, idx) => (
+                <div
+                  key={idx}
+                  className="w-full md:w-[calc(33.333%-1.33rem)] bg-card/40 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-primary/30 group transition-all flex flex-col"
+                >
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-[#66F8DB] text-[#66F8DB]" />
+                    ))}
+                  </div>
+                  <p className="text-white/80 italic mb-8 leading-relaxed text-lg quote-marks">
+                    "{item.quote}"
+                  </p>
+                  <div className="flex items-center gap-4 mt-auto">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">
+                      {item.name[0]}
+                    </div>
+                    <div>
+                      <h4 className="text-white font-bold">{item.name}</h4>
+                      <p className="text-white/40 text-xs uppercase tracking-widest">{item.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-              <div className="flex gap-2.5">
-                {scrollSnaps.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => emblaApi?.scrollTo(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${selectedIndex === index ? "bg-primary w-6" : "bg-white/20"
-                      }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={scrollNext}
-                disabled={nextBtnDisabled}
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary disabled:opacity-30 transition-all hover:bg-white/10 active:scale-95"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
+            {/* Disclaimer */}
+            <div className="text-center mt-12">
+              <p className="text-white/40 text-xs italic max-w-2xl mx-auto">
+                {t("home.testimonials.disclaimer")}
+              </p>
             </div>
           </div>
 

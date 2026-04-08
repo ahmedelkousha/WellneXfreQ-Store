@@ -17,7 +17,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Edit2, Trash2, LogOut, Check, X, Loader2, UploadCloud, Eye, EyeOff, Archive, Globe, ExternalLink } from "lucide-react";
+import { Plus, Edit2, Trash2, LogOut, Check, X, Loader2, UploadCloud, Eye, EyeOff, Archive, Globe, ExternalLink, Star } from "lucide-react";
 
 export default function AdminDashboard() {
   const { t, i18n } = useTranslation();
@@ -42,6 +42,8 @@ export default function AdminDashboard() {
   const [formData, setFormData] = useState<Partial<Product>>({});
   const [uploadProgress, setUploadProgress] = useState<number | null>(null);
   const [galleryUploadProgress, setGalleryUploadProgress] = useState<number | null>(null);
+  const [rawFeatures, setRawFeatures] = useState("");
+  const [rawFeaturesPl, setRawFeaturesPl] = useState("");
 
   // Blog states
   const { data: blogs = [], isLoading: loadingBlogs } = useBlogs();
@@ -78,19 +80,36 @@ export default function AdminDashboard() {
       setEditingId("new");
       setFormData({
         name: "",
+        name_pl: "",
         slug: "",
-        tagline: "",
-        description: "",
-        howItWorks: "",
-        whoItsFor: "",
-        science: "",
-        benefits: [],
+        shortDescription: "",
+        shortDescription_pl: "",
+        features: [],
+        features_pl: [],
         image: "",
         gallery: [],
         price: "",
+        isFeatured: false,
       });
+      setRawFeatures("");
+      setRawFeaturesPl("");
     }
   };
+
+  const syncRawFeatures = (p: Product | null) => {
+    setRawFeatures(p?.features?.join("\n\n") || "");
+    setRawFeaturesPl(p?.features_pl?.join("\n\n") || "");
+  };
+
+  useEffect(() => {
+    if (editingId && editingId !== "new") {
+      const p = products.find(p => p.id === editingId);
+      if (p) syncRawFeatures(p);
+    } else if (editingId === "new") {
+      setRawFeatures("");
+      setRawFeaturesPl("");
+    }
+  }, [editingId, products]);
 
   const startEditBlog = (blog: Blog | null) => {
     if (blog) {
@@ -108,13 +127,29 @@ export default function AdminDashboard() {
 
   const handleSave = async () => {
     try {
+      // If setting this product to featured, optionally unset others (best effort)
+      if (formData.isFeatured) {
+        const featured = products.find(p => p.isFeatured && p.id !== editingId);
+        if (featured) {
+          await updateProduct.mutateAsync({ ...featured, isFeatured: false });
+        }
+      }
+
+      const finalData = {
+        ...formData,
+        features: rawFeatures.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean),
+        features_pl: rawFeaturesPl.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean),
+      };
+
       if (editingId === "new") {
-        await addProduct.mutateAsync(formData as Omit<Product, "id">);
+        await addProduct.mutateAsync(finalData as Omit<Product, "id">);
       } else if (editingId) {
-        await updateProduct.mutateAsync(formData as Product);
+        await updateProduct.mutateAsync({ ...finalData, id: editingId } as Product);
       }
       setEditingId(null);
       setFormData({});
+      setRawFeatures("");
+      setRawFeaturesPl("");
     } catch (error) {
       console.error("Error saving product:", error);
       alert(t("admin.dashboard.products.save_failed"));
@@ -146,6 +181,24 @@ export default function AdminDashboard() {
     }
   };
 
+  const syncFirebaseProducts = async () => {
+    if(confirm("This will WIPE all current products and permanently forcefully sync to the 6 seed products. Continue?")) {
+      try {
+        const { products: localSeedProducts } = await import("@/data/products");
+        for (const p of products) { // from useProducts hook
+          await deleteProduct.mutateAsync(p.id);
+        }
+        for (const seed of localSeedProducts) {
+          await addProduct.mutateAsync(seed as any);
+        }
+        alert("Firebase Products Synced to New Schema!");
+      } catch(e) {
+        console.error(e);
+        alert("Sync failed.");
+      }
+    }
+  };
+
   const handleBlogDelete = async (id: string) => {
     if (confirm(t("admin.dashboard.blogs.delete_confirm"))) await deleteBlog.mutateAsync(id);
   };
@@ -153,7 +206,7 @@ export default function AdminDashboard() {
   const generateSlug = (text: string) =>
     text.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
-  const handleChange = (field: keyof Product, value: string) => {
+  const handleChange = (field: keyof Product, value: any) => {
     setFormData((prev) => {
       const updates: Partial<Product> = { [field]: value };
       if (field === "name" && editingId === "new") {
@@ -203,9 +256,7 @@ export default function AdminDashboard() {
     });
   };
 
-  const handleBenefitsChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, benefits: value.split(",").map((s) => s.trim()) }));
-  };
+  // Removed handleFeaturesChange in favor of raw state logic
 
   const performSupabaseUpload = async (file: File): Promise<string> => {
     const fileName = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
@@ -445,9 +496,14 @@ export default function AdminDashboard() {
           <TabsContent value="products">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold text-white">{t("admin.dashboard.products.title")}</h2>
-              <Button onClick={() => startEditProduct(null)} className="gap-2 bg-primary text-black">
-                <Plus className="w-4 h-4" /> {t("admin.dashboard.products.new")}
-              </Button>
+              <div className="flex gap-2 items-center">
+                <Button onClick={syncFirebaseProducts} variant="destructive" className="bg-red-500/20 text-red-500 hover:bg-red-500/30 border border-red-500/50">
+                  ⚠️ Reset & Sync Products
+                </Button>
+                <Button onClick={() => startEditProduct(null)} className="gap-2 bg-primary text-black">
+                  <Plus className="w-4 h-4" /> {t("admin.dashboard.products.new")}
+                </Button>
+              </div>
             </div>
 
             <div className="grid gap-6">
@@ -468,7 +524,7 @@ export default function AdminDashboard() {
                         {product.name} <span className="text-sm font-normal text-white/50 bg-white/5 px-2 py-1 rounded">/{product.slug}</span>
                         {product.price && <span className="ml-3 font-mono text-primary bg-primary/10 px-2 py-1 rounded-md text-sm">{product.price}</span>}
                       </h3>
-                      <p className="text-white/70 text-sm line-clamp-2 max-w-xl">{product.description}</p>
+                      <p className="text-white/70 text-sm line-clamp-2 max-w-xl">{product.features?.[0]}</p>
                     </div>
                   </div>
                   <div className="flex flex-wrap md:flex-col gap-2 shrink-0">
@@ -1067,47 +1123,58 @@ export default function AdminDashboard() {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.name")}</label>
+                <label className="text-xs text-white/50 font-medium mb-1 block">Name (English)</label>
                 <Input value={formData.name || ""} onChange={(e) => handleChange("name", e.target.value)} className="bg-black/50 border-white/10 text-white" />
+              </div>
+              <div>
+                <label className="text-xs text-white/50 font-medium mb-1 block">Name (Polish)</label>
+                <Input value={formData.name_pl || ""} onChange={(e) => handleChange("name_pl", e.target.value)} className="bg-black/50 border-white/10 text-white" />
               </div>
               <div>
                 <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.slug")}</label>
                 <Input value={formData.slug || ""} onChange={(e) => handleChange("slug", e.target.value)} className="bg-black/50 border-white/10 text-white" />
               </div>
               <div>
-                <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.image_fallback")}</label>
-                <Input value={formData.image || ""} onChange={(e) => handleChange("image", e.target.value)} className="bg-black/50 border-white/10 text-white text-xs" />
-              </div>
-              <div>
                 <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.price")}</label>
                 <Input value={formData.price || ""} onChange={(e) => handleChange("price", e.target.value)} className="bg-black/50 border-white/10 text-white" />
               </div>
+              <div className="md:col-span-2">
+                <label className="text-xs text-white/50 font-medium mb-1 block">Image URL Fallback (External Link)</label>
+                <Input value={formData.image || ""} onChange={(e) => handleChange("image", e.target.value)} className="bg-black/50 border-white/10 text-white text-xs" />
+              </div>
             </div>
-            <div>
-              <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.tagline")}</label>
-              <Input value={formData.tagline || ""} onChange={(e) => handleChange("tagline", e.target.value)} className="bg-black/50 border-white/10 text-white" />
-            </div>
-            <div>
-              <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.desc")}</label>
-              <Textarea value={formData.description || ""} onChange={(e) => handleChange("description", e.target.value)} className="bg-black/50 border-white/10 text-white" />
-            </div>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.how")}</label>
-                <Textarea value={formData.howItWorks || ""} onChange={(e) => handleChange("howItWorks", e.target.value)} className="bg-black/50 border-white/10 text-white text-xs h-24" />
+                <label className="text-xs text-white/50 font-medium mb-1 block">Quick Feature (Description)</label>
+                <Textarea value={formData.shortDescription || ""} onChange={(e) => handleChange("shortDescription", e.target.value)} className="bg-black/50 border-white/10 text-white min-h-[80px]" placeholder="English summary..." />
               </div>
               <div>
-                <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.who")}</label>
-                <Textarea value={formData.whoItsFor || ""} onChange={(e) => handleChange("whoItsFor", e.target.value)} className="bg-black/50 border-white/10 text-white text-xs h-24" />
-              </div>
-              <div>
-                <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.science")}</label>
-                <Textarea value={formData.science || ""} onChange={(e) => handleChange("science", e.target.value)} className="bg-black/50 border-white/10 text-white text-xs h-24" />
+                <label className="text-xs text-white/50 font-medium mb-1 block">Quick Feature PL (Opis)</label>
+                <Textarea value={formData.shortDescription_pl || ""} onChange={(e) => handleChange("shortDescription_pl", e.target.value)} className="bg-black/50 border-white/10 text-white min-h-[80px]" placeholder="Polskie podsumowanie..." />
               </div>
             </div>
             <div>
-              <label className="text-xs text-white/50 font-medium mb-1 block">{t("admin.dashboard.modals.product.labels.benefits")}</label>
-              <Input value={formData.benefits?.join(", ") || ""} onChange={(e) => handleBenefitsChange(e.target.value)} className="bg-black/50 border-white/10 text-white" placeholder={t("admin.dashboard.modals.product.placeholders.benefits")} />
+              <label className="text-xs text-white/50 font-medium mb-1 block">Key Benefits (English) - Double-line-break separated</label>
+              <Textarea value={rawFeatures} onChange={(e) => setRawFeatures(e.target.value)} className="bg-black/50 border-white/10 text-white min-h-[150px]" />
+            </div>
+
+            <div>
+              <label className="text-xs text-white/50 font-medium mb-1 block">Key Benefits (Polish) - Double-line-break separated</label>
+              <Textarea value={rawFeaturesPl} onChange={(e) => setRawFeaturesPl(e.target.value)} className="bg-black/50 border-white/10 text-white min-h-[150px]" />
+            </div>
+
+            <div className="flex items-center gap-2 pt-2">
+              <input 
+                type="checkbox" 
+                id="isFeatured"
+                checked={!!formData.isFeatured}
+                onChange={(e) => handleChange("isFeatured", e.target.checked)}
+                className="w-4 h-4 accent-primary"
+              />
+              <label htmlFor="isFeatured" className="text-sm text-white font-medium cursor-pointer flex items-center gap-2">
+                Mark as Featured Product (Home Page)
+                {formData.isFeatured && <Star className="w-3 h-3 text-primary fill-primary" />}
+              </label>
             </div>
 
             <div className="flex gap-3 justify-end pt-6 mb-2 border-t border-white/10 mt-6">

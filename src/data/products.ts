@@ -3,21 +3,14 @@ export interface Product {
   slug: string;
   name: string;
   name_pl?: string;
-  tagline: string;
-  tagline_pl?: string;
-  description: string;
-  description_pl?: string;
-  benefits: string[];
-  benefits_pl?: string[];
-  howItWorks: string;
-  howItWorks_pl?: string;
-  whoItsFor: string;
-  whoItsFor_pl?: string;
-  science: string;
-  science_pl?: string;
+  shortDescription?: string;
+  shortDescription_pl?: string;
+  features: string[];
+  features_pl?: string[];
   image: string;
   gallery?: string[];
   price?: string;
+  isFeatured?: boolean;
 }
 
 import vitalityWandImg from "@assets/vitality_wand.png";
@@ -25,263 +18,182 @@ import thzTeraP90PlusImg from "@assets/thz_tera-p90+.png";
 import teraP90Img from "@assets/tera-p90.png";
 import shakenMassagerImg from "@assets/shaken_massager.png";
 import galaxyGOneImg from "@assets/galaxy_g-one.png";
-import skylineSL6Img from "@assets/skyline_sl6.png";
-import a9BamaAirImg from "@assets/a9_bamaair.png";
 import hPlusBarImg from "@assets/h+_bar.png";
 
 export const products: Product[] = [
   {
     id: "1",
-    slug: "vitality-wand",
-    name: "OlyLife Vitality Wand",
-    name_pl: "Witalna Różdżka OlyLife",
-    tagline: "VITALITY WAND CHAMPION'S CHOICE | OlyNation",
-    tagline_pl: "VITALity WAND WYBÓR MISTRZÓW | OlyNation",
-    description: "The Vitality Wand is designed to provide a relaxing and comfortable wellness experience through frequency-based technology and controlled airflow. Featuring ultra-long wave frequency technology, gentle warmth, and air pressure massage, the device is engineered to support comfort and relaxation as part of a self-care routine.",
-    description_pl: "Vitality Wand został zaprojektowany, aby zapewnić relaksujące i komfortowe doświadczenie wellness dzięki technologii opartej na częstotliwościach i kontrolowanym przepływie powietrza. Wyposażone w technologię fal o ultradługiej częstotliwości, delikatne ciepło i masaż ciśnieniowy powietrzem, urządzenie wspiera komfort i relaks.",
-    benefits: [
-      "Support healthy microcirculation",
-      "Detoxification",
-      "Removal of cold and dampness",
-      "Dredge meridians"
-    ],
-    benefits_pl: [
-      "Wsparcie zdrowego mikrokrążenia",
-      "Detoksykacja organizmu",
-      "Usuwanie zimna i wilgoci",
-      "Udrażnianie meridianów"
-    ],
-    howItWorks: "Terahertz Waves (1 THz) resonate with human cells while PEMF Ultra-long Waves penetrate deeply. Controlled airflow and air pressure massage offer standardized, hygienic application.",
-    howItWorks_pl: "Fale Terahertzowe (1 THz) rezonują z ludzkimi komórkami, podczas gdy fale PEMF Ultra-long wnikają głęboko. Kontrolowany przepływ powietrza i masaż ciśnieniowy zapewniają higieniczną aplikację.",
-    whoItsFor: "Individuals seeking a personalized and convenient wellness session experience with intuitive one-click operation and adjustable temperature settings.",
-    whoItsFor_pl: "Osoby szukające spersonalizowanego i wygodnego doświadczenia wellness z intuicyjną obsługą jednym kliknięciem i regulowanymi ustawieniami temperatury.",
-    science: "Thermal Energy Transfer helps to relieve pain, relax muscle, alleviate inflammation and increase tissue flexibility. PEMF technology penetrates deeply into the body.",
-    science_pl: "Transfer Energii Termicznej pomaga łagodzić ból, rozluźniać mięśnie, łagodzić stany zapalne i zwiększać elastyczność tkanek. Technologia PEMF wnika głęboko w ciało.",
-    image: vitalityWandImg,
-    price: "$600",
-  },
-  {
-    id: "2",
     slug: "tera-p90-plus",
     name: "OlyLife THz Tera-P90+",
     name_pl: "OlyLife THz Tera-P90+",
-    tagline: "OlyNation | Comprehensive Multi-Technology Wellness System",
-    tagline_pl: "OlyNation | Kompleksowy System Wellness Wielotechnologiczny",
-    description: "OlyLife THz Tera-P90+ is a multi-technology wellness system that integrates PEMF and frequency-based technology with specialized attachments like the Frost Age Beauty Device and Revitaluxe Massager for a complete self-care experience.",
-    description_pl: "OlyLife THz Tera-P90+ to zaawansowany system wellness integrujący PEMF i technologię częstotliwościową ze specjalistycznymi przystawkami dla pełnej regeneracji i samopoczucia.",
-    benefits: [
-      "Multi-Technology Wellness Integration",
-      "20-Level Intensity Control",
-      "Upgraded foot pedal design",
-      "Infrared remote control",
-      "Includes Frost Age & Revitaluxe attachments"
+    isFeatured: true,
+    shortDescription: "The OlyLife THz Tera-P90+ is an all-in-one wellness device combining PEMF technology with beauty and massage tools for comprehensive relaxation and rejuvenation.",
+    shortDescription_pl: "OlyLife THz Tera-P90+ to wszechstronne urządzenie wellness łączące technologię PEMF z narzędziami upiększającymi i masującymi dla kompleksowego relaksu i regeneracji.",
+    features: [
+      "All-in-One Wellness Ecosystem: An integrated platform combining Pulsed Electromagnetic Field (PEMF), Terahertz (THz) waves, Radio Frequency (RF), and EMS for total body health.",
+      "Dual-Frequency Core: Features the world’s first integrated PEMF and Terahertz technology to charge cells, activate dormant energy, and improve microcirculation.",
+      "Frost Age Beauty Device: A dedicated attachment using RF and EMS to stimulate collagen, firm skin, and provide anti-aging benefits for a youthful complexion.",
+      "Revitaluxe 3-in-1 Massager: Combines magnetic fusion, TENS/EMS, and Red Light Therapy to target muscle relaxation, pain relief, and scalp/hair health.",
+      "Customized Intensity: Offers a 20-level intensity control system (from \"walking\" to \"sprinting\" modes) to suit individual energy perception and comfort.",
+      "Deep Tissue Penetration: Delivers bio-resonance energy 3–5 cm deep to \"dredge\" meridians, remove internal \"cold and dampness,\" and support natural repair.",
+      "Upgraded Ergonomics: Features an enlarged foot pedal design (up to shoe size 13/47 UK) and a wireless infrared remote for effortless operation.",
+      "Comprehensive Health Support: Designed to assist with inflammation, metabolic waste removal, fat sculpting, and sleep quality improvements."
     ],
-    benefits_pl: [
-      "Integracja wielu technologii wellness",
-      "20 poziomów intensywności dla personalizacji",
-      "Ulepszona konstrukcja pedałów",
-      "Pilot na podczerwień",
-      "Zawiera przystawki Frost Age i Revitaluxe"
+    features_pl: [
+      "Ekosystem Wellness All-in-One: Zintegrowana platforma łącząca Promieniowanie Elektromagnetyczne (PEMF), fale Terahertz (THz), fale radiowe (RF) oraz EMS dla ogólnego zdrowia organizmu.",
+      "Dwuczęstotliwościowy rdzeń: Pierwsza na świecie zintegrowana technologia PEMF i Terahertz ładująca komórki, aktywująca uśpioną energię i poprawiająca mikrokrążenie.",
+      "Końcówka Frost Age: Przystawka wykorzystująca RF i EMS do stymulacji kolagenu, ujędrniania skóry i działania przeciwstarzeniowego dla młodego wyglądu.",
+      "Masażer Revitaluxe 3-w-1: Łączy fuzję magnetyczną, TENS/EMS i Terapię Czerwonym Światłem w celu relaksacji mięśni, łagodzenia bólu oraz poprawy zdrowia skóry głowy i włosów.",
+      "Dostosowana Intensywność: 20-poziomowy system kontroli intensywności (od \"spaceru\" do \"sprintu\") dostosowany do percepcji energetycznej.",
+      "Głębokie Przenikanie Tkanek: Energia biorezonansowa sięgająca 3-5 cm w głąb poprawiająca naturalną regenerację organizmu.",
+      "Ulepszona Ergonomia: Powiększone platformy na stopy (do rozmiaru 47) oraz bezprzewodowy pilot.",
+      "Kompleksowe Wsparcie Zdrowia: Wspiera usuwanie stanów zapalnych, odpadów metabolicznych, kształtowanie sylwetki i poprawia jakość snu."
     ],
-    howItWorks: "Integrates PEMF and frequency-based tech with specialized attachments: Frost Age (RF & EMS) for smoother skin, and Revitaluxe (Magnetic, EMS & Light) for scalp and muscle relaxation.",
-    howItWorks_pl: "Integruje PEMF i technologię częstotliwościową z przystawkami: Frost Age (RF i EMS) dla gładszej skóry oraz Revitaluxe (magnetyzm, EMS i światło) dla relaksu skóry głowy i mięśni.",
-    whoItsFor: "Those seeking a professional-grade, complete self-care system designed to complement daily wellness routines and support total body balance.",
-    whoItsFor_pl: "Osoby szukające profesjonalnego, kompletnego systemu dbania o siebie, zaprojektowanego w celu uzupełnienia codziennych rutyn wellness i wsparcia równowagi organizmu.",
-    science: "Synergistic application of PEMF for cellular voltage, RF/EMS for skin rejuvenation, and magnetic/light therapy for deep muscle recovery.",
-    science_pl: "Synergiczne zastosowanie PEMF dla napięcia komórkowego, RF/EMS dla odmłodzenia skóry oraz terapii magnetycznej i świetlnej dla głębokiej regeneracji mięśni.",
     image: thzTeraP90PlusImg,
-    price: "$1,500",
+    price: "$1,500"
   },
   {
-    id: "3",
+    id: "2",
     slug: "tera-p90",
     name: "OlyLife THz Tera-P90",
     name_pl: "OlyLife THz Tera-P90",
-    tagline: "OlyNation | Focus on Frequency-Based Balance",
-    tagline_pl: "OlyNation | Koncentracja na Równowadze Częstotliwościowej",
-    description: "OlyLife THz Tera-P90 is a wellness device designed to support relaxation and overall well-being through frequency-based technology. It combines PEMF with terahertz-based frequency patterns to support the body's natural balance.",
-    description_pl: "OlyLife THz Tera-P90 to urządzenie wellness wspierające relaks i ogólne samopoczucie dzięki technologii częstotliwościowej. Łączy PEMF z wzorcami terahertzowymi.",
-    benefits: [
-      "Supports overall wellness",
-      "Encourages relaxation",
-      "Supports physical comfort",
-      "Promotes a sense of vitality",
-      "Non-invasive experience"
+    shortDescription: "The OlyLife THz Tera-P90 boosts cellular health by combining bioelectromagnetic and terahertz energy.",
+    shortDescription_pl: "OlyLife THz Tera-P90 wzmacnia zdrowie komórkowe łącząc energię bioelektromagnetyczną i terahercową.",
+    features: [
+      "Dual-Frequency Technology: Integrates Pulsed Electromagnetic Field (PEMF) and Terahertz-based frequency patterns for a comprehensive wellness experience.",
+      "Terahertz \"Light of Life\": Utilizes a focused energy band (3−3000μm) that resonates with body molecules to improve microcirculation.",
+      "Deep Penetration: Delivers energy 4–5 cm beneath the skin to enhance cellular interaction and improve tissue health.",
+      "PEMF Support: Uses low-frequency signals to support relaxation, general wellness, and the body's natural balance.",
+      "Revitalizing Benefits: Promotes a sense of vitality, physical comfort, and serves as a complement to daily self-care routines.",
+      "User-Centric Design: Features a non-invasive, gentle, and easy-to-use interface engineered for comfort during sessions."
     ],
-    benefits_pl: [
-      "Wspiera ogólne samopoczucie",
-      "Sprzyja relaksacji",
-      "Wspiera komfort fizyczny",
-      "Promuje poczucie witalności",
-      "Doświadczenie nieinwazyjne"
+    features_pl: [
+      "Technologia Dwuczęstotliwościowa: Integruje pulsujące pole elektromagnetyczne (PEMF) z wzorcami terahertzowymi dla kompleksowego środowiska wellness.",
+      "Terahertz \"Światło Życia\": Wykorzystuje skoncentrowaną energię (3-3000μm) rezonującą z cząsteczkami w ciele poprawiającą mikrokrążenie.",
+      "Głębokie Przenikanie: Dostarcza energię na 4-5 cm w głąb tkanek wspierając interakcję komórkową.",
+      "Wsparcie PEMF: Niskie częstotliwości wspierają relaks oraz naturalny balans organizmu.",
+      "Korzyści Ożywiające: Zwiększa poczucie witalności i ogólny komfort fizyczny w codziennych nawykach dbania o siebie.",
+      "Projekt Oparty o Użytkownika: Nieinwazyjny, łagodny oraz prosty interfejs dla niesamowitego komfortu."
     ],
-    howItWorks: "Utilizing a focused band of 3-3000 μm (the 'light of life'), terahertz energy penetrates 4-5 cm deep to enhance cellular interaction while PEMF supports general wellness.",
-    howItWorks_pl: "Wykorzystując pasmo 3-3000 μm ('światło życia'), energia terahertzowa wnika na 4-5 cm głębokości, aby wzmocnić interakcje komórkowe, podczas gdy PEMF wspiera wellness.",
-    whoItsFor: "Individuals committed to a healthy lifestyle seeking a gentle and supportive wellness session that complements the body's natural processes.",
-    whoItsFor_pl: "Osoby prowadzące zdrowy tryb życia, szukające delikatnej i wspierającej sesji wellness, która uzupełnia naturalne procesy organizmu.",
-    science: "Terahertz energy resonates synergistically with body molecules to improve microcirculation. PEMF utilizes low-frequency signals for relaxation.",
-    science_pl: "Energia terahertzowa rezonuje synergicznie z cząsteczkami ciała, poprawiając mikrokrążenie. PEMF wykorzystuje sygnały niskiej częstotliwości do relaksu.",
     image: teraP90Img,
-    price: "$1,000",
+    price: "$1,000"
+  },
+  {
+    id: "3",
+    slug: "galaxy-g-one",
+    name: "OlyLife Galaxy G-One",
+    name_pl: "OlyLife Galaxy G-One",
+    shortDescription: "The GALAXY G-one is a foldable smart eye massager with PEMF technology, offering 7 eye care modes, 4 technologies, and easy one-button control for on-the-go comfort.",
+    shortDescription_pl: "GALAXY G-one to składany inteligentny masażer oczu z technologią PEMF, oferujący 7 trybów pielęgnacji oczu, 4 technologie i proste sterowanie jednym przyciskiem dla komfortu w podróży.",
+    features: [
+      "Smart Eye Wellness: A dedicated device designed to support relaxation and visual comfort around the eye area.",
+      "Low-Frequency PEMF: Features core pulsed electromagnetic field technology to support general wellness and relaxation.",
+      "Multi-Mode Massage: Includes six-zone airbag and intermittent vibration massage functions for a soothing experience.",
+      "Warm Compress Technology: Provides a gentle, constant-temperature warm compress to enhance the calming effect.",
+      "Customizable Care: Offers 7 care modes, allowing users to combine massage, vibration, and warmth for a tailored session.",
+      "Portable & User-Friendly: Features a lightweight, foldable design with simple one-button operation for use anywhere.",
+      "Restorative Benefits: Encourages a refreshed, well-rested appearance and provides relief after long periods of screen time."
+    ],
+    features_pl: [
+      "Inteligentne Wellness Oczu: Dedykowane urządzenie do wsparcia relaksu i komfortu w okolicach oczu.",
+      "Niskoczęstotliwościowy PEMF: Wbudowane pulsujące pole elektromagnetyczne dla ogólnego wsparcia zdrowia i relaksacji.",
+      "Masaż Wielotrybowy: Posiada 6-strefowe poduszki powietrzne i pulsujące wibracje.",
+      "Technologia Ciepłego Kompresu: Delikatny kompres ze stałą temperaturą poprawiającą efekt ukojenia.",
+      "Indywidualna Troska: Oferuje 7 trybów pielęgnacji, aby umożliwić użytkownikom kombinację masażu, wibracji i ciepła.",
+      "Przenośność & Funkcjonalność: Lekka i łatwo składana konstrukcja kontrolowana jednym guzikiem z dowolnego miejsca.",
+      "Korzyści Odtwórcze: Zapewnia odświeżenie oraz rześki wygląd wraz z olbrzymią ulgą w zmęczeniu przy ekranie komputera."
+    ],
+    image: galaxyGOneImg,
+    price: "$500"
   },
   {
     id: "4",
     slug: "shaken-massager",
-    name: "Shaken Massager",
+    name: "OlyLife Shaken Massager",
     name_pl: "Masażer Shaken",
-    tagline: "OlyNation | Shaken Massager PEMF Smart Wellness Device",
-    tagline_pl: "OlyNation | Inteligentne Urządzenie Wellness PEMF Shaken Massager",
-    description: "The Shaken Massager is a wearable wellness device designed to support comfort and relaxation. This waist-worn device combines ultrasonic vibration, gentle heat, radio frequency, red light, massage, and PEMF technology.",
-    description_pl: "Shaken Massager to ubieralne urządzenie wellness wspierające komfort i relaks. Noszone w talii, łączy wibracje ultradźwiękowe, ciepło, fale radiowe RF, światło czerwone i PEMF.",
-    benefits: [
-      "Ultrasonic comfort technology",
-      "RF (Radio Frequency) warming energy",
-      "7-zone air pressure massage",
-      "Red light revitalization",
-      "Wearable for active lifestyle"
+    shortDescription: "The Shaken Massager targets stubborn belly fat using 7-in-1 technology including PEMF, ultrasound, and heat therapy to shape the waist and support core health.",
+    shortDescription_pl: "Masażer Shaken celuje w uporczywą tkankę tłuszczową brzucha, wykorzystując technologię 7-w-1, w tym PEMF, ultradźwięki i terapię ciepłem, aby rzeźbić talię i wspierać zdrowie korpusu.",
+    features: [
+      "7-in-1 Advanced Technology: A powerhouse device combining PEMF, Ultrasound, RF (Radio Frequency), EMS, Vibration, Heat Therapy, and Red Light Therapy.",
+      "Targeted Fat Reduction: Features CellBreak™ technology using ultrasound sound waves (acoustic cavitation) to help mobilize and break down stubborn fat cells.",
+      "Deep Cellular Wellness: Utilizes ultra-low frequency PEMF to support microcirculation and healthy organ function up to 20cm deep.",
+      "Skin Firming & Anti-Aging: Employs RF technology and Red Light Therapy to stimulate collagen, improve skin texture, and reduce the appearance of stretch marks.",
+      "Effortless Core Engagement: Uses high-frequency vibration and dynamic massage to stimulate muscles, mimicking the effects of a core workout and enhancing lymphatic flow.",
+      "AI Adaptive Control: Includes a smart AI system that tracks heart rate, SpO₂, and body temperature to auto-adjust intensity for a personalized session.",
+      "Smartwatch Integration: Features a dedicated smartwatch to easily switch between modes and monitor real-time health data.",
+      "Ergonomic Design: Crafted from soft, hypoallergenic silicone with an adjustable fit (24 to 55 inches) for comfortable use while sitting or moving."
     ],
-    benefits_pl: [
-      "Ultradźwiękowa technologia komfortu",
-      "Energia grzewcza RF (fale radiowe)",
-      "7-strefowy masaż ciśnieniowy",
-      "Rewitalizacja światłem czerwonym",
-      "Ubieralność dla aktywnego stylu życia"
+    features_pl: [
+      "Zaawansowana Technologia 7 w 1: Urządzenie łączące PEMF, Ultradźwięki, RF (fale radiowe), EMS, Wibracje, Ciepło i Terapie Czerwonym Światłem.",
+      "Celowa Utrata Tkanki Tłuszczowej: Wykorzystuje kawitację akustyczną przy pomocy CellBreak™, aby pomóc rzezbić najcięższe warstwy tłuszczowe.",
+      "Głębokie Wellness Komórkowe: Ultraniska częstotliwość wpływa zbawiennie do 20cm do najważniejszych organów.",
+      "Ujędrnianie Skóry & Anti-Aging: Tworzy nowy kolagen i redukuje powstawanie rozstępów dzięki falom RF oraz czerwonym led.",
+      "Wsparcie Środka Ciała: Imituje ćwiczenia wzmacniające przy pomocy wstrząsów o dużej częstotliwości oraz przyśpiesza odprowadzanie limfy.",
+      "Wbudowany System AI: Automatycznie dobiera intensywność dzięki czytnikowi tętna, sprawdzając temperaturę i nasycenie tlenu w krwi.",
+      "Integracja Ze Smartwatchem: Posiada dedykowany zegarek dla wygodniejszej modyfikacji zdrowia rzut oka od nadgarstka.",
+      "Ergonomiczny Projekt: Wykonano go z delikatnego i antyalergicznego tworzywa potrafiącego objąć pas nawet do 140 centymetrów w obwodzie."
     ],
-    howItWorks: "Combines multi-airbag compression with rhythmic vibration and low-frequency PEMF. Features specific modes: Body Comfort, Massage, and Heat Therapy.",
-    howItWorks_pl: "Łączy kompresję wielopoduszkową z rytmicznymi wibracjami i niskoczęstotliwościowym PEMF. Posiada tryby: Komfort Ciała, Masaż i Terapia Ciepłem.",
-    whoItsFor: "Active individuals seeking a streamlined way to promote relaxation while fitting seamlessly into everyday wear, whether at home or on the move.",
-    whoItsFor_pl: "Osoby aktywne szukające uproszczonego sposobu na relaks, który idealnie pasuje do codziennego stroju, w domu lub w podróży.",
-    science: "Ultrasonic waves provide gentle stimulation, while RF delivers warming energy. PEMF supports relaxation and overall core wellness.",
-    science_pl: "Fale ultradźwiękowe zapewniają delikatną stymulację, podczas gdy RF dostarcza energię cieplną. PEMF wspiera relaks i ogólne dobre samopoczucie.",
     image: shakenMassagerImg,
-    price: "$1,000",
+    price: "$1,000"
   },
   {
     id: "5",
-    slug: "galaxy-g-one",
-    name: "OlyLife Galaxy G-One",
-    name_pl: "OlyLife Galaxy G-One",
-    tagline: "OlyNation | Smart Eye Wellness Experience",
-    tagline_pl: "OlyNation | Inteligentne Doświadczenie Wellness dla Oczu",
-    description: "The GALAXY G-one is a smart eye wellness device featuring low-frequency PEMF technology combined with multi-mode massage functions to provide a soothing experience after screen time or long days.",
-    description_pl: "GALAXY G-one to inteligentne urządzenie do pielęgnacji oczu, wykorzystujące PEMF o niskiej częstotliwości z wieloma funkcjami masażu dla ukojenia po pracy przy ekranie.",
-    benefits: [
-      "Encourages eye-area relaxation",
-      "Seven customizable care modes",
-      "Six-zone airbag massage",
-      "Foldable lightweight design",
-      "Gentle warm compress"
+    slug: "vitality-wand",
+    name: "OlyLife Vitality Wand",
+    name_pl: "Witalna Różdżka OlyLife",
+    shortDescription: "The Vitality Wand uses ultra-long and biological energy waves with adjustable heat and airflow for a hands-free, fatigue-relieving experience.",
+    shortDescription_pl: "Witalna Różdżka wykorzystuje ultra-długie i biologiczne fale energii z regulowanym ciepłem i przepływem powietrza dla relaksującego doświadczenia bez użycia rąk.",
+    features: [
+      "Core Frequency Technology: Utilizes ultra-long wave frequency (PEMF) and Terahertz waves (1 THz) to provide a deep-penetrating wellness experience.",
+      "Triple-Action Support: Combines frequency-based technology with gentle warmth and air pressure massage to enhance physical comfort.",
+      "Circulation & Detox: Specifically designed to support healthy microcirculation, assist in detoxification, and help remove \"cold and dampness\" from the body.",
+      "Meridian Care: Engineered to help \"dredge\" meridians, promoting a smoother flow of energy throughout the body's natural pathways.",
+      "Thermal Relief: Features thermal energy transfer to help alleviate muscle tension, reduce inflammation, and increase tissue flexibility.",
+      "Intuitive Air Massage: Employs controlled airflow to apply uniform and consistent pressure, ensuring a hygienic and flexible massage technique.",
+      "Personalized Comfort: Offers adjustable temperature settings and a simple one-click operation for a customized and convenient user experience.",
+      "Hands-Free Ease: Includes an intelligent stand that allows for hands-free use during self-care sessions."
     ],
-    benefits_pl: [
-      "Sprzyja relaksacji okolic oczu",
-      "Siedem konfigurowalnych trybów",
-      "Sześcio-strefowy masaż powietrzny",
-      "Składana, lekka konstrukcja",
-      "Delikatny ciepły kompres"
+    features_pl: [
+      "Technologia Fal Głównych: Ultra-długie częstotliwości PEMF oraz 1 THz fali w celu głęboko przenikającej fali wsparcia organizmu.",
+      "Trójakcyjne Wsparcie: Łączy fale rezonujące z delikatnym ciepłem, i uciskiem zwiększając relaksujące poczucie.",
+      "Krążenie & Detoks: Powstała, aby pomagać przepływowi mikrokrążenia i usuwania toksyn a w głównej mierze wyciągać z organizmu zimno po chińsku zwanym stasis.",
+      "Pielęgnacja Meridian: Pomaga rozpuścić zapchane pory organizmu na poziomie fizycznym jak i energetycznym.",
+      "Termiczna Ulga: Transmisja energii cieplnej by odciążyć ból, zahamować powstawanie zapaleń i nadać mięśniom lepszej giętkości.",
+      "Powietrzny Masaż: Osiąga wyjątkowy powiew dbając o najwyższe wymogi elastycznej a zarazem higienicznej aplikacji bez kontaktu bezpośredniego.",
+      "Wygoda i Regulacja: Wykorzystaj proste ustawienie jednym ruchem w celu kontroli temperatury dla personalizacji doświadczeń.",
+      "Obsługa Wolne Ręce: Nowoczesna inteligentna nóżka w komplecie umożliwi wsparcie na siebie samego."
     ],
-    howItWorks: "Combines pneumatic compression, intermittent vibration, and constant-temperature warmth with PEMF to soothe visual strain.",
-    howItWorks_pl: "Łączy kompresję pneumatyczną, przerywane wibracje i ciepło o stałej temperaturze z PEMF, aby koić zmęczenie wzroku.",
-    whoItsFor: "Students, office workers, and travelers who experience eye fatigue and seek a portable, one-button solution for daily visual comfort.",
-    whoItsFor_pl: "Studenci, pracownicy biurowi i podróżni, którzy odczuwają zmęczenie oczu i szukają przenośnego rozwiązania dla codziennego komfortu.",
-    science: "Low-frequency PEMF targets eye-area relaxation while pneumatic interaction supports local tissue relief and refreshing revitalization.",
-    science_pl: "Niskoczęstotliwościowy PEMF koncentruje się na relaksie okolic oczu, podczas gdy interakcja pneumatyczna wspiera ulgę w tkankach.",
-    image: galaxyGOneImg,
-    price: "$500",
+    image: vitalityWandImg,
+    price: "$600"
   },
   {
     id: "6",
-    slug: "skyline-sl-6",
-    name: "OlyLife Skyline SL-6",
-    name_pl: "OlyLife Skyline SL-6",
-    tagline: "SKYLINE | OlyNation | One Touch for All-Day Comfort",
-    tagline_pl: "SKYLINE | OlyNation | Jeden Dotyk dla Całodziennego Komfortu",
-    description: "Skyline Smart Cloud-Sense Sanitary Napkin integrates advanced breathable layers with magnetic components and far-infrared ceramic materials to promote dryness, airflow, and comfort.",
-    description_pl: "Skyline Smart Cloud-Sense to inteligentne podpaski integrujące zaawansowane warstwy oddychające z komponentami magnetycznymi dla suchości i komfortu.",
-    benefits: [
-      "Ultra-thin absorbent core",
-      "Breathable bamboo fiber surface",
-      "Far-infrared & Graphene tech",
-      "Magnetic induction layer",
-      "Suspension fit structure"
-    ],
-    benefits_pl: [
-      "Ultratanki rdzeń chłonny",
-      "Oddychająca powierzchnia z włókna bambusowego",
-      "Technologia dalekiej podczerwieni i grafenu",
-      "Warstwa indukcji magnetycznej",
-      "Struktura Suspension Fit"
-    ],
-    howItWorks: "Microporous base layers support airflow while graphene conductive framework and ceramic materials maintain material-based thermal properties for consistent comfort.",
-    howItWorks_pl: "Warstwy mikroporowate wspierają przepływ powietrza, podczas gdy grafen i materiały ceramiczne utrzymują właściwości termiczne dla stałego komfortu.",
-    whoItsFor: "Women seeking a technologically advanced, skin-friendly solution that prioritizes dryness, airflow, and confident support throughout the day.",
-    whoItsFor_pl: "Kobiety szukające zaawansowanego technologicznie, przyjaznego dla skóry rozwiązania, które stawia na suchość i pewne wsparcie przez cały dzień.",
-    science: "Magnetic induction and far-infrared technologies support local microcirculation at a material engineering level to ensure softness and adaptability.",
-    science_pl: "Technologie indukcji magnetycznej i dalekiej podczerwieni wspierają lokalne mikrokrążenie na poziomie inżynierii materiałowej.",
-    image: skylineSL6Img,
-    price: "$500",
-  },
-  {
-    id: "7",
-    slug: "a9-bamaair",
-    name: "OlyLife A9 Smart Anion BamaAir",
-    name_pl: "OlyLife A9 Smart Anion BamaAir",
-    tagline: "OlyNation | The Forest Like Experience",
-    tagline_pl: "OlyNation | Doświadczenie Leśnej Świeżości",
-    description: "A9 Smart Anion BamaAir supports a clean indoor environment through high-concentration negative ion generation and HEPA filtration to reduce common airborne particles.",
-    description_pl: "A9 Smart Anion BamaAir wspiera czyste środowisko wewnętrzne dzięki wysokiemu stężeniu jonów ujemnych i filtracji HEPA.",
-    benefits: [
-      "High Concentration Anions (200M/cm3)",
-      "HEPA Air Purification system",
-      "7 Natural Light modes",
-      "14 Soothing Music tracks",
-      "Smart App control"
-    ],
-    benefits_pl: [
-      "Wysokie stężenie anionów (200M/cm3)",
-      "System oczyszczania powietrza HEPA",
-      "7 trybów naturalnego światła",
-      "14 kojących ścieżek muzycznych",
-      "Inteligentne sterowanie aplikacją"
-    ],
-    howItWorks: "Generates high concentrations of negative ions to neutralize allergens while HEPA filtration traps dust. Features Auto, Sleep, and Anti-mosquito modes.",
-    howItWorks_pl: "Generuje wysokie stężenia jonów ujemnych do neutralizacji alergenów, podczas gdy HEPA zatrzymuje kurz. Posiada tryby Auto, Sen i Anty-komar.",
-    whoItsFor: "Families and professionals looking to create a forest-like atmosphere and improve air quality in homes or offices with real-time feedback.",
-    whoItsFor_pl: "Rodziny i profesjonaliści chcący stworzyć leśną atmosferę i poprawić jakość powietrza z informacją o parametrach w czasie rzeczywistym.",
-    science: "Anion enrichment (200M/cm3) helps clear dust and microbes, while HEPA filters remove 99.9% of particles down to 0.3 microns.",
-    science_pl: "Wzbogacenie anionami pomaga oczyścić kurz, podczas gdy HEPA usuwa 99,9% cząsteczek o wielkości do 0,3 mikrona.",
-    image: a9BamaAirImg,
-    price: "$500",
-  },
-  {
-    id: "8",
     slug: "h-plus-bar",
     name: "OlyLife H+ Bar",
     name_pl: "OlyLife H+ Bar",
-    tagline: "OlyNation | Portable Hydrogen & MRET Hydration",
-    tagline_pl: "OlyNation | Przenośne Nawodnienie Wodorem i MRET",
-    description: "The H+ Bar is a portable water bottle combining hydrogen infusion technology with MRET low-frequency resonance to support a refreshing hydration experience anytime, anywhere.",
-    description_pl: "H+ Bar to przenośna butelka łącząca nasycanie wodorem z rezonansem MRET dla wyjątkowego nawodnienia w dowolnym miejscu i czasie.",
-    benefits: [
-      "Molecular hydrogen infusion",
-      "MRET Resonance Tech",
-      "Dual-Chamber design",
-      "Durable Waterproof design",
-      "Pressure Injection Dissolution"
+    shortDescription: "The H+ Bar is a portable water bottle that produces antioxidant-rich hydrogen water and enhances absorption with MRET low-frequency resonance technology.",
+    shortDescription_pl: "H+ Bar to przenośna butelka wytwarzająca bogatą w antyoksydanty wodę wodorową i zwiększająca wchłanianie dzięki technologii rezonansu niskiej częstotliwości MRET.",
+    features: [
+      "Dual-Function Wellness: Combines advanced molecular hydrogen infusion with MRET (Molecular Resonance Effect Technology) to transform ordinary water into a \"powerhouse\" for health.",
+      "MRET Low-Frequency Resonance: Restructures water molecules from a clustered arrangement into a linear structure, significantly enhancing cellular absorption and bioavailability.",
+      "Selective Antioxidant Power: Infuses water with dissolved molecular hydrogen (H₂) to neutralize harmful free radicals while protecting beneficial cellular processes.",
+      "Deep Cellular Hydration: Small structured water clusters pass through aquaporins (cell gates) more efficiently, providing faster and deeper hydration than standard water.",
+      "Energy & Recovery: Supports mitochondrial function to reduce cellular fatigue and helps athletes accelerate recovery by reducing lactic acid buildup.",
+      "Anti-Aging & Skin Support: Promotes healthier-looking skin and protects DNA/proteins from oxidative stress linked to aging and chronic conditions.",
+      "Dual-Chamber Design: Features a professional-grade proton exchange membrane (Dry Membrane) and pressure injection technology to ensure high-concentration hydrogen with zero pollution.",
+      "Portable & Durable: Heat-resistant, non-slip, and waterproof design—safe for all types of beverages and easy to use anywhere."
     ],
-    benefits_pl: [
-      "Nasycanie wodorem cząsteczkowym",
-      "Technologia rezonansu MRET",
-      "Dwu-komorowa konstrukcja",
-      "Trwała, wodoodporna budowa",
-      "Technologia rozpuszczania ciśnieniowego"
+    features_pl: [
+      "Podwójna Funkcja Detoksykująca: Połączenie wodoru na poziomie molekularnym i rezonansu MRET dla transformacji tradycyjnego płynu w pełne zasilanie dla komórek.",
+      "Rezonans Niskiej Częstotliwości MRET: Ujednolica molekuły wody i nadaje mu naturalną, unikalną jakość pomagając docierać i nawilżać ciało dogłębniej.",
+      "Selektywna Siła Antyoksydantów: Rozpuszczony wodór w butelce chroni nasze środowisko wewnętrzne eliminując złe, trujące substancje i dbając by proces w nich był bez skazy.",
+      "Głęboka Hydracja Komórek: Malutka woda przedostaje się niesłychanie prędko gwarantując pełniejsze ugaszenie pragnienia, ze względu że wodór bez trudu nasyca puste wejścia aquaporyny.",
+      "Energia & Odpoczynek: Rozbudzone mitochondrium tworzy rzadszą przerwę wspierając odpoczynek dla osób sportu, zatrzymujące w rezultacie budowę nadciągłego kwasu mrówkowego.",
+      "Redukacja Zmian Starzenia: Poprawiony stan ochrony skóry nie strasząc destruktywnej zmiany w postaci DNA/protein powodowanej ciągłym przewrażliwieniem powiązanym z objawieniem chronicznym.",
+      "Konstrukcja Dwukomorowa: System wymiany bez strachu w wciągnięcie nieczystości podczas odpalenia procesów technologii wytwarzającej i cięgnącej niesłychanie skoncentrowane cząstki H2.",
+      "Kompaktowa jakość OlyLife: Najwyższej próby i niezwykle gęste formy, bez ryzyka przepalenia oraz nieścieralna i gotowa by bez oporu być wszędzie wykorzystana w pełnym tego słowa znaczeniu."
     ],
-    howItWorks: "Uses a proton exchange membrane for stable hydrogen production and MRET low-frequency resonance technology structure molecules for better absorption.",
-    howItWorks_pl: "Wykorzystuje membranę wymiany protonów dla produkcji wodoru oraz technologię MRET do strukturyzacji cząsteczek dla lepszej absorpcji.",
-    whoItsFor: "Hydration-conscious individuals seeking a portable way to enjoy hydrogen-enriched water that complements a balanced, active lifestyle.",
-    whoItsFor_pl: "Osoby dbające o nawodnienie, szukające przenośnego sposobu na wodę wzbogaconą wodorem, pasującą do aktywnego stylu życia.",
-    science: "Molecular hydrogen acts as a selective antioxidant. MRET low-frequency resonance induces vibrations that mimic natural electromagnetic signals.",
-    science_pl: "Wodór cząsteczkowy działa jako selektywny antyoksydant. Rezonans MRET indukuje wibracje naśladujące naturalne sygnały elektromagnetyczne.",
     image: hPlusBarImg,
-    price: "$600",
+    price: "$600"
   }
 ];

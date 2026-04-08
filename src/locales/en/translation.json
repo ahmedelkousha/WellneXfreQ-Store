@@ -1,775 +1,245 @@
 {
   "nav": {
     "home": "Home",
-    "technology": "Technology",
-    "philosophy": "The Journey",
-    "about": "About",
-    "blog": "Blog",
-    "products": "Products",
-    "contact": "Contact",
-    "inquire": "Inquire Now",
-    "order": "Get Started"
+    "products": "Our Devices",
+    "blogs": "Knowledge Base",
+    "order": "Request Consultation",
+    "order-footer": "Order Your Device",
+    "contact": "Support",
+    "admin": "Admin Portal"
   },
   "home": {
     "hero": {
-      "tagline": "Frequency Wellness Technology",
-      "title1": "RESET YOUR",
-      "title1_highlight": "CELLS",
-      "title2": "RESTORE YOUR",
-      "title2_highlight": "RHYTHM",
-      "title3": "RECLAIM YOUR",
-      "title3_highlight": "VITALITY",
-      "subtitle": "Where frequency meets biology. PEMF and Terahertz technology, the way your body was designed to perform.",
-      "cta_tech": "Learn About The Technology",
-      "cta_phil": "Start Your Ritual"
+      "title": "Unlocking Wellness Through ",
+      "title_highlight": "Frequency Resonance",
+      "subtitle": "Harness the power of Pulsed Electromagnetic Fields (PEMF) and Terahertz technology to revitalize your cells and restore balance to your body.",
+      "cta_primary": "View Catalogue",
+      "cta_secondary": "How It Works"
     },
-    "tech": {
-      "science_title": "The Future of ",
-      "science_title_italic": "Optimization",
-      "science_subtitle": "We go beyond conventional recovery. By utilizing specific electromagnetic and terahertz frequencies, we interact directly with your body's cellular communication network.",
-      "pemf_title": "PEMF Technology (The Battery Charger)",
-      "pemf_desc": "Pulsed Electromagnetic Field therapy uses Earth-mimicking frequencies to recharge your cells' natural voltage. It's safe, low-frequency electromagnetic pulses to stimulate the body at the cellular level.",
-      "pemf_benefits": [
-        "Recharges cellular battery & repairs voltage",
-        "Reduces inflammation and flushes pain",
-        "Accelerates natural detoxification & recovery"
-      ],
-      "thz_title": "Terahertz Resonance (The Fine Tuner)",
-      "thz_desc": "Terahertz waves resonate in harmony with healthy human cells, penetrating deep into tissues to dissolve blockages and restore the body's natural cellular vibration.",
-      "thz_benefits": [
-        "Bio Thermal Activation without ionizing radiation",
-        "Dissolves internal blockages & boosts flow",
-        "Restores biological coherence and life force"
-      ],
-      "repair": "Cellular Repair",
-      "repair_desc": "Accelerates cellular regeneration and tissue recovery.",
-      "recovery": "Deep Recovery",
-      "recovery_desc": "Flushes inflammation and reduces physical stress.",
-      "oxygenate": "Oxygenation",
-      "oxygenate_desc": "Enhances circulation and nutrient delivery.",
-      "activate": "Cell Activation",
-      "activate_desc": "Wakes up underperforming cells for peak function.",
-      "flow": "Internal Flow",
-      "flow_desc": "Supports microcirculation and energy pathways.",
-      "balance": "Biological Balance",
-      "balance_desc": "Aligns the body's natural biological coherence."
+    "dual_action": {
+      "title": "The Dual-Action ",
+      "title_highlight": "Advantage",
+      "subtitle": "Combining PEMF and Terahertz technology for unprecedented results.",
+      "pemf": {
+        "title": "PEMF Technology",
+        "description": "Pulsed Electromagnetic Fields penetrate deep into the body to recharge cellular voltage and support natural recovery.",
+        "benefits": [
+          "Improves microcirculation",
+          "Supports bone and joint health",
+          "Enhances muscle recovery",
+          "Reduces inflammation"
+        ]
+      },
+      "thz": {
+        "title": "Terahertz Waves",
+        "description": "Terahertz waves resonate at the same frequency as healthy human cells, promoting deep tissue activation and energy flow.",
+        "benefits": [
+          "Activates dormant cells",
+          "Promotes detoxification",
+          "Increases metabolic rate",
+          "Supports meridian flow"
+        ]
+      }
     },
-    "philosophy": {
-      "title": "Built to ",
-      "title_italic_1": "Move.",
-      "subtitle": "Created to ",
-      "subtitle_italic_2": "Last.",
-      "title_3": "Powered at the ",
-      "title_highlight_3": "Source.",
-      "text1": "As a health, wellness, and movement coach with 13 years of experience, I've helped people rebuild their bodies from the inside out. But it was my own battle with chronic pain, burnout, and low energy that changed everything.",
-      "text2": "Traditional approaches kept working around the body. I needed something that worked with it. That search led me to PEMF and Terahertz frequency technology — and I've never looked back.",
-      "coach_text": "My drive for longevity led me somewhere most people haven't looked yet. That's exactly why wellneXfreQ exists.",
-      "coach": "Patrycja W.",
-      "learn_more": "Get In Touch"
-    },
-    "products": {
-      "title": "Explore Our ",
-      "title_highlight": "Devices",
-      "subtitle": "Each device is engineered for a specific biological outcome. PEMF and Terahertz frequency technology, designed for daily use and long-term results.",
-      "featured_badge": "FEATURED",
-      "featured_title": "OlyLife THz Tera-P90+",
-      "featured_desc": "Next-generation Tera-P90+ delivering enhanced features for deeper cellular recovery and performance.",
-      "learn_more": "Learn More →",
-      "view_all": "View All Devices →"
-    },
-    "blog": {
-      "title": "From the ",
-      "title_highlight": "Frequency Lab",
-      "subtitle": "Latest insights on biohacking, cellular health, and the science of frequency medicine.",
-      "read": "Read Article",
-      "view_all": "View All Articles"
+    "dual_action_table": {
+      "title": "Dual-Action Technology Comparison",
+      "subtitle": "Understanding how our integrated technologies compare to single-platform devices.",
+      "headers": {
+        "feature": "Diagnostic / Frequency Action",
+        "thz": "Tera-P90+ (Dual Core)",
+        "single": "Single-Tech Brand"
+      },
+      "rows": [
+        {
+          "feature": "Cellular Recharge",
+          "thz": "Dual PEMF + THz Action",
+          "single": "Single Mode Only"
+        },
+        {
+          "feature": "Penetration Depth",
+          "thz": "10-12cm Deep Tissue",
+          "single": "1-3cm Surface Only"
+        },
+        {
+          "feature": "Biological Resonance",
+          "thz": "0.1-30 THz (Natural)",
+          "single": "Fixed / Industrial"
+        },
+        {
+          "feature": "Target Audience",
+          "thz": "Integrated Holistic Care",
+          "single": "Niche Application"
+        }
+      ]
     },
     "testimonials": {
       "title": "Real People. ",
       "title_highlight": "Real Results.",
       "subtitle": "Frequency technology is transforming lives around the world.",
+      "disclaimer": "Disclaimer: Individual results may vary. Consult with your healthcare provider before use.",
       "items": [
         {
-          "name": "Maria",
-          "role": "Verified User",
-          "quote": "I went from struggling to get out of bed to walking 5km a day. The P90+ didn't just help my legs. It gave me my independence back."
+          "name": "Kirsty Robertson",
+          "role": "QUEENSLAND, AUSTRALIA",
+          "quote": "After one session on that machine, I had a month of traveling, doing a lot of sitting, and my hip was absolutely fine. It blew me away."
         },
         {
-          "name": "Mark J.",
-          "role": "Entrepreneur",
-          "quote": "As a high performer, I thought being tired was just part of the job. After 30 days with the Tera P90+, my mental clarity is at a level I haven't felt in a decade."
+          "name": "Brian Caccaniga",
+          "role": "AUSTRALIA",
+          "quote": "Pop, I feel like I can twist my back. It's not hurting. I can bend down."
         },
         {
-          "name": "Sarah L.",
-          "role": "Verified User",
-          "quote": "The biggest surprise wasn't just the physical pain relief. It was the peace. My nervous system finally feels reset. I'm sleeping through the night for the first time in years."
+          "name": "Ethan Leeds",
+          "role": "BRAZIL",
+          "quote": "I like to think of the P90 in its very simple form as a human battery charger. We being the battery, the P90 being the charger."
         },
         {
-          "name": "Robert K.",
-          "role": "Senior / Gardening Enthusiast",
-          "quote": "Dealing with joint stiffness was my daily routine until I tried the wand. It's like my joints have been oiled. I can finally enjoy my gardening again without the following day's pain."
+          "name": "Luigi",
+          "role": "VERIFIED USER",
+          "quote": "I have the strength of Hercules to be able to do all these little changes in my life."
         },
         {
-          "name": "Elena S.",
-          "role": "Yoga Instructor",
-          "quote": "I use the Terahertz device as part of my post-practice ritual. The waves help me sink into a deeper state of relaxation and mental clarity that I haven't achieved with any other tool."
-        },
-        {
-          "name": "Alex M.",
-          "role": "Professional Athlete",
-          "quote": "Recovery is the secret weapon in my training. The P90+ has cut my muscle soreness time in half. It's an absolute game-changer for my competition prep."
+          "name": "Jim Feldman",
+          "role": "SYDNEY, AUSTRALIA",
+          "quote": "Something I'd struggled with for over 20 years — just gone. My monthly psychologist visits, gone. Medication I'd relied on for years, gone."
         }
       ]
-    },
-    "faqs": {
-      "title": "Frequently Asked ",
-      "title_highlight": "Frequency Questions",
-      "items": [
-        {
-          "question": "What is the difference between PEMF and Terahertz frequency therapy?",
-          "answer": "PEMF (Pulsed Electromagnetic Field) therapy uses low-frequency electromagnetic pulses that mimic the Earth's natural field to recharge cellular voltage — essentially a battery charger for your cells. Terahertz frequency operates at a higher frequency band that resonates with the natural vibration of healthy human cells, penetrating deep into tissues to activate stem cells and clear meridian blockages. They work through different mechanisms and complement each other powerfully."
-        },
-        {
-          "question": "Which product should I start with?",
-          "answer": "It depends on your primary goal. For full-body cellular recovery and sleep improvement, start with the TERA-P90 foot mat — it's the most convenient daily entry point. For targeted pain or inflammation in specific areas, the VITALITY WAND is the most direct tool. If you want the most comprehensive system with both PEMF and Terahertz in one, the THz TERA-P90+ is the flagship."
-        },
-        {
-          "question": "How soon will I notice results?",
-          "answer": "Most people notice changes in sleep quality within the first 3-7 days of consistent use — deeper sleep, waking more restored. Energy and pain levels typically shift noticeably within 2-3 weeks. The effects are cumulative; your body is rebuilding cellular voltage and clearing accumulated stress. The longer and more consistently you use the technology, the more pronounced the results."
-        },
-        {
-          "question": "Can I use multiple devices together?",
-          "answer": "Yes — and we actively encourage it. For example: begin your morning on the TERA-P90 foot mat for 20 minutes to recharge cellular voltage before the day starts, use the VITALITY WAND on any symptomatic areas post-training, hydrate with the H+ BAR throughout the day to manage oxidative stress, and wind down with the GALAXY G-ONE or SHAKEN MASSAGER to support nervous system recovery before sleep."
-        },
-        {
-          "question": "Is frequency therapy safe for people with existing health conditions?",
-          "answer": "Our devices use non-ionizing frequencies that are safe for the vast majority of people. Terahertz and PEMF are non-invasive and work with the body's own natural frequencies. As with any wellness technology, those with pacemakers, implanted electronic devices, or who are pregnant should consult their healthcare provider before use."
-        },
-        {
-          "question": "What makes wellneXfreQ different from other wellness brands?",
-          "answer": "wellneXfreQ exists at the intersection of elite athletic coaching and quantum wellness science. Every product is selected by a Strength and Movement Coach with 13+ years of biohacking experience — not by a marketing team. We don't sell devices for the sake of it. We educate on the underlying science, provide a direct inquiry model, and build ongoing relationships with clients to ensure results."
-        }
-      ]
-    },
-    "cta": {
-      "title": "Ready to Power Up at the ",
-      "title_highlight": "Source?",
-      "subtitle": "Join the future of high-performance wellness and start your cellular optimization journey today.",
-      "button": "Go to Products"
-    }
-  },
-  "about": {
-    "hero": {
-      "tagline": "13+ Years Experience",
-      "title": "Built to ",
-      "title_italic_1": "Move.",
-      "title_and": "Created to ",
-      "title_italic_2": "Last.",
-      "title_highlight": "Powered at the Source.",
-      "subtitle": "Biohacking health and rebuilding from the ground up through movement and frequency technology."
-    },
-    "dual_tech_table": {
-      "badge": "Why Dual Technology Works",
-      "title": "The Dual Action ",
-      "title_highlight": "Advantage",
-      "description": "By combining PEMF and Terahertz frequency technology, both systems target the body at its most fundamental level — the cell. One recharges cellular voltage, the other restores natural cellular rhythm. Together they create a compounding effect that optimises your biological systems for vitality, recovery, and long-term performance.",
-      "headers": {
-        "feature": "Feature",
-        "pemf": "PEMF Technology",
-        "terahertz": "Terahertz Resonance"
-      },
-      "features": {
-        "primary_goal": "PRIMARY GOAL",
-        "mechanism": "MECHANISM",
-        "key_benefit": "KEY BENEFIT",
-        "analogy": "ANALOGY"
-      },
-      "pemf_values": {
-        "badge": "PEMF TECHNOLOGY",
-        "tagline": "The Battery Charger",
-        "bullets": [
-          "Recharges cellular voltage",
-          "Restores magnetic field balance",
-          "Flushes inflammation",
-          "Supports deep tissue recovery"
-        ]
-      },
-      "terahertz_values": {
-        "badge": "TERAHERTZ RESONANCE",
-        "tagline": "The Fine Tuner",
-        "bullets": [
-          "Matches healthy cell vibration",
-          "Activates dormant cells",
-          "Dissolves energy blockages",
-          "Boosts microcirculation and flow"
-        ]
-      }
-    },
-    "story": {
-      "badge": "The Coach",
-      "title": "Breaking heads free. ",
-      "title_highlight": "Rebuilding from the ground up.",
-      "p1": "I'm a health, wellness and movement coach with over 13 years of experience helping people biohack their health, breaking out of their own heads, reclaiming their power and rebuilding from the ground up.",
-      "p2": "That means addressing poor nutrition habits, lack of self discipline and the disconnect between mind and body through building strong resilient bodies and learning the art of movement.",
-      "p3": "But after struggling with chronic pain, burnout and persistently low energy myself, I realised that most health approaches miss something fundamental.",
-      "p4": "They work around the body instead of with it. Discovering the dual technology of PEMF and Terahertz frequency opened a perspective I couldn't ignore and one I now share with everyone seeking a deeper path to wellbeing.",
-      "quote": "My drive for health, wellness and longevity led me somewhere most people haven't looked yet and that's exactly why wellneXfreQ exists."
-    },
-    "tech": {
-      "badge": "The \"Dual Action Advantage\"",
-      "technology_01": "01",
-      "technology_02": "02",
-      "pemf_title": "PEMF CELLULAR RECHARGE",
-      "pemf_subtitle": "Powering Your Electrical System.",
-      "pemf_desc": "Originally developed by NASA to support astronaut health, PEMF uses safe low frequency magnetic pulses to work with the body at a cellular level, like charging a battery. It promotes cellular repair, supports circulation, improves blood flow and supports pain relief.",
-      "pemf_nasa_badge": "ENERGY BASED WELLNESS BACKED BY NASA",
-      "title": "The Dual Action",
-      "title_highlight": "Advantage",
-      "subtitle": "By combining PEMF and Terahertz frequency technology, both systems target the body at its most fundamental level — the cell. One recharges cellular voltage, the other restores natural cellular rhythm. Together they create a compounding effect that optimises your biological systems for vitality, recovery, and long-term performance.",
-      "pemf_benefits": [
-        {
-          "label": "Repair",
-          "desc": "Accelerate cellular regeneration and tissue recovery."
-        },
-        {
-          "label": "Recovery",
-          "desc": "Flush inflammation and reduce physical stress."
-        },
-        {
-          "label": "Oxygenate",
-          "desc": "Enhance circulation and oxygen rich nutrient delivery."
-        }
-      ],
-      "thz_title": "TERAHERTZ ACTIVATION",
-      "thz_subtitle": "Restoring Cellular Vibration.",
-      "thz_desc": "Terahertz frequency sits between microwave and infrared waves, known as the \"Wave of Life\" because it vibrates in harmony with healthy human cells. When your cellular rhythm falls out of tune, imbalance follows. These waves restore coherence, awaken your innate recovery potential and amplify your body's natural energy.",
-      "thz_benefits": [
-        {
-          "label": "Activate",
-          "desc": "Wake up underperforming cells for peak function."
-        },
-        {
-          "label": "Flow",
-          "desc": "Support microcirculation and internal energy pathways."
-        },
-        {
-          "label": "Balance",
-          "desc": "Align your body's natural biological coherence."
-        }
-      ]
-    }
-  },
-  "shop": {
-    "hero": {
-      "badge": "Biohacking Arsenal",
-      "title": "Our Complete ",
-      "title_highlight": "Collection",
-      "subtitle": "Explore our meticulously curated array of professional PEMF and Terahertz frequency devices engineered for total cellular mastery."
-    },
-    "list": {
-      "loading": "Loading Products...",
-      "empty": "No products currently available in the catalog.",
-      "badge": "High Tech",
-      "button": "Explore Capabilities"
-    },
-    "cta": {
-      "title": "Unsure Which Frequency Fits You?",
-      "subtitle": "Our coaching team is ready to analyze your specific wellness goals to match you with the precise device protocol you need.",
-      "button": "Consult With A Coach"
-    }
-  },
-  "blog": {
-    "hero": {
-      "badge": "Insights & Education",
-      "title": "The ",
-      "title_highlight": "Frequency",
-      "title_suffix": " Journal",
-      "subtitle": "Science, performance, and the cellular edge. Deep-dives on PEMF, Terahertz frequency, recovery, and biohacking from 13+ years in the field."
     },
     "featured": {
-      "badge": "Featured",
-      "read_more": "Read more"
+      "badge": "Technology Spotlight",
+      "title": "Experience the Next Era of Home Wellness",
+      "description": "Our flagship OlyLife systems represent the pinnacle of bio-hacking technology. Designed for daily use, these devices bring the benefits of institutional-grade recovery to your living room.",
+      "cta": "Explore the Catalogue",
+      "learn_more": "Learn More"
     },
-    "list": {
-      "read_more": "Read more",
-      "loading": "Loading Articles..."
-    },
-    "categories": {
-      "Technology": "Technology",
-      "Performance": "Performance",
-      "Coaching": "Coaching",
-      "Wellness": "Wellness",
-      "Getting Started": "Getting Started"
-    }
-  },
-  "product_detail": {
-    "loading": "Loading product details...",
-    "breadcrumb": {
-      "home": "Home",
-      "tech": "Technology"
-    },
-    "badge": "Quantum Technology",
-    "headers": {
-      "benefits": "Key Benefits",
-      "price": "Retail Price",
-      "pricing": "Pricing",
-      "how": "How it Works",
-      "who": "Who it's For",
-      "science": "The Science",
-      "gallery": "Gallery"
-    },
-    "pricing": {
-      "contact": "Contact for Pricing",
-      "fallback": "We'll match you with the right package",
-      "direct": "Direct sale"
-    },
-    "button": "Inquire to Purchase",
-    "inquiry": {
-      "title": "Purchase Inquiry",
-      "subtitle": "Our professional-grade devices are available via direct inquiry to ensure you get the right technology for your specific needs."
-    }
-  },
-  "blog_post": {
-    "loading": "Loading blog post...",
-    "not_found": "Post Not Found",
-    "back_to_blog": "Back to Blog",
-    "back_to_journal": "Back to Journal",
-    "featured": "Featured",
     "cta": {
-      "title": "Ready to Experience the Difference?",
-      "subtitle": "Explore our full range of frequency wellness devices.",
-      "view_tech": "View Technology",
-      "inquire": "Inquire Now"
-    },
-    "nav": {
-      "prev": "Previous",
-      "next": "Next"
+      "title": "Ready to Start Your Journey?",
+      "subtitle": "Contact our consultants today to find the right frequency solution for your wellness goals.",
+      "button": "Work with a Consultant"
     }
   },
-  "common": {
-    "navigation": {
-      "back": "Back",
-      "back_to_catalog": "Back to Catalog",
-      "back_to_journal": "Back to Journal",
-      "view_products": "Explore Product Range",
-      "products": "Products"
+  "products": {
+    "title": "Our Recovery Suite",
+    "subtitle": "Precision-engineered devices for cellular vitality and systemic balance.",
+    "filters": {
+      "all": "All Solutions",
+      "pemf": "PEMF Systems",
+      "thz": "Terahertz Devices",
+      "hydrogen": "Hydrogen Therapy"
     },
-    "affiliate": {
-      "title": "Affiliate Program",
-      "hero_title": "Love the technology?",
-      "hero_highlight": "Share it and earn.",
-      "subtitle": "Join our affiliate program and become part of the wellneXfreQ movement.",
-      "p1_title": "High Commission",
-      "p1_desc": "Earn competitive commissions on every successful technology referral.",
-      "p2_title": "Join a Movement",
-      "p2_desc": "Be at the forefront of cellular wellness and join our global community.",
-      "button": "Join Partner Program"
-    },
-    "form": {
-      "labels": {
-        "name": "Full Name",
-        "email": "Email Address",
-        "phone": "Phone Number (Optional)",
-        "product": "Product of Interest",
-        "interest": "I Am Interested In",
-        "message": "Message",
-        "source": "How did you hear about us? (Optional)"
-      },
-      "placeholders": {
-        "name": "John Doe",
-        "email": "john@example.com",
-        "phone": "+1 (555) 000-0000",
-        "product": "Select a product",
-        "interest": "Select interest",
-        "message": "Tell us about your health goals or specific questions...",
-        "source": "Select an option"
-      },
-      "options": {
-        "interests": {
-          "label": "I Am Interested In",
-          "placeholder": "Select interest",
-          "general": "General Inquiry",
-          "buy": "I Want to Buy",
-          "consult": "Book My Consultation",
-          "affiliate": "Become an Affiliate"
-        },
-        "sources": {
-          "instagram": "Instagram",
-          "facebook": "Facebook",
-          "friend": "Friend / Referral",
-          "search": "Search Engine",
-          "other": "Other"
-        }
-      },
-      "submit": "Send Message",
-      "success": {
-        "title": "Message Sent Successfully",
-        "desc": "We've received your message and our team will be in touch shortly."
-      },
-      "error": {
-        "title": "Error Sending",
-        "desc": "There was a problem sending your inquiry. Please try again."
-      },
-      "validation": {
-        "name": "Name must be at least 2 characters.",
-        "email": "Invalid email address.",
-        "message": "Message must be at least 10 characters."
-      }
+    "card": {
+      "view_details": "View Technology Details",
+      "order_button": "Request Consultation"
     }
   },
-  "contact": {
-    "hero": {
-      "title": "Let's Connect",
-      "subtitle": "Ready to explore frequency technology or have questions about our products? Reach out and we'll guide you to the right solution."
+  "product": {
+    "tabs": {
+      "features": "Key Benefits",
+      "technology": "Technical Spec",
+      "gallery": "Device Gallery"
     },
-    "info": {
-      "title": "Contact Info",
-      "email": "Email",
-      "phone": "Phone",
-      "location": "Location"
+    "spec_labels": {
+      "power": "Power Input",
+      "frequency": "Frequency Output",
+      "dimensions": "Dimensions",
+      "weight": "Weight"
     },
-    "help": {
-      "title": "Not sure where to start?",
-      "text": "Tell us about your current health challenges or performance goals in the message, and we'll recommend the optimal technology stack for your specific needs."
-    },
-    "form": {
-      "title": "Send an Inquiry",
-      "labels": {
-        "interest": "I Am Interested In"
-      },
-      "placeholders": {
-        "interest": "Select an option"
-      }
+    "cta": {
+      "title": "Interested in this Device?",
+      "subtitle": "Connect with our team to discuss how it can assist your specific recovery goals.",
+      "button": "Enquire Now"
     }
+  },
+  "blogs": {
+    "title": "The Science of Frequency",
+    "subtitle": "Articles, research, and deep dives into PEMF and Terahertz technology.",
+    "read_more": "Read Deep Dive",
+    "featured": "Featured Research"
   },
   "order": {
-    "hero": {
-      "badge": "Direct Order Request",
-      "title": "Order Your Frequency Technology",
-      "subtitle": "Submit a direct purchase request for wellneXfreQ devices. Our team will confirm availability, P&H and final details with you personally before payment."
-    },
+    "title": "Professional Consultation",
+    "subtitle": "Please provide your details below and a specialist will contact you to discuss your specific technology needs.",
     "form": {
-      "title": "Order Now",
-      "description": "Fill in your details and choose the technology you wish to purchase. This form sends a non-binding order request so we can confirm stock, shipping and payment details with you directly.",
-      "labels": {
-        "first_name": "First Name",
-        "last_name": "Last Name",
-        "email": "Email",
-        "phone": "Phone Number",
-        "id_number": "ID Number (EA-XXXXXX)",
-        "gender": "Gender",
-        "male": "Male",
-        "female": "Female",
-        "country": "Country",
-        "address": "Full Address",
-        "products": "Products to Order",
-        "quantity": "Qty",
-        "add_product": "Add Product",
-        "summary_subtotal": "Subtotal",
-        "summary_ph": "Packaging & Handling",
-        "summary_total": "Estimated Total",
-        "consent": "I understand this is an order request and that final confirmation, shipping timelines and payment details will be provided to me via email or WhatsApp.",
-        "submit": "Submit Order Request",
-        "submitting": "Submitting...",
-        "remove_line": "Remove line"
-      },
-      "placeholders": {
-        "product": "Select a product",
-        "search_product": "Search product...",
-        "no_product": "No product found.",
-        "search_country": "Search country...",
-        "no_country": "No country found."
-      }
-    },
-    "validation": {
-      "first_name": "First name is required.",
-      "last_name": "Last name is required.",
-      "email": "Valid email is required.",
-      "phone": "Phone number is required.",
-      "id_suffix": "ID must be 6 characters after EA- prefix.",
-      "gender": "Please select gender.",
-      "country": "Please select a country.",
-      "address": "Please enter your full address.",
-      "items": "Please select at least one product and quantity.",
-      "consent": "You must confirm you understand the purchasing methodology."
-    },
-    "methodology": {
-      "title": "How the Purchase Works",
-      "steps": [
-        "Submit your order request with your details and chosen devices.",
-        "Our team reviews your request, confirms availability, P&H and total, then contacts you via email or WhatsApp.",
-        "Once you confirm, we provide secure payment instructions and finalise shipping arrangements."
-      ],
-      "note": "All prices shown are indicative device prices in USD with +10% P&H added for each line. Final amount, currency and shipping timelines will be confirmed with you directly before payment."
-    },
-    "social": {
-      "title": "Validate & Connect",
-      "subtitle": "You can always confirm our presence, activity and updates through our official social channels and direct contact details below."
-    },
-    "success": {
-      "title": "Order Request Sent",
-      "desc": "Thank you. Your order request has been received. We will contact you shortly to confirm details and next steps."
-    },
-    "error": {
-      "title": "Order Request Failed",
-      "desc": "There was a problem sending your order request. Please try again or contact us directly."
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "product": "Product of Interest",
+      "message": "Specify your recovery goals or questions...",
+      "submit": "Submit Request",
+      "success": "Request received. We will be in touch shortly.",
+      "error": "Submission failed. Please try again."
     }
   },
   "footer": {
-    "tagline": "Biohacking your health with PEMF and Terahertz technology. Your daily ritual for longevity. Built to move. Created to last. Powered at the source.",
-    "affiliate": {
-      "title": "Love the technology? Share it and earn.",
-      "subtitle": "Join our affiliate program and become part of the wellneXfreQ movement.",
-      "button": "Become an Affiliate"
-    },
-    "company": "Company",
-    "tech": "Technology",
-    "connect": "Connect",
-    "serving": "Sourcing",
-    "philosophy": "The Journey",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "rights": "All rights reserved.",
-    "about": "About"
-  },
-  "privacy": {
-    "title": "Privacy Policy",
-    "effective_date": "Effective date: ",
-    "date": "April 1, 2026",
-    "back_to_home": "Back to Home",
-    "badge": "Legal",
-    "intro": "wellneXfreQ (\"we\", \"us\", or \"our\") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit our website or submit an inquiry through our contact form.",
-    "footer_text": "wellneXfreQ © {{year}}. All rights reserved.",
-    "footer_link": "Contact us with questions",
-    "sections": [
-      {
-        "title": "Information We Collect",
-        "body": "When you submit an inquiry through our contact form, we collect the following information: your full name, email address, phone number (if provided), the product or service you are interested in, your message, and how you heard about us. We may also collect basic analytics data such as pages visited and time spent on the site through standard web analytics tools. We do not collect payment information — all purchases are handled through direct inquiry, not an online checkout."
-      },
-      {
-        "title": "How We Use Your Information",
-        "body": "The information you provide is used solely to respond to your inquiry, provide product information, and follow up on your interest in our frequency wellness technology. We do not use your data for automated marketing campaigns without your consent. If you have expressed interest in receiving educational content or updates from wellneXfreQ, we may send occasional communications about new products, blog articles, or relevant wellness information. You may unsubscribe at any time."
-      },
-      {
-        "title": "Information Sharing",
-        "body": "We do not sell, trade, or rent your personal information to third parties. We may share necessary information with trusted service providers who assist us in operating our website or conducting our business — for example, email service providers — provided that those parties agree to keep your information confidential. We may disclose information when required by law or to protect the rights, property, or safety of wellneXfreQ, our clients, or others."
-      },
-      {
-        "title": "Data Retention",
-        "body": "We retain your personal information for as long as is necessary to fulfil the purposes outlined in this policy, or as required by applicable law. Inquiry data is retained for a period of up to 3 years to support ongoing client relationships and service history. You may request deletion of your data at any time by contacting us directly at your@wellnexfreq.com."
-      },
-      {
-        "title": "Cookies and Tracking",
-        "body": "Our website uses cookies and similar tracking technologies to enhance your browsing experience. Essential cookies are required for the site to function. Analytics cookies help us understand how visitors interact with our content — this data is aggregated and anonymised. You can control cookie preferences through your browser settings. Disabling certain cookies may affect the functionality of some parts of the site."
-      },
-      {
-        "title": "Your Rights",
-        "body": "Depending on your location, you may have rights under applicable data protection laws including: the right to access personal information we hold about you, the right to correct inaccurate information, the right to request deletion of your data, the right to withdraw consent for communications at any time, and the right to lodge a complaint with a relevant supervisory authority. To exercise any of these rights, please contact us at your@wellnexfreq.com."
-      },
-      {
-        "title": "Security",
-        "body": "We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, disclosure, alteration, or destruction. While we take the security of your data seriously, no method of transmission over the internet or electronic storage is 100% secure. We encourage you to exercise caution when sharing personal information online."
-      },
-      {
-        "title": "Third-Party Links",
-        "body": "Our website may contain links to third-party websites, including social media platforms and external resources. This Privacy Policy applies only to information collected on the wellneXfreQ website. We are not responsible for the privacy practices of external sites and encourage you to review their privacy policies independently."
-      },
-      {
-        "title": "Changes to This Policy",
-        "body": "We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. When we make material changes, we will update the effective date at the top of this page. We encourage you to review this policy periodically. Continued use of our website after any changes constitutes your acceptance of the updated policy."
-      },
-      {
-        "title": "Contact Us",
-        "body": "If you have any questions, concerns, or requests regarding this Privacy Policy or the handling of your personal data, please contact us at: your@wellnexfreq.com. We aim to respond to all privacy-related inquiries within 10 business days."
-      }
-    ]
-  },
-  "terms": {
-    "title": "Terms of Service",
-    "effective_date": "Effective date: ",
-    "date": "April 1, 2026",
-    "back_to_home": "Back to Home",
-    "badge": "Legal",
-    "intro": "Welcome to wellneXfreQ. By accessing our website and using our services, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our site.",
-    "footer_text": "wellneXfreQ © {{year}}. All rights reserved.",
-    "footer_link": "Contact us with questions",
-    "sections": [
-      {
-        "title": "Scope of Service",
-        "body": "wellneXfreQ provides access to advanced frequency wellness technology and related educational content. Our products are sold through a direct inquiry and coaching model to ensure proper application and education. We do not provide medical advice or treatments."
-      },
-      {
-        "title": "No Medical Advice",
-        "body": "The content on this website and the products offered are for educational and wellness purposes only. They are not intended to diagnose, treat, cure, or prevent any disease. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this website."
-      },
-      {
-        "title": "Product Availability",
-        "body": "While we strive to maintain accurate product descriptions and availability, we reserve the right to limit quantities or discontinue products at any time without notice. Product specifications are subject to change based on technological advancements."
-      },
-      {
-        "title": "Pricing and Payment",
-        "body": "Pricing for our professional-grade devices is provided upon inquiry. We reserve the right to change prices at any time. All transactions are handled directly through our secure invoicing process rather than a public checkout."
-      },
-      {
-        "title": "Intellectual Property",
-        "body": "All content on this website, including text, graphics, logos, images, and software, is the property of wellneXfreQ or its content suppliers and is protected by international copyright and intellectual property laws. Unauthorized use of any materials is strictly prohibited."
-      },
-      {
-        "title": "User Conduct",
-        "body": "By using our site, you agree to use it for lawful purposes only and not to engage in any activity that could damage, disable, or impair the site's functionality or interfere with other users' access."
-      },
-      {
-        "title": "Limitation of Liability",
-        "body": "wellneXfreQ and its officers, directors, and employees shall not be held liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of our website or products."
-      },
-      {
-        "title": "Governing Law",
-        "body": "These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which wellneXfreQ operates, without regard to its conflict of law principles."
-      },
-      {
-        "title": "Termination",
-        "body": "We reserve the right to terminate or suspend access to our website and services immediately, without prior notice, for any reason whatsoever, including without limitation if you breach the Terms."
-      },
-      {
-        "title": "Contact",
-        "body": "If you have any questions about these Terms, please contact us at your@wellnexfreq.com."
-      }
-    ]
-  },
-  "not_found": {
-    "title": "Frequency Not Found",
-    "subtitle": "The page you are searching for has drifted out of resonance. Let's tune back to the main spectrum.",
-    "back": "Go Back",
-    "home": "Return to Base"
+    "tagline": "Advanced frequency technology for cellular resonance and systemic recovery.",
+    "quick_links": "Navigation",
+    "contact": "Global Support",
+    "copyright": "© 2026 WellneXfreQ. All rights reserved.",
+    "disclaimer": "The OlyLife devices are intended for relaxation and supporting general wellness. They are not medical devices and do not diagnose or treat medical conditions."
   },
   "admin": {
     "login": {
-      "title": "Admin Portal",
+      "title": "Admin Access",
       "email": "Email",
       "password": "Password",
-      "submit": "Login",
-      "failed": "Login Failed"
+      "button": "Authenticate",
+      "error_auth": "Invalid credentials",
+      "error_input": "Email and password required"
     },
     "dashboard": {
-      "title": "Admin Control Center",
-      "status": "Authenticating & Loading Dashboard...",
-      "go_to_site": "Go to Site",
-      "logout": "Logout",
+      "title": "Control Center",
+      "logout": "Exit Portal",
       "tabs": {
-        "products": "Products Hub",
-        "blogs": "Blog Journal",
-        "inquiries": "Inquiries",
-        "orders": "Orders"
+        "products": "Inventory",
+        "blogs": "Knowledge Base",
+        "inquiries": "Consultations",
+        "orders": "Device Orders"
       },
       "products": {
-        "title": "Manage Products",
-        "new": "New Product",
-        "edit": "Edit",
-        "delete": "Delete",
-        "view_live": "View Live",
-        "no_products": "No products found. Create one.",
-        "delete_confirm": "Are you sure you want to delete this product?"
+        "title": "Catalogue Management",
+        "add_new": "Add Device",
+        "columns": {
+          "image": "Asset",
+          "name": "Model",
+          "slug": "Endpoint",
+          "actions": "Manage"
+        },
+        "delete_confirm": "Wipe this device from the database?",
+        "save_failed": "Cloud sync failed"
       },
-      "blogs": {
-        "title": "Manage Blog Articles",
-        "new": "New Article",
-        "edit": "Edit",
-        "delete": "Delete",
-        "view_live": "View Live",
-        "no_articles": "No articles found. Create your first post!",
-        "delete_confirm": "Permanently delete this blog article?"
-      },
-      "inquiries": {
-        "title": "Client Inquiries",
-        "active": "Active Inbox",
-        "archived": "Archived",
-        "no_active": "No active inquiries. You're all caught up!",
-        "no_archived": "No archived inquiries yet.",
-        "mark_read": "Mark Read",
-        "mark_unread": "Mark Unread",
-        "archive": "Archive",
-        "unarchive": "Unarchive",
-        "delete": "Delete",
-        "delete_confirm": "Permanently delete this inquiry?",
-        "new_badge": "New"
-      },
-      "upload": {
-        "too_large": "The image exceeds the 500KB limit.",
-        "failed": "Upload Failed"
-      },
-      "error_title": "Error Loading Configuration",
-      "error_message": "An unknown error occurred. Make sure your Firestore Rules are set.",
-      "retry": "Retry",
       "modals": {
         "product": {
-          "title_new": "Create New Product",
-          "title_edit": "Edit Product",
-          "description": "Fill in the product details and optimize your image gallery.",
+          "title_new": "New Device Entry",
+          "title_edit": "Update Model Info",
+          "description": "Ensure all localized fields are entered for full site compatibility.",
           "labels": {
-            "main_img": "Main Product Image (Max 500KB)",
-            "gallery_img": "Gallery Images (Max 4, 500KB each)",
-            "name": "Product Name",
-            "slug": "URL Slug (e.g. name-of-product)",
-            "image_fallback": "Fallback Direct Image Link",
-            "price": "Price",
-            "tagline": "Short Tagline",
-            "desc": "Main Description",
-            "how": "How it Works",
-            "who": "Who it's For",
-            "science": "The Science",
-            "benefits": "Benefits (Comma separated)"
-          },
-          "placeholders": {
-            "benefits": "e.g. Sleep recovery, Muscle tension..."
+            "name": "Model Name",
+            "slug": "Slug / URL Key",
+            "price": "Market Value / Price",
+            "main_img": "Primary Image Asset",
+            "image_fallback": "Cloud Image Backup",
+            "gallery": "Supporting Imagery"
           },
           "buttons": {
-            "cancel": "Cancel",
-            "save": "Save Changes",
-            "create": "Create Product"
+            "cancel": "Discard",
+            "create": "Initialize",
+            "save": "Push Updates"
           }
         },
         "blog": {
-          "title_new": "Draft New Article",
-          "title_edit": "Edit Article",
-          "description": "Fill in the rich content data for your blog. Thumbnails must be under 500KB.",
-          "labels": {
-            "header_img": "Header Image (Max 500KB)",
-            "title": "Title",
-            "slug": "URL Slug (e.g. why-frequency)",
-            "category": "Category",
-            "date": "Date String Format",
-            "read_time": "Read Time",
-            "excerpt": "Short Excerpt Summary",
-            "body_title": "Body Content Strategy",
-            "intro": "Introductory Paragraphs",
-            "sections": "Article Sections Array",
-            "add_section": "Add Section",
-            "section_heading": "Section Heading",
-            "section_body": "Section Body Paragraphs",
-            "no_sections": "No sections added. Click \"+ Add Section\" above to start building the body.",
-            "conclusion": "Conclusion Wrap-up"
+          "title_new": "New Knowledge Article",
+          "title_edit": "Edit Article Content",
+          "description": "Markdown is supported for the main content body.",
+          "buttons": {
+            "cancel": "Discard",
+            "create": "Publish",
+            "save": "Update Live"
           }
         }
       },
       "orders": {
-        "title": "Client Orders",
-        "active": "Active Inbox",
-        "archived": "Archived",
-        "no_active": "No active orders. You're all caught up!",
-        "no_archived": "No archived orders yet.",
-        "no_orders": "No orders have been placed yet.",
-        "mark_read": "Mark Read",
-        "mark_unread": "Mark Unread",
-        "archive": "Archive",
-        "unarchive": "Unarchive",
-        "delete": "Delete",
-        "delete_confirm": "Permanently delete this order?",
-        "new_badge": "New",
-        "total": "Total",
-        "line_total": "Line Total",
-        "summary_subtotal": "Devices subtotal",
-        "summary_ph": "P&H total",
-        "address": "Address"
+        "no_archived": "No archived orders found"
       }
     }
   }

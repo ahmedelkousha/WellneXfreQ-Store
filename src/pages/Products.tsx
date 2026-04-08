@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useProducts } from "@/hooks/useProducts";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, ArrowRight, Zap, Target, Loader2, Activity } from "lucide-react";
+import { ChevronRight, ArrowRight, Zap, Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import coachJumpImg from "@assets/products-cover2.png";
@@ -22,6 +22,7 @@ export default function Products() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language.split("-")[0];
   const { data: products = [], isLoading } = useProducts();
+  const featuredId = products.find(p => p.isFeatured)?.id || products[0]?.id;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -83,36 +84,20 @@ export default function Products() {
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {products.map((product, index) => {
-                const isFeatured = index === 0;
-                // Determine tech badge
-                let techBadge = "Frequency";
-                let TechIconVar = Zap;
-                if (product.slug.includes("p90") || product.slug.includes("wand")) {
-                  techBadge = product.slug.includes("plus") ? "Dual Tech" : (product.slug.includes("wand") ? "Terahertz" : "PEMF");
-                  TechIconVar = product.slug.includes("wand") ? Activity : Zap;
-                } else if (product.slug.includes("bar")) {
-                  techBadge = "Hydrogen";
-                  TechIconVar = Target;
-                }
-
-                const TechIcon = TechIconVar;
+              {products.map((product) => {
+                const isFeatured = product.id === featuredId;
 
                 return (
                   <motion.div
                     key={product.id}
                     variants={fadeIn}
-                    className={`group bg-card border border-white/5 rounded-2xl overflow-hidden hover:border-primary/40 transition-[border-color,box-shadow,transform] duration-500 hover:shadow-[0_0_40px_rgba(126,255,212,0.08)] flex flex-col will-change-transform ${
-                      isFeatured ? "md:col-span-2 lg:col-span-2 md:flex-row h-auto" : "h-full"
-                    }`}
+                    className="group bg-card border border-white/5 rounded-2xl overflow-hidden hover:border-primary/40 transition-[border-color,box-shadow,transform] duration-500 hover:shadow-[0_0_40px_rgba(126,255,212,0.08)] flex flex-col will-change-transform h-full"
                   >
                     <Link 
                       to={`/${currentLang}/product/${product.slug}`} 
-                      className={`block overflow-hidden relative ${
-                        isFeatured ? "md:w-1/2 aspect-video md:aspect-auto" : "aspect-video"
-                      }`}
+                      className="block overflow-hidden relative aspect-video"
                     >
                       <div className="absolute inset-0 bg-linear-to-t from-card/80 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
                       <img
@@ -120,48 +105,32 @@ export default function Products() {
                         alt={currentLang === "pl" ? (product.name_pl || product.name) : product.name}
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out"
                       />
-                      <div className="absolute top-4 left-4 z-20">
-                        <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border bg-primary/10 text-primary border-primary/30 backdrop-blur-md flex items-center gap-1.5 leading-none">
-                          <TechIcon className="w-3 h-3" />
-                          {techBadge}
-                        </span>
-                      </div>
                       {isFeatured && (
-                        <div className="absolute bottom-4 left-4 z-20">
-                          <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded bg-primary text-black/80">
-                            Featured Product
+                        <div className="absolute top-4 left-4 z-20">
+                          <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded bg-primary text-black/80 flex items-center gap-1.5">
+                            <Zap className="w-3 h-3" />
+                            FEATURED
                           </span>
                         </div>
                       )}
                     </Link>
 
-                    <div className={`p-6 md:p-8 flex flex-col grow ${isFeatured ? "md:w-1/2 md:p-12 justify-center" : ""}`}>
-                      <h3 className={`${isFeatured ? "text-2xl md:text-3xl" : "text-xl"} font-heading font-bold text-white mb-3 group-hover:text-primary transition-colors`}>
+                    <div className="p-6 md:p-8 flex flex-col grow">
+                      <h3 className="text-xl font-heading font-bold text-white mb-4 group-hover:text-primary transition-colors">
                         {currentLang === "pl" ? (product.name_pl || product.name) : product.name}
                       </h3>
 
-                      <p className={`text-white/50 leading-relaxed mb-6 grow ${isFeatured ? "text-sm md:text-base line-clamp-4" : "text-sm line-clamp-3"}`}>
-                        {currentLang === "pl"
-                          ? (product.tagline_pl || product.tagline)
-                          : (product.tagline)}
+                      <p className="text-sm text-white/50 group-hover:text-white/70 transition-colors line-clamp-3 leading-relaxed mb-8 grow">
+                        {currentLang === "pl" ? (product.shortDescription_pl || product.shortDescription) : product.shortDescription}
                       </p>
 
-                      <div className={`space-y-3 mb-8 ${isFeatured ? "grid md:grid-cols-2 gap-x-8 gap-y-3 space-y-0" : ""}`}>
-                        {(currentLang === "pl" ? (product.benefits_pl || product.benefits) : product.benefits)?.slice(0, isFeatured ? 4 : 2).map((benefit, i) => (
-                          <div key={i} className="flex items-center text-xs text-white/40 group-hover:text-white/70 transition-colors">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary/40 mr-3 group-hover:bg-primary transition-colors shrink-0" />
-                            {benefit}
-                          </div>
-                        ))}
-                      </div>
-
                       <div className="pt-6 border-t border-white/5 mt-auto flex items-center justify-between">
-                        <span className={`font-mono uppercase tracking-widest text-white/20 group-hover:text-primary/50 transition-colors ${isFeatured ? "text-sm" : "text-xs"}`}>
+                        <span className="font-mono uppercase tracking-widest text-white/20 group-hover:text-primary/50 transition-colors text-sm">
                           {product.price || "$$$"}
                         </span>
-                        <Button asChild variant="ghost" size={isFeatured ? "lg" : "sm"} className="text-xs font-bold uppercase tracking-widest hover:bg-primary/10 hover:text-primary -mr-3 px-3">
-                          <Link to={`/${currentLang}/product/${product.slug}`}>
-                            {t("shop.list.button")} <ChevronRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                        <Button asChild variant="default" size="sm" className="font-bold uppercase tracking-widest text-xs px-4 bg-primary text-black hover:bg-primary/90 transition-colors">
+                          <Link to={`/${currentLang}/order`}>
+                            {t("nav.order-footer")} <ChevronRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
                           </Link>
                         </Button>
                       </div>

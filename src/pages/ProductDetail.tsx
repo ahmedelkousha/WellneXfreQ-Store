@@ -37,11 +37,11 @@ export default function ProductDetail() {
   }
 
   const scrollToForm = () => {
-    document.getElementById("inquiry-form")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("order-section")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="bg-background min-h-screen pt-24 pb-20">
+    <div className="bg-background min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4">
 
         <button 
@@ -82,24 +82,18 @@ export default function ProductDetail() {
             <div className="inline-block px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold mb-6 uppercase tracking-wider w-fit">
               {t("product_detail.badge")}
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-8 leading-tight">
               {currentLang === "pl" ? (product.name_pl || product.name) : product.name}
             </h1>
-            <p className="text-xl text-primary font-medium mb-6">
-              {currentLang === "pl" ? (product.tagline_pl || product.tagline) : product.tagline}
-            </p>
-            <p className="text-white/70 text-lg leading-relaxed mb-10">
-              {currentLang === "pl" ? (product.description_pl || product.description) : product.description}
-            </p>
 
-            {/* Key Benefits */}
+            {/* Key Features */}
             <div className="mb-8">
               <h3 className="text-sm uppercase tracking-widest text-white/50 font-semibold mb-4">{t("product_detail.headers.benefits")}</h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {(currentLang === "pl" ? (product.benefits_pl || product.benefits) : product.benefits).map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-3">
+              <ul className="grid grid-cols-1 gap-4">
+                {(currentLang === "pl" ? (product.features_pl || product.features) : product.features)?.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-4">
                     <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-white/80">{benefit}</span>
+                    <span className="text-white/80 text-sm leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -145,43 +139,12 @@ export default function ProductDetail() {
               size="lg"
               className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg font-semibold shadow-[0_0_30px_rgba(126,255,212,0.2)]"
             >
-              {t("product_detail.button")}
+              {t("nav.order-footer")}
             </Button>
           </motion.div>
         </div>
 
-        {/* Details Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
-          }}
-          className="grid md:grid-cols-3 gap-8 mb-24"
-        >
-          <motion.div variants={fadeIn} className="bg-card/40 border border-white/5 rounded-3xl p-8">
-            <h3 className="text-2xl font-heading font-semibold text-white mb-4">{t("product_detail.headers.how")}</h3>
-            <p className="text-white/70 leading-relaxed">
-              {currentLang === "pl" ? (product.howItWorks_pl || product.howItWorks) : product.howItWorks}
-            </p>
-          </motion.div>
 
-          <motion.div variants={fadeIn} className="bg-card/40 border border-white/5 rounded-3xl p-8">
-            <h3 className="text-2xl font-heading font-semibold text-white mb-4">{t("product_detail.headers.who")}</h3>
-            <p className="text-white/70 leading-relaxed">
-              {currentLang === "pl" ? (product.whoItsFor_pl || product.whoItsFor) : product.whoItsFor}
-            </p>
-          </motion.div>
-
-          <motion.div variants={fadeIn} className="bg-card/40 border border-white/5 rounded-3xl p-8">
-            <h3 className="text-2xl font-heading font-semibold text-white mb-4">{t("product_detail.headers.science")}</h3>
-            <p className="text-white/70 leading-relaxed">
-              {currentLang === "pl" ? (product.science_pl || product.science) : product.science}
-            </p>
-          </motion.div>
-        </motion.div>
 
         {/* Gallery */}
         {product.gallery && product.gallery.length > 0 && (
@@ -206,27 +169,9 @@ export default function ProductDetail() {
             </div>
           </motion.div>
         )}
-        <OrderNow />
-        {/* Inquiry Form */}
-        {/* <motion.div
-          id="inquiry-form"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          className="max-w-3xl mx-auto bg-card border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden"
-        >
-          <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-transparent via-primary to-transparent"></div>
-
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-heading font-bold text-white mb-4">{t("product_detail.inquiry.title")}</h2>
-            <p className="text-white/60">
-              {t("product_detail.inquiry.subtitle")}
-            </p>
-          </div>
-
-          <ContactForm defaultProduct={product.id} />
-        </motion.div> */}
+        <div id="order-section">
+          <OrderNow />
+        </div>
 
       </div>
     </div>

@@ -8,7 +8,8 @@
     "products": "Produkty",
     "contact": "Kontakt",
     "inquire": "Zapytaj teraz",
-    "order": "Zaczynajmy"
+    "order": "Zaczynajmy",
+    "order-footer": "Zamów teraz"
   },
   "home": {
     "hero": {
@@ -72,7 +73,7 @@
       "title_highlight": "Urządzenia",
       "subtitle": "Każde urządzenie jest zaprojektowane dla określonego celu biologicznego. Technologia częstotliwości PEMF i Teraherców, przeznaczona do codziennego użytku i długoterminowych rezultatów.",
       "featured_badge": "WYRÓŻNIONE",
-      "featured_title": "OlyLife THz Tera-P90+",
+      "featured_title": "THz Tera-P90+",
       "featured_desc": "Tera-P90+ nowej generacji oferujące ulepszone funkcje dla głębszej regeneracji komórkowej i wydajności.",
       "learn_more": "Dowiedz się więcej →",
       "view_all": "Zobacz wszystkie urządzenia →"
@@ -88,36 +89,32 @@
       "title": "Prawdziwi ludzie. ",
       "title_highlight": "Prawdziwe efekty.",
       "subtitle": "Technologia częstotliwości zmienia życie ludzi na całym świecie.",
+      "disclaimer": "Zastrzeżenie: Indywidualne wyniki mogą się różnić. Przed użyciem skonsultuj się ze swoim lekarzem.",
       "items": [
         {
-          "name": "Maria",
-          "role": "Zweryfikowany użytkownik",
-          "quote": "Od trudności z wstaniem z łóżka przeszłam do chodzenia 5 km dziennie. P90+ nie tylko pomógł moim nogom. Przywrócił mi niezależność."
+          "name": "Kirsty Robertson",
+          "role": "QUEENSLAND, AUSTRALIA",
+          "quote": "Po jednej sesji na tej maszynie miałam miesiąc podróży, dużo siedzenia i moje biodro było absolutnie w porządku. To mnie oszołomiło."
         },
         {
-          "name": "Mark J.",
-          "role": "Przedsiębiorca",
-          "quote": "Jako osoba o wysokiej wydajności myślałem, że zmęczenie to po prostu część pracy. Po 30 dniach z Tera P90+ moja klarowność umysłu jest na poziomie, którego nie czułem od dekady."
+          "name": "Brian Caccaniga",
+          "role": "AUSTRALIA",
+          "quote": "Puk, czuję, że mogę skręcić plecy. Nie boli. Mogę się schylić."
         },
         {
-          "name": "Sarah L.",
-          "role": "Zweryfikowany użytkownik",
-          "quote": "Największą niespodzianką nie była tylko ulga w bólu fizycznym. To był spokój. Mój układ nerwowy w końcu czuje się zresetowany. Śpię całą noc po raz pierwszy od lat."
+          "name": "Ethan Leeds",
+          "role": "BRAZIL",
+          "quote": "Lubię myśleć o P90 w jego bardzo prostej formie jako o ludzkiej ładowarce akumulatorów. My jesteśmy akumulatorem, P90 ładowarką."
         },
         {
-          "name": "Robert K.",
-          "role": "Senior / Pasjonat Ogrodnictwa",
-          "quote": "Sztywność stawów była moją codziennością, dopóki nie spróbowałem różdżki. To tak, jakby moje stawy zostały naoliwione. W końcu mogę znów cieszyć się ogrodnictwem bez bólu następnego dnia."
+          "name": "Luigi",
+          "role": "VERIFIED USER",
+          "quote": "Mam siłę Herkulesa, aby móc wprowadzić te wszystkie małe zmiany w moim życiu."
         },
         {
-          "name": "Elena S.",
-          "role": "Instruktorka Jogi",
-          "quote": "Używam urządzenia Terahertz jako części mojego rytuału po praktyce. Fale pomagają mi wejść w głębszy stan relaksu i jasności umysłu, którego nie osiągnęłam żadnym innym narzędziem."
-        },
-        {
-          "name": "Alex M.",
-          "role": "Zawodowy Sportowiec",
-          "quote": "Regeneracja to tajna broń w moim treningu. P90+ skrócił czas zakwasów o połowę. To absolutny przełom w moich przygotowaniach do zawodów."
+          "name": "Jim Feldman",
+          "role": "SYDNEY, AUSTRALIA",
+          "quote": "Coś, z czym zmagałem się przez ponad 20 lat – po prostu zniknęło. Moje comiesięczne wizyty u psychologa, zniknęły. Leki, na których polegałem przez lata, zniknęły."
         }
       ]
     },
