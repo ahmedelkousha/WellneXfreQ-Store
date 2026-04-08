@@ -242,7 +242,7 @@
   },
   "shop": {
     "hero": {
-      "badge": "Arsenał Biohackingu",
+      "badge": "PRZEWIŃ, ABY ODKRYĆ",
       "title": "Nasza Pełna ",
       "title_highlight": "Kolekcja",
       "subtitle": "Przeglądaj naszą starannie dobraną ofertę profesjonalnych urządzeń PEMF i częstotliwości Terahertzowej, zaprojektowanych z myślą o całkowitym opanowaniu procesów komórkowych."
@@ -497,11 +497,11 @@
     }
   },
   "footer": {
-    "tagline": "Biohacking zdrowia dzięki technologii PEMF i Terahertz. Twój codzienny rytuał długowieczności. Zbudowany, by się ruszać. Stworzony, by trwać. Zasilany u źródła.",
+    "tagline": "Technologia PEMF i częstotliwości Terahertz dla odnowy biologicznej komórek, regeneracji i długoterminowej wydajności. Niezależny dystrybutor technologii OlyLife.",
     "company": "Firma",
-    "tech": "Technologia",
+    "tech": "Produkty",
     "connect": "Połącz się",
-    "serving": "Obsługiwane regiony",
+    "serving": "Pozyskiwanie",
     "philosophy": "Podróż",
     "privacy": "Polityka Prywatności",
     "terms": "Regulamin",

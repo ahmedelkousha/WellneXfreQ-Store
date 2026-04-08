@@ -80,7 +80,7 @@ export default function Home() {
           <img
             src={heroImg}
             alt="PEMF Therapy"
-            className="w-full h-full object-cover sm:object-bottom-left lg:object-bottom"
+            className="w-full h-full object-cover object-[12%] sm:object-bottom-left lg:object-bottom"
           />
         </motion.div>
 
@@ -389,7 +389,7 @@ export default function Home() {
           {/* Featured Product Card */}
           <motion.div
             variants={fadeIn}
-            className="relative w-auto h-[940px] rounded-3xl overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5"
+            className="relative w-auto h-[110vh] md:h-[940px] rounded-3xl overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5"
           >
             {/* Background Image Setup */}
 
@@ -411,7 +411,7 @@ export default function Home() {
               <img 
                 src={featuredProductImgSm} 
                 alt="OlyLife THz Tera-P90+" 
-                className="h-[940px] w-full object-cover object-[80%] transition-transform duration-1000 group-hover:scale-[1.03]" 
+                className="h-[940px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]" 
               />
             </div>
 
@@ -641,7 +641,7 @@ export default function Home() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="md:py-26 py-10 relative">
+      {/* <section className="md:py-26 py-10 relative">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.div
             initial="hidden"
@@ -675,7 +675,7 @@ export default function Home() {
             </Accordion>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA SECTION */}
       <section className="py-32 relative overflow-hidden">
@@ -707,7 +707,7 @@ export default function Home() {
         </div>
       </section>
 
-      <AffiliateCTA />
+      {/* <AffiliateCTA /> */}
       <div id="contact">
         <OrderNow />
       </div>

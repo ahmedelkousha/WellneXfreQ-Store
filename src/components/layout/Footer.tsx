@@ -56,16 +56,16 @@ export default function Footer() {
     { icon: Facebook, href: "#" },
   ];
 
-  // const TechLinks = () => (
-  //   <ul className="space-y-4">
-  //     <li><Link to={getPath("/product/shaken-massager")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> SHAKEN MASSAGER</Link></li>
-  //     <li><Link to={getPath("/product/thz-tera-p90-plus")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> THz TERA-P90+</Link></li>
-  //     <li><Link to={getPath("/product/vitality-wand")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> VITALITY WAND</Link></li>
-  //     <li><Link to={getPath("/product/h-plus-bar")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> H+ BAR</Link></li>
-  //     <li><Link to={getPath("/product/galaxy-g-one")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> GALAXY G-ONE</Link></li>
-  //     <li><Link to={getPath("/product/tera-p90")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> TERA-P90</Link></li>
-  //   </ul>
-  // );
+  const TechLinks = () => (
+    <ul className="space-y-4">
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> SHAKEN MASSAGER</Link></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> THz TERA-P90+</Link></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> VITALITY WAND</Link></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> H+ BAR</Link></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> GALAXY G-ONE</Link></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> TERA-P90</Link></li>
+    </ul>
+  );
 
   const CompanyLinks = () => (
     <ul className="space-y-4">
@@ -92,7 +92,7 @@ export default function Footer() {
       </li>
       <li className="flex items-start gap-3 text-sm">
         <Activity className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-        <span className="text-foreground/70">{t("footer.serving")}: Australia, Poland, UK, Thailand, Bali & Global</span>
+        <span className="text-foreground/70">{t("footer.serving")}: Australia & Poland</span>
       </li>
     </ul>
   );
@@ -112,9 +112,9 @@ export default function Footer() {
             variants={fadeIn} 
             className="lg:col-span-1 space-y-8"
           >
-            <Link to={`/${currentLang}`} className="inline-block">
+            <a href={getPath("/")} onClick={handleHomeClick} className="inline-block">
               <img src={logo} alt="logo" className="h-8" />
-            </Link>
+            </a>
             <p className="text-white/50 leading-relaxed text-sm max-w-xs">
               {t("footer.tagline")}
             </p>
@@ -140,10 +140,10 @@ export default function Footer() {
             <CompanyLinks />
           </div>
 
-          {/* <div className="hidden md:block">
+          <div className="hidden md:block">
             <h4 className="text-white font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.tech")}</h4>
             <TechLinks />
-          </div> */}
+          </div>
 
           <div className="hidden md:block">
             <h4 className="text-white font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.connect")}</h4>
@@ -161,14 +161,14 @@ export default function Footer() {
                   </div>
                 </AccordionContent>
               </AccordionItem>
-              {/* <AccordionItem value="technology" className="border-white/10">
+              <AccordionItem value="technology" className="border-white/10">
                 <AccordionTrigger className="text-white hover:no-underline font-heading font-semibold tracking-wider text-xs uppercase">{t("footer.tech")}</AccordionTrigger>
                 <AccordionContent>
                   <div className="pt-2 pb-4">
                     <TechLinks />
                   </div>
                 </AccordionContent>
-              </AccordionItem> */}
+              </AccordionItem>
               <AccordionItem value="connect" className="border-white/10">
                 <AccordionTrigger className="text-white hover:no-underline font-heading font-semibold tracking-wider text-xs uppercase">{t("footer.connect")}</AccordionTrigger>
                 <AccordionContent>

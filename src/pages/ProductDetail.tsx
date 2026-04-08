@@ -3,11 +3,12 @@ import { useProducts } from "@/hooks/useProducts";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ChevronRight, Tag, MessageCircle, ShieldCheck, Loader2, ArrowLeft } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+// import ContactForm from "@/components/ContactForm";
 import NotFound from "@/pages/not-found";
 import { useTranslation } from "react-i18next";
-import OrderForm from "@/components/sections/OrderForm";
+// import OrderForm from "@/components/sections/OrderForm";
 import OrderNow from "./OrderNow";
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
