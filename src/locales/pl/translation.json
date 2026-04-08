@@ -68,11 +68,14 @@
       "learn_more": "Skontaktuj się"
     },
     "products": {
-      "title": "Poznaj naszą ",
-      "title_highlight": "Technologię",
-      "subtitle": "Specyficzne częstotliwości dla konkretnych celów biologicznych. Elitarna wydajność, regeneracja komórkowa i kwantowy wellness.",
-      "view": "Zobacz produkt",
-      "view_all": "Zobacz całą technologię"
+      "title": "Poznaj nasze ",
+      "title_highlight": "Urządzenia",
+      "subtitle": "Każde urządzenie jest zaprojektowane dla określonego celu biologicznego. Technologia częstotliwości PEMF i Teraherców, przeznaczona do codziennego użytku i długoterminowych rezultatów.",
+      "featured_badge": "WYRÓŻNIONE",
+      "featured_title": "OlyLife THz Tera-P90+",
+      "featured_desc": "Tera-P90+ nowej generacji oferujące ulepszone funkcje dla głębszej regeneracji komórkowej i wydajności.",
+      "learn_more": "Dowiedz się więcej →",
+      "view_all": "Zobacz wszystkie urządzenia →"
     },
     "blog": {
       "title": "Z Laboratorium ",

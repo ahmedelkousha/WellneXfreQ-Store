@@ -69,10 +69,13 @@
     },
     "products": {
       "title": "Explore Our ",
-      "title_highlight": "Technology",
-      "subtitle": "Specific frequencies for specific biological goals. Elite performance, cellular recovery, and quantum wellness.",
-      "view": "View Product",
-      "view_all": "View All Technology"
+      "title_highlight": "Devices",
+      "subtitle": "Each device is engineered for a specific biological outcome. PEMF and Terahertz frequency technology, designed for daily use and long-term results.",
+      "featured_badge": "FEATURED",
+      "featured_title": "OlyLife THz Tera-P90+",
+      "featured_desc": "Next-generation Tera-P90+ delivering enhanced features for deeper cellular recovery and performance.",
+      "learn_more": "Learn More →",
+      "view_all": "View All Devices →"
     },
     "blog": {
       "title": "From the ",

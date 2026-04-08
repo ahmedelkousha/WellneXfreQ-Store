@@ -18,7 +18,7 @@ const DualTechPanel = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-background text-foreground p-6 pt-20 md:pb-48 pb-28 md:pt-24 md:px-16">
+    <section className="bg-background text-foreground p-6 pt-30 md:pb-48 pb-28 md:pt-32 md:px-16">
       <motion.div 
         initial="hidden"
         whileInView="visible"

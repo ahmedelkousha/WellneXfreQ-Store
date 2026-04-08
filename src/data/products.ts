@@ -20,14 +20,14 @@ export interface Product {
   price?: string;
 }
 
-import vitalityWandImg from "@assets/vitality_wand_1775039147403.png";
-import thzTeraP90PlusImg from "@assets/thz_tera-p90+_1775039147402.png";
-import teraP90Img from "@assets/tera-p90_1775039147404.png";
-import shakenMassagerImg from "@assets/shaken_massager_1775039147402.png";
-import galaxyGOneImg from "@assets/galaxy_g-one_1775039147403.png";
+import vitalityWandImg from "@assets/vitality_wand.png";
+import thzTeraP90PlusImg from "@assets/thz_tera-p90+.png";
+import teraP90Img from "@assets/tera-p90.png";
+import shakenMassagerImg from "@assets/shaken_massager.png";
+import galaxyGOneImg from "@assets/galaxy_g-one.png";
 import skylineSL6Img from "@assets/skyline_sl6.png";
 import a9BamaAirImg from "@assets/a9_bamaair.png";
-import hPlusBarImg from "@assets/h+_bar_1775039147403.png";
+import hPlusBarImg from "@assets/h+_bar.png";
 
 export const products: Product[] = [
   {

@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useProducts } from "@/hooks/useProducts";
 // import { useBlogs } from "@/hooks/useBlogs";
 import { useTranslation } from "react-i18next";
 import useEmblaCarousel from "embla-carousel-react";
@@ -21,6 +20,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import AffiliateCTA from "@/components/sections/AffiliateCTA";
+import featuredProductImgSm from "@assets/featured-product-sm.png";
+import featuredProductImgLg from "@assets/featured-product-lg.png";
 
 import heroImg from "@assets/mountain.png";
 import coachBlankingImg from "@assets/patrycja-coach.png";
@@ -46,22 +47,14 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language.split("-")[0];
   const { scrollYProgress } = useScroll();
-  const { data: products = [] } = useProducts();
   // Blogs DISABLED
   // const { data: blogs = [], isLoading: blogsLoading } = useBlogs();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   // Testimonials Embla Hook
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: true, 
-    align: "start",
-    skipSnaps: false
-  });
-
-  // Products Embla Hook
-  const [productsEmblaRef, productsEmblaApi] = useEmblaCarousel({ 
-    loop: false, 
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
     align: "start",
     skipSnaps: false
   });
@@ -71,16 +64,8 @@ export default function Home() {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
-  const [productsSelectedIndex, setProductsSelectedIndex] = useState(0);
-  const [productsScrollSnaps, setProductsScrollSnaps] = useState<number[]>([]);
-  const [productsPrevBtnDisabled, setProductsPrevBtnDisabled] = useState(true);
-  const [productsNextBtnDisabled, setProductsNextBtnDisabled] = useState(true);
-
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-
-  const productsScrollPrev = useCallback(() => productsEmblaApi && productsEmblaApi.scrollPrev(), [productsEmblaApi]);
-  const productsScrollNext = useCallback(() => productsEmblaApi && productsEmblaApi.scrollNext(), [productsEmblaApi]);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -94,13 +79,6 @@ export default function Home() {
     setNextBtnDisabled(!emblaApi.canScrollNext());
   }, [emblaApi]);
 
-  const onProductsSelect = useCallback(() => {
-    if (!productsEmblaApi) return;
-    setProductsSelectedIndex(productsEmblaApi.selectedScrollSnap());
-    setProductsPrevBtnDisabled(!productsEmblaApi.canScrollPrev());
-    setProductsNextBtnDisabled(!productsEmblaApi.canScrollNext());
-  }, [productsEmblaApi]);
-
   useEffect(() => {
     if (!emblaApi) return;
     onSelect();
@@ -108,14 +86,6 @@ export default function Home() {
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
-
-  useEffect(() => {
-    if (!productsEmblaApi) return;
-    onProductsSelect();
-    setProductsScrollSnaps(productsEmblaApi.scrollSnapList());
-    productsEmblaApi.on("select", onProductsSelect);
-    productsEmblaApi.on("reInit", onProductsSelect);
-  }, [productsEmblaApi, onProductsSelect]);
 
   useEffect(() => {
     const pending = sessionStorage.getItem("pendingScroll");
@@ -246,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* THE JOURNEY SECTION */}
-      <section id="philosophy" className="py-32 bg-white/2 relative overflow-hidden scroll-mt-24">
+      <section id="philosophy" className="py-32 bg-white/2 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -338,7 +308,7 @@ export default function Home() {
         <DualTechFeatures />
       </div>
 
-      
+
       {/* SCIENCE/TECH EXPLAINER */}
       {/* <section id="technology" className="py-32 relative border-b border-white/5">
         <div className="container mx-auto px-4">
@@ -405,9 +375,9 @@ export default function Home() {
             </motion.div>
           </div> */}
 
-          {/* Benefits Grid */}
+      {/* Benefits Grid */}
 
-          {/* <motion.div
+      {/* <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -433,131 +403,72 @@ export default function Home() {
       </section> */}
 
       {/* PRODUCTS SECTION */}
-      <section id="products" className="py-32 relative bg-white/2">
-        <div className="container mx-auto px-4">
+      <section id="products" className="py-32  relative bg-white/2">
+        <div className="mx-auto px-4 h-full w-full">
           <motion.div
             variants={fadeIn}
             className="text-center max-w-3xl mx-auto mb-20"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.products.title")}<br /><span className="text-primary italic">{t("home.products.title_highlight")}</span>
+              {t("home.products.title")}<span className="text-primary italic">{t("home.products.title_highlight")}</span>
             </h2>
-            <p className="text-lg text-white/60 text-left">
+            <p className="text-lg text-white/60">
               {t("home.products.subtitle")}
             </p>
           </motion.div>
 
-          {/* Products Embla Container */}
-          <div className="relative group/embla">
-            <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={productsEmblaRef}>
-              <div className="flex gap-6 md:gap-8">
-                {products.length > 0 ? (
-                  products.map((product, index) => {
-                    const isFeatured = index === 0;
-                    return (
-                      <div
-                        key={product.id}
-                        className={`${isFeatured ? "flex-[0_0_90%] md:flex-[0_0_80%]" : "flex-[0_0_80%] sm:flex-[0_0_50%] md:flex-[0_0_calc(33.333%-1.33rem)]"} min-w-0`}
-                      >
-                        <motion.div
-                          variants={fadeIn}
-                          transition={{ delay: index * 0.1 }}
-                          className={`group relative bg-card border border-white/5 rounded-2xl hover:border-primary/40 hover:shadow-[0_0_40px_rgba(126,255,212,0.08)] flex flex-col h-full ${isFeatured ? "md:flex-row h-auto" : ""
-                          }`}
-                        >
-                          <Link 
-                            to={`/${currentLang}/product/${product.slug}`} 
-                            className={`block overflow-hidden relative rounded-t-2xl ${isFeatured ? "md:w-1/2 aspect-video md:aspect-auto md:rounded-l-2xl md:rounded-tr-none" : "aspect-4/3"
-                            }`}
-                          >
-                            <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent z-10"></div>
-                            <img
-                              src={product.image}
-                              alt={product.name}
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                            {isFeatured && (
-                              <div className="absolute top-4 left-4 z-20">
-                                <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded bg-primary text-black/80">
-                                  Featured
-                                </span>
-                              </div>
-                            )}
-                            <div className="absolute bottom-4 left-4 z-20 right-4 text-left">
-                              <h3 className={`${isFeatured ? "text-xl md:text-2xl" : "text-lg"} font-heading font-bold text-white mb-1`}>
-                                {currentLang === "pl" ? (product.name_pl || product.name) : product.name}
-                              </h3>
-                            </div>
-                          </Link>
-                          <div className={`p-6 flex flex-col grow text-left ${isFeatured ? "md:w-1/2 md:p-8 justify-center" : ""}`}>
-                            <p className={`text-white/50 mb-6 grow ${isFeatured ? "text-sm md:text-base line-clamp-4" : "text-sm line-clamp-3"}`}>
-                              {currentLang === "pl" ? (product.tagline_pl || product.tagline) : (product.tagline || product.description)}
-                            </p>
-                            <Button asChild className={`w-full bg-white/5 hover:bg-primary hover:text-primary-foreground text-white border border-white/10 hover:border-primary transition-all group/btn ${isFeatured ? "md:w-max px-6 h-10" : ""}`}>
-                              <Link to={`/${currentLang}/product/${product.slug}`}>
-                                {t("home.products.view")} <ChevronRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                              </Link>
-                            </Button>
-                          </div>
-                        </motion.div>
-                      </div>
-                    );
-                  })
-                ) : (
-                  <div className="flex-[0_0_100%] text-center py-12 text-white/50">
-                    {t("shop.list.empty")}
-                  </div>
-                )}
-              </div>
+          {/* Featured Product Card */}
+          <motion.div
+            variants={fadeIn}
+            className="relative w-auto h-[940px] rounded-3xl overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5"
+          >
+            {/* Background Image Setup */}
+
+            {/* Desktop Image */}
+            {/* Desktop Image */}
+            <div className="hidden lg:block absolute inset-0 z-0 h-full w-full">
+              <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
+              <img src={featuredProductImgLg} alt="OlyLife THz Tera-P90+" className="h-[940px] w-full object-cover object-[40%] transition-transform duration-1000 group-hover:scale-[1.03]" />
             </div>
 
-            {/* Products Navigation */}
-            {products.length > 0 && productsScrollSnaps.length > 1 && (
-              <div className="flex items-center justify-center gap-6 mt-12 pb-4">
-                <button
-                  onClick={productsScrollPrev}
-                  disabled={productsPrevBtnDisabled}
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary disabled:opacity-30 transition-all hover:bg-white/10 active:scale-95"
-                  aria-label="Previous products"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
+            {/* Mobile Image */}
+            <div className="lg:hidden block absolute inset-0 z-0 h-full w-full">
+              <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
+              <img src={featuredProductImgSm} alt="OlyLife THz Tera-P90+" className="h-[940px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-[1.03]" />
+            </div>
 
-                <div className="flex gap-2.5">
-                  {productsScrollSnaps.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => productsEmblaApi?.scrollTo(index)}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${productsSelectedIndex === index ? "bg-primary w-6" : "bg-white/20"
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
+            {/* Content overlay */}
+            <div className="relative z-20 h-full w-full flex flex-col justify-start p-14 md:p-16 sm:p-12 lg:p-30">
+              <div className="lg:max-w-xl text-left w-full">
+                <span className="bg-secondary w-fit p-3 rounded-lg text-primary font-bold text-[11px] uppercase tracking-[0.25em] mb-5 block drop-shadow-md">
+                  {t('home.products.featured_badge')}
+                </span>
+
+                <h3 className="text-[1.4rem] sm:text-4xl lg:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
+                  {t('home.products.featured_title')}
+                </h3>
+                <p className="text-[0.9rem] sm:text-lg text-white/70 mb-10 max-w-md font-light leading-relaxed">
+                  {t('home.products.featured_desc')}
+                </p>
+
+                <div className="flex flex-col gap-6 items-start w-fit">
+                  <Link
+                    to={`/${currentLang}/product/thz-tera-p90-plus`}
+                    className="sm:px-10 sm:py-4 px-0 py-3 rounded-full bg-primary text-black font-bold uppercase tracking-widest text-[11px] sm:text-[13px] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_30px_rgba(102,248,219,0.3)] hover:shadow-[0_0_40px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-full sm:w-auto"
+                  >
+                    {t('home.products.learn_more')}
+                  </Link>
+                  <Link
+                    to={`/${currentLang}/products`}
+                    className="text-white/50 hover:text-primary transition-colors text-[10px] sm:text-[13px] font-semibold uppercase tracking-widest inline-flex items-center group/link w-full sm:w-auto justify-center sm:justify-start"
+                  >
+                    {t('home.products.view_all')}
+                  </Link>
                 </div>
-
-                <button
-                  onClick={productsScrollNext}
-                  disabled={productsNextBtnDisabled}
-                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary disabled:opacity-30 transition-all hover:bg-white/10 active:scale-95"
-                  aria-label="Next products"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
               </div>
-            )}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center mt-12"
-          >
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all hover:scale-105 shadow-[0_0_20px_rgba(126,255,212,0.15)] group h-12 px-8">
-              <Link to={`/${currentLang}/products`}>
-                {t("home.products.view_all")} <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -709,7 +620,7 @@ export default function Home() {
                     key={index}
                     onClick={() => emblaApi?.scrollTo(index)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${selectedIndex === index ? "bg-primary w-6" : "bg-white/20"
-                    }`}
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
@@ -821,7 +732,7 @@ export default function Home() {
 
       <AffiliateCTA />
       <div id="contact">
-      <OrderNow />
+        <OrderNow />
       </div>
     </div>
   );
