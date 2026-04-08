@@ -1,25 +1,26 @@
 {
   "nav": {
-    "home": "Home",
+    "home": "Strona główna",
     "technology": "Technologia",
     "philosophy": "Podróż",
     "about": "O nas",
     "blog": "Blog",
+    "products": "Produkty",
     "contact": "Kontakt",
     "inquire": "Zapytaj teraz",
-    "order": "Zamów teraz"
+    "order": "Zaczynajmy"
   },
   "home": {
     "hero": {
-      "tagline": "Biohacking i witalność komórkowa",
+      "tagline": "Technologia wellness częstotliwości",
       "title1": "ZRESETUJ SWOJE",
       "title1_highlight": "KOMÓRKI",
       "title2": "PRZYWRÓĆ SWÓJ",
       "title2_highlight": "RYTM",
       "title3": "ODZYSKAJ SWOJĄ",
       "title3_highlight": "WITALNOŚĆ",
-      "subtitle": "Biohacking szczytowej witalności z wykorzystaniem technologii PEMF i terahercowych. Twój codzienny rytuał na długowieczność.",
-      "cta_tech": "Poznaj technologię",
+      "subtitle": "Gdzie częstotliwość spotyka biologię. Technologia PEMF i terahercowa, tak jak została zaprojektowana do działania Twojego organizmu.",
+      "cta_tech": "Dowiedz się o technologii",
       "cta_phil": "Zacznij swój rytuał"
     },
     "tech": {
@@ -41,7 +42,7 @@
         "Przywraca biologiczną spójność i siły witalne"
       ],
       "repair": "Naprawa komórkowa",
-      "repair_desc": "Przyspiesza regenerację komórek i gojenie tkanek.",
+      "repair_desc": "Przyspiesza regenerację komórkową i odbudowę tkanek.",
       "recovery": "Głęboka regeneracja",
       "recovery_desc": "Niweluje stany zapalne i redukuje stres fizyczny.",
       "oxygenate": "Dotlenienie",
@@ -60,11 +61,11 @@
       "subtitle_italic_2": "trwać.",
       "title_3": "Zasilany u ",
       "title_highlight_3": "źródła.",
-      "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z ponad 13-letnim doświadczeniem, pomagam ludziom odbudować ich ciała i stosować biohacking dla zdrowia. Jednak moje własne zmagania z przewlekłym bólem, wypaleniem i niskim poziomem energii uświadomiły mi, że wiele tradycyjnych podejść do zdrowia pomija coś fundamentalnego, działając obok ciała, zamiast z nim współpracować.",
-      "text2": "To odkrycie doprowadziło mnie do podwójnej technologii częstotliwości PEMF i terahercowych. Ten przełom otworzył nową perspektywę na uzdrawianie, której nie mogłem zignorować, a teraz z zaangażowaniem dzielę się tą głębszą ścieżką do dobrego samopoczucia z każdym, kto jest gotów odzyskać swoją witalność.",
-      "coach_text": "Moje dążenie do zdrowia, dobrego samopoczucia i długowieczności zaprowadziło mnie gdzieś, gdzie większość ludzi jeszcze nie zajrzała, i właśnie dlatego istnieje wellneXfreQ.",
+      "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z 13-letnim doświadczeniem pomagałem ludziom w odbudowie ciał od wewnątrz. Ale to moja własna walka z przewlekłym bólem, wypaleniem i niską energią zmieniła wszystko.",
+      "text2": "Tradycyjne podejścia wciąż działały omijając ciało. Potrzebowałem czegoś, co z nim współpracuje. Te poszukiwania doprowadziły mnie do technologii częstotliwości PEMF i Teraherców – i nigdy nie oglądałem się za siebie.",
+      "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość ludzi jeszcze nie spojrzała. Właśnie dlatego istnieje wellneXfreQ.",
       "coach": "Patrycja W.",
-      "learn_more": "Dowiedz się więcej"
+      "learn_more": "Skontaktuj się"
     },
     "products": {
       "title": "Poznaj naszą ",
@@ -168,7 +169,7 @@
       "badge": "Dlaczego podwójna technologia działa",
       "title": "Przewaga ",
       "title_highlight": "Podwójnego Działania",
-      "description": "Łącząc technologię PEMF i częstotliwości Terahertz, oddziałujemy na organizm na jego najbardziej podstawowym poziomie – komórce. Jedna z nich ładuje komórki, druga przywraca im naturalny rytm. Rezultatem jest efekt kumulacji, który optymalizuje biologiczne systemy elektryczne napędzające witalność, regenerację i długowieczność.",
+      "description": "Dzięki połączeniu technologii częstotliwości PEMF i Terahertz, oba systemy działają na organizm na jego najbardziej podstawowym poziomie – komórce. Jeden z nich ładuje napięcie komórkowe, drugi przywraca naturalny rytm komórek. Razem tworzą efekt kumulacji, który optymalizuje układy biologiczne pod kątem witalności, regeneracji i długofalowej wydajności.",
       "headers": {
         "feature": "Cecha",
         "pemf": "Technologia PEMF",
@@ -181,16 +182,24 @@
         "analogy": "ANALOGIA"
       },
       "pemf_values": {
-        "primary_goal": "Doładowanie i naprawa komórek",
-        "mechanism": "Impulsy magnetyczne przywracają napięcie",
-        "key_benefit": "Niweluje stany zapalne i ból",
-        "analogy": "Ładowarka akumulatorów"
+        "badge": "TECHNOLOGIA PEMF",
+        "tagline": "Ładowarka Akumulatorów",
+        "bullets": [
+          "Ładuje napięcie komórkowe",
+          "Przywraca równowagę pola magnetycznego",
+          "Niweluje stany zapalne",
+          "Wspomaga głęboką regenerację tkanek"
+        ]
       },
       "terahertz_values": {
-        "primary_goal": "Bio-termiczna aktywacja",
-        "mechanism": "Fale dopasowane do wibracji zdrowych komórek",
-        "key_benefit": "Rozpuszcza blokady i wspomaga przepływ",
-        "analogy": "Precyzyjny stroiciel"
+        "badge": "REZONANS TERAHERCOWY",
+        "tagline": "Precyzyjny Stroiciel",
+        "bullets": [
+          "Dopasowuje się do wibracji zdrowych komórek",
+          "Aktywuje uśpione komórki",
+          "Rozpuszcza blokady energetyczne",
+          "Wspiera mikrokrążenie i przepływ"
+        ]
       }
     },
     "story": {
@@ -207,27 +216,27 @@
       "badge": "Przewaga \"Dual Action Advantage\"",
       "title": "Podwójne Działanie",
       "title_highlight": "Przewaga",
-      "subtitle": "Łącząc technologię PEMF i częstotliwości Terahertz, oddziałujemy na organizm na jego najbardziej podstawowym poziomie – komórce. Jedna z nich ładuje komórki, druga przywraca im naturalny rytm. Rezultatem jest efekt kumulacji, który optymalizuje biologiczne systemy elektryczne napędzające witalność, regenerację i długowieczność.",
-      "technology_01": "Technologia 01",
+      "subtitle": "Dzięki połączeniu technologii częstotliwości PEMF i Terahertz, oba systemy działają na organizm na jego najbardziej podstawowym poziomie – komórce. Jeden z nich ładuje napięcie komórkowe, drugi przywraca naturalny rytm komórek. Razem tworzą efekt kumulacji, który optymalizuje układy biologiczne pod kątem witalności, regeneracji i długofalowej wydajności.",
+      "technology_01": "01",
       "technology_01_subtitle": "Ładowarka Baterii",
-      "technology_02": "Technologia 02",
+      "technology_02": "02",
       "technology_02_subtitle": "Precyzyjny Stroiciel",
       "pemf_title": "PEMF DOŁADOWANIE KOMÓRKOWE",
       "pemf_subtitle": "Zasilanie Twojego układu elektrycznego.",
-      "pemf_desc": "Pierwotnie opracowany przez NASA w celu wspierania zdrowia astronautów, PEMF wykorzystuje bezpieczne impulsy elektromagnetyczne o niskiej częstotliwości do stymulacji organizmu na poziomie komórkowym, podobnie jak ładowanie baterii. Wspomaga naprawę komórkową, wspiera naturalny detoks, redukuje stany zapalne, poprawia przepływ krwi i uśmierza ból.",
+      "pemf_desc": "Pierwotnie opracowana przez NASA w celu wspierania zdrowia astronautów, technologia PEMF wykorzystuje bezpieczne impulsy magnetyczne o niskiej częstotliwości do współpracy z organizmem na poziomie komórkowym, podobnie jak ładowanie baterii. Promuje naprawę komórkową, wspiera krążenie, poprawia przepływ krwi i wspomaga łagodzenie bólu.",
       "pemf_nasa_badge": "WELLNESS OPARTY NA ENERGII WSPIERANY PRZEZ NASA",
       "pemf_benefits": [
-        { "label": "Naprawa", "desc": "Przyspieszenie regeneracji komórkowej i gojenia tkanek." },
-        { "label": "Regeneracja", "desc": "Usuwanie stanów zapalnych i redukcja stresu fizycznego." },
-        { "label": "Dotlenienie", "desc": "Poprawa krążenia i dostarczenie składników odżywczych bogatych w tlen." }
+        { "label": "NAPRAWA", "desc": "Przyspiesza regenerację komórkową i odbudowę tkanek." },
+        { "label": "REGENERACJA", "desc": "Niweluje stany zapalne i redukuje stres fizyczny." },
+        { "label": "DOTLENIENIE", "desc": "Poprawia krążenie i dostarczanie bogatych w tlen składników odżywczych." }
       ],
       "thz_title": "AKTYWACJA TERAHERCOWA",
       "thz_subtitle": "Przywracanie wibracji komórkowych.",
-      "thz_desc": "Częstotliwość terahercowa znajduje się między falami mikrofalowymi a podczerwonymi, znana jako Fala Życia, ponieważ wibruje w harmonii ze zdrowymi ludzkimi komórkami. Gdy Twój rytm komórkowy zostaje zaburzony, pojawia się brak równowagi. Fale te przywracają spójność, budzą wrodzony potencjał uzdrawiania i wzmacniają naturalną siłę życiową Twojego ciała.",
+      "thz_desc": "Częstotliwość terahercowa znajduje się między falami mikrofalowymi a podczerwonymi, znana jako \"Fala Życia\", ponieważ wibruje w harmonii ze zdrowymi ludzkimi komórkami. Gdy Twój rytm komórkowy zostaje zaburzony, pojawia się brak równowagi. Fale te przywracają spójność, budzą wrodzony potencjał regeneracyjny i wzmacniają naturalną energię twojego ciała.",
       "thz_benefits": [
-        { "label": "Aktywacja", "desc": "Budzenie niewydolnych komórek dla osiągnięcia szczytowej wydajności." },
-        { "label": "Przepływ", "desc": "Wsparcie mikrokrążenia i wewnętrznych ścieżek energetycznych." },
-        { "label": "Równowaga", "desc": "Wyrównanie naturalnej spójności biologicznej Twojego ciała." }
+        { "label": "AKTYWACJA", "desc": "Budzi mało wydajne komórki do szczytowej formy." },
+        { "label": "PRZEPŁYW", "desc": "Wspiera mikrokrążenie i wewnętrzne ścieżki energetyczne." },
+        { "label": "RÓWNOWAGA", "desc": "Wyrównuje naturalną spójność biologiczną Twojego ciała." }
       ]
     }
   },
@@ -421,7 +430,7 @@
       "back": "Wstecz",
       "back_to_catalog": "Powrót do katalogu",
       "back_to_journal": "Powrót do dziennika",
-      "view_products": "Zobacz nasze produkty",
+      "view_products": "Poznaj gamę produktów",
       "products": "Produkty"
     },
     "form": {

@@ -34,7 +34,20 @@ export default function FloatingProductsCTA() {
       const isPastShow = scrollY > showThreshold;
       const isBeforeHide = scrollY < (documentHeight - windowHeight - hideBeforeBottom);
 
-      setIsVisible(isPastShow && isBeforeHide);
+      // Check for #technology intersection
+      let isOverlappingTech = false;
+      const techSection = document.getElementById("technology");
+      if (techSection) {
+        const rect = techSection.getBoundingClientRect();
+        // The floating button usually sits near the bottom
+        // We'll hide it if the tech section is within the visible window where the button sits
+        const buttonY = windowHeight * 0.85; 
+        if (rect.top <= buttonY && rect.bottom >= buttonY) {
+          isOverlappingTech = true;
+        }
+      }
+
+      setIsVisible(isPastShow && isBeforeHide && !isOverlappingTech);
     };
 
     window.addEventListener("scroll", handleScroll);

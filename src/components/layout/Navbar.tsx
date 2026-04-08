@@ -1,7 +1,7 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { href, Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { useProducts } from "@/hooks/useProducts";
-import { ChevronDown, Home, Cpu, BookOpen, Mail, Leaf } from "lucide-react";
+import { ChevronDown, Home, Cpu, BookOpen, Mail, Leaf, ShoppingBag } from "lucide-react";
 import logoImg from "@assets/logo-icon.png";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
@@ -42,7 +42,7 @@ export default function Navbar() {
       return;
     }
 
-    const sectionIds = ["technology", "philosophy", "blog"];
+    const sectionIds = ["technology", "philosophy", "blog", "products", "contact"];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -92,12 +92,13 @@ export default function Navbar() {
     }
   };
 
-  const isHomeActive = (location === `/${currentLang}` || location === `/${currentLang}/`) && !["technology", "philosophy", "blog"].includes(activeSection);
-  const isTechActive = activeSection === "technology" || location.includes("/products");
+  const isHomeActive = (location === `/${currentLang}` || location === `/${currentLang}/`) && !["technology", "philosophy", "blog", "products", "contact"].includes(activeSection);
+  const isTechActive = activeSection === "technology"
   const isPhilActive = activeSection === "philosophy" || location.includes("/about");
-  const isBlogActive = activeSection === "blog" || location.includes("/blog");
-  const isContactActive = location.includes("/contact");
-  const isOrderActive = location.includes("/order");
+  // const isBlogActive = activeSection === "blog" || location.includes("/blog");
+  const isProductsActive = activeSection === "products" || location.includes("/products");
+  const isContactActive = activeSection === "contact" || location.includes("/contact");
+  // const isOrderActive = location.includes("/order");
 
   const mobileNavItems = [
     {
@@ -105,18 +106,21 @@ export default function Navbar() {
       icon: Home,
       action: handleHomeClick,
       active: isHomeActive,
+      href: false
     },
     {
       label: t("nav.philosophy"),
       icon: Leaf,
       action: () => scrollToSection("philosophy"),
       active: isPhilActive,
+      href: false
     },
     {
       label: t("nav.technology"),
       icon: Cpu,
       action: () => scrollToSection("technology"),
       active: isTechActive,
+      href: false
     },
 
     // {
@@ -126,17 +130,25 @@ export default function Navbar() {
     //   active: isBlogActive,
     // },
     {
-      label: t("nav.contact"),
-      icon: Mail,
-      href: getPath("/contact"),
-      active: isContactActive,
+      label: t("nav.products"),
+      icon: ShoppingBag,
+      action: () => scrollToSection("products"),
+      active: isProductsActive,
+      href: false
     },
     {
-      label: t("nav.order"),
-      icon: Cpu,
-      href: getPath("/order"),
-      active: isOrderActive,
+      label: t("nav.contact"),
+      icon: Mail,
+      action: () => scrollToSection("contact"),
+      active: isContactActive,
+      href: false
     },
+    // {
+    //   label: t("nav.order"),
+    //   icon: Cpu,
+    //   href: getPath("/order"),
+    //   active: isOrderActive,
+    // },
   ];
 
   return (
@@ -152,7 +164,7 @@ export default function Navbar() {
             <img
               src={logoImg}
               alt="wellneXfreQ"
-              className={`md:h-16 h-12 w-auto`}
+              className={`md:h-20 h-14 w-auto`}
               style={{ mixBlendMode: "screen" }}
             />
           </button>
@@ -214,6 +226,12 @@ export default function Navbar() {
               {t("nav.blog")}
             </button> */}
 
+            <Link
+              to={getPath("/products")}
+              className={`text-sm font-medium transition-colors ${isProductsActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+            >
+              {t("nav.products")}
+            </Link>
             <Link
               to={getPath("/contact")}
               className={`text-sm font-medium transition-colors ${isContactActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
@@ -285,7 +303,7 @@ export default function Navbar() {
               return (
                 <Link
                   key={item.label}
-                  to={item.href}
+                  to={item.href as any}
                   className={`flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all min-w-0 ${item.active
                     ? "text-primary bg-primary/10"
                     : "text-foreground/40"

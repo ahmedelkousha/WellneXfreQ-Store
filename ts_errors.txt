@@ -1,0 +1,5 @@
+src/pages/Home.tsx(132,6): error TS17008: JSX element 'div' has no corresponding closing tag.
+src/pages/Home.tsx(134,8): error TS17008: JSX element 'section' has no corresponding closing tag.
+src/pages/Home.tsx(197,12): error TS17008: JSX element 'motion.div' has no corresponding closing tag.
+src/pages/Home.tsx(828,1): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/Home.tsx(829,1): error TS1005: '</' expected.

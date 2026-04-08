@@ -6,7 +6,7 @@ import { useProducts } from "@/hooks/useProducts";
 // import { useBlogs } from "@/hooks/useBlogs";
 import { useTranslation } from "react-i18next";
 import useEmblaCarousel from "embla-carousel-react";
-import DualTechTable from '@/components/sections/DualAction';
+import DualTechPanel from '@/components/sections/DualAction';
 import DualTechFeatures from '@/components/sections/DualActionFeatures';
 import {
   ArrowRight,
@@ -131,7 +131,7 @@ export default function Home() {
   return (
     <div className="bg-background min-h-screen overflow-hidden">
       {/* HERO SECTION */}
-      <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative h-[100svh] flex items-center justify-center overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem] z-10 border-b border-white/10 shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
         <motion.div
           style={{ y, opacity }}
           className="absolute inset-0 w-full h-full"
@@ -198,7 +198,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-row sm:flex-row gap-2 sm:w-auto pt-8"
+            className="relative flex flex-col sm:flex-row gap-2 sm:w-auto pt-8"
           >
             <Button
               size="lg"
@@ -207,14 +207,40 @@ export default function Home() {
             >
               {t("home.hero.cta_tech")}
             </Button>
-            <Button
+
+
+            {/* Scroll Indicator */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 1 }}
+              className="absolute top-[130px] lg:top-[180px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
+              onClick={() => scrollToSection("philosophy")}
+            >
+              <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span>
+              <div className="w-[22px] h-[34px] border border-white/20 rounded-full flex justify-center p-1 bg-black/20 backdrop-blur-sm transition-colors hover:border-primary/50">
+                <motion.div
+                  animate={{
+                    y: [0, 14, 0],
+                    opacity: [1, 0.4, 1]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-1 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
+                />
+              </div>
+            </motion.div>
+            {/* <Button
               variant="outline"
               size="lg"
               className="h-14 border-white/20 text-white sm:px-4 px-2 sm:text-base text-sm hover:bg-white/5 transition-all cursor-pointer"
               onClick={() => scrollToSection("philosophy")}
             >
               {t("home.hero.cta_phil")}
-            </Button>
+            </Button> */}
           </motion.div>
         </div>
       </section>
@@ -274,7 +300,7 @@ export default function Home() {
 
                 <div className="flex flex-wrap items-center gap-8">
                   <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-6 rounded-full shadow-[0_0_20px_rgba(126,255,212,0.2)] transition-all hover:scale-105 group">
-                    <Link to={`/${currentLang}/about`}>{t("home.philosophy.learn_more")} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" /></Link>
+                    <Link to={`/${currentLang}/contact`}>{t("home.philosophy.learn_more")} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" /></Link>
                   </Button>
                 </div>
               </motion.div>
@@ -308,10 +334,9 @@ export default function Home() {
       </section>
 
       <div id="technology">
-        <DualTechTable />
+        <DualTechPanel />
+        <DualTechFeatures />
       </div>
-      
-      <DualTechFeatures />
 
       
       {/* SCIENCE/TECH EXPLAINER */}
@@ -408,7 +433,7 @@ export default function Home() {
       </section> */}
 
       {/* PRODUCTS SECTION */}
-      <section className="py-32 relative bg-white/2">
+      <section id="products" className="py-32 relative bg-white/2">
         <div className="container mx-auto px-4">
           <motion.div
             variants={fadeIn}
@@ -437,14 +462,12 @@ export default function Home() {
                         <motion.div
                           variants={fadeIn}
                           transition={{ delay: index * 0.1 }}
-                          className={`group relative bg-card border border-white/5 rounded-2xl hover:border-primary/40 hover:shadow-[0_0_40px_rgba(126,255,212,0.08)] flex flex-col h-full ${
-                            isFeatured ? "md:flex-row h-auto" : ""
+                          className={`group relative bg-card border border-white/5 rounded-2xl hover:border-primary/40 hover:shadow-[0_0_40px_rgba(126,255,212,0.08)] flex flex-col h-full ${isFeatured ? "md:flex-row h-auto" : ""
                           }`}
                         >
                           <Link 
                             to={`/${currentLang}/product/${product.slug}`} 
-                            className={`block overflow-hidden relative rounded-t-2xl ${
-                              isFeatured ? "md:w-1/2 aspect-video md:aspect-auto md:rounded-l-2xl md:rounded-tr-none" : "aspect-4/3"
+                            className={`block overflow-hidden relative rounded-t-2xl ${isFeatured ? "md:w-1/2 aspect-video md:aspect-auto md:rounded-l-2xl md:rounded-tr-none" : "aspect-4/3"
                             }`}
                           >
                             <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent z-10"></div>
@@ -505,8 +528,7 @@ export default function Home() {
                     <button
                       key={index}
                       onClick={() => productsEmblaApi?.scrollTo(index)}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        productsSelectedIndex === index ? "bg-primary w-6" : "bg-white/20"
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${productsSelectedIndex === index ? "bg-primary w-6" : "bg-white/20"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -686,8 +708,7 @@ export default function Home() {
                   <button
                     key={index}
                     onClick={() => emblaApi?.scrollTo(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      selectedIndex === index ? "bg-primary w-6" : "bg-white/20"
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${selectedIndex === index ? "bg-primary w-6" : "bg-white/20"
                     }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
@@ -799,7 +820,9 @@ export default function Home() {
       </section>
 
       <AffiliateCTA />
+      <div id="contact">
       <OrderNow />
+      </div>
     </div>
   );
 }

@@ -14,31 +14,8 @@ const staggerContainer = {
   }
 };
 
-const DualTechTable = () => {
+const DualTechPanel = () => {
   const { t } = useTranslation();
-
-  const tableData = [
-    {
-      feature: t('about.dual_tech_table.features.primary_goal'),
-      pemf: t('about.dual_tech_table.pemf_values.primary_goal'),
-      terahertz: t('about.dual_tech_table.terahertz_values.primary_goal'),
-    },
-    {
-      feature: t('about.dual_tech_table.features.mechanism'),
-      pemf: t('about.dual_tech_table.pemf_values.mechanism'),
-      terahertz: t('about.dual_tech_table.terahertz_values.mechanism'),
-    },
-    {
-      feature: t('about.dual_tech_table.features.key_benefit'),
-      pemf: t('about.dual_tech_table.pemf_values.key_benefit'),
-      terahertz: t('about.dual_tech_table.terahertz_values.key_benefit'),
-    },
-    {
-      feature: t('about.dual_tech_table.features.analogy'),
-      pemf: t('about.dual_tech_table.pemf_values.analogy'),
-      terahertz: t('about.dual_tech_table.terahertz_values.analogy'),
-    },
-  ];
 
   return (
     <section className="bg-background text-foreground p-6 pt-20 md:pb-48 pb-28 md:pt-24 md:px-16">
@@ -59,58 +36,61 @@ const DualTechTable = () => {
             {t('about.dual_tech_table.title')} <br />
             <span className="text-primary italic font-light">{t('about.dual_tech_table.title_highlight')}</span>
           </h2>
-          <p className="text-white/60 max-w-4xl md:text-lg mx-auto text-md text-left">
+          <p className="text-white/60 max-w-4xl md:text-lg mx-auto text-base text-left md:text-center">
             {t('about.dual_tech_table.description')}
           </p>
         </motion.div>
 
-        {/* Responsive Table Wrapper */}
-        <motion.div 
-          variants={fadeIn}
-          className="overflow-x-auto bg-card rounded-xl border border-white/10 shadow-2xl scrollbar-hide"
-        >
-          <table className="w-full text-left border-collapse text-nowrap min-w-[370px] font-sans">
-            <thead>
-              <tr className="border-b border-white/10">
-                <th className="py-6 px-3 md:px-6 text-xs md:text-sm tracking-widest text-muted-foreground uppercase font-semibold w-[20%]">
-                  {t('about.dual_tech_table.headers.feature')}
-                </th>
-                <th className="py-6 px-3 md:px-6 text-xs md:text-sm tracking-wider text-primary uppercase font-semibold w-[30%]">
-                  {t('about.dual_tech_table.headers.pemf')}
-                </th>
-                <th className="py-6 px-3 md:px-6 text-xs md:text-sm tracking-wider text-primary uppercase font-semibold w-[30%]">
-                  {t('about.dual_tech_table.headers.terahertz')}
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-white/5">
-              {tableData.map((row, index) => (
-                <motion.tr 
-                  key={index}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="hover:bg-white/5 transition-colors duration-200"
-                >
-                  <td className="py-6 px-3 md:px-6 md:text-xs text-xs tracking-widest text-muted-foreground uppercase font-medium align-top">
-                    {row.feature}
-                  </td>
-                  <td className="py-6 px-3 md:px-6 text-card-foreground md:text-base text-xs align-top">
-                    {row.pemf}
-                  </td>
-                  <td className="py-6 px-3 md:px-6 text-card-foreground md:text-base text-xs align-top">
-                    {row.terahertz}
-                  </td>
-                </motion.tr>
+        {/* Split Panel */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 text-left">
+          
+          {/* Left Panel - PEMF */}
+          <motion.div 
+            variants={fadeIn}
+            className="bg-[#111111] p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl flex flex-col hover:border-primary/30 transition-colors"
+          >
+            <h3 className="text-[#66F8DB] font-heading tracking-widest text-sm font-bold mb-2 uppercase">
+              {t('about.dual_tech_table.pemf_values.badge')}
+            </h3>
+            <p className="text-white/50 mb-8 font-light italic text-lg border-b border-white/10 pb-6">
+              {t('about.dual_tech_table.pemf_values.tagline')}
+            </p>
+            <ul className="space-y-5">
+              {(t('about.dual_tech_table.pemf_values.bullets', { returnObjects: true }) as string[]).map((bullet, i) => (
+                <li key={i} className="flex items-start text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#66F8DB] mt-2 mr-4 shrink-0 shadow-[0_0_8px_rgba(102,248,219,0.8)]" />
+                  <span className="text-sm md:text-base leading-relaxed">{bullet}</span>
+                </li>
               ))}
-            </tbody>
-          </table>
-        </motion.div>
+            </ul>
+          </motion.div>
+
+          {/* Right Panel - Terahertz */}
+          <motion.div 
+            variants={fadeIn}
+            className="bg-[#111111] p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl flex flex-col hover:border-primary/30 transition-colors"
+          >
+            <h3 className="text-[#66F8DB] font-heading tracking-widest text-sm font-bold mb-2 uppercase">
+              {t('about.dual_tech_table.terahertz_values.badge')}
+            </h3>
+            <p className="text-white/50 mb-8 font-light italic text-lg border-b border-white/10 pb-6">
+              {t('about.dual_tech_table.terahertz_values.tagline')}
+            </p>
+            <ul className="space-y-5">
+              {(t('about.dual_tech_table.terahertz_values.bullets', { returnObjects: true }) as string[]).map((bullet, i) => (
+                <li key={i} className="flex items-start text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#66F8DB] mt-2 mr-4 shrink-0 shadow-[0_0_8px_rgba(102,248,219,0.8)]" />
+                  <span className="text-sm md:text-base leading-relaxed">{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+          
+        </div>
 
       </motion.div>
     </section>
   );
 };
 
-export default DualTechTable;
+export default DualTechPanel;

@@ -5,21 +5,22 @@
     "philosophy": "The Journey",
     "about": "About",
     "blog": "Blog",
+    "products": "Products",
     "contact": "Contact",
     "inquire": "Inquire Now",
-    "order": "Order Now"
+    "order": "Get Started"
   },
   "home": {
     "hero": {
-      "tagline": "Biohacking & Cellular Wellness",
+      "tagline": "Frequency Wellness Technology",
       "title1": "RESET YOUR",
       "title1_highlight": "CELLS",
       "title2": "RESTORE YOUR",
       "title2_highlight": "RHYTHM",
       "title3": "RECLAIM YOUR",
       "title3_highlight": "VITALITY",
-      "subtitle": "Biohacking your peak vitality with PEMF and Terahertz technologies. Your daily ritual for longevity.",
-      "cta_tech": "Explore Technology",
+      "subtitle": "Where frequency meets biology. PEMF and Terahertz technology, the way your body was designed to perform.",
+      "cta_tech": "Learn About The Technology",
       "cta_phil": "Start Your Ritual"
     },
     "tech": {
@@ -41,7 +42,7 @@
         "Restores biological coherence and life force"
       ],
       "repair": "Cellular Repair",
-      "repair_desc": "Accelerates cellular regeneration and tissue healing.",
+      "repair_desc": "Accelerates cellular regeneration and tissue recovery.",
       "recovery": "Deep Recovery",
       "recovery_desc": "Flushes inflammation and reduces physical stress.",
       "oxygenate": "Oxygenation",
@@ -51,7 +52,7 @@
       "flow": "Internal Flow",
       "flow_desc": "Supports microcirculation and energy pathways.",
       "balance": "Biological Balance",
-      "balance_desc": "Aligns the body's natural natural biological coherence."
+      "balance_desc": "Aligns the body's natural biological coherence."
     },
     "philosophy": {
       "title": "Built to ",
@@ -60,11 +61,11 @@
       "subtitle_italic_2": "Last.",
       "title_3": "Powered at the ",
       "title_highlight_3": "Source.",
-      "text1": "As a health, wellness, and movement coach with over 13 years of experience, I help people rebuild their bodies and biohack their health. However, my own battles with chronic pain, burnout, and low energy taught me that many traditional health approaches miss something fundamental by working around the body rather than with it.",
-      "text2": "This realization led me to discover the powerful dual technology of PEMF and Terahertz frequencies. This breakthrough opened a new perspective on healing that I couldn't ignore, and I am now dedicated to sharing this deeper path to wellbeing with anyone ready to reclaim their vitality.",
-      "coach_text": "My drive for health, wellness and longevity led me somewhere most people haven't looked yet and that's exactly why wellneXfreQ exists.",
+      "text1": "As a health, wellness, and movement coach with 13 years of experience, I've helped people rebuild their bodies from the inside out. But it was my own battle with chronic pain, burnout, and low energy that changed everything.",
+      "text2": "Traditional approaches kept working around the body. I needed something that worked with it. That search led me to PEMF and Terahertz frequency technology — and I've never looked back.",
+      "coach_text": "My drive for longevity led me somewhere most people haven't looked yet. That's exactly why wellneXfreQ exists.",
       "coach": "Patrycja W.",
-      "learn_more": "Learn More"
+      "learn_more": "Get In Touch"
     },
     "products": {
       "title": "Explore Our ",
@@ -168,7 +169,7 @@
       "badge": "Why Dual Technology Works",
       "title": "The Dual Action ",
       "title_highlight": "Advantage",
-      "description": "By combining PEMF and Terahertz frequency technology, the body is targeted at its most fundamental level, the cell. One recharges your cells, the other restores their natural rhythm. The result is a compounding effect that optimises the biological electrical systems driving vitality, recovery and longevity.",
+      "description": "By combining PEMF and Terahertz frequency technology, both systems target the body at its most fundamental level — the cell. One recharges cellular voltage, the other restores natural cellular rhythm. Together they create a compounding effect that optimises your biological systems for vitality, recovery, and long-term performance.",
       "headers": {
         "feature": "Feature",
         "pemf": "PEMF Technology",
@@ -181,16 +182,24 @@
         "analogy": "ANALOGY"
       },
       "pemf_values": {
-        "primary_goal": "Cellular Recharge & Repair",
-        "mechanism": "Magnetic pulses restore voltage",
-        "key_benefit": "Flushes inflammation & pain",
-        "analogy": "The Battery Charger"
+        "badge": "PEMF TECHNOLOGY",
+        "tagline": "The Battery Charger",
+        "bullets": [
+          "Recharges cellular voltage",
+          "Restores magnetic field balance",
+          "Flushes inflammation",
+          "Supports deep tissue recovery"
+        ]
       },
       "terahertz_values": {
-        "primary_goal": "Bio Thermal Activation",
-        "mechanism": "Waves match healthy cell vibration",
-        "key_benefit": "Dissolves blockages & boosts flow",
-        "analogy": "The Fine Tuner"
+        "badge": "TERAHERTZ RESONANCE",
+        "tagline": "The Fine Tuner",
+        "bullets": [
+          "Matches healthy cell vibration",
+          "Activates dormant cells",
+          "Dissolves energy blockages",
+          "Boosts microcirculation and flow"
+        ]
       }
     },
     "story": {
@@ -205,19 +214,19 @@
     },
     "tech": {
       "badge": "The \"Dual Action Advantage\"",
-      "technology_01": "Technology 01",
-      "technology_02": "Technology 02",
+      "technology_01": "01",
+      "technology_02": "02",
       "pemf_title": "PEMF CELLULAR RECHARGE",
       "pemf_subtitle": "Powering Your Electrical System.",
-      "pemf_desc": "Originally developed by NASA to support astronaut health, PEMF uses safe low frequency electromagnetic pulses to stimulate the body at a cellular level, like charging a battery. It promotes cellular repair, supports natural detox, reduces inflammation, improves blood flow and relieves pain.",
+      "pemf_desc": "Originally developed by NASA to support astronaut health, PEMF uses safe low frequency magnetic pulses to work with the body at a cellular level, like charging a battery. It promotes cellular repair, supports circulation, improves blood flow and supports pain relief.",
       "pemf_nasa_badge": "ENERGY BASED WELLNESS BACKED BY NASA",
       "title": "The Dual Action",
       "title_highlight": "Advantage",
-      "subtitle": "By combining PEMF and Terahertz frequency technology, the body is targeted at its most fundamental level, the cell. One recharges your cells, the other restores their natural rhythm. The result is a compounding effect that optimises the biological electrical systems driving vitality, recovery and longevity.",
+      "subtitle": "By combining PEMF and Terahertz frequency technology, both systems target the body at its most fundamental level — the cell. One recharges cellular voltage, the other restores natural cellular rhythm. Together they create a compounding effect that optimises your biological systems for vitality, recovery, and long-term performance.",
       "pemf_benefits": [
         {
           "label": "Repair",
-          "desc": "Accelerate cellular regeneration and tissue healing."
+          "desc": "Accelerate cellular regeneration and tissue recovery."
         },
         {
           "label": "Recovery",
@@ -230,7 +239,7 @@
       ],
       "thz_title": "TERAHERTZ ACTIVATION",
       "thz_subtitle": "Restoring Cellular Vibration.",
-      "thz_desc": "Terahertz frequency sits between microwave and infrared waves, known as the Wave of Life because it vibrates in harmony with healthy human cells. When your cellular rhythm falls out of tune, imbalance follows. These waves restore coherence, awaken your innate healing potential and amplify your body's natural life force.",
+      "thz_desc": "Terahertz frequency sits between microwave and infrared waves, known as the \"Wave of Life\" because it vibrates in harmony with healthy human cells. When your cellular rhythm falls out of tune, imbalance follows. These waves restore coherence, awaken your innate recovery potential and amplify your body's natural energy.",
       "thz_benefits": [
         {
           "label": "Activate",
@@ -339,7 +348,7 @@
       "back": "Back",
       "back_to_catalog": "Back to Catalog",
       "back_to_journal": "Back to Journal",
-      "view_products": "View Our Products",
+      "view_products": "Explore Product Range",
       "products": "Products"
     },
     "affiliate": {
