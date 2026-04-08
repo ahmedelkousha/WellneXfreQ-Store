@@ -1,14 +1,27 @@
 import OrderForm from "@/components/sections/OrderForm";
 import { useTranslation } from "react-i18next";
-import { Instagram, Facebook, Mail, Phone, MessageCircle } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone, MessageCircle, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function OrderNow() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
   return (
-    <div className="pt-28 pb-24 bg-background text-foreground">
-      <div className="container mx-auto px-4 lg:px-6 max-w-6xl">
-        {!location.pathname.includes("/product") && <section className="mb-10">
+    <div className="pt-28 pb-24 bg-background text-foreground relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 lg:px-6 max-w-6xl relative z-10">
+        <button 
+          onClick={() => navigate(-1)}
+          className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors mb-10 group"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          <span className="text-xs font-medium uppercase tracking-widest">{t("common.navigation.back")}</span>
+        </button>
+
+        <section className="mb-10">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
             {t("order.hero.badge")}
           </p>
@@ -18,10 +31,11 @@ export default function OrderNow() {
           <p className="text-sm md:text-base text-white/70 max-w-2xl">
             {t("order.hero.subtitle")}
           </p>
-        </section>}
+        </section>
 
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.1fr)] items-start">
-          <section className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-7 shadow-xl shadow-black/40">
+          <section className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-7 shadow-xl shadow-black/40 relative overflow-hidden">
+            <div className="absolute top-0 left-10 right-10 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
             <h2 className="text-lg font-semibold mb-3 text-white">
               {t("order.form.title")}
             </h2>
@@ -54,7 +68,7 @@ export default function OrderNow() {
 
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <a
-                  href="https://www.facebook.com/share/18CbZK1UyD/"
+                  href={t("order.social.facebook")}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:border-primary hover:bg-primary/10 transition-colors"
@@ -62,23 +76,11 @@ export default function OrderNow() {
                   <Facebook className="h-4 w-4 text-primary" />
                   <div className="flex flex-col">
                     <span className="font-medium text-white/90">Facebook</span>
-                    <span className="text-[10px] text-white/60">Australia</span>
+                    <span className="text-[10px] text-white/60">{i18n.language.startsWith("pl") ? "Poland" : "Australia"}</span>
                   </div>
                 </a>
                 <a
-                  href="https://www.facebook.com/share/1EE6TqJA6N/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:border-primary hover:bg-primary/10 transition-colors"
-                >
-                  <Facebook className="h-4 w-4 text-primary" />
-                  <div className="flex flex-col">
-                    <span className="font-medium text-white/90">Facebook</span>
-                    <span className="text-[10px] text-white/60">Poland</span>
-                  </div>
-                </a>
-                <a
-                  href="https://www.instagram.com/wellnexfreq.au?igsh=MThrenBseWpzOWR1YQ=="
+                  href={t("order.social.instagram")}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:border-primary hover:bg-primary/10 transition-colors"
@@ -86,19 +88,7 @@ export default function OrderNow() {
                   <Instagram className="h-4 w-4 text-primary" />
                   <div className="flex flex-col">
                     <span className="font-medium text-white/90">Instagram</span>
-                    <span className="text-[10px] text-white/60">Australia</span>
-                  </div>
-                </a>
-                <a
-                  href="https://www.instagram.com/wellnexfreq.pl?igsh=MWd4ajNlbWpka3Z5NQ=="
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:border-primary hover:bg-primary/10 transition-colors"
-                >
-                  <Instagram className="h-4 w-4 text-primary" />
-                  <div className="flex flex-col">
-                    <span className="font-medium text-white/90">Instagram</span>
-                    <span className="text-[10px] text-white/60">Poland</span>
+                    <span className="text-[10px] text-white/60">{i18n.language.startsWith("pl") ? "Poland" : "Australia"}</span>
                   </div>
                 </a>
               </div>
@@ -107,30 +97,30 @@ export default function OrderNow() {
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-primary" />
                   <a
-                    href="mailto:your@wellnexfreq.com"
+                    href={`mailto:${t("order.social.email")}`}
                     className="hover:text-primary transition-colors"
                   >
-                    your@wellnexfreq.com
+                    {t("order.social.email")}
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-primary" />
                   <a
-                    href="tel:+61450334543"
+                    href={`tel:${t("order.social.phone").replace(/\s/g, "")}`}
                     className="hover:text-primary transition-colors"
                   >
-                    +61 450 334 543
+                    {t("order.social.phone")}
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <MessageCircle className="h-4 w-4 text-primary" />
                   <a
-                    href="https://wa.me/61450334543"
+                    href={t("order.social.whatsapp")}
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-primary transition-colors"
                   >
-                    WhatsApp (AU & PL): +61 450 334 543
+                    WhatsApp (AU & PL): {t("order.social.phone")}
                   </a>
                 </div>
               </div>
@@ -141,4 +131,3 @@ export default function OrderNow() {
     </div>
   );
 }
-

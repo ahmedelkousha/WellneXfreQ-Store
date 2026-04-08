@@ -52,8 +52,8 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: Instagram, href: "#" },
-    { icon: Facebook, href: "#" },
+    { icon: Instagram, href: t("order.social.instagram") },
+    { icon: Facebook, href: t("order.social.facebook") },
   ];
 
   const TechLinks = () => (
@@ -84,11 +84,11 @@ export default function Footer() {
     <ul className="space-y-4">
       <li className="flex items-start gap-3 text-sm">
         <Mail className="w-5 h-5 text-primary shrink-0" />
-        <a href="mailto:your@wellnexfreq.com" className="hover:text-white transition-colors break-all">your@wellnexfreq.com</a>
+        <a href={`mailto:${t("order.social.email")}`} className="hover:text-white transition-colors break-all">{t("order.social.email")}</a>
       </li>
       <li className="flex items-start gap-3 text-sm">
         <Phone className="w-5 h-5 text-primary shrink-0" />
-        <a href="tel:+61450334543" className="hover:text-white transition-colors">+61 450 334 543</a>
+        <a href={`tel:${t("order.social.phone").replace(/\s/g, "")}`} className="hover:text-white transition-colors">{t("order.social.phone")}</a>
       </li>
       <li className="flex items-start gap-3 text-sm">
         <Activity className="w-5 h-5 text-primary shrink-0 mt-0.5" />

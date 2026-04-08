@@ -329,6 +329,7 @@
   },
   "contact": {
     "hero": {
+      "badge": "SKONTAKTUJ SIĘ Z NAMI",
       "title": "Połączmy się",
       "subtitle": "Gotowy na poznanie technologii częstotliwości lub masz pytania o nasze produkty? Skontaktuj się z nami, a pomożemy Ci znaleźć odpowiednie rozwiązanie."
     },
@@ -414,7 +415,12 @@
     },
     "social": {
       "title": "Zweryfikuj i połącz się",
-      "subtitle": "Możesz zawsze potwierdzić naszą obecność, aktywność i aktualizacje poprzez oficjalne kanały społecznościowe i bezpośrednie dane kontaktowe poniżej."
+      "subtitle": "Możesz zawsze potwierdzić naszą obecność, aktywność i aktualizacje poprzez oficjalne kanały społecznościowe i bezpośrednie dane kontaktowe poniżej.",
+      "facebook": "https://www.facebook.com/share/1EE6TqJA6N/",
+      "instagram": "https://www.instagram.com/wellnexfreq.pl?igsh=MWd4ajNlbWpka3Z5NQ==",
+      "whatsapp": "https://wa.me/61450334543",
+      "email": "your@wellnexfreq.com",
+      "phone": "+61 450 334 543"
     },
     "success": {
       "title": "Zapytanie zamówieniowe wysłane",

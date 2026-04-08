@@ -329,6 +329,7 @@
   },
   "contact": {
     "hero": {
+      "badge": "REACH US",
       "title": "Let's connect",
       "subtitle": "Ready to explore frequency technology or have questions about our products? Reach out to us, and we'll help you find the right solution."
     },
@@ -414,7 +415,12 @@
     },
     "social": {
       "title": "Verify and connect",
-      "subtitle": "You can always confirm our presence, activity, and updates through official social channels and the direct contact details below."
+      "subtitle": "You can always confirm our presence, activity, and updates through official social channels and the direct contact details below.",
+      "facebook": "https://www.facebook.com/share/18CbZK1UyD/",
+      "instagram": "https://www.instagram.com/wellnexfreq.au?igsh=MThrenBseWpzOWR1YQ==",
+      "whatsapp": "https://wa.me/61450334543",
+      "email": "your@wellnexfreq.com",
+      "phone": "+61 450 334 543"
     },
     "success": {
       "title": "Order inquiry sent",
