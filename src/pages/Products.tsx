@@ -86,7 +86,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm lg:text-lg text-white/60 max-w-[22rem] lg:max-w-[28.5rem] xl:max-w-2xl font-light"
+            className="text-sm lg:text-lg text-white/60 max-w-88 lg:max-w-114 xl:max-w-2xl font-light"
           >
             {t("shop.hero.subtitle")}
           </motion.p>

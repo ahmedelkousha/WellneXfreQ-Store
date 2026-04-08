@@ -10,19 +10,19 @@ import {
   ArrowRight,
   Star
 } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import AffiliateCTA from "@/components/sections/AffiliateCTA";
+// import {
+//   Accordion,
+//   AccordionContent,
+//   AccordionItem,
+//   AccordionTrigger,
+// } from "@/components/ui/accordion";
+// import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from "@assets/featured-product-sm.png";
 import featuredProductImgLg from "@assets/featured-product-lg.png";
 
 import heroImg from "@assets/mountain.png";
 import coachBlankingImg from "@assets/patrycja-coach.png";
-import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";
+// import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";
 import bloodAnalysisVideo from "@assets/Livebloodanalysisfb.mp4";
 import videoPoster from "@assets/poster.png";
 import OrderNow from "./OrderNow";
@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <div className="bg-background min-h-screen overflow-hidden">
       {/* HERO SECTION */}
-      <section id="hero" className="relative h-[100svh] flex items-center justify-center overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem] z-10 border-b border-white/10 shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
+      <section id="hero" className="relative h-svh flex items-center justify-center overflow-hidden rounded-b-4xl md:rounded-b-[3rem] z-10 border-b border-white/10 shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
         <motion.div
           style={{ y, opacity }}
           className="absolute inset-0 w-full h-full"
@@ -128,7 +128,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm md:text-lg text-white/70 md:max-w-lg sm:max-w-sm max-w-xs mx-auto mt-10 font-light"
+            className="text-sm md:text-lg text-white/70 md:max-w-lg sm:max-w-sm max-w-88 mx-auto mt-10 font-light text-center"
           >
             {t("home.hero.subtitle")}
           </motion.p>

@@ -1,11 +1,11 @@
-import { href, Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { useProducts } from "@/hooks/useProducts";
-import { ChevronDown, Home, Cpu, BookOpen, Mail, Leaf, ShoppingBag } from "lucide-react";
+import { ChevronDown, Home, Cpu, Mail, Leaf, ShoppingBag } from "lucide-react";
 import logoImg from "@assets/logo-icon.png";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import Flag from "react-world-flags";
+// import Flag from "react-world-flags";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
