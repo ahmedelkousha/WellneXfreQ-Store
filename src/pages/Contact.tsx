@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, ArrowLeft, Instagram, Facebook, MessageCircle } fr
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-export default function Contact() {
+export default function Contact({ hideBackButton = false }: { hideBackButton?: boolean }) {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
@@ -14,13 +14,16 @@ export default function Contact() {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-4 lg:px-6 max-w-6xl relative z-10">
-        {location.pathname !== `/${i18n.language}` && <button 
-          onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors mb-10 group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span className="text-xs font-medium uppercase tracking-widest">{t("common.navigation.back")}</span>
-        </button>}
+        
+        {!hideBackButton && (
+          <button 
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors mb-10 group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-xs font-medium uppercase tracking-widest">{t("common.navigation.back")}</span>
+          </button>
+        )}
 
         <section className="mb-10">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">

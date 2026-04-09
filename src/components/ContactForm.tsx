@@ -194,8 +194,8 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
           )}
         /> */}
 
-        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base font-semibold group">
-          {t("common.form.submit")}
+        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group">
+          {t("common.form.submit").toUpperCase()}
           <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
         </Button>
       </form>

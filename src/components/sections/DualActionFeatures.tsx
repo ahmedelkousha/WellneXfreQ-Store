@@ -12,7 +12,8 @@ const TechnologySection = () => {
 
   return (
     <>
-      <div className="bg-white/2 text-gray-300 font-sans px-4 py-20 md:py-48 md:px-16 flex justify-center overflow-hidden">
+    {/* It was flex I hide a it as per client */}
+      <div className="hidden bg-white/2 text-gray-300 font-sans px-4 py-20 md:py-48 md:px-16 justify-center overflow-hidden">
         <div className="max-w-5xl w-full relative">
           
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
@@ -106,7 +107,7 @@ const TechnologySection = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeIn}
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 px-8 md:px-16 py-20 md:py-40 max-w-4xl mx-auto"
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 px-8 md:px-16 py-20 md:pb-40 max-w-6xl mx-auto"
       >
         {[
           { icon: ShieldCheck, title: t("home.tech.repair"), desc: t("home.tech.repair_desc") },

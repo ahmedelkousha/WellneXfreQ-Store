@@ -264,7 +264,7 @@ export default function Navbar() {
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               >
-                <Link to={getPath("/order")}>{t("nav.order")}</Link>
+                <Link className="text-[0.65rem] sm:text-[0.73rem]" to={getPath("/order")}>{t("nav.order").toUpperCase()}</Link>
               </Button>
             </div>
           </nav>

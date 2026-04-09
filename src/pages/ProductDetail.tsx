@@ -140,7 +140,7 @@ export default function ProductDetail() {
               size="lg"
               className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg font-semibold shadow-[0_0_30px_rgba(126,255,212,0.2)]"
             >
-              {t("nav.order-footer")}
+              {t("nav.order-footer").toUpperCase()}
             </Button>
           </motion.div>
         </div>

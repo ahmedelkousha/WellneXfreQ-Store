@@ -47,18 +47,18 @@
         "Dissolves internal blockages and supports flow",
         "Restores biological coherence and vital forces"
       ],
-      "repair": "Cellular Repair",
-      "repair_desc": "Accelerates cellular regeneration and tissue recovery.",
-      "recovery": "Deep Recovery",
-      "recovery_desc": "Flushes inflammation and reduces physical stress.",
-      "oxygenate": "Oxygenation",
-      "oxygenate_desc": "Enhances circulation and nutrient delivery.",
-      "activate": "Cell Activation",
-      "activate_desc": "Wakes up underperforming cells for peak function.",
-      "flow": "Internal Flow",
-      "flow_desc": "Supports microcirculation and energy pathways.",
-      "balance": "Biological Balance",
-      "balance_desc": "Aligns the body's natural biological coherence."
+      "repair": "CELLULAR REPAIR",
+      "repair_desc": "Your body rebuilds itself. Daily use accelerates the process.",
+      "recovery": "DEEP RECOVERY",
+      "recovery_desc": "Less soreness. Less tension. More bounce back.",
+      "oxygenate": "ENERGY & VITALITY",
+      "oxygenate_desc": "Wake up feeling recharged. Move through your day with ease.",
+      "activate": "MENTAL CLARITY",
+      "activate_desc": "When your cells function better, so does your mind.",
+      "flow": "BETTER SLEEP",
+      "flow_desc": "A nervous system in balance sleeps deeper and recovers faster.",
+      "balance": "LONGEVITY",
+      "balance_desc": "Daily frequency wellness is the new frontier of long-term health."
     },
     "philosophy": {
       "title": "Built to ",
@@ -174,7 +174,7 @@
       "badge": "Why Dual Technology Works",
       "title": "The Dual Action ",
       "title_highlight": "Advantage",
-      "description": "By combining PEMF and Terahertz frequency technology, both systems target the body at its most fundamental level — the cell. One recharges cellular voltage, the other restores natural cellular rhythm. Together they create a compounding effect that optimises your biological systems for vitality, recovery, and long-term performance.",
+      "description": "By combining PEMF and Terahertz frequency technology, both systems target the body at its most fundamental level, your cells. One recharges cellular voltage, the other restores natural cellular rhythm. Together they create a compounding effect that optimises your biological systems for vitality, recovery, and long-term performance.",
       "headers": {
         "feature": "Feature",
         "pemf": "PEMF Technology",
@@ -190,20 +190,22 @@
         "badge": "PEMF TECHNOLOGY",
         "tagline": "The Battery Charger",
         "bullets": [
-          "Recharges cellular voltage",
-          "Restores magnetic field balance",
-          "Flushes inflammation",
-          "Supports deep tissue recovery"
+          "Your cells run low. PEMF recharges them",
+          "Originally developed by NASA",
+          "Reduces inflammation and physical tension",
+          "Boosts circulation and oxygen delivery",
+          "Gentle, non-invasive, built for daily use"
         ]
       },
       "terahertz_values": {
         "badge": "TERAHERTZ RESONANCE",
         "tagline": "The Fine Tuner",
         "bullets": [
-          "Matches healthy cell vibration",
-          "Activates dormant cells",
-          "Dissolves energy blockages",
-          "Boosts microcirculation and flow"
+          "Your body has a natural rhythm. This restores it",
+          "Known as the Wave of Life",
+          "Dissolves blockages and reignites energy",
+          "Activates cells that have stopped performing",
+          "The results are subtle at first — then undeniable"
         ]
       }
     },
@@ -334,9 +336,9 @@
   },
   "contact": {
     "hero": {
-      "badge": "REACH US",
+      "badge": "GET IN TOUCH",
       "title": "Let's connect",
-      "subtitle": "Ready to explore frequency technology or have questions about our products? Reach out to us, and we'll help you find the right solution."
+      "subtitle": "Have a question about our devices or want to book a consultation to discuss what’s right for you? Feel free to reach out."
     },
     "info": {
       "title": "Contact Information",

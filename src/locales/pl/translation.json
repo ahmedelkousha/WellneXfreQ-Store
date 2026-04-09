@@ -47,18 +47,18 @@
         "Rozpuszcza wewnętrzne blokady i wspomaga przepływ",
         "Przywraca biologiczną spójność i siły witalne"
       ],
-      "repair": "Naprawa komórkowa",
-      "repair_desc": "Przyspiesza regenerację komórkową i odbudowę tkanek.",
-      "recovery": "Głęboka regeneracja",
-      "recovery_desc": "Niweluje stany zapalne i redukuje stres fizyczny.",
-      "oxygenate": "Dotlenienie",
-      "oxygenate_desc": "Poprawia krążenie i dostarczanie składników odżywczych.",
-      "activate": "Aktywacja komórek",
-      "activate_desc": "Budzi mało wydajne komórki do szczytowej formy.",
-      "flow": "Wewnętrzny przepływ",
-      "flow_desc": "Wspiera mikrokrążenie i ścieżki energetyczne.",
-      "balance": "Równowaga biologiczna",
-      "balance_desc": "Wyrównuje naturalną spójność biologiczną organizmu."
+      "repair": "NAPRAWA KOMÓRKOWA",
+      "repair_desc": "Twoje ciało się odbudowuje. Codzienne stosowanie przyspiesza ten proces.",
+      "recovery": "GŁĘBOKA REGENERACJA",
+      "recovery_desc": "Mniej bólu. Mniej napięcia. Więcej sprężystości.",
+      "oxygenate": "ENERGIA I WITALNOŚĆ",
+      "oxygenate_desc": "Obudź się z uczuciem regeneracji. Poruszaj się swobodnie przez dzień.",
+      "activate": "JASNOŚĆ UMYSŁU",
+      "activate_desc": "Kiedy Twoje komórki funkcjonują lepiej, Twój umysł również.",
+      "flow": "LEPSZY SEN",
+      "flow_desc": "Zrównoważony układ nerwowy śpi głębiej i regeneruje się szybciej.",
+      "balance": "DŁUGOWIECZNOŚĆ",
+      "balance_desc": "Codzienne dbanie o dobre samopoczucie to nowy wymiar długoterminowego zdrowia."
     },
     "philosophy": {
       "title": "Zbudowany, by się ",
@@ -190,20 +190,22 @@
         "badge": "TECHNOLOGIA PEMF",
         "tagline": "Ładowarka Akumulatorów",
         "bullets": [
-          "Ładuje napięcie komórkowe",
-          "Przywraca równowagę pola magnetycznego",
-          "Niweluje stany zapalne",
-          "Wspomaga głęboką regenerację tkanek"
+          "Twoje komórki się wyczerpują. PEMF je ładuje",
+          "Pierwotnie opracowany przez NASA",
+          "Zmniejsza stan zapalny i napięcie fizyczne",
+          "Zwiększa krążenie i dostarczanie tlenu",
+          "Delikatny, nieinwazyjny, stworzony do codziennego użytku"
         ]
       },
       "terahertz_values": {
         "badge": "REZONANS TERAHERCOWY",
         "tagline": "Precyzyjny Stroiciel",
         "bullets": [
-          "Dopasowuje się do wibracji zdrowych komórek",
-          "Aktywuje uśpione komórki",
-          "Rozpuszcza blokady energetyczne",
-          "Wspiera mikrokrążenie i przepływ"
+          "Twoje ciało ma naturalny rytm. To ją przywraca",
+          "Znana jako Fala Życia",
+          "Rozpuszcza blokady i na nowo rozpala energię",
+          "Aktywuje komórki, które przestały działać",
+          "Efekty są na początku subtelne — potem niepodważalne"
         ]
       }
     },
@@ -231,17 +233,35 @@
       "pemf_desc": "Pierwotnie opracowana przez NASA w celu wspierania zdrowia astronautów, technologia PEMF wykorzystuje bezpieczne impulsy magnetyczne o niskiej częstotliwości do współpracy z organizmem na poziomie komórkowym, podobnie jak ładowanie baterii. Promuje naprawę komórkową, wspiera krążenie, poprawia przepływ krwi i wspomaga łagodzenie bólu.",
       "pemf_nasa_badge": "WELLNESS OPARTY NA ENERGII WSPIERANY PRZEZ NASA",
       "pemf_benefits": [
-        { "label": "NAPRAWA", "desc": "Przyspiesza regenerację komórkową i odbudowę tkanek." },
-        { "label": "REGENERACJA", "desc": "Niweluje stany zapalne i redukuje stres fizyczny." },
-        { "label": "DOTLENIENIE", "desc": "Poprawia krążenie i dostarczanie bogatych w tlen składników odżywczych." }
+        {
+          "label": "NAPRAWA",
+          "desc": "Przyspiesza regenerację komórkową i odbudowę tkanek."
+        },
+        {
+          "label": "REGENERACJA",
+          "desc": "Niweluje stany zapalne i redukuje stres fizyczny."
+        },
+        {
+          "label": "DOTLENIENIE",
+          "desc": "Poprawia krążenie i dostarczanie bogatych w tlen składników odżywczych."
+        }
       ],
       "thz_title": "AKTYWACJA TERAHERCOWA",
       "thz_subtitle": "Przywracanie wibracji komórkowych.",
       "thz_desc": "Częstotliwość terahercowa znajduje się między falami mikrofalowymi a podczerwonymi, znana jako \"Fala Życia\", ponieważ wibruje w harmonii ze zdrowymi ludzkimi komórkami. Gdy Twój rytm komórkowy zostaje zaburzony, pojawia się brak równowagi. Fale te przywracają spójność, budzą wrodzony potencjał regeneracyjny i wzmacniają naturalną energię twojego ciała.",
       "thz_benefits": [
-        { "label": "AKTYWACJA", "desc": "Budzi mało wydajne komórki do szczytowej formy." },
-        { "label": "PRZEPŁYW", "desc": "Wspiera mikrokrążenie i wewnętrzne ścieżki energetyczne." },
-        { "label": "RÓWNOWAGA", "desc": "Wyrównuje naturalną spójność biologiczną Twojego ciała." }
+        {
+          "label": "AKTYWACJA",
+          "desc": "Budzi mało wydajne komórki do szczytowej formy."
+        },
+        {
+          "label": "PRZEPŁYW",
+          "desc": "Wspiera mikrokrążenie i wewnętrzne ścieżki energetyczne."
+        },
+        {
+          "label": "RÓWNOWAGA",
+          "desc": "Wyrównuje naturalną spójność biologiczną Twojego ciała."
+        }
       ]
     }
   },
@@ -336,7 +356,7 @@
     "hero": {
       "badge": "SKONTAKTUJ SIĘ Z NAMI",
       "title": "Połączmy się",
-      "subtitle": "Gotowy na poznanie technologii częstotliwości lub masz pytania o nasze produkty? Skontaktuj się z nami, a pomożemy Ci znaleźć odpowiednie rozwiązanie."
+      "subtitle": "Masz pytanie dotyczące naszych urządzeń lub chcesz umówić się na konsultację, aby omówić, co będzie dla Ciebie najlepsze? Skontaktuj się z nami."
     },
     "info": {
       "title": "Dane kontaktowe",

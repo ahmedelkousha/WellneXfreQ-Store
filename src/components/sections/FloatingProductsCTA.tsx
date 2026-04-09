@@ -66,7 +66,7 @@ export default function FloatingProductsCTA() {
         >
           <Link
             to={`/${currentLang}/products`}
-            className="group relative flex items-center gap-3 px-2 sm:px-6 sm:py-4 py-8 sm:rounded-full rounded-lg bg-primary text-black/80 hover:shadow-none shadow-2xl shadow-primary/40 hover:bg-transparent hover:text-primary transition-all duration-300 font-heading"
+            className="group relative flex items-center gap-3 px-2 sm:px-6 sm:py-4 py-8 sm:rounded-full rounded-lg bg-transparent border-primary border text-primary hover:shadow-none  hover:bg-transparent hover:text-primary transition-all duration-300 font-heading"
           >
             <ShoppingBag className="sm:w-5 sm:h-5 w-4 h-4 shrink-0 group-hover:rotate-12 transition-transform" />
             <span className="text-[9px] -translate-x-8 sm:translate-x-0 sm:rotate-0 -rotate-90 sm:text-[10px] lg:text-xs uppercase tracking-widest leading-none font-bold">

@@ -362,8 +362,8 @@ export default function OrderForm() {
       </div>
       {errors.consent && <p className="mt-1 text-xs text-red-400">{errors.consent}</p>}
 
-      <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto bg-primary text-black hover:bg-primary/90">
-        {isSubmitting ? t("order.form.labels.submitting") : t("order.form.labels.submit")}
+      <Button type="submit" disabled={isSubmitting} className="w-full text-[0.65rem] sm:text-[0.8rem] md:w-auto bg-primary text-black hover:bg-primary/90">
+        {isSubmitting ? t("order.form.labels.submitting").toUpperCase() : t("order.form.labels.submit").toUpperCase()}
       </Button>
     </form>
   );

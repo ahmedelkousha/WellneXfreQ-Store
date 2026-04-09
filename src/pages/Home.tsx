@@ -142,10 +142,10 @@ export default function Home() {
           >
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 sm:px-4 px-2 sm:text-base text-xs shadow-[0_0_30px_rgba(126,255,212,0.3)] border border-primary/50 transition-all hover:scale-105 cursor-pointer"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 sm:px-4 px-2 sm:text-[0.8rem] text-[0.65rem] shadow-[0_0_30px_rgba(126,255,212,0.3)] border border-primary/50 transition-all hover:scale-105 cursor-pointer"
               onClick={() => scrollToSection("technology")}
             >
-              {t("home.hero.cta_tech")}
+              {t("home.hero.cta_tech").toUpperCase()}
             </Button>
 
 
@@ -239,8 +239,8 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-8">
-                  <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-6 rounded-lg shadow-[0_0_20px_rgba(126,255,212,0.2)] transition-all hover:scale-105 group">
-                    <Link to={`/${currentLang}/contact`}>{t("home.philosophy.learn_more")} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" /></Link>
+                  <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 text-[0.65rem] sm:text-[0.8rem] px-6 rounded-lg shadow-[0_0_20px_rgba(126,255,212,0.2)] transition-all hover:scale-105 group">
+                    <Link to={`/${currentLang}/contact`}>{t("home.philosophy.learn_more").toUpperCase()} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" /></Link>
                   </Button>
                 </div>
               </motion.div>
@@ -444,7 +444,7 @@ export default function Home() {
                 <div className="flex flex-col gap-6 items-start w-fit">
                   <Link
                     to={featuredProduct ? `/${currentLang}/product/${featuredProduct.slug}` : `/${currentLang}/products`}
-                    className="sm:px-10 sm:py-4 px-0 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[11px] sm:text-[13px] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_30px_rgba(102,248,219,0.3)] hover:shadow-[0_0_40px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-full sm:w-auto"
+                    className="sm:px-10 sm:py-4 px-0 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_30px_rgba(102,248,219,0.3)] hover:shadow-[0_0_40px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-full sm:w-auto"
                   >
                     {t('home.products.learn_more')}
                   </Link>
@@ -740,7 +740,7 @@ export default function Home() {
 
       {/* <AffiliateCTA /> */}
       <div id="contact">
-        <Contact />
+        <Contact hideBackButton={true} />
       </div>
     </div>
   );
