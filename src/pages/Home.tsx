@@ -233,7 +233,7 @@ export default function Home() {
                 </motion.div>
 
                 <div className="border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
-                  <p className="text-md text-white/70 leading-relaxed">
+                  <p className="text-sm md:text-lg text-center md:text-left text-white/70 leading-relaxed">
                     "{t("home.philosophy.coach_text")}"
                   </p>
                 </div>
@@ -382,7 +382,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.products.title")}<br /><span className="text-primary italic">{t("home.products.title_highlight")}</span>
             </h2>
-            <p className="text-lg text-white/60">
+            <p className="text-sm md:text-lg text-center md:text-left text-white/60">
               {t("home.products.subtitle")}
             </p>
           </motion.div>
@@ -556,7 +556,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.blood_analysis.title")}<br /><span className="text-primary italic">{t("home.blood_analysis.title_highlight")}</span>
             </h2>
-            <p className="text-white/60 max-w-4xl mx-auto text-lg leading-relaxed">
+            <p className="text-white/60 max-w-4xl mx-auto text-lg leading-relaxed text-sm md:text-lg text-center md:text-left">
               {t("home.blood_analysis.subtitle")}
             </p>
           </motion.div>
@@ -597,7 +597,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.testimonials.title")}<br /><span className="text-primary italic">{t("home.testimonials.title_highlight")}</span>
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto text-lg text-left">
+            <p className="text-white/60 max-w-2xl mx-auto text-lg text-left text-sm md:text-lg text-center md:text-left">
               {t("home.testimonials.subtitle")}
             </p>
           </motion.div>
