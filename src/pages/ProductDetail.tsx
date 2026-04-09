@@ -7,7 +7,7 @@ import { CheckCircle2, ChevronRight, Tag, MessageCircle, ShieldCheck, Loader2, A
 import NotFound from "@/pages/not-found";
 import { useTranslation } from "react-i18next";
 // import OrderForm from "@/components/sections/OrderForm";
-import OrderNow from "./OrderNow";
+// import OrderNow from "./OrderNow";
 
 
 const fadeIn = {
@@ -45,7 +45,7 @@ export default function ProductDetail() {
     <div className="bg-background min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4">
 
-        <button 
+        <button
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 text-white/50 hover:text-primary transition-colors mb-6 group"
         >
@@ -136,7 +136,7 @@ export default function ProductDetail() {
             </motion.div>
 
             <Button
-              onClick={scrollToForm}
+              onClick={() => navigate(`/${currentLang}/order`)}
               size="lg"
               className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg font-semibold shadow-[0_0_30px_rgba(126,255,212,0.2)]"
             >
@@ -170,9 +170,9 @@ export default function ProductDetail() {
             </div>
           </motion.div>
         )}
-        <div id="order-section">
+        {/* <div id="order-section">
           <OrderNow />
-        </div>
+        </div> */}
 
       </div>
     </div>

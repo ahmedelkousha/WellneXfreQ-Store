@@ -19,7 +19,7 @@ import {
 // import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from "@assets/featured-product-sm.png";
 import featuredProductImgLg from "@assets/featured-product-lg.png";
-import featuredProductImgPhone from "@assets/featured-product-phone.avif";
+import featuredProductImgPhone from "@assets/featured-product-phone.png";
 import heroImg from "@assets/mountain.png";
 import coachBlankingImg from "@assets/patrycja-coach.png";
 // import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";

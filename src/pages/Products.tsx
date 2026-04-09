@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 // import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from "@assets/featured-product-sm.png";
 import featuredProductImgLg from "@assets/featured-product-lg.png";
-import featuredProductImgPhone from "@assets/featured-product-phone.avif";
+import featuredProductImgPhone from "@assets/featured-product-phone.png";
 
 
 const fadeIn = {
@@ -190,7 +190,7 @@ export default function Products() {
       {/* <AffiliateCTA /> */}
 
       {/* CTA SECTION */}
-      <section className="py-24 relative overflow-hidden bg-background">
+      {/* <section className="py-24 relative overflow-hidden bg-background">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -209,7 +209,7 @@ export default function Products() {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
     </div>
   );
