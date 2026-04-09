@@ -78,14 +78,32 @@ export function useCreateOrder() {
 
       const payload = {
         firstName: input.firstName,
+        middleName: input.middleName || null,
         lastName: input.lastName,
         email: input.email,
         phoneCountryCode: input.phoneCountryCode,
         phoneNumber: input.phoneNumber,
+        preferredUsername: input.preferredUsername || null,
         idNumber: input.idNumber,
         gender: input.gender,
-        country: input.country,
-        addressLine: input.addressLine,
+        
+        // Personal Address
+        personalStreetAddress: input.personalStreetAddress,
+        personalCity: input.personalCity,
+        personalState: input.personalState,
+        personalCountry: input.personalCountry,
+        personalPostalCode: input.personalPostalCode,
+
+        // Recipient info
+        isRecipientSameAsPersonal: input.isRecipientSameAsPersonal,
+        recipientName: input.recipientName || null,
+        recipientPhone: input.recipientPhone || null,
+        recipientStreetAddress: input.recipientStreetAddress || null,
+        recipientCity: input.recipientCity || null,
+        recipientState: input.recipientState || null,
+        recipientCountry: input.recipientCountry || null,
+        recipientPostalCode: input.recipientPostalCode || null,
+
         items,
         subtotal,
         totalPh,

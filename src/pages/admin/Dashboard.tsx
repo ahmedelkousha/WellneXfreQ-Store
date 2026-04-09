@@ -56,6 +56,8 @@ export default function AdminDashboard() {
   });
   const [blogUploadProgress, setBlogUploadProgress] = useState<number | null>(null);
 
+  const [selectedOrder, setSelectedOrder] = useState<any | null>(null);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
@@ -736,18 +738,16 @@ export default function AdminDashboard() {
                           </a>
                           {" • "}
                           <strong>ID:</strong> {order.idNumber}
-                          {" • "}
-                          <strong>Phone:</strong> {order.phoneCountryCode} {order.phoneNumber}
-                         
-                        
                         </p>
                         <p className="mt-1 text-xs text-white/60">
-                          <strong>{t("admin.dashboard.orders.address")}:</strong> {order.addressLine}<br/>
-                          <strong>Country:</strong> {order.country}
+                          <strong>{t("admin.dashboard.orders.address")}:</strong> {order.personalStreetAddress}, {order.personalCity || ""}, {order.personalCountry}<br/>
                         </p>
                         
                       </div>
                       <div className="flex flex-col items-end gap-2">
+                        <Button size="sm" variant="outline" onClick={() => setSelectedOrder(order)} className="border-primary/30 text-primary hover:bg-primary/10 mb-2">
+                          <Eye className="w-4 h-4 mr-2" /> {t("admin.dashboard.orders.view_details")}
+                        </Button>
                         <p className="text-xs text-white/60 uppercase tracking-[0.15em]">
                           {t("admin.dashboard.orders.total")}
                         </p>
@@ -922,15 +922,16 @@ export default function AdminDashboard() {
                                 </a>
                                 {" • "}
                                 <strong>ID:</strong> {order.idNumber}
-                                {" • "}
-                                <strong>Phone:</strong> {order.phoneCountryCode} {order.phoneNumber}
                               </p>
                               <p className="mt-1 text-xs text-white/60">
                                 <strong>{t("admin.dashboard.orders.address")}:</strong>{" "}
-                                {order.addressLine}
+                                {order.personalStreetAddress}, {order.personalCity || ""}, {order.personalCountry}
                               </p>
                             </div>
                             <div className="flex flex-col items-end gap-2">
+                              <Button size="sm" variant="outline" onClick={() => setSelectedOrder(order)} className="border-primary/30 text-primary hover:bg-primary/10 mb-2">
+                                <Eye className="w-4 h-4 mr-2" /> {t("admin.dashboard.orders.view_details")}
+                              </Button>
                               <p className="text-xs text-white/60 uppercase tracking-[0.15em]">
                                 {t("admin.dashboard.orders.total")}
                               </p>
@@ -1274,6 +1275,119 @@ export default function AdminDashboard() {
             <Button onClick={saveBlog} className="bg-primary hover:bg-primary/90 text-black min-w-[140px]">
               <Check className="w-4 h-4 mr-2" /> {editingBlogId === "new" ? t("admin.dashboard.modals.blog.buttons.publish") : t("admin.dashboard.modals.product.buttons.save")}
             </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* ORDER DETAILS MODAL */}
+      <Dialog open={!!selectedOrder} onOpenChange={(open) => !open && setSelectedOrder(null)}>
+        <DialogContent className="max-w-4xl bg-black border border-white/10 text-white overflow-y-auto max-h-[90vh] custom-scrollbar">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-heading font-bold text-primary">{t("admin.dashboard.orders.modal_title")}</DialogTitle>
+            <DialogDescription className="text-white/60">{t("admin.dashboard.orders.modal_subtitle")} {selectedOrder?.firstName} {selectedOrder?.lastName}</DialogDescription>
+          </DialogHeader>
+          
+          {selectedOrder && (
+            <div className="space-y-8 py-4">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Personal Section */}
+                <div className="space-y-4">
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-primary/80 border-b border-white/10 pb-2">{t("admin.dashboard.orders.personal_info")}</h4>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <span className="text-white/40 block">Full Name</span>
+                      <span className="text-white">{selectedOrder.firstName} {selectedOrder.middleName} {selectedOrder.lastName}</span>
+                    </div>
+                    <div>
+                      <span className="text-white/40 block">Email</span>
+                      <a href={`mailto:${selectedOrder.email}`} className="text-primary hover:underline">{selectedOrder.email}</a>
+                    </div>
+                    <div>
+                      <span className="text-white/40 block">Phone</span>
+                      <span className="text-white">{selectedOrder.phoneCountryCode} {selectedOrder.phoneNumber}</span>
+                    </div>
+                    <div>
+                      <span className="text-white/40 block">ID Number</span>
+                      <span className="text-white font-mono">{selectedOrder.idNumber}</span>
+                    </div>
+                    <div>
+                      <span className="text-white/40 block">Gender</span>
+                      <span className="text-white capitalize">{selectedOrder.gender}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Personal Address Section */}
+                <div className="space-y-4">
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-primary/80 border-b border-white/10 pb-2">Personal Address</h4>
+                  <div className="text-sm space-y-2">
+                    <p><span className="text-white/40">Street:</span> {selectedOrder.personalStreetAddress}</p>
+                    <p><span className="text-white/40">City:</span> {selectedOrder.personalCity}</p>
+                    <p><span className="text-white/40">State/Prov:</span> {selectedOrder.personalState}</p>
+                    <p><span className="text-white/40">Country:</span> {selectedOrder.personalCountry}</p>
+                    <p><span className="text-white/40">Postal Code:</span> {selectedOrder.personalPostalCode}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Recipient Section */}
+              <div className="space-y-4 bg-white/5 p-6 rounded-2xl border border-white/10">
+                <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-primary/80">{t("admin.dashboard.orders.shipping_info")}</h4>
+                  {selectedOrder.isRecipientSameAsPersonal && (
+                    <span className="text-[10px] bg-white/10 text-white/60 px-2 py-0.5 rounded">SAME AS PERSONAL</span>
+                  )}
+                </div>
+                <div className="grid md:grid-cols-2 gap-8 text-sm">
+                  <div className="space-y-2">
+                    <p><span className="text-white/40">Name:</span> {selectedOrder.recipientName}</p>
+                    <p><span className="text-white/40">Phone:</span> {selectedOrder.recipientPhone}</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p><span className="text-white/40">Address:</span> {selectedOrder.recipientStreetAddress}</p>
+                    <p><span className="text-white/40">Location:</span> {selectedOrder.recipientCity}, {selectedOrder.recipientState}, {selectedOrder.recipientCountry} ({selectedOrder.recipientPostalCode})</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Products Section */}
+              <div className="space-y-4">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-primary/80 border-b border-white/10 pb-2">{t("admin.dashboard.orders.ordered_products")}</h4>
+                <div className="space-y-3">
+                  {selectedOrder.items.map((item: any, idx: number) => (
+                    <div key={idx} className="flex justify-between items-center bg-black/40 p-3 rounded-xl border border-white/5">
+                      <div>
+                        <span className="font-bold text-white">{item.name}</span>
+                        <span className="text-white/40 ml-2">× {item.quantity}</span>
+                      </div>
+                      <div className="text-right">
+                        <span className="font-mono text-primary">${item.lineTotal?.toLocaleString()}</span>
+                        <p className="text-[10px] text-white/40 whitespace-nowrap">Incl. {item.phPercent}% P&H</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="flex flex-col items-end gap-1 pt-4 border-t border-white/10">
+                  <div className="text-sm text-white/60 flex justify-between w-full md:w-64">
+                    <span>Subtotal:</span>
+                    <span>${selectedOrder.subtotal?.toLocaleString()}</span>
+                  </div>
+                  <div className="text-sm text-white/60 flex justify-between w-full md:w-64">
+                    <span>P&H Total:</span>
+                    <span>${selectedOrder.totalPh?.toLocaleString()}</span>
+                  </div>
+                  <div className="text-xl font-bold text-primary flex justify-between w-full md:w-64 mt-2">
+                    <span>Total:</span>
+                    <span>USD ${selectedOrder.total?.toLocaleString()}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          
+          <div className="flex justify-end mt-6">
+            <Button onClick={() => setSelectedOrder(null)} className="bg-white/10 text-white hover:bg-white/20">Close</Button>
           </div>
         </DialogContent>
       </Dialog>
