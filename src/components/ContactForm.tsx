@@ -134,9 +134,9 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="bg-card border-white/10 text-white">
-                    <SelectItem value="none">{t("common.form.options.interests.general")}</SelectItem>
-                    <SelectItem value="buy">{t("common.form.options.interests.buy")}</SelectItem>
-                    <SelectItem value="consultation">{t("common.form.options.interests.consult")}</SelectItem>
+                    <SelectItem className="focus:bg-[#008080]" value="none">1. {t("common.form.options.interests.general")}</SelectItem>
+                    <SelectItem className="focus:bg-[#008080]" value="buy">2. {t("common.form.options.interests.buy")}</SelectItem>
+                    <SelectItem className="focus:bg-[#008080]" value="consultation">3. {t("common.form.options.interests.consult")}</SelectItem>
                     {/* <SelectItem value="affiliate">{t("common.form.options.interests.affiliate")}</SelectItem> */}
                     <div className="hidden">{/* Divider for products if needed */}</div>
                     {/* {products.map(p => (

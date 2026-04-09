@@ -207,7 +207,8 @@ export default function Home() {
                 <p className="text-sm md:text-lg text-white/70 mb-8 leading-relaxed">
                   {t("home.philosophy.text2")}
                 </p>
-
+                
+                {/* Mobile Image */}
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -231,12 +232,20 @@ export default function Home() {
                     </div>
                   </div>
                 </motion.div>
+                {/* End of mobile image */}
 
                 <div className="border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
-                  <p className="text-sm md:text-lg text-center md:text-left text-white/70 leading-relaxed">
+                  <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
                     "{t("home.philosophy.coach_text")}"
                   </p>
                 </div>
+
+                 <div className="block lg:hidden border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
+                  <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
+                    "{t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>"
+                  </p>
+                </div>
+
 
                 <div className="flex flex-wrap items-center gap-8">
                   <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 text-[0.65rem] sm:text-[0.8rem] px-6 rounded-lg shadow-[0_0_20px_rgba(126,255,212,0.2)] transition-all hover:scale-105 group">
@@ -246,29 +255,41 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="lg:block hidden relative o rounded-3xl overflow-hidden group"
-            >
-              <img
-                src={coachBlankingImg}
-                alt="Coach jumping"
-                className="w-full h-full object-contain md:object-fit transition-transform duration-700 group-hover:scale-105"
-              />
+            {/* large screen image */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="lg:block hidden relative o rounded-3xl overflow-hidden group"
+              >
+                <img
+                  src={coachBlankingImg}
+                  alt="Coach jumping"
+                  className="w-full h-full object-contain md:object-fit transition-transform duration-700 group-hover:scale-105"
+                />
 
-              {/* Floating card */}
-              <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary text-xs font-bold bg-primary/5">
-                    13+
+
+                {/* Floating card */}
+                <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary text-xs font-bold bg-primary/5">
+                      13+
+                    </div>
+                    <span className="text-sm uppercase tracking-widest text-white/40 font-medium">{t("home.philosophy.coach")}</span>
                   </div>
-                  <span className="text-sm uppercase tracking-widest text-white/40 font-medium">{t("home.philosophy.coach")}</span>
                 </div>
+              </motion.div>
+
+              <div className="hidden lg:block border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
+                <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
+                  "{t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>"
+                </p>
               </div>
-            </motion.div>
+
+
+            </div>
           </div>
         </div>
       </section>
@@ -409,10 +430,10 @@ export default function Home() {
             <div className="sm:block hidden xl:hidden absolute inset-0 z-0 h-full w-full">
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-              <img 
-                src={featuredProductImgSm} 
-                alt="OlyLife THz Tera-P90+" 
-                className="h-[940px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]" 
+              <img
+                src={featuredProductImgSm}
+                alt="OlyLife THz Tera-P90+"
+                className="h-[940px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]"
               />
             </div>
 

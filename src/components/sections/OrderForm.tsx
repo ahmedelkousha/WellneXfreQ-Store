@@ -58,7 +58,8 @@ const formSchema = z.object({
     quantity: z.number().min(0),
   })).min(1, "Please select at least one product").refine(items => items.some(i => i.quantity > 0), "Please select at least one product with quantity > 0"),
   
-  consent: z.boolean().refine(v => v === true, "You must consent to proceed"),
+  consent1: z.boolean().refine(v => v === true, "Confirmation is required"),
+  consent2: z.boolean().refine(v => v === true, "Confirmation is required"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -92,7 +93,8 @@ export default function OrderForm() {
       recipientCountry: "AU",
       recipientPostalCode: "",
       items: ORDER_PRODUCTS.map(p => ({ productId: p.id, quantity: 0 })),
-      consent: false,
+      consent1: false,
+      consent2: false,
     },
   });
 
@@ -174,7 +176,7 @@ export default function OrderForm() {
     return { subtotal, phTotal, total: subtotal + phTotal };
   };
 
-  const { subtotal, phTotal, total } = calculateTotals();
+  // const { subtotal, phTotal, total } = calculateTotals();
 
   return (
     <Form {...form}>
@@ -687,7 +689,7 @@ export default function OrderForm() {
             <div className="h-px bg-white/10 flex-1" />
           </div>
 
-          <p className="text-sm text-white/50 bg-white/5 p-4 rounded-xl border border-white/10 leading-relaxed italic">
+          <p className="text-sm hidden text-white/50 bg-white/5 p-4 rounded-xl border border-white/10 leading-relaxed italic">
             {t("order.form.labels.products_disclaimer")}
           </p>
 
@@ -765,7 +767,7 @@ export default function OrderForm() {
           </div>
 
           {/* Totals Summary Card */}
-          <div className="bg-primary/5 border border-primary/20 p-8 rounded-3xl mt-8">
+          {/* <div className="bg-primary/5 border border-primary/20 p-8 rounded-3xl mt-8">
             <div className="space-y-4">
               <div className="flex justify-between items-center text-white/60">
                 <span>{t("order.form.labels.summary_subtotal")}</span>
@@ -784,41 +786,67 @@ export default function OrderForm() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Section 5: Consent and Submit */}
         <div className="space-y-6 pt-6">
-          <FormField
-            control={form.control}
-            name="consent"
-            render={({ field }) => (
-              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                    className="mt-1 border-primary/40 data-[state=checked]:bg-primary data-[state=checked]:text-black"
-                  />
-                </FormControl>
-                <div className="space-y-1 leading-none">
-                  <FormLabel className="text-sm text-white/60 leading-relaxed cursor-pointer select-none">
-                    {t("order.form.labels.consent")}
-                  </FormLabel>
-                </div>
-              </FormItem>
-            )}
-          />
-          {form.formState.errors.consent && (
-            <p className="text-xs text-red-400">{form.formState.errors.consent.message}</p>
-          )}
+          <div className="space-y-4">
+            <FormField
+              control={form.control}
+              name="consent1"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                      className="mt-1 border-primary/40 data-[state=checked]:bg-primary data-[state=checked]:text-black"
+                    />
+                  </FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel className="text-sm text-white/60 leading-relaxed cursor-pointer select-none">
+                      {t("order.form.labels.consent1")}
+                    </FormLabel>
+                    {form.formState.errors.consent1 && (
+                      <p className="text-xs text-red-400 mt-1">{form.formState.errors.consent1.message}</p>
+                    )}
+                  </div>
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="consent2"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                      className="mt-1 border-primary/40 data-[state=checked]:bg-primary data-[state=checked]:text-black"
+                    />
+                  </FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel className="text-sm text-white/60 leading-relaxed cursor-pointer select-none">
+                      {t("order.form.labels.consent2")}
+                    </FormLabel>
+                    {form.formState.errors.consent2 && (
+                      <p className="text-xs text-red-400 mt-1">{form.formState.errors.consent2.message}</p>
+                    )}
+                  </div>
+                </FormItem>
+              )}
+            />
+          </div>
 
           <Button 
             type="submit" 
             disabled={createOrder.isPending}
             className="w-full bg-primary text-black h-16 rounded-lg text-[0.65rem] sm:text-[0.8rem] font-semibold uppercase tracking-widest hover:bg-primary/90 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
           >
-            {createOrder.isPending ? t("order.form.labels.submitting").toUpperCase() : t("order.form.labels.submit").toUpperCase()}
+            {createOrder.isPending ? t("order.form.labels.submitting") : t("order.form.labels.submit")}
           </Button>
         </div>
       </form>

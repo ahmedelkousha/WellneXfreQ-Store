@@ -70,6 +70,8 @@
       "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z 13-letnim doświadczeniem pomagałem ludziom w odbudowie ciał od wewnątrz. Ale to moja własna walka z przewlekłym bólem, wypaleniem i niską energią zmieniła wszystko.",
       "text2": "Tradycyjne podejścia wciąż działały omijając ciało. Potrzebowałem czegoś, co z nim współpracuje. Te poszukiwania doprowadziły mnie do technologii częstotliwości PEMF i Teraherców – i nigdy nie oglądałem się za siebie.",
       "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość ludzi jeszcze nie spojrzała. Właśnie dlatego istnieje wellneXfreQ.",
+      "coach_text2": "Poza technologią częstotliwości, nadal pomagam klientom poruszać się lepiej, czuć się silniejszym i budować odporne ciała na długowieczność poprzez",
+      "coach_text2_highlight": "FITIN2IT PT",
       "coach": "Patrycja W.",
       "learn_more": "Skontaktuj się"
     },
@@ -382,7 +384,8 @@
     "hero": {
       "badge": "Bezpośrednie zamówienie",
       "title": "Zacznijmy Twoje zamówienie",
-      "subtitle": "Powiedz nam, które produkty OlyLife chcesz zamówić, przesyłając poniżej swoje dane."
+      "subtitle": "Powiedz nam, które produkty OlyLife chcesz zamówić, przesyłając poniżej swoje dane.",
+      "help": "Jeśli masz jakiekolwiek pytania, skontaktuj się ze mną tutaj:"
     },
     "form": {
       "title": "Zamów teraz",
@@ -415,22 +418,23 @@
         "bundles_disclaimer": "Powiedz nam, ile sztuk każdego pakietu chcesz zamówić.",
         "quantity": "Ilość",
         "summary_subtotal": "Suma urządzeń",
-        "summary_ph": "Pakowanie i obsługa (P&H)",
+        "summary_ph": "Wysyłka",
         "summary_total": "Szacowana suma",
-        "consent": "Rozumiem, że te informacje zostaną wykorzystane do wygenerowania bezpiecznego linku do płatności oraz do celów wysyłkowych. To jest zapytanie, a nie ostateczna transakcja.",
+        "consent1": "Rozumiem, że ten formularz nie zapisuje mnie ani nie przetwarza żadnej płatności. Jest to narzędzie pomagające mojemu sponsorowi w rejestracji w OlyLife. Przyjmuję do wiadomości, że zgadzam się na otrzymywanie informacji od mojego sponsora w celu pomocy w rejestracji i onboardingu oraz że w przyszłości mogę otrzymywać od niego materiały marketingowe lub promocyjne. Rozumiem, że w dowolnym momencie w przyszłości mogę zrezygnować z otrzymywania informacji marketingowych lub promocyjnych od mojego sponsora.",
+        "consent2": "Przesyłając formularz, przyjmuję do wiadomości, że mój sponsor pomoże mi w rejestracji i dostarczy link do płatności. Rozumiem, że muszę zweryfikować nazwę sprzedawcy jako OlyLife Limited - Hong Kong lub upewnić się, że każda płatność jest dokonywana przez bezpieczną i zweryfikowaną bramkę, taką jak bezpośredni przelew bankowy, z tą samą nazwą sprzedawcy. Jeśli mam wątpliwości co do wiarygodności sponsora lub instrukcji płatności, przed dokonaniem jakiejkolwiek płatności zweryfikuję autoryzowanych dystrybutorów na stronie https://www.olylife.com w sekcji Contact Us > Specific Regions, aby upewnić się, że otrzymam legalny produkt i uchronić się przed oszustwem. WellneXfreQ jest jedynie zespołem wsparcia i nie zbiera ani nie przetwarza płatności przez żadne niezweryfikowane kanały.",
         "submit": "Składać",
         "submitting": "Wysyłanie...",
         "remove_line": "Usuń pozycję",
         "product_names": {
-          "tera-p90": "Tera P90 ($1,000)",
-          "tera-p90-kit": "THZ Tera-P90+ ($1,500)",
-          "shaken-massager": "Shaken Massage ($1,000)",
-          "galaxy-g-one": "Galaxy G-One ($500)",
-          "vitality-wand": "Vitality Wand ($600)",
-          "h-plus-bar": "H+ Bar ($600)",
-          "bundle-tera-shaken": "Tera-P90+ i Masażer Shaken ($2,500)",
-          "bundle-tera-galaxy": "Tera-P90+ i Galaxy G-One ($2,000)",
-          "bundle-tera-galaxy-shaken": "Tera-P90+, Galaxy G-One i Masażer Shaken ($3,000)"
+          "tera-p90": "Tera P90 (US$1,000)",
+          "tera-p90-kit": "THZ Tera-P90+ (US$1,500)",
+          "shaken-massager": "Shaken Massage (US$1,000)",
+          "galaxy-g-one": "Galaxy G-One (US$500)",
+          "vitality-wand": "Vitality Wand (US$600)",
+          "h-plus-bar": "H+ Bar (US$600)",
+          "bundle-tera-shaken": "Tera-P90+ i Masażer Shaken (US$2,500)",
+          "bundle-tera-galaxy": "Tera-P90+ i Galaxy G-One (US$2,000)",
+          "bundle-tera-galaxy-shaken": "Tera-P90+, Galaxy G-One i Masażer Shaken (US$3,000)"
         }
       },
       "placeholders": {

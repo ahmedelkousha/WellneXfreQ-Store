@@ -155,8 +155,8 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/90 backdrop-blur-md py-2"
-          : "bg-transparent py-3"
+          ? "bg-black py-1"
+          : "bg-background/90 py-2"
           }`}
       >
         <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between">
@@ -171,15 +171,17 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6">
-            <button
-              onClick={handleHomeClick}
-              className={`text-sm font-medium transition-colors ${isHomeActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
-            >
-              {t("nav.home")}
-            </button>
+
 
             <div className="relative">
 
+
+              <button
+                onClick={handleHomeClick}
+                className={`text-xs tracking-widest font-medium transition-colors uppercase ${isHomeActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+              >
+                {t("nav.home")}
+              </button>
 
               {/* <div
                 className={`absolute top-full left-1/2 -translate-x-1/2 w-64 bg-card border border-white/10 rounded-lg shadow-xl overflow-hidden transition-all duration-200 origin-top ${productsDropdownOpen
@@ -205,12 +207,12 @@ export default function Navbar() {
 
             <button
               onClick={() => scrollToSection("philosophy")}
-              className={`text-sm font-medium transition-colors ${isPhilActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isPhilActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
             >
               {t("nav.philosophy")}
             </button>
             <button
-              className={`flex items-center gap-1 text-sm font-medium transition-colors py-2 ${isTechActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+              className={`flex items-center gap-1 text-xs tracking-widest font-medium transition-colors py-2 uppercase ${isTechActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
               onClick={() => scrollToSection("technology")}
             // onMouseEnter={() => setProductsDropdownOpen(true)}
             // onMouseLeave={() => setProductsDropdownOpen(false)}
@@ -228,13 +230,13 @@ export default function Navbar() {
 
             <Link
               to={getPath("/products")}
-              className={`text-sm font-medium transition-colors ${isProductsActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isProductsActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
             >
               {t("nav.products")}
             </Link>
             <Link
               to={getPath("/contact")}
-              className={`text-sm font-medium transition-colors ${isContactActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isContactActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
             >
               {t("nav.contact")}
             </Link>
@@ -253,9 +255,9 @@ export default function Navbar() {
                 title={currentLang === "en" ? "Switch to Polish" : "Przełącz na Angielski"}
               >
                 {currentLang === "en" ? (
-                  <span className="w-4 h-4 text-xs rounded-sm shadow-sm text-primary hover:text-white">PL</span>
+                  <span className="w-4 h-4 text-xs tracking-[0.2rem] rounded-sm shadow-sm text-primary hover:text-white">PL</span>
                 ) : (
-                  <span className="w-4 h-4 text-xs rounded-sm shadow-sm">EN</span>
+                  <span className="w-4 h-4 text-xs tracking-[0.2rem] rounded-sm shadow-sm">EN</span>
                 )}
               </button>
 
@@ -290,7 +292,7 @@ export default function Navbar() {
               asChild
               size="sm"
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="text-xs tracking-widest font-medium transition-colors uppercase border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               <Link to={getPath("/order")}>{t("nav.order")}</Link>
             </Button>
