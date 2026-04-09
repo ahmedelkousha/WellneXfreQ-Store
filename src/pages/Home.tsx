@@ -19,13 +19,14 @@ import {
 // import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from "@assets/featured-product-sm.png";
 import featuredProductImgLg from "@assets/featured-product-lg.png";
-
+import featuredProductImgPhone from "@assets/featured-product-phone.avif";
 import heroImg from "@assets/mountain.png";
 import coachBlankingImg from "@assets/patrycja-coach.png";
 // import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";
 import bloodAnalysisVideo from "@assets/Livebloodanalysisfb.mp4";
 import videoPoster from "@assets/poster.png";
-import OrderNow from "./OrderNow";
+// import OrderNow from "./OrderNow";
+import Contact from "./Contact";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -141,7 +142,7 @@ export default function Home() {
           >
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 sm:px-4 px-2 sm:text-base text-sm shadow-[0_0_30px_rgba(126,255,212,0.3)] border border-primary/50 transition-all hover:scale-105 cursor-pointer"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 sm:px-4 px-2 sm:text-base text-xs shadow-[0_0_30px_rgba(126,255,212,0.3)] border border-primary/50 transition-all hover:scale-105 cursor-pointer"
               onClick={() => scrollToSection("technology")}
             >
               {t("home.hero.cta_tech")}
@@ -156,7 +157,7 @@ export default function Home() {
               className="absolute top-[130px] lg:top-[180px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
               onClick={() => scrollToSection("philosophy")}
             >
-              <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span>
+              {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
               <div className="w-[22px] h-[34px] border border-white/20 rounded-full flex justify-center p-1 bg-black/20 backdrop-blur-sm transition-colors hover:border-primary/50">
                 <motion.div
                   animate={{
@@ -238,7 +239,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-8">
-                  <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-6 rounded-full shadow-[0_0_20px_rgba(126,255,212,0.2)] transition-all hover:scale-105 group">
+                  <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-6 rounded-lg shadow-[0_0_20px_rgba(126,255,212,0.2)] transition-all hover:scale-105 group">
                     <Link to={`/${currentLang}/contact`}>{t("home.philosophy.learn_more")} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" /></Link>
                   </Button>
                 </div>
@@ -373,7 +374,7 @@ export default function Home() {
 
       {/* PRODUCTS SECTION */}
       <section id="products" className="py-32  relative bg-white/2">
-        <div className="mx-auto px-4 h-full w-full">
+        <div className="mx-auto px-1 sm:px-4 h-full w-full">
           <motion.div
             variants={fadeIn}
             className="text-center max-w-3xl mx-auto mb-20"
@@ -389,23 +390,23 @@ export default function Home() {
           {/* Featured Product Card */}
           <motion.div
             variants={fadeIn}
-            className="relative w-auto h-[110vh] md:h-[940px] rounded-3xl overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5"
+            className="relative w-auto h-[670px] sm:h-[940px] rounded-3xl overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5"
           >
             {/* Background Image Setup */}
 
-            {/* Desktop Image */}
+            {/* Large Image */}
             <div className="hidden xl:block absolute inset-0 z-0 h-full w-full">
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-              <img 
-                src={featuredProductImgLg} 
-                alt="OlyLife THz Tera-P90+" 
-                className="h-[940px] w-full object-cover object-center transition-transform duration-1000 group-hover:scale-[1.03]" 
+              <img
+                src={featuredProductImgLg}
+                alt="OlyLife THz Tera-P90+"
+                className="h-[940px] w-full object-cover object-bottom transition-transform duration-1000 group-hover:scale-[1.03]"
               />
             </div>
 
-            {/* Mobile Image */}
-            <div className="xl:hidden block absolute inset-0 z-0 h-full w-full">
+            {/* Small Image */}
+            <div className="sm:block hidden xl:hidden absolute inset-0 z-0 h-full w-full">
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
               <img 
@@ -415,8 +416,19 @@ export default function Home() {
               />
             </div>
 
+            {/* Mobile Image */}
+            <div className="sm:hidden block absolute inset-0 z-0 h-full w-full">
+              <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
+              <img
+                src={featuredProductImgPhone}
+                alt="OlyLife THz Tera-P90+"
+                className="h-[670px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]"
+              />
+            </div>
+
             {/* Content overlay */}
-            <div className="relative z-20 h-full w-full flex flex-col justify-start p-14 md:p-16 sm:p-12 lg:p-30">
+            <div className="relative z-20 h-full w-full flex flex-col justify-start p-8 md:p-16 sm:p-12 lg:p-30">
               <div className="lg:max-w-xl text-left w-full">
                 <span className="bg-secondary w-fit p-3 rounded-lg text-primary font-bold text-[11px] uppercase tracking-[0.25em] mb-5 block drop-shadow-md">
                   {t('home.products.featured_badge')}
@@ -425,14 +437,14 @@ export default function Home() {
                 <h3 className="text-[1.4rem] sm:text-4xl lg:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
                   {t('home.products.featured_title')}
                 </h3>
-                <p className="text-[0.9rem] sm:text-lg text-white/70 mb-10 max-w-md font-light leading-relaxed">
+                <p className="text-[0.9rem] sm:text-lg text-white/70 mb-4 sm:mb-10 max-w-md font-light leading-relaxed">
                   {t('home.products.featured_desc')}
                 </p>
 
                 <div className="flex flex-col gap-6 items-start w-fit">
                   <Link
                     to={featuredProduct ? `/${currentLang}/product/${featuredProduct.slug}` : `/${currentLang}/products`}
-                    className="sm:px-10 sm:py-4 px-0 py-3 rounded-full bg-primary text-black font-bold uppercase tracking-widest text-[11px] sm:text-[13px] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_30px_rgba(102,248,219,0.3)] hover:shadow-[0_0_40px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-full sm:w-auto"
+                    className="sm:px-10 sm:py-4 px-0 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[11px] sm:text-[13px] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_30px_rgba(102,248,219,0.3)] hover:shadow-[0_0_40px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-full sm:w-auto"
                   >
                     {t('home.products.learn_more')}
                   </Link>
@@ -539,10 +551,51 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
+              {t("home.blood_analysis.title")}<br /><span className="text-primary italic">{t("home.blood_analysis.title_highlight")}</span>
+            </h2>
+            <p className="text-white/60 max-w-4xl mx-auto text-lg leading-relaxed">
+              {t("home.blood_analysis.subtitle")}
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center"
+        >
+          <div className="relative group max-w-4xl w-full aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            {/* <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors z-10 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/50 flex items-center justify-center group-hover:scale-110 transition-transform cursor-pointer">
+                  <Activity className="w-10 h-10 text-primary fill-primary" />
+                </div>
+              </div> */}
+            <video
+              src={bloodAnalysisVideo}
+              controls
+              poster={videoPoster}
+              className="w-full h-full aspect-video p-2 rounded-4xl object-cover transition-transform duration-700 group-hover:scale-[101%]"
+            />
+            <div className="absolute bottom-6 right-6 z-20 text-white/40 text-xs font-mono uppercase tracking-widest">
+              Blood Analysis after PEMF session
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="container mx-auto px-4 pt-40">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeIn}
             className="text-center mb-20"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.testimonials.title")}<br /><span className="text-primary">{t("home.testimonials.title_highlight")}</span>
+              {t("home.testimonials.title")}<br /><span className="text-primary italic">{t("home.testimonials.title_highlight")}</span>
             </h2>
             <p className="text-white/60 max-w-2xl mx-auto text-lg text-left">
               {t("home.testimonials.subtitle")}
@@ -614,29 +667,7 @@ export default function Home() {
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-20 flex justify-center"
-          >
-            <div className="relative group max-w-4xl w-full aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-              {/* <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors z-10 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/50 flex items-center justify-center group-hover:scale-110 transition-transform cursor-pointer">
-                  <Activity className="w-10 h-10 text-primary fill-primary" />
-                </div>
-              </div> */}
-              <video
-                src={bloodAnalysisVideo}
-                controls
-                poster={videoPoster}
-                className="w-full h-full aspect-video p-2 rounded-4xl object-cover transition-transform duration-700 group-hover:scale-[101%]"
-              />
-              <div className="absolute bottom-6 right-6 z-20 text-white/40 text-xs font-mono uppercase tracking-widest">
-                Blood Analysis after PEMF session
-              </div>
-            </div>
-          </motion.div>
+
         </div>
       </section>
 
@@ -709,7 +740,7 @@ export default function Home() {
 
       {/* <AffiliateCTA /> */}
       <div id="contact">
-        <OrderNow />
+        <Contact />
       </div>
     </div>
   );

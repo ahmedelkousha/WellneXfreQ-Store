@@ -61,10 +61,10 @@ export default function OrderNow() {
             </div>
 
             <div className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-4">
-              <h3 className="text-sm font-semibold text-white">
+              {/* <h3 className="text-sm font-semibold text-white">
                 {t("order.social.title")}
               </h3>
-              <p className="text-xs text-white/70">{t("order.social.subtitle")}</p>
+              <p className="text-xs text-white/70">{t("order.social.subtitle")}</p> */}
 
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <a

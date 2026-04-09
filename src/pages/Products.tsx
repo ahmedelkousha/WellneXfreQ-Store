@@ -8,6 +8,8 @@ import { useTranslation } from "react-i18next";
 // import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from "@assets/featured-product-sm.png";
 import featuredProductImgLg from "@assets/featured-product-lg.png";
+import featuredProductImgPhone from "@assets/featured-product-phone.avif";
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -39,7 +41,7 @@ export default function Products() {
           {/* <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-background via-background/90 to-transparent h-2/3"></div> */}
 
           {/* <img src={coachJumpImg} alt="Products Hero" className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay grayscale" /> */}
-          {/* Desktop Image */}
+          {/* Large Image */}
           <div className="hidden xl:block absolute inset-0 z-0 h-full w-full">
             <div className="absolute inset-0 bg-linear-to-b from-[#0a0a0a] via-black/5 to-transparent z-10" />
             <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
@@ -50,8 +52,8 @@ export default function Products() {
             />
           </div>
 
-          {/* Mobile Image */}
-          <div className="xl:hidden block absolute inset-0 z-0 h-full w-full">
+          {/* Small Image */}
+          <div className="xl:hidden sm:block hidden absolute inset-0 z-0 h-full w-full">
             <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
             <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
             <img
@@ -60,6 +62,18 @@ export default function Products() {
               className="h-[940px] w-full object-cover object-[80%] transition-transform duration-1000 group-hover:scale-[1.03]"
             />
           </div>
+
+          {/* Mobile Image */}
+          <div className="sm:hidden block absolute inset-0 z-0 h-full w-full">
+            <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
+            <img
+              src={featuredProductImgPhone}
+              alt="OlyLife THz Tera-P90+"
+              className="h-[800px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]"
+            />
+          </div>
+
         </div>
 
         <div className="container relative z-10 text-left pl-6 pt-0 lg:pt-10 lg:pl-30">
@@ -67,7 +81,7 @@ export default function Products() {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6 backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-4 sm:mb-6 backdrop-blur-md"
           >
             <Mouse className="w-4 h-4" />
             <span className="lg:text-md md:text-sm text-[0.7rem]">{t("shop.hero.badge")}</span>
@@ -77,7 +91,7 @@ export default function Products() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl md:text-3xl lg:text-4xl xl:text-7xl font-heading font-bold text-white mb-6"
+            className="text-[1.7rem] sm:text-3xl lg:text-4xl xl:text-7xl font-heading font-bold text-white sm:mb-6 mb-4"
           >
             {t("shop.hero.title")}<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("shop.hero.title_highlight")}</span>
           </motion.h1>

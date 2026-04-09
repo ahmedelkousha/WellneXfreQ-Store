@@ -14,13 +14,13 @@ export default function Contact() {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-4 lg:px-6 max-w-6xl relative z-10">
-        <button 
+        {location.pathname !== `/${i18n.language}` && <button 
           onClick={() => navigate(-1)}
           className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors mb-10 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           <span className="text-xs font-medium uppercase tracking-widest">{t("common.navigation.back")}</span>
-        </button>
+        </button>}
 
         <section className="mb-10">
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
@@ -94,10 +94,10 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-4"
             >
-              <h3 className="text-sm font-semibold text-white">
+              {/* <h3 className="text-sm font-semibold text-white">
                 {t("order.social.title")}
               </h3>
-              <p className="text-xs text-white/70">{t("order.social.subtitle")}</p>
+              <p className="text-xs text-white/70">{t("order.social.subtitle")}</p> */}
 
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <a
