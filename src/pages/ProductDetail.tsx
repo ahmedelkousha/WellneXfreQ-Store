@@ -113,13 +113,13 @@ export default function ProductDetail() {
                     <Tag className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="text-xs text-white/40 uppercase tracking-widest font-semibold mb-0.5">{t("product_detail.headers.price")}</p>
+                    {/* <p className="text-xs text-white/40 uppercase tracking-widest font-semibold mb-0.5">{t("product_detail.headers.price")}</p> */}
                     <p className="text-3xl font-heading font-bold text-white">{product.price}</p>
                   </div>
-                  <div className="ml-auto flex items-center gap-1.5 text-xs text-white/40">
+                  {/* <div className="ml-auto flex items-center gap-1.5 text-xs text-white/40">
                     <ShieldCheck className="w-4 h-4 text-primary/60" />
                     <span>{t("product_detail.pricing.direct")}</span>
-                  </div>
+                  </div> */}
                 </div>
               ) : (
                 <div className="flex items-center gap-4 bg-white/3 border border-white/10 rounded-2xl p-5">

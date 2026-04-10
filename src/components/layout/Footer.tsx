@@ -5,7 +5,8 @@ import {
   Mail, 
   ArrowUpRight, 
   Phone, 
-  Activity 
+  Activity, 
+  MessageCircle
 } from "lucide-react";
 import { 
   Accordion, 
@@ -57,18 +58,18 @@ export default function Footer() {
   ];
 
   const TechLinks = () => (
-    <ul className="space-y-4">
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> SHAKEN MASSAGER</Link></li>
+    <ul className="space-y-4 -translate-x-[0.9rem]">
       <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> THz TERA-P90+</Link></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> TERA-P90</Link></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> GALAXY G-ONE</Link></li>
+      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> SHAKEN MASSAGER</Link></li>
       <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> VITALITY WAND</Link></li>
       <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> H+ BAR</Link></li>
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> GALAXY G-ONE</Link></li>
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> TERA-P90</Link></li>
     </ul>
   );
 
   const CompanyLinks = () => (
-    <ul className="space-y-4">
+    <ul className="space-y-4 -translate-x-[0.9rem]">
       <li><a href={getPath("/")} onClick={handleHomeClick} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.home")}</a></li>
       {/* <li><Link to={getPath("/about")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.about")}</Link></li> */}
       <li><a href={`${getPath("/")}#philosophy`} onClick={scrollToPhilosophy} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("footer.philosophy")}</a></li>
@@ -89,6 +90,10 @@ export default function Footer() {
       <li className="flex items-start gap-3 text-sm">
         <Phone className="w-5 h-5 text-primary shrink-0" />
         <a href={`tel:${t("order.social.phone").replace(/\s/g, "")}`} className="hover:text-white transition-colors">{t("order.social.phone")}</a>
+      </li>
+      <li className="flex items-start gap-3 text-sm">
+        <MessageCircle className="w-5 h-5 text-primary shrink-0" />
+        <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/61450334543`} className="hover:text-white transition-colors">{t("order.social.phone")}</a>
       </li>
       <li className="flex items-start gap-3 text-sm">
         <Activity className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -136,17 +141,17 @@ export default function Footer() {
 
           {/* Desktop Links */}
           <div className="hidden md:block">
-            <h4 className="text-white font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.company")}</h4>
+            <h4 className="text-primary font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.company")}</h4>
             <CompanyLinks />
           </div>
 
           <div className="hidden md:block">
-            <h4 className="text-white font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.tech")}</h4>
+            <h4 className="text-primary font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.tech")}</h4>
             <TechLinks />
           </div>
 
           <div className="hidden md:block">
-            <h4 className="text-white font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.connect")}</h4>
+            <h4 className="text-primary font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.connect")}</h4>
             <ConnectLinks />
           </div>
 

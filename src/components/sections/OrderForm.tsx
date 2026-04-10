@@ -160,21 +160,21 @@ export default function OrderForm() {
     }
   };
 
-  const calculateTotals = () => {
-    let subtotal = 0;
-    let phTotal = 0;
+  // const calculateTotals = () => {
+  //   let subtotal = 0;
+  //   let phTotal = 0;
 
-    formItems.forEach(item => {
-      const product = ORDER_PRODUCTS.find(p => p.id === item.productId);
-      if (product && item.quantity > 0) {
-        const lineSubtotal = product.price * item.quantity;
-        subtotal += lineSubtotal;
-        phTotal += (lineSubtotal * product.phPercent) / 100;
-      }
-    });
+  //   formItems.forEach(item => {
+  //     const product = ORDER_PRODUCTS.find(p => p.id === item.productId);
+  //     if (product && item.quantity > 0) {
+  //       const lineSubtotal = product.price * item.quantity;
+  //       subtotal += lineSubtotal;
+  //       phTotal += (lineSubtotal * product.phPercent) / 100;
+  //     }
+  //   });
 
-    return { subtotal, phTotal, total: subtotal + phTotal };
-  };
+  //   return { subtotal, phTotal, total: subtotal + phTotal };
+  // };
 
   // const { subtotal, phTotal, total } = calculateTotals();
 
@@ -190,6 +190,8 @@ export default function OrderForm() {
             </h3>
             <div className="h-px bg-white/10 flex-1" />
           </div>
+
+          <h4 className="text-sm font-heading font-bold text-white tracking-wider whitespace-nowrap">{t("order.form.labels.full_legal_name")}</h4>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <FormField

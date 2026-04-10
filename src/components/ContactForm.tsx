@@ -86,7 +86,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
               <FormItem>
                 <FormLabel className="text-white/80">{t("common.form.labels.name")}</FormLabel>
                 <FormControl>
-                  <Input placeholder={t("common.form.placeholders.name")} className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
+                  <Input className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -99,7 +99,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
               <FormItem>
                 <FormLabel className="text-white/80">{t("common.form.labels.email")}</FormLabel>
                 <FormControl>
-                  <Input placeholder={t("common.form.placeholders.email")} type="email" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
+                  <Input type="email" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -115,7 +115,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
               <FormItem>
                 <FormLabel className="text-white/80">{t("common.form.labels.phone")}</FormLabel>
                 <FormControl>
-                  <Input placeholder={t("common.form.placeholders.phone")} type="tel" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
+                  <Input type="tel" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -130,7 +130,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger className="bg-black/50 border-white/10 focus-visible:ring-primary text-white">
-                      <SelectValue placeholder={t("contact.form.placeholders.interest") || t("common.form.placeholders.product")} />
+                      <SelectValue />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="bg-card border-white/10 text-white">
@@ -158,7 +158,6 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
               <FormLabel className="text-white/80">{t("common.form.labels.message")}</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder={t("common.form.placeholders.message")} 
                   className="min-h-[120px] bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white resize-none" 
                   {...field} 
                 />

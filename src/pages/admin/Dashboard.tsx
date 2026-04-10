@@ -17,7 +17,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Edit2, Trash2, LogOut, Check, X, Loader2, UploadCloud, Eye, EyeOff, Archive, Globe, ExternalLink, Star } from "lucide-react";
+import { Plus, Edit2, Trash2, LogOut, Check, X, Loader2, UploadCloud, Eye, EyeOff, Archive, Globe, ExternalLink, Star, Zap } from "lucide-react";
 
 export default function AdminDashboard() {
   const { t, i18n } = useTranslation();
@@ -525,6 +525,12 @@ export default function AdminDashboard() {
                       <h3 className="text-xl font-bold text-white mb-2">
                         {product.name} <span className="text-sm font-normal text-white/50 bg-white/5 px-2 py-1 rounded">/{product.slug}</span>
                         {product.price && <span className="ml-3 font-mono text-primary bg-primary/10 px-2 py-1 rounded-md text-sm">{product.price}</span>}
+                        {product.isFeatured && (
+                          <span className="ml-3 text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-primary text-black flex items-center gap-1 w-fit inline-flex align-middle">
+                            <Zap className="w-2.5 h-2.5" />
+                            FEATURED
+                          </span>
+                        )}
                       </h3>
                       <p className="text-white/70 text-sm line-clamp-2 max-w-xl">{product.features?.[0]}</p>
                     </div>

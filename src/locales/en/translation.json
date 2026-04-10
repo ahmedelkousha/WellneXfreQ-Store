@@ -95,7 +95,7 @@
     "testimonials": {
       "title": "Real people. ",
       "title_highlight": "Real results.",
-      "subtitle": "Frequency technology is changing people's lives all over the world.",
+      "subtitle": "Frequency technology is transforming lives around the world. Listen to real people share their experiences.",
       "disclaimer": "Disclaimer: Individual results may vary. Consult your doctor before use.",
       "items": [
         {
@@ -251,10 +251,14 @@
   },
   "shop": {
     "hero": {
-      "badge": "SCROLL TO DISCOVER",
-      "title": "Our Full ",
-      "title_highlight": "Collection",
-      "subtitle": "Browse our carefully curated selection of professional PEMF and Terahertz frequency devices, designed for total mastery of cellular processes."
+      "badge": "DISCOVER PRODUCTS BELOW",
+      "title": "Every Device.",
+      "title_highlight": "One Purpose.",
+      "subtitle": "PEMF and Terahertz frequency devices engineered for cellular repair, recovery, and longevity."
+    },
+    "medical_notice": {
+      "title": "Medical and Regulatory Notice",
+      "text": "PEMF technology has been studied for decades and certain PEMF devices have received FDA clearance for specific indications. Regulatory clearances are device- and indication-specific and do not apply across brands or models. OlyLife products are marketed as wellness devices and are not medical devices. They are not intended to diagnose, treat, cure, or prevent any disease or condition. No statements herein have been evaluated by the FDA or other regulators. Individual experiences vary. Consult your physician before beginning any wellness routine if you have a medical condition, implanted device, or concerns."
     },
     "list": {
       "loading": "Loading products...",
@@ -367,12 +371,13 @@
       "badge": "Direct Order",
       "title": "Let’s Get Your Order Started",
       "subtitle": "Tell us what OlyLife products you’d like by submitting your details below.",
-      "help": "If you have any questions, please reach out to me here:"
+      "help": "If you have any questions, please reach out:"
     },
     "form": {
       "title": "Order Now",
       "description": "Fill in your details and select the technology you wish to purchase. This form sends a non-binding order inquiry so we can confirm availability, shipping, and payment directly with you.",
       "labels": {
+        "full_legal_name": "Full legal name as written on ID",
         "personal_details": "Personal Details",
         "first_name": "First Name",
         "middle_name": "Middle Name",
@@ -390,12 +395,12 @@
         "country": "Country",
         "postal_code": "Postal Code",
         "shipping_details": "Recipient / Shipping Details",
-        "same_as_personal": "Same as Personal Details / Address",
+        "same_as_personal": "Same as personal address",
         "recipient_name": "Recipient Name",
         "recipient_phone": "Recipient Phone",
         "recipient_address": "Recipient Address",
         "products_section": "Select Products",
-        "products_disclaimer": "This is not a checkout page. I will reach out shortly after you submit this form to finalize everything with you. We will use this information for the packaging and shipping process after you complete the check-out process via our official secure platform.",
+        "products_disclaimer": "This is not a checkout page. I will reach out shortly after you submit this form to finalise everything with you. We will use this information for the packaging and shipping process after you complete the check-out process via our official secure platform.",
         "bundles_section": "OlyLife Product Bundles",
         "bundles_disclaimer": "Tell us how many of each bundle you'd like to order.",
         "quantity": "Quantity",
@@ -408,15 +413,15 @@
         "submitting": "Submitting...",
         "remove_line": "Remove item",
         "product_names": {
-          "tera-p90": "Tera P90 (US$1,000)",
-          "tera-p90-kit": "THZ Tera-P90+ (US$1,500)",
-          "shaken-massager": "Shaken Massage (US$1,000)",
-          "galaxy-g-one": "Galaxy G-One (US$500)",
-          "vitality-wand": "Vitality Wand (US$600)",
-          "h-plus-bar": "H+ Bar (US$600)",
-          "bundle-tera-shaken": "Tera-P90+ & Shaken Massager (US$2,500)",
-          "bundle-tera-galaxy": "Tera-P90+ & Galaxy G-One (US$2,000)",
-          "bundle-tera-galaxy-shaken": "Tera-P90+ & Galaxy G-One & Shaken Massager (US$3,000)"
+          "tera-p90": "Tera P90 ($1,000 USD)",
+          "tera-p90-kit": "THZ Tera-P90+ ($1,500 USD)",
+          "shaken-massager": "Shaken Massage ($1,000 USD)",
+          "galaxy-g-one": "Galaxy G-One ($500 USD)",
+          "vitality-wand": "Vitality Wand ($600 USD)",
+          "h-plus-bar": "H+ Bar ($600 USD)",
+          "bundle-tera-shaken": "Tera-P90+ & Shaken Massager ($2,500 USD)",
+          "bundle-tera-galaxy": "Tera-P90+ & Galaxy G-One ($2,000 USD)",
+          "bundle-tera-galaxy-shaken": "Tera-P90+ & Galaxy G-One & Shaken Massager ($3,000 USD)"
         }
       },
       "placeholders": {
@@ -553,7 +558,7 @@
   },
   "footer": {
     "tagline": "PEMF and Terahertz frequency technology for cellular wellness, recovery and long-term performance. Independent distributor of OlyLife technology.",
-    "company": "Company",
+    "company": "Quick Links",
     "tech": "Products",
     "connect": "Connect",
     "serving": "Sourcing",

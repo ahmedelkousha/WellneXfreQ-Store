@@ -25,7 +25,7 @@ export default function Products() {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language.split("-")[0];
   const { data: products = [], isLoading } = useProducts();
-  const featuredId = products.find(p => p.isFeatured)?.id || products[0]?.id;
+  const featuredId = products.find(p => p.isFeatured)?.id;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -93,7 +93,7 @@ export default function Products() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[1.7rem] sm:text-3xl lg:text-4xl xl:text-7xl font-heading font-bold text-white sm:mb-6 mb-4"
           >
-            {t("shop.hero.title")}<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("shop.hero.title_highlight")}</span>
+            {t("shop.hero.title")}<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]"><br />{t("shop.hero.title_highlight")}</span>
           </motion.h1>
 
           <motion.p
@@ -210,6 +210,30 @@ export default function Products() {
           </motion.div>
         </div>
       </section> */}
+
+      {/* FULL PRODUCTS LISTING SECTION ENDS HERE */}
+
+      {/* MEDICAL AND REGULATORY NOTICE */}
+      <section className="py-24 relative z-10 border-t border-white/5 bg-background">
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto bg-black/40 border border-primary/20 p-10 md:p-16 rounded-[2.5rem] text-center shadow-[0_0_60px_rgba(126,255,212,0.03)] relative overflow-hidden group hover:border-primary/30 transition-all duration-500"
+          >
+            {/* Subtle inner glow */}
+            <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"></div>
+            
+            <h2 className="text-3xl md:text-4xl font-heading font-medium text-white mb-10 tracking-tight">
+              {t("shop.medical_notice.title")}
+            </h2>
+            <p className="text-base md:text-lg text-white/50 leading-relaxed font-light max-w-4xl mx-auto">
+              {t("shop.medical_notice.text")}
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
     </div>
   );

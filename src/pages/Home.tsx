@@ -1,13 +1,17 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useProducts } from "@/hooks/useProducts";
 import { useTranslation } from "react-i18next";
+import useEmblaCarousel from 'embla-carousel-react';
 import DualTechPanel from '@/components/sections/DualAction';
 import DualTechFeatures from '@/components/sections/DualActionFeatures';
 import {
+  ArrowLeft,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
   Star
 } from "lucide-react";
 // import {
@@ -47,6 +51,38 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const { data: products = [] } = useProducts();
   const featuredProduct = products.find(p => p.isFeatured) || products[0];
+  const isActualFeatured = products.some(p => p.isFeatured);
+
+  // Carousel State
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    align: 'start', 
+    loop: false,
+    dragFree: true,
+    containScroll: 'trimSnaps'
+  });
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+  }, [emblaApi, onSelect]);
 
   // Blogs DISABLED
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
@@ -451,9 +487,11 @@ export default function Home() {
             {/* Content overlay */}
             <div className="relative z-20 h-full w-full flex flex-col justify-start p-8 md:p-16 sm:p-12 lg:p-30">
               <div className="lg:max-w-xl text-left w-full">
-                <span className="bg-secondary w-fit p-3 rounded-lg text-primary font-bold text-[11px] uppercase tracking-[0.25em] mb-5 block drop-shadow-md">
-                  {t('home.products.featured_badge')}
-                </span>
+                {isActualFeatured && (
+                  <span className="bg-secondary w-fit p-3 rounded-lg text-primary font-bold text-[11px] uppercase tracking-[0.25em] mb-5 block drop-shadow-md">
+                    {t('home.products.featured_badge')}
+                  </span>
+                )}
 
                 <h3 className="text-[1.4rem] sm:text-4xl lg:text-6xl font-heading font-bold text-white mb-4 drop-shadow-lg">
                   {t('home.products.featured_title')}
@@ -623,66 +661,75 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="space-y-8">
-            {/* Top Row: 3 Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {(t("home.testimonials.items", { returnObjects: true }) as any[]).slice(0, 3).map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-card/40 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-primary/30 group transition-all flex flex-col h-full"
-                >
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#66F8DB] text-[#66F8DB]" />
-                    ))}
-                  </div>
-                  <p className="text-white/80 italic mb-8 leading-relaxed text-lg quote-marks">
-                    "{item.quote}"
-                  </p>
-                  <div className="flex items-center gap-4 mt-auto">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">
-                      {item.name[0]}
+          <div className="relative">
+            {/* Carousel Viewport */}
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex gap-6 md:gap-8">
+                {(t("home.testimonials.items", { returnObjects: true }) as any[]).map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex-[0_0_100%] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] min-w-0"
+                  >
+                    <div className="bg-card/40 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-primary/30 group transition-all flex flex-col h-full shadow-lg">
+                      <div className="flex gap-1 mb-6">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                        ))}
+                      </div>
+                      <p className="text-white/80 italic mb-10 leading-relaxed text-lg quote-marks">
+                        "{item.quote}"
+                      </p>
+                      <div className="flex items-center gap-4 mt-auto">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0 border border-primary/20">
+                          {item.name[0]}
+                        </div>
+                        <div>
+                          <h4 className="text-white font-bold tracking-tight">{item.name}</h4>
+                          <p className="text-white/40 text-[10px] uppercase tracking-[0.2em]">{item.role}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-white font-bold">{item.name}</h4>
-                      <p className="text-white/40 text-xs uppercase tracking-widest">{item.role}</p>
-                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            {/* Bottom Row: 2 Cards Centered */}
-            <div className="flex flex-col md:flex-row justify-center gap-8">
-              {(t("home.testimonials.items", { returnObjects: true }) as any[]).slice(3, 5).map((item, idx) => (
-                <div
-                  key={idx}
-                  className="w-full md:w-[calc(33.333%-1.33rem)] bg-card/40 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:border-primary/30 group transition-all flex flex-col"
-                >
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#66F8DB] text-[#66F8DB]" />
-                    ))}
-                  </div>
-                  <p className="text-white/80 italic mb-8 leading-relaxed text-lg quote-marks">
-                    "{item.quote}"
-                  </p>
-                  <div className="flex items-center gap-4 mt-auto">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">
-                      {item.name[0]}
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold">{item.name}</h4>
-                      <p className="text-white/40 text-xs uppercase tracking-widest">{item.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {/* Unified Navigation controls (Arrows and Dots) */}
+            <div className="flex items-center justify-center gap-6 mt-12 mb-8">
+               <Button
+                size="icon"
+                variant="ghost"
+                onClick={scrollPrev}
+                disabled={prevBtnDisabled}
+                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white transition-all hover:bg-primary hover:text-black hover:border-primary disabled:opacity-20"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </Button>
+              
+              <div className="flex items-center gap-2">
+                {scrollSnaps.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => scrollTo(index)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${index === selectedIndex ? 'bg-primary w-8' : 'bg-white/10 w-4 hover:bg-white/20'}`}
+                  />
+                ))}
+              </div>
+
+               <Button
+                size="icon"
+                variant="ghost"
+                onClick={scrollNext}
+                disabled={nextBtnDisabled}
+                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white transition-all hover:bg-primary hover:text-black hover:border-primary disabled:opacity-20"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </Button>
             </div>
 
             {/* Disclaimer */}
             <div className="text-center mt-12">
-              <p className="text-white/40 text-xs italic max-w-2xl mx-auto">
+              <p className="text-white/40 text-[10px] uppercase tracking-widest italic max-w-2xl mx-auto opacity-60">
                 {t("home.testimonials.disclaimer")}
               </p>
             </div>

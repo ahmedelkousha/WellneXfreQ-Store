@@ -14,9 +14,9 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-4 lg:px-6 max-w-6xl relative z-10">
-        
+
         {!hideBackButton && (
-          <button 
+          <button
             onClick={() => navigate(-1)}
             className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors mb-10 group"
           >
@@ -37,27 +37,18 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
           </p>
         </section>
 
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.1fr)] items-start">
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-8 shadow-xl shadow-black/40 relative"
-          >
-            <div className="absolute top-0 left-10 right-10 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
-            <h2 className="text-xl font-heading font-bold text-white mb-8">{t("contact.form.title")}</h2>
-            <ContactForm />
-          </motion.section>
+        <div className="grid gap-10 grid-cols-1  items-start">
 
-          <aside className="space-y-6">
-            <motion.div 
+
+          <aside className="space-y-6 flex flex-row justify-center flex-wrap sm:flex-nowrap gap-6">
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-6"
+              className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-6 sm:w-1/2 m-0 w-full"
             >
               <h3 className="text-sm font-semibold text-white mb-4">{t("contact.info.title")}</h3>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start gap-4 text-xs">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
@@ -68,7 +59,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
                     <a href={`mailto:${t("order.social.email")}`} className="text-white/90 hover:text-primary transition-colors">{t("order.social.email")}</a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4 text-xs">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4 text-primary" />
@@ -91,11 +82,11 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-4"
+              className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-4 sm:w-1/2 m-0 w-full"
             >
               {/* <h3 className="text-sm font-semibold text-white">
                 {t("order.social.title")}
@@ -144,7 +135,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
               </div>
             </motion.div>
 
-            <motion.div 
+            {/* <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -154,8 +145,21 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
               <p className="text-white/60 text-[11px] leading-relaxed">
                 {t("contact.help.text")}
               </p>
-            </motion.div>
+            </motion.div> */}
           </aside>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-8 shadow-xl shadow-black/40 relative"
+          >
+            <div className="absolute top-0 left-10 right-10 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
+            <h2 className="text-xl font-heading font-bold text-white mb-8">{t("contact.form.title")}</h2>
+            <ContactForm />
+          </motion.section>
+
+
         </div>
       </div>
     </div>

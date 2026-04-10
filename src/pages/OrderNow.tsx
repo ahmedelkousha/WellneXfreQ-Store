@@ -37,7 +37,7 @@ export default function OrderNow() {
           </p>
 
           <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl">
-            {t("order.hero.help")} <a href="https://wa.me/61450334543" className="text-xs sm:text-sm md:text-base max-w-2xl text-primary hover:underline">+61 450 334 543</a>
+            {t("order.hero.help")} <a target="_blank" rel="noreferrer" href="https://wa.me/61450334543" className="text-xs sm:text-sm md:text-base max-w-2xl text-primary hover:underline">+61 450 334 543</a>
           </p>
         </section>
 
@@ -56,7 +56,7 @@ export default function OrderNow() {
               </p>
             </div> */}
 
-          <div className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-4">
+          <div className="hidden bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-4">
             {/* <h3 className="text-sm font-semibold text-white">
                 {t("order.social.title")}
               </h3>
@@ -129,9 +129,9 @@ export default function OrderNow() {
             <h2 className="text-lg font-semibold mb-3 text-white">
               {t("order.form.title")}
             </h2>
-            <p className="text-xs text-white/60 mb-6">
+            {/* <p className="text-xs text-white/60 mb-6">
               {t("order.form.description")}
-            </p>
+            </p> */}
             <OrderForm />
           </section>
 

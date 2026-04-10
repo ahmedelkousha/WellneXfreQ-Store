@@ -50,7 +50,7 @@ export const products: Product[] = [
       "Kompleksowe Wsparcie Zdrowia: Wspiera usuwanie stanów zapalnych, odpadów metabolicznych, kształtowanie sylwetki i poprawia jakość snu."
     ],
     image: thzTeraP90PlusImg,
-    price: "$1,500"
+    price: "$1,500 USD"
   },
   {
     id: "2",
@@ -76,7 +76,7 @@ export const products: Product[] = [
       "Projekt Oparty o Użytkownika: Nieinwazyjny, łagodny oraz prosty interfejs dla niesamowitego komfortu."
     ],
     image: teraP90Img,
-    price: "$1,000"
+    price: "$1,000 USD"
   },
   {
     id: "3",
@@ -104,7 +104,7 @@ export const products: Product[] = [
       "Korzyści Odtwórcze: Zapewnia odświeżenie oraz rześki wygląd wraz z olbrzymią ulgą w zmęczeniu przy ekranie komputera."
     ],
     image: galaxyGOneImg,
-    price: "$500"
+    price: "$500 USD"
   },
   {
     id: "4",
@@ -134,7 +134,7 @@ export const products: Product[] = [
       "Ergonomiczny Projekt: Wykonano go z delikatnego i antyalergicznego tworzywa potrafiącego objąć pas nawet do 140 centymetrów w obwodzie."
     ],
     image: shakenMassagerImg,
-    price: "$1,000"
+    price: "$1,000 USD"
   },
   {
     id: "5",
@@ -164,7 +164,7 @@ export const products: Product[] = [
       "Obsługa Wolne Ręce: Nowoczesna inteligentna nóżka w komplecie umożliwi wsparcie na siebie samego."
     ],
     image: vitalityWandImg,
-    price: "$600"
+    price: "$600 USD"
   },
   {
     id: "6",
@@ -194,6 +194,6 @@ export const products: Product[] = [
       "Kompaktowa jakość OlyLife: Najwyższej próby i niezwykle gęste formy, bez ryzyka przepalenia oraz nieścieralna i gotowa by bez oporu być wszędzie wykorzystana w pełnym tego słowa znaczeniu."
     ],
     image: hPlusBarImg,
-    price: "$600"
+    price: "$600 USD"
   }
 ];

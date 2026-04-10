@@ -95,7 +95,7 @@
     "testimonials": {
       "title": "Prawdziwi ludzie. ",
       "title_highlight": "Prawdziwe efekty.",
-      "subtitle": "Technologia częstotliwości zmienia życie ludzi na całym świecie.",
+      "subtitle": "Technologia częstotliwości zmienia życie ludzi na całym świecie. Posłuchaj prawdziwych ludzi dzielących się swoimi doświadczeniami.",
       "disclaimer": "Zastrzeżenie: Indywidualne wyniki mogą się różnić. Przed użyciem skonsultuj się ze swoim lekarzem.",
       "items": [
         {
@@ -269,10 +269,14 @@
   },
   "shop": {
     "hero": {
-      "badge": "PRZEWIŃ, ABY ODKRYĆ",
-      "title": "Nasza Pełna ",
-      "title_highlight": "Kolekcja",
-      "subtitle": "Przeglądaj naszą starannie dobraną ofertę profesjonalnych urządzeń PEMF i częstotliwości Terahertzowej, zaprojektowanych z myślą o całkowitym opanowaniu procesów komórkowych."
+      "badge": "ODKRYJ PRODUKTY PONIŻEJ",
+      "title": "Każde Urządzenie.",
+      "title_highlight": "Jeden Cel.",
+      "subtitle": "Urządzenia PEMF i częstotliwości terahercowej zaprojektowane z myślą o naprawie komórek, regeneracji i długowieczności."
+    },
+    "medical_notice": {
+      "title": "Informacja Medyczna i Regulacyjna",
+      "text": "Technologia PEMF jest badana od dziesięcioleci, a niektóre urządzenia PEMF otrzymały certyfikat FDA dla konkretnych wskazań. Certyfikaty regulacyjne dotyczą konkretnych urządzeń i wskazań i nie mają zastosowania do innych marek lub modeli. Produkty OlyLife są wprowadzane do obrotu jako urządzenia poprawiające samopoczucie (wellness) i nie są urządzeniami medycznymi. Nie są one przeznaczone do diagnozowania, leczenia, ani zapobiegania jakimkolwiek chorobom lub stanom. Żadne oświadczenia zawarte w niniejszym dokumencie nie zostały ocenione przez FDA ani inne organy regulacyjne. Indywidualne doświadczenia mogą się różnić. Skonsultuj się z lekarzem przed rozpoczęciem jakiejkolwiek rutyny wellness, jeśli masz schorzenia, wszczepione urządzenia lub obawy."
     },
     "list": {
       "loading": "Ładowanie produktów...",
@@ -385,12 +389,13 @@
       "badge": "Bezpośrednie zamówienie",
       "title": "Zacznijmy Twoje zamówienie",
       "subtitle": "Powiedz nam, które produkty OlyLife chcesz zamówić, przesyłając poniżej swoje dane.",
-      "help": "Jeśli masz jakiekolwiek pytania, skontaktuj się ze mną tutaj:"
+      "help": "Jeśli masz jakiekolwiek pytania, skontaktuj się:"
     },
     "form": {
       "title": "Zamów teraz",
       "description": "Uzupełnij swoje dane i wybierz technologię, którą chcesz zakupić. Ten formularz wysyła niewiążące zapytanie zamówieniowe, abyśmy mogli potwierdzić dostępność, wysyłkę i płatność bezpośrednio z Tobą.",
       "labels": {
+        "full_legal_name": "Pełne imię i nazwisko zgodne z dokumentem tożsamości",
         "personal_details": "Dane osobowe",
         "first_name": "Imię",
         "middle_name": "Drugie imię",
@@ -408,7 +413,7 @@
         "country": "Kraj",
         "postal_code": "Kod pocztowy",
         "shipping_details": "Dane odbiorcy / Wysyłki",
-        "same_as_personal": "Takie same jak dane osobowe / adres",
+        "same_as_personal": "Takie same jak adres zamieszkania",
         "recipient_name": "Imię i nazwisko odbiorcy",
         "recipient_phone": "Telefon odbiorcy",
         "recipient_address": "Adres odbiorcy",
@@ -426,15 +431,15 @@
         "submitting": "Wysyłanie...",
         "remove_line": "Usuń pozycję",
         "product_names": {
-          "tera-p90": "Tera P90 (US$1,000)",
-          "tera-p90-kit": "THZ Tera-P90+ (US$1,500)",
-          "shaken-massager": "Shaken Massage (US$1,000)",
-          "galaxy-g-one": "Galaxy G-One (US$500)",
-          "vitality-wand": "Vitality Wand (US$600)",
-          "h-plus-bar": "H+ Bar (US$600)",
-          "bundle-tera-shaken": "Tera-P90+ i Masażer Shaken (US$2,500)",
-          "bundle-tera-galaxy": "Tera-P90+ i Galaxy G-One (US$2,000)",
-          "bundle-tera-galaxy-shaken": "Tera-P90+, Galaxy G-One i Masażer Shaken (US$3,000)"
+          "tera-p90": "Tera P90 ($1,000 USD)",
+          "tera-p90-kit": "THZ Tera-P90+ ($1,500 USD)",
+          "shaken-massager": "Shaken Massage ($1,000 USD)",
+          "galaxy-g-one": "Galaxy G-One ($500 USD)",
+          "vitality-wand": "Vitality Wand ($600 USD)",
+          "h-plus-bar": "H+ Bar ($600 USD)",
+          "bundle-tera-shaken": "Tera-P90+ i Masażer Shaken ($2,500 USD)",
+          "bundle-tera-galaxy": "Tera-P90+ i Galaxy G-One ($2,000 USD)",
+          "bundle-tera-galaxy-shaken": "Tera-P90+, Galaxy G-One i Masażer Shaken ($3,000 USD)"
         }
       },
       "placeholders": {
@@ -571,7 +576,7 @@
   },
   "footer": {
     "tagline": "Technologia PEMF i częstotliwości Terahertz dla odnowy biologicznej komórek, regeneracji i długoterminowej wydajności. Niezależny dystrybutor technologii OlyLife.",
-    "company": "Firma",
+    "company": "Szybkie linki",
     "tech": "Produkty",
     "connect": "Połącz się",
     "serving": "Pozyskiwanie",
