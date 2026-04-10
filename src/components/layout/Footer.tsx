@@ -6,7 +6,10 @@ import {
   ArrowUpRight, 
   Phone, 
   Activity, 
-  MessageCircle
+  MessageCircle,
+  Pin,
+  Map,
+  MapPin
 } from "lucide-react";
 import { 
   Accordion, 
@@ -96,8 +99,8 @@ export default function Footer() {
         <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/61450334543`} className="hover:text-white transition-colors">{t("order.social.phone")}</a>
       </li>
       <li className="flex items-start gap-3 text-sm">
-        <Activity className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-        <span className="text-foreground/70">{t("footer.serving")}: Australia & Poland</span>
+        <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+        <span className="text-foreground/70">Australia | Poland</span>
       </li>
     </ul>
   );
@@ -124,7 +127,7 @@ export default function Footer() {
               {t("footer.tagline")}
             </p>
             
-            <div className="flex gap-4">
+            <div className="flex gap-4 md:hidden">
               {socialLinks.map((link, i) => (
                 <a
                   key={i}
@@ -153,6 +156,20 @@ export default function Footer() {
           <div className="hidden md:block">
             <h4 className="text-primary font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.connect")}</h4>
             <ConnectLinks />
+
+             <div className="hidden gap-4 pt-6 md:flex">
+              {socialLinks.map((link, i) => (
+                <a
+                  key={i}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-primary/10"
+                >
+                  <link.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Mobile Accordion */}

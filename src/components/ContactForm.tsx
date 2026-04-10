@@ -43,7 +43,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
     message: z.string().min(10, { message: t("common.form.validation.message") }),
     source: z.string().optional(),
   });
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -66,7 +66,7 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
         description: t("common.form.success.desc"),
       });
       form.reset();
-    } catch(err) {
+    } catch (err) {
       toast({
         title: t("common.form.error.title"),
         description: t("common.form.error.desc"),
@@ -157,9 +157,9 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
             <FormItem>
               <FormLabel className="text-white/80">{t("common.form.labels.message")}</FormLabel>
               <FormControl>
-                <Textarea 
-                  className="min-h-[120px] bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white resize-none" 
-                  {...field} 
+                <Textarea
+                  className="min-h-[120px] bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white resize-none"
+                  {...field}
                 />
               </FormControl>
               <FormMessage />
@@ -192,11 +192,12 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
             </FormItem>
           )}
         /> */}
-
-        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group">
-          {t("common.form.submit").toUpperCase()}
-          <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-        </Button>
+        <div className="flex justify-center w-full">
+          <Button type="submit" className="w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group">
+            {t("common.form.submit").toUpperCase()}
+            <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </div>
       </form>
     </Form>
   );

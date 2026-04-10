@@ -86,7 +86,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="border border-white/10 rounded-3xl p-5 md:p-6 space-y-4 w-full sm:w-[80%] lg:-translate-x-5 translate-x-0 lg:w-1/2"
+              className=" border-white/10 rounded-3xl py-5 md:py-6 space-y-4 w-full sm:w-[80%] lg:w-1/2"
             >
               {/* <h3 className="text-sm font-semibold text-white">
                 {t("order.social.title")}
