@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Activity, ShieldCheck } from "lucide-react";
-import coachJumpImg from "@assets/intro.jpg";
-import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";
+import { useTranslation } from "react-i18next";
+import AffiliateCTA from "@/components/sections/AffiliateCTA";
+import coachPatrycjaImg from "@assets/patrycja-coach.png";
+import aboutCover from "@assets/about-cover.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -17,6 +19,9 @@ const staggerContainer = {
 };
 
 export default function About() {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language.split("-")[0];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -29,7 +34,7 @@ export default function About() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-linear-to-b from-background/50 via-background/85 to-background z-10" />
           <img
-            src={coachBoulderImg}
+            src={aboutCover}
             alt="About wellneXfreQ"
             className="w-full h-full object-cover object-center opacity-40 grayscale"
           />
@@ -47,7 +52,7 @@ export default function About() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
-            Strength &amp; Movement Coach
+            {t("about.hero.tagline")}
           </motion.div>
 
           <motion.h1
@@ -56,14 +61,14 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight"
           >
-            Built to{" "}
-            <span className="italic font-light text-primary">Move.</span>
+            {t("about.hero.title")}{" "}
+            <span className="italic font-light text-primary">{t("about.hero.title_italic_1")}</span>
             <br />
-            Created to{" "}
-            <span className="italic font-light text-primary">Last.</span>
+            {t("about.hero.title_and")}{" "}
+            <span className="italic font-light text-primary">{t("about.hero.title_italic_2")}</span>
             <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">
-              Powered at the Source.
+              {t("about.hero.title_highlight")}
             </span>
           </motion.h1>
 
@@ -73,13 +78,13 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto font-light"
           >
-            13+ years of biohacking, movement coaching, and a relentless pursuit of what the human body is truly capable of.
+            {t("about.hero.subtitle")}
           </motion.p>
         </div>
       </section>
 
       {/* STORY SECTION */}
-      <section className="py-24 relative bg-black border-y border-white/5">
+      <section className="py-24 relative bg-white/2 border-y border-white/5">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
@@ -94,32 +99,32 @@ export default function About() {
                 variants={fadeIn}
                 className="mb-6 inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm uppercase tracking-widest text-primary font-semibold"
               >
-                The Coach
+                {t("about.story.badge")}
               </motion.div>
 
               <motion.h2
                 variants={fadeIn}
                 className="text-3xl md:text-5xl font-heading font-bold text-white mb-8 leading-tight"
               >
-                Breaking heads free. <span className="italic font-light text-primary">Rebuilding from the ground up.</span>
+                {t("about.story.title")} <span className="italic font-light text-primary">{t("about.story.title_highlight")}</span>
               </motion.h2>
 
               <motion.div variants={fadeIn} className="space-y-6 text-lg text-white/70 leading-relaxed">
                 <p>
-                  I'm a strength and movement coach with over 13 years of experience helping people biohack their optimal function — breaking out of their heads, reclaiming power, and rebuilding from the ground up.
+                  {t("about.story.p1")}
                 </p>
                 <p>
-                  That means addressing poor nutrition habits, lack of self discipline, and the disconnect between mind and body through building strong, resilient bodies and learning the art of movement.
+                  {t("about.story.p2")}
                 </p>
                 <p>
-                  But after struggling with chronic pain, burnout, and persistently low energy myself, I realised that most health approaches miss something fundamental. They work <em>around</em> the body instead of <em>with</em> it.
+                  {t("about.story.p3")}
                 </p>
                 <p>
-                  Discovering the dual technology of PEMF and Terahertz frequency opened a perspective I couldn't ignore — and one I now share with everyone seeking a deeper path to wellbeing.
+                  {t("about.story.p4")}
                 </p>
 
                 <blockquote className="border-l-4 border-primary pl-6 py-2 my-8 text-xl font-heading font-medium text-white italic">
-                  "My drive for health, wellness and longevity led me somewhere most people haven't looked yet — and that's exactly why wellneXfreQ exists."
+                  "{t("about.story.quote")}"
                 </blockquote>
               </motion.div>
             </motion.div>
@@ -133,9 +138,9 @@ export default function About() {
               className="relative h-[560px] lg:h-[680px] rounded-3xl overflow-hidden group"
             >
               <img
-                src={coachJumpImg}
+                src={coachPatrycjaImg}
                 alt="Strength & Movement Coach"
-                className="w-full h-full object-cover object-center transition-transform duration-700 scale-105 group-hover:scale-100"
+                className="w-full h-full object-contain transition-transform duration-700 scale-100 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
@@ -169,13 +174,13 @@ export default function About() {
             className="text-center mb-20 max-w-3xl mx-auto"
           >
             <div className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm uppercase tracking-widest text-primary font-semibold mb-6">
-              Why Dual Technology Works
+              {t("about.tech.badge")}
             </div>
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-              The Dual Action <span className="text-primary italic font-light">Advantage</span>
+              {t("about.tech.title")} <span className="text-primary italic font-light">{t("about.tech.title_highlight")}</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed">
-              By combining PEMF and Terahertz frequency technology, the body is targeted at its most fundamental level — the cell. One recharges your cells, the other restores their natural rhythm. The result is a compounding effect that optimises the biological electrical systems driving vitality, recovery and longevity.
+              {t("about.tech.subtitle")}
             </p>
           </motion.div>
 
@@ -196,18 +201,25 @@ export default function About() {
                 </div>
                 <span className="text-primary font-mono text-sm font-bold tracking-widest">01</span>
               </div>
-              <h3 className="text-2xl font-heading font-bold text-white mb-2">PEMF Cellular Recharge</h3>
-              <p className="text-primary text-sm font-medium mb-4 italic">Powering Your Electrical System</p>
+              <h3 className="text-2xl font-heading font-bold text-white mb-2">{t("about.tech.pemf_title")}</h3>
+              <p className="text-primary text-sm font-medium mb-4 italic">{t("about.tech.pemf_subtitle")}</p>
               <p className="text-white/70 leading-relaxed mb-6">
-                Originally developed by NASA to support astronaut health, PEMF uses safe low frequency electromagnetic pulses to stimulate the body at a cellular level — like charging a battery. It promotes cellular repair, supports natural detox, reduces inflammation, improves blood flow and relieves pain.
+                {t("about.tech.pemf_desc")}
               </p>
               <ul className="space-y-3">
-                {["Promotes cellular repair &amp; natural detox", "Reduces inflammation &amp; relieves pain", "Improves blood flow &amp; tissue oxygenation"].map((b, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-white/80">
-                    <ShieldCheck className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span dangerouslySetInnerHTML={{ __html: b }} />
-                  </li>
-                ))}
+                {(() => {
+                  const benefits = t("about.tech.pemf_benefits", { returnObjects: true });
+                  if (!Array.isArray(benefits)) return null;
+                  return benefits.map((b: any, i: number) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-white/80">
+                      <ShieldCheck className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <div>
+                        {b.label && <span className="text-primary font-bold mr-1.5">{b.label}:</span>}
+                        <span className="text-white/70">{b.desc || b}</span>
+                      </div>
+                    </li>
+                  ));
+                })()}
               </ul>
             </motion.div>
 
@@ -226,18 +238,25 @@ export default function About() {
                 </div>
                 <span className="text-cyan-400 font-mono text-sm font-bold tracking-widest">02</span>
               </div>
-              <h3 className="text-2xl font-heading font-bold text-white mb-2">Terahertz Activation</h3>
-              <p className="text-cyan-400 text-sm font-medium mb-4 italic">Restoring Cellular Vibration</p>
+              <h3 className="text-2xl font-heading font-bold text-white mb-2">{t("about.tech.thz_title")}</h3>
+              <p className="text-cyan-400 text-sm font-medium mb-4 italic">{t("about.tech.thz_subtitle")}</p>
               <p className="text-white/70 leading-relaxed mb-6">
-                Terahertz frequency sits between microwave and infrared waves — known as the <em>Wave of Life</em> because it vibrates in harmony with healthy human cells. When your cellular rhythm falls out of tune, imbalance follows. These waves restore coherence, awaken your innate healing potential and amplify your body's natural life force.
+                {t("about.tech.thz_desc")}
               </p>
               <ul className="space-y-3">
-                {["Resonates with healthy cells at 2–17 THz", "Activates dormant stem cells &amp; self-healing", "Clears meridian blockages &amp; restores coherence"].map((b, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-white/80">
-                    <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span dangerouslySetInnerHTML={{ __html: b }} />
-                  </li>
-                ))}
+                {(() => {
+                  const benefits = t("about.tech.thz_benefits", { returnObjects: true });
+                  if (!Array.isArray(benefits)) return null;
+                  return benefits.map((b: any, i: number) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-white/80">
+                      <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <div>
+                        {b.label && <span className="text-cyan-400 font-bold mr-1.5">{b.label}:</span>}
+                        <span className="text-white/70">{b.desc || b}</span>
+                      </div>
+                    </li>
+                  ));
+                })()}
               </ul>
             </motion.div>
           </div>
@@ -255,25 +274,26 @@ export default function About() {
             className="max-w-3xl mx-auto text-center bg-card/40 border border-white/10 rounded-3xl p-10 md:p-16 backdrop-blur-sm"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Ready to Optimize Your <span className="text-primary">Frequency?</span>
+              {t("home.cta.title")}<span className="text-primary">{t("home.cta.title_highlight")}</span>
             </h2>
             <p className="text-white/60 text-lg mb-8 max-w-xl mx-auto">
-              Whether you're dealing with chronic issues or looking to elevate performance, our technology can get you there.
+              {t("home.cta.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 rounded-full shadow-[0_0_30px_rgba(126,255,212,0.3)] transition-all hover:scale-105 group">
-                <Link to="/contact">
-                  Start Your Journey <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <Link to={`/${currentLang}/contact`}>
+                  {t("home.cta.button")} <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="h-12 px-8 border-white/20 text-white hover:bg-white/5 transition-all rounded-full">
-                <Link to="/products">Explore Products</Link>
+                <Link to={`/${currentLang}/products`}>{t("home.products.view_all")}</Link>
               </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
+      <AffiliateCTA />
     </div>
   );
 }

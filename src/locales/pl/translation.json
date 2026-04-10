@@ -1,0 +1,836 @@
+{
+  "nav": {
+    "home": "Strona",
+    "technology": "Technologia",
+    "philosophy": "O NAS",
+    "about": "O NAS",
+    "blog": "Blog",
+    "products": "Produkty",
+    "contact": "Kontakt",
+    "inquire": "Zapytaj teraz",
+    "order": "Zamów teraz",
+    "order-footer": "Zamów teraz"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Technologia Wellness Częstotliwości",
+      "title1": "ZRESETUJ SWOJE",
+      "title1_highlight": "KOMÓRKI",
+      "title2": "PRZYWRÓĆ SWÓJ",
+      "title2_highlight": "RYTM",
+      "title3": "ODZYSKAJ SWOJĄ",
+      "title3_highlight": "WITALNOŚĆ",
+      "subtitle": "Biohacking Twojego zdrowia z wykorzystaniem technologii PEMF i terahercowych. Twój codzienny rytuał na długowieczność.",
+      "cta_tech": "O technologii",
+      "cta_phil": "Zacznij swój rytuał"
+    },
+    "blood_analysis": {
+      "title": "Analiza Żywej Kropli ",
+      "title_highlight": "Krwi",
+      "subtitle": "Podziękowania dla Katriny Murray za udostępnienie skanów analizy krwi przed i po 20-minutowej sesji OlyLife P90+. Pokazuje to dramatyczną transformację krwi z zagęszczonych, lepkich kolumn komórek do wyraźnie odseparowanych i swobodnie płynących komórek."
+    },
+    "tech": {
+      "science_title": "Przyszłość ",
+      "science_title_italic": "Optymalizacji",
+      "science_subtitle": "Wykraczamy poza konwencjonalną regenerację. Wykorzystując specyficzne częstotliwości elektromagnetyczne i terahertzowe, oddziałujemy bezpośrednio na sieć komunikacji komórkowej Twojego ciała.",
+      "pemf_title": "Technologia PEMF (Ładowarka akumulatorów)",
+      "pemf_desc": "Terapia pulsującym polem elektromagnetycznym wykorzystuje częstotliwości naśladujące naturę, aby doładować naturalne napięcie Twoich komórek. To bezpieczne impulsy stymulujące ciało na poziomie komórkowym.",
+      "pemf_benefits": [
+        "Doładowuje baterię komórkową i naprawia napięcie",
+        "Redukuje stany zapalne i niweluje ból",
+        "Przyspiesza naturalny detoks i regenerację"
+      ],
+      "thz_title": "Rezonans Terahertzowy (Precyzyjny stroiciel)",
+      "thz_desc": "Fale Terahertzowe rezonują w harmonii ze zdrowymi ludzkimi komórkami, wnikając głęboko w tkanki, aby rozpuszczać blokady i przywracać naturalne wibracje komórkowe organizmu.",
+      "thz_benefits": [
+        "Bio-termiczna aktywacja bez promieniowania jonizującego",
+        "Rozpuszcza wewnętrzne blokady i wspomaga przepływ",
+        "Przywraca biologiczną spójność i siły witalne"
+      ],
+      "repair": "NAPRAWA KOMÓRKOWA",
+      "repair_desc": "Twoje ciało się odbudowuje. Codzienne stosowanie przyspiesza ten proces.",
+      "recovery": "GŁĘBOKA REGENERACJA",
+      "recovery_desc": "Mniej bólu. Mniej napięcia. Więcej sprężystości.",
+      "oxygenate": "ENERGIA I WITALNOŚĆ",
+      "oxygenate_desc": "Obudź się z uczuciem regeneracji. Poruszaj się swobodnie przez dzień.",
+      "activate": "JASNOŚĆ UMYSŁU",
+      "activate_desc": "Kiedy Twoje komórki funkcjonują lepiej, Twój umysł również.",
+      "flow": "LEPSZY SEN",
+      "flow_desc": "Zrównoważony układ nerwowy śpi głębiej i regeneruje się szybciej.",
+      "balance": "DŁUGOWIECZNOŚĆ",
+      "balance_desc": "Codzienne dbanie o dobre samopoczucie to nowy wymiar długoterminowego zdrowia."
+    },
+    "philosophy": {
+      "title": "Zbudowany, by się ",
+      "title_italic_1": "ruszać.",
+      "subtitle": "Stworzony, by ",
+      "subtitle_italic_2": "trwać.",
+      "title_3": "Zasilany u ",
+      "title_highlight_3": "źródła.",
+      "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z 13-letnim doświadczeniem pomagałem ludziom w odbudowie ciał od wewnątrz. Ale to moja własna walka z przewlekłym bólem, wypaleniem i niską energią zmieniła wszystko.",
+      "text2": "Tradycyjne podejścia wciąż działały omijając ciało. Potrzebowałem czegoś, co z nim współpracuje. Te poszukiwania doprowadziły mnie do technologii częstotliwości PEMF i Teraherców – i nigdy nie oglądałem się za siebie.",
+      "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość ludzi jeszcze nie spojrzała. Właśnie dlatego istnieje wellneXfreQ.",
+      "coach_text2": "Oprócz technologii częstotliwości nadal pomagam klientom lepiej się poruszać, czuć się silniejszymi i budować wytrzymałe ciała na długie lata dzięki",
+      "coach_text2_highlight": "FITIN2IT PT",
+      "coach": "Patrycja W.",
+      "learn_more": "Skontaktuj się"
+    },
+    "products": {
+      "title": "Poznaj nasze ",
+      "title_highlight": "Urządzenia",
+      "subtitle": "Każde urządzenie jest zaprojektowane dla określonego celu biologicznego. Technologia częstotliwości PEMF i Teraherców, przeznaczona do codziennego użytku i długoterminowych rezultatów.",
+      "featured_badge": "WYRÓŻNIONE",
+      "featured_title": "THz Tera-P90+",
+      "featured_desc": "Tera-P90+ nowej generacji oferujące ulepszone funkcje dla głębszej regeneracji komórkowej i wydajności.",
+      "learn_more": "Dowiedz się więcej →",
+      "view_all": "Zobacz wszystkie urządzenia →"
+    },
+    "blog": {
+      "title": "Z Laboratorium ",
+      "title_highlight": "Częstotliwości",
+      "subtitle": "Najnowsze spostrzeżenia na temat biohackingu, zdrowia komórkowego i nauki o medycynie częstotliwości.",
+      "read": "Czytaj artykuł",
+      "view_all": "Zobacz wszystkie artykuły"
+    },
+    "testimonials": {
+      "title": "Prawdziwi ludzie. ",
+      "title_highlight": "Prawdziwe efekty.",
+      "subtitle": "Technologia częstotliwości zmienia życie ludzi na całym świecie. Posłuchaj prawdziwych ludzi dzielących się swoimi doświadczeniami.",
+      "disclaimer": "Zastrzeżenie: Indywidualne wyniki mogą się różnić. Przed użyciem skonsultuj się ze swoim lekarzem.",
+      "items": [
+        {
+          "name": "Kirsty Robertson",
+          "role": "QUEENSLAND, AUSTRALIA",
+          "quote": "Po jednej sesji na tej maszynie miałam miesiąc podróży, dużo siedzenia i moje biodro było absolutnie w porządku. To mnie oszołomiło."
+        },
+        {
+          "name": "Brian Caccaniga",
+          "role": "AUSTRALIA",
+          "quote": "Puk, czuję, że mogę skręcić plecy. Nie boli. Mogę się schylić."
+        },
+        {
+          "name": "Ethan Leeds",
+          "role": "BRAZIL",
+          "quote": "Lubię myśleć o P90 w jego bardzo prostej formie jako o ludzkiej ładowarce akumulatorów. My jesteśmy akumulatorem, P90 ładowarką."
+        },
+        {
+          "name": "Luigi",
+          "role": "VERIFIED USER",
+          "quote": "Mam siłę Herkulesa, aby móc wprowadzić te wszystkie małe zmiany w moim życiu."
+        },
+        {
+          "name": "Jim Feldman",
+          "role": "SYDNEY, AUSTRALIA",
+          "quote": "Coś, z czym zmagałem się przez ponad 20 lat – po prostu zniknęło. Moje comiesięczne wizyty u psychologa, zniknęły. Leki, na których polegałem przez lata, zniknęły."
+        }
+      ]
+    },
+    "faqs": {
+      "title": "Najczęściej Zadawane ",
+      "title_highlight": "Pytania o Częstotliwości",
+      "items": [
+        {
+          "question": "Jaka jest różnica między terapią PEMF a terapią częstotliwością Terahertz?",
+          "answer": "Terapia PEMF (Pulsacyjne Pole Elektromagnetyczne) wykorzystuje impulsy elektromagnetyczne o niskiej częstotliwości, które naśladują naturalne pole Ziemi, aby naładować napięcie komórkowe — to w zasadzie ładowarka dla Twoich komórek. Częstotliwość Terahertz operuje na wyższym paśmie, które rezonuje z naturalnymi wibracjami zdrowych ludzkich komórek, wnikając głęboko w tkanki, aby aktywować komórki macierzyste i odblokować meridiany. Działają one poprzez różne mechanizmy i potężnie się uzupełniają."
+        },
+        {
+          "question": "Od którego produktu powinienem zacząć?",
+          "answer": "To zależy od Twojego głównego celu. Dla ogólnoustrojowej regeneracji komórkowej i poprawy snu zacznij od maty do stóp TERA-P90 — to najwygodniejszy punkt wejścia. W przypadku punktowego bólu lub stanów zapalnych, VITALITY WAND jest najbardziej bezpośrednim narzędziem. Jeśli chcesz najbardziej kompleksowy system łączący PEMF i Terahertz w jednym, flagowym modelem jest THz TERA-P90+."
+        },
+        {
+          "question": "Jak szybko zauważę rezultaty?",
+          "answer": "Większość osób zauważa zmiany w jakości snu w ciągu pierwszych 3-7 dni konsekwentnego stosowania — głębszy sen, budzenie się z większą energią. Poziom energii i bólu zazwyczaj zmienia się zauważalnie w ciągu 2-3 tygodni. Efekty kumulują się; Twoje ciało odbudowuje napięcie komórkowe i oczyszcza nagromadzony stres. Im dłużej i bardziej konsekwentnie korzystasz z technologii, tym wyraźniejsze są efekty."
+        },
+        {
+          "question": "Czy mogę używać wielu urządzeń jednocześnie?",
+          "answer": "Tak — i aktywnie do tego zachęcamy. Na przykład: zacznij poranek od 20 minut na macie TERA-P90, aby naładować napięcie komórkowe przed dniem, użyj VITALITY WAND na obszarach objętych objawami po treningu, nawadniaj się wodą z H+ BAR w ciągu dnia, aby zarządzać stresem oksydacyjnym, i wycisz się z GALAXY G-ONE przed snem, aby wesprzeć regenerację układu nerwowego."
+        },
+        {
+          "question": "Czy terapia częstotliwościami jest bezpieczna dla osób z istniejącymi schorzeniami?",
+          "answer": "Nasze urządzenia wykorzystują niejonizujące częstotliwości, które są bezpieczne dla zdecydowanej większości ludzi. Terahertz i PEMF are nieinwazyjne i współpracują z naturalnymi częstotliwościami organizmu. Jak w przypadku każdej technologii wellness, osoby z rozrusznikami serca, wszczepionymi urządzeniami elektronicznymi lub kobiety w ciąży powinny skonsultować się z lekarzem przed użyciem."
+        },
+        {
+          "question": "Co wyróżnia wellneXfreQ na tle innych marek wellness?",
+          "answer": "wellneXfreQ istnieje na skrzyżowaniu elitarnych treningów sportowych i nauki o wellness kwantowym. Każdy produkt jest wybierany przez trenera siły i ruchu z ponad 13-letnim doświadczeniem w biohackingu — a nie przez zespół marketingowy. Nie sprzedajemy urządzeń dla samej sprzedaży. Edukujemy o nauce, zapewniamy model bezpośredniego zapytania i budujemy trwałe relacje z klientami, aby zapewnić rezultaty."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Gotowy na zasilanie u ",
+      "title_highlight": "źródła?",
+      "subtitle": "Dołącz do przyszłości wellness i rozpocznij swoją podróż optymalizacji komórkowej już dziś.",
+      "button": "Przejdź do Produktów"
+    }
+  },
+  "about": {
+    "hero": {
+      "tagline": "13+ lat doświadczenia",
+      "title": "Zbudowany, by się ",
+      "title_italic_1": "ruszać.",
+      "title_and": "Stworzony, by ",
+      "title_italic_2": "trwać.",
+      "title_highlight": "Zasilany u źródła.",
+      "subtitle": "Biohacking zdrowia i odbudowa od podstaw poprzez ruch i technologię częstotliwości."
+    },
+    "dual_tech_table": {
+      "badge": "Dlaczego podwójna technologia działa",
+      "title": "Przewaga ",
+      "title_highlight": "Podwójnego Działania",
+      "description": "Dzięki połączeniu technologii częstotliwości PEMF i Terahertz, oba systemy działają na organizm na jego najbardziej podstawowym poziomie – komórce. Jeden z nich ładuje napięcie komórkowe, drugi przywraca naturalny rytm komórek. Razem tworzą efekt kumulacji, który optymalizuje układy biologiczne pod kątem witalności, regeneracji i długofalowej wydajności.",
+      "headers": {
+        "feature": "Cecha",
+        "pemf": "Technologia PEMF",
+        "terahertz": "Rezonans Terahertzowy"
+      },
+      "features": {
+        "primary_goal": "GŁÓWNY CEL",
+        "mechanism": "MECHANIZM",
+        "key_benefit": "KLUCZOWA KORZYŚĆ",
+        "analogy": "ANALOGIA"
+      },
+      "pemf_values": {
+        "badge": "TECHNOLOGIA PEMF",
+        "tagline": "Ładowarka Akumulatorów",
+        "bullets": [
+          "Twoje komórki się wyczerpują. PEMF je ładuje",
+          "Pierwotnie opracowany przez NASA",
+          "Zmniejsza stan zapalny i napięcie fizyczne",
+          "Zwiększa krążenie i dostarczanie tlenu",
+          "Delikatny, nieinwazyjny, stworzony do codziennego użytku"
+        ]
+      },
+      "terahertz_values": {
+        "badge": "REZONANS TERAHERCOWY",
+        "tagline": "Precyzyjny Stroiciel",
+        "bullets": [
+          "Twoje ciało ma naturalny rytm. To ją przywraca",
+          "Znana jako Fala Życia",
+          "Rozpuszcza blokady i na nowo rozpala energię",
+          "Aktywuje komórki, które przestały działać",
+          "Efekty są na początku subtelne — potem niepodważalne"
+        ]
+      }
+    },
+    "story": {
+      "badge": "Trener",
+      "title": "Uwalnianie głowy. ",
+      "title_highlight": "Odbudowa od podstaw.",
+      "p1": "Jestem trenerem zdrowia, odnowy biologicznej i ruchu z ponad 13-letnim doświadczeniem w pomaganiu ludziom w stosowaniu biohackingu dla ich zdrowia, uwalnianiu się z własnych ograniczeń umysłowych, odzyskiwaniu sprawczości i odbudowie od samych podstaw.",
+      "p2": "Oznacza to pracę nad złymi nawykami żywieniowymi, brakiem samodyscypliny oraz brakiem połączenia między umysłem a ciałem poprzez budowanie silnych, odpornych ciał i naukę sztuki ruchu.",
+      "p3": "Jednak po własnych zmaganiach z przewlekłym bólem, wypaleniem i trwale niskim poziomem energii, uświadomiłem sobie, że w większości podejść do zdrowia brakuje czegoś fundamentalnego.",
+      "p4": "Działają one obok ciała, zamiast z nim współpracować. Odkrycie podwójnej technologii częstotliwości PEMF i terahercowych otworzyło perspektywę, której nie mogłem zignorować, a którą teraz dzielę się z każdym, kto szuka głębszej drogi do dobrego samopoczucia.",
+      "quote": "Moje dążenie do zdrowia, dobrego samopoczucia i długowieczności zaprowadziło mnie w miejsce, w które większość ludzi jeszcze nie spojrzała, i właśnie dlatego istnieje wellneXfreQ."
+    },
+    "tech": {
+      "badge": "Przewaga \"Dual Action Advantage\"",
+      "title": "Podwójne Działanie",
+      "title_highlight": "Przewaga",
+      "subtitle": "Dzięki połączeniu technologii częstotliwości PEMF i Terahertz, oba systemy działają na organizm na jego najbardziej podstawowym poziomie – komórce. Jeden z nich ładuje napięcie komórkowe, drugi przywraca naturalny rytm komórek. Razem tworzą efekt kumulacji, który optymalizuje układy biologiczne pod kątem witalności, regeneracji i długofalowej wydajności.",
+      "technology_01": "01",
+      "technology_01_subtitle": "Ładowarka Baterii",
+      "technology_02": "02",
+      "technology_02_subtitle": "Precyzyjny Stroiciel",
+      "pemf_title": "PEMF DOŁADOWANIE KOMÓRKOWE",
+      "pemf_subtitle": "Zasilanie Twojego układu elektrycznego.",
+      "pemf_desc": "Pierwotnie opracowana przez NASA w celu wspierania zdrowia astronautów, technologia PEMF wykorzystuje bezpieczne impulsy magnetyczne o niskiej częstotliwości do współpracy z organizmem na poziomie komórkowym, podobnie jak ładowanie baterii. Promuje naprawę komórkową, wspiera krążenie, poprawia przepływ krwi i wspomaga łagodzenie bólu.",
+      "pemf_nasa_badge": "WELLNESS OPARTY NA ENERGII WSPIERANY PRZEZ NASA",
+      "pemf_benefits": [
+        {
+          "label": "NAPRAWA",
+          "desc": "Przyspiesza regenerację komórkową i odbudowę tkanek."
+        },
+        {
+          "label": "REGENERACJA",
+          "desc": "Niweluje stany zapalne i redukuje stres fizyczny."
+        },
+        {
+          "label": "DOTLENIENIE",
+          "desc": "Poprawia krążenie i dostarczanie bogatych w tlen składników odżywczych."
+        }
+      ],
+      "thz_title": "AKTYWACJA TERAHERCOWA",
+      "thz_subtitle": "Przywracanie wibracji komórkowych.",
+      "thz_desc": "Częstotliwość terahercowa znajduje się między falami mikrofalowymi a podczerwonymi, znana jako \"Fala Życia\", ponieważ wibruje w harmonii ze zdrowymi ludzkimi komórkami. Gdy Twój rytm komórkowy zostaje zaburzony, pojawia się brak równowagi. Fale te przywracają spójność, budzą wrodzony potencjał regeneracyjny i wzmacniają naturalną energię twojego ciała.",
+      "thz_benefits": [
+        {
+          "label": "AKTYWACJA",
+          "desc": "Budzi mało wydajne komórki do szczytowej formy."
+        },
+        {
+          "label": "PRZEPŁYW",
+          "desc": "Wspiera mikrokrążenie i wewnętrzne ścieżki energetyczne."
+        },
+        {
+          "label": "RÓWNOWAGA",
+          "desc": "Wyrównuje naturalną spójność biologiczną Twojego ciała."
+        }
+      ]
+    }
+  },
+  "shop": {
+    "hero": {
+      "badge": "ODKRYJ PRODUKTY PONIŻEJ",
+      "title": "Każde Urządzenie.",
+      "title_highlight": "Jeden Cel.",
+      "subtitle": "Urządzenia PEMF i częstotliwości terahercowej zaprojektowane z myślą o naprawie komórek, regeneracji i długowieczności."
+    },
+    "medical_notice": {
+      "title": "Informacja Medyczna i Regulacyjna",
+      "text": "Technologia PEMF jest badana od dziesięcioleci, a niektóre urządzenia PEMF otrzymały certyfikat FDA dla konkretnych wskazań. Certyfikaty regulacyjne dotyczą konkretnych urządzeń i wskazań i nie mają zastosowania do innych marek lub modeli. Produkty OlyLife są wprowadzane do obrotu jako urządzenia poprawiające samopoczucie (wellness) i nie są urządzeniami medycznymi. Nie są one przeznaczone do diagnozowania, leczenia, ani zapobiegania jakimkolwiek chorobom lub stanom. Żadne oświadczenia zawarte w niniejszym dokumencie nie zostały ocenione przez FDA ani inne organy regulacyjne. Indywidualne doświadczenia mogą się różnić. Skonsultuj się z lekarzem przed rozpoczęciem jakiejkolwiek rutyny wellness, jeśli masz schorzenia, wszczepione urządzenia lub obawy."
+    },
+    "list": {
+      "loading": "Ładowanie produktów...",
+      "empty": "Obecnie w katalogu nie ma dostępnych produktów.",
+      "badge": "Wysoka Technologia",
+      "button": "Poznaj możliwości"
+    },
+    "cta": {
+      "title": "Nie wiesz, która częstotliwość jest dla Ciebie?",
+      "subtitle": "Nasz zespół trenerów jest gotowy przeanalizować Twoje konkretne cele wellness, aby dopasować Cię do precyzyjnego protokołu urządzenia, którego potrzebujesz.",
+      "button": "Skonsultuj się z trenerem"
+    }
+  },
+  "blog": {
+    "hero": {
+      "badge": "Spostrzeżenia i Edukacja",
+      "title": "Dziennik ",
+      "title_highlight": "Częstotliwości",
+      "title_suffix": "",
+      "subtitle": "Nauka, wydajność i przewaga komórkowa. Dokładne analizy PEMF, częstotliwości Terahertzowej, regeneracji i biohackingu na podstawie ponad 13 lat doświadczenia w terenie."
+    },
+    "featured": {
+      "badge": "Wyróżnione",
+      "read_more": "Czytaj więcej"
+    },
+    "list": {
+      "read_more": "Czytaj więcej",
+      "loading": "Ładowanie artykułów..."
+    },
+    "categories": {
+      "Technology": "Technologia",
+      "Performance": "Wydajność",
+      "Coaching": "Coaching",
+      "Wellness": "Wellness",
+      "Getting Started": "Pierwsze kroki"
+    }
+  },
+  "product_detail": {
+    "loading": "Ładowanie szczegółów produktu...",
+    "breadcrumb": {
+      "home": "Start",
+      "tech": "Technologia"
+    },
+    "badge": "Technologia Kwantowa",
+    "headers": {
+      "benefits": "Kluczowe Korzyści",
+      "price": "Cena Detaliczna",
+      "pricing": "Cennik",
+      "how": "Jak to działa",
+      "who": "Dla kogo",
+      "science": "Nauka",
+      "gallery": "Galeria"
+    },
+    "pricing": {
+      "contact": "Zapytaj o cenę",
+      "fallback": "Dobierzemy dla Ciebie odpowiedni pakiet",
+      "direct": "Sprzedaż bezpośrednia"
+    },
+    "button": "Zapytaj o zakup",
+    "inquiry": {
+      "title": "Zapytanie o zakup",
+      "subtitle": "Nasze profesjonalne urządzenia są dostępne poprzez bezpośrednie zapytanie, aby zapewnić dobór odpowiedniej technologii do Twoich konkretnych potrzeb."
+    }
+  },
+  "blog_post": {
+    "loading": "Ładowanie wpisu...",
+    "not_found": "Nie znaleziono wpisu",
+    "back_to_blog": "Powrót do bloga",
+    "back_to_journal": "Powrót do dziennika",
+    "featured": "Wyróżnione",
+    "cta": {
+      "title": "Gotowy, by poczuć różnicę?",
+      "subtitle": "Poznaj naszą pełną gamę urządzeń wellness opartych na częstotliwościach.",
+      "view_tech": "Zobacz technologię",
+      "inquire": "Zapytaj teraz"
+    },
+    "nav": {
+      "prev": "Poprzedni",
+      "next": "Następny"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "SKONTAKTUJ SIĘ Z NAMI",
+      "title": "Połączmy się",
+      "subtitle": "Masz pytanie dotyczące naszych urządzeń lub chcesz umówić się na konsultację, aby omówić, co będzie dla Ciebie najlepsze? Skontaktuj się z nami."
+    },
+    "info": {
+      "title": "Dane kontaktowe",
+      "email": "Email",
+      "phone": "Telefon",
+      "location": "Lokalizacja"
+    },
+    "help": {
+      "title": "Nie wiesz, od czego zacząć?",
+      "text": "Opowiedz nam o swoich obecnych wyzwaniach zdrowotnych lub celach wydolnościowych w wiadomości, a zarekomendujemy optymalny zestaw technologii dla Twoich konkretnych potrzeb."
+    },
+    "form": {
+      "title": "Wyślij wiadomość",
+      "labels": {
+        "interest": "Interesuje mnie"
+      },
+      "placeholders": {
+        "interest": "Wybierz opcję"
+      }
+    }
+  },
+  "order": {
+    "hero": {
+      "badge": "Bezpośrednie zamówienie",
+      "title": "Zacznijmy Twoje zamówienie",
+      "subtitle": "Powiedz nam, które produkty OlyLife chcesz zamówić, przesyłając poniżej swoje dane.",
+      "help": "Jeśli masz jakiekolwiek pytania, skontaktuj się:"
+    },
+    "form": {
+      "title": "Zamów teraz",
+      "description": "Uzupełnij swoje dane i wybierz technologię, którą chcesz zakupić. Ten formularz wysyła niewiążące zapytanie zamówieniowe, abyśmy mogli potwierdzić dostępność, wysyłkę i płatność bezpośrednio z Tobą.",
+      "labels": {
+        "full_legal_name": "Pełne imię i nazwisko zgodne z dokumentem tożsamości",
+        "personal_details": "Dane osobowe",
+        "first_name": "Imię",
+        "middle_name": "Drugie imię",
+        "last_name": "Nazwisko",
+        "email": "Email",
+        "phone": "Numer telefonu",
+        "id_number": "Numer ID",
+        "gender": "Płeć",
+        "male": "Mężczyzna",
+        "female": "Kobieta",
+        "personal_address": "Adres zamieszkania",
+        "street": "Ulica i numer",
+        "city": "Miasto",
+        "state": "Województwo / Stan",
+        "country": "Kraj",
+        "postal_code": "Kod pocztowy",
+        "shipping_details": "Dane odbiorcy / Wysyłki",
+        "same_as_personal": "Takie same jak adres zamieszkania",
+        "recipient_name": "Imię i nazwisko odbiorcy",
+        "recipient_phone": "Telefon odbiorcy",
+        "recipient_address": "Adres odbiorcy",
+        "products_section": "Wybierz produkty",
+        "products_disclaimer": "To nie jest strona płatności. Skontaktujemy się z Tobą wkrótce po przesłaniu tego formularza, aby sfinalizować zamówienie. Informacje te zostaną wykorzystane do procesu pakowania i wysyłki po dokonaniu płatności przez naszą bezpieczną platformę.",
+        "bundles_section": "Pakiety produktów OlyLife",
+        "bundles_disclaimer": "Powiedz nam, ile sztuk każdego pakietu chcesz zamówić.",
+        "quantity": "Ilość",
+        "summary_subtotal": "Suma urządzeń",
+        "summary_ph": "Wysyłka",
+        "summary_total": "Szacowana suma",
+        "consent1": "Rozumiem, że ten formularz nie zapisuje mnie ani nie przetwarza żadnej płatności. Jest to narzędzie pomagające mojemu sponsorowi w rejestracji w OlyLife. Przyjmuję do wiadomości, że zgadzam się na otrzymywanie informacji od mojego sponsora w celu pomocy w rejestracji i onboardingu oraz że w przyszłości mogę otrzymywać od niego materiały marketingowe lub promocyjne. Rozumiem, że w dowolnym momencie w przyszłości mogę zrezygnować z otrzymywania informacji marketingowych lub promocyjnych od mojego sponsora.",
+        "consent2": "Przesyłając formularz, przyjmuję do wiadomości, że mój sponsor pomoże mi w rejestracji i dostarczy link do płatności. Rozumiem, że muszę zweryfikować nazwę sprzedawcy jako OlyLife Limited - Hong Kong lub upewnić się, że każda płatność jest dokonywana przez bezpieczną i zweryfikowaną bramkę, taką jak bezpośredni przelew bankowy, z tą samą nazwą sprzedawcy. Jeśli mam wątpliwości co do wiarygodności sponsora lub instrukcji płatności, przed dokonaniem jakiejkolwiek płatności zweryfikuję autoryzowanych dystrybutorów na stronie https://www.olylife.com w sekcji Contact Us > Specific Regions, aby upewnić się, że otrzymam legalny produkt i uchronić się przed oszustwem. WellneXfreQ jest jedynie zespołem wsparcia i nie zbiera ani nie przetwarza płatności przez żadne niezweryfikowane kanały.",
+        "submit": "Składać",
+        "submitting": "Wysyłanie...",
+        "remove_line": "Usuń pozycję",
+        "product_names": {
+          "tera-p90": "Tera P90 ($1,000 USD)",
+          "tera-p90-kit": "THZ Tera-P90+ ($1,500 USD)",
+          "shaken-massager": "Shaken Massager ($1,000 USD)",
+          "galaxy-g-one": "Galaxy G-One ($500 USD)",
+          "vitality-wand": "Vitality Wand ($600 USD)",
+          "h-plus-bar": "H+ Bar ($600 USD)",
+          "bundle-tera-shaken": "Tera-P90+ i Masażer Shaken ($2,500 USD)",
+          "bundle-tera-galaxy": "Tera-P90+ i Galaxy G-One ($2,000 USD)",
+          "bundle-tera-galaxy-shaken": "Tera-P90+, Galaxy G-One i Masażer Shaken ($3,000 USD)"
+        }
+      },
+      "placeholders": {
+        "first_name": "Twoje imię",
+        "middle_name": "Drugie imię (opcjonalnie)",
+        "last_name": "Twoje nazwisko",
+        "email": "twoj@email.com",
+        "phone": "np. +48 600 000 000",
+        "preferred_username": "Wybierz nazwę użytkownika",
+        "id_number": "Paszport lub nr prawa jazdy",
+        "street": "ul. Długa 12/3",
+        "city": "Twoje miasto",
+        "state": "Województwo",
+        "country": "Szukaj kraju...",
+        "postal_code": "Kod pocztowy",
+        "recipient_name": "Imię i nazwisko odbiorcy",
+        "recipient_phone": "Telefon odbiorcy",
+        "product": "Wybierz produkt",
+        "search_product": "Szukaj produktu...",
+        "no_product": "Nie znaleziono produktu.",
+        "search_country": "Szukaj kraju...",
+        "no_country": "Nie znaleziono kraju."
+      }
+    },
+    "validation": {
+      "first_name": "Imię jest wymagane.",
+      "last_name": "Nazwisko jest wymagane.",
+      "email": "Wymagany jest poprawny adres email.",
+      "phone": "Numer telefonu jest wymagany.",
+      "id_suffix": "ID musi mieć 6 znaków po prefiksie EA-.",
+      "gender": "Wybierz płeć.",
+      "country": "Wybierz kraj.",
+      "address": "Podaj swój pełny adres.",
+      "items": "Wybierz co najmniej jeden produkt i ilość.",
+      "consent": "Musisz potwierdzić, że rozumiesz metodologię zakupu."
+    },
+    "methodology": {
+      "title": "Jak wygląda proces zakupu",
+      "steps": [
+        "Wysyłasz zapytanie zamówieniowe ze swoimi danymi oraz wybranymi urządzeniami.",
+        "Nasz zespół weryfikuje zamówienie, potwierdza dostępność, P&H oraz sumę i kontaktuje się z Tobą mailowo lub przez WhatsApp.",
+        "Po potwierdzeniu z Twojej strony przekazujemy bezpieczne instrukcje płatności i finalizujemy szczegóły wysyłki."
+      ],
+      "note": "Wszystkie pokazane ceny to orientacyjne ceny urządzeń w USD, z doliczonym +10% P&H dla każdej pozycji. Ostateczna kwota, waluta i terminy wysyłki zostaną potwierdzone z Tobą bezpośrednio przed płatnością."
+    },
+    "social": {
+      "title": "Zweryfikuj i połącz się",
+      "subtitle": "Możesz zawsze potwierdzić naszą obecność, aktywność i aktualizacje poprzez oficjalne kanały społecznościowe i bezpośrednie dane kontaktowe poniżej.",
+      "facebook": "https://www.facebook.com/share/1EE6TqJA6N/",
+      "instagram": "https://www.instagram.com/wellnexfreq.pl?igsh=MWd4ajNlbWpka3Z5NQ==",
+      "whatsapp": "https://wa.me/61450334543",
+      "email": "your@wellnexfreq.com",
+      "phone": "+61 450 334 543"
+    },
+    "success": {
+      "title": "Zapytanie zamówieniowe wysłane",
+      "desc": "Dziękujemy. Twoje zapytanie zostało odebrane. Skontaktujemy się z Tobą wkrótce, aby potwierdzić szczegóły i kolejne kroki."
+    },
+    "error": {
+      "title": "Błąd wysyłania zamówienia",
+      "desc": "Wystąpił problem z wysłaniem zapytania zamówieniowego. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio."
+    }
+  },
+  "common": {
+    "navigation": {
+      "back": "Wstecz",
+      "back_to_catalog": "Powrót do katalogu",
+      "back_to_journal": "Powrót do dziennika",
+      "view_products": "Poznaj produkty",
+      "products": "Produkty"
+    },
+    "form": {
+      "labels": {
+        "name": "Imię i Nazwisko",
+        "email": "Adres Email",
+        "phone": "Numer Telefonu (Opcjonalnie)",
+        "product": "Produkt, którym jesteś zainteresowany",
+        "interest": "Interesuje mnie",
+        "message": "Wiadomość",
+        "source": "Jak o nas usłyszałeś? (Opcjonalnie)"
+      },
+      "placeholders": {
+        "name": "Jan Kowalski",
+        "email": "jan@przyklad.pl",
+        "phone": "+48 000 000 000",
+        "product": "Wybierz produkt",
+        "interest": "Wybierz zainteresowanie",
+        "message": "Opowiedz nam o swoich celach zdrowotnych lub zadaj konkretne pytania...",
+        "source": "Wybierz opcję"
+      },
+      "options": {
+        "interests": {
+          "label": "Interesuje mnie",
+          "placeholder": "Wybierz zainteresowanie",
+          "general": "Ogólne pytanie",
+          "buy": "Zamów urządzenie",
+          "consult": "Zarezerwuj konsultację",
+          "affiliate": "Zostań partnerem"
+        },
+        "sources": {
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "friend": "Znajomy / Polecenie",
+          "search": "Wyszukiwarka",
+          "other": "Inne"
+        }
+      },
+      "submit": "Wyślij",
+      "success": {
+        "title": "Wiadomość wysłana pomyślnie",
+        "desc": "Otrzymaliśmy Twoją wiadomość, nasz zespół skontaktuje się z Tobą wkrótce."
+      },
+      "error": {
+        "title": "Błąd wysyłania",
+        "desc": "Wystąpił problem z wysłaniem zapytania. Spróbuj ponownie."
+      },
+      "validation": {
+        "name": "Imię musi mieć co najmniej 2 znaki.",
+        "email": "Niepoprawny adres email.",
+        "message": "Wiadomość musi mieć co najmniej 10 znaków."
+      }
+    },
+    "affiliate": {
+      "title": "Program Partnerski",
+      "hero_title": "Uwielbiasz tę technologię?",
+      "hero_highlight": "Dziel się i zarabiaj.",
+      "subtitle": "Dołącz do naszego programu partnerskiego i stań się częścią ruchu wellneXfreQ.",
+      "button": "Zostań partnerem",
+      "p1_title": "Wysoka prowizja",
+      "p1_desc": "Zarabiaj znaczące nagrody za każde udane polecenie.",
+      "p2_title": "Dołącz do ruchu",
+      "p2_desc": "Bądź częścią elitarnej społeczności ekspertów od witalności częstotliwościowej."
+    }
+  },
+  "footer": {
+    "tagline": "Technologia PEMF i częstotliwości Terahertz dla odnowy biologicznej komórek, regeneracji i długoterminowej wydajności. Niezależny dystrybutor technologii OlyLife.",
+    "company": "Szybkie linki",
+    "tech": "Produkty",
+    "connect": "Połącz się",
+    "serving": "Pozyskiwanie",
+    "philosophy": "O nas",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "about": "O nas"
+  },
+  "privacy": {
+    "title": "Polityka Prywatności",
+    "effective_date": "Data wejścia w życie: ",
+    "date": "1 kwietnia 2026",
+    "back_to_home": "Powrót do strony głównej",
+    "badge": "Prawne",
+    "intro": "wellneXfreQ (\"my\", \"nas\" lub \"nasz\") zobowiązuje się do ochrony Twoich danych osobowych. Niniejsza Polityka Prywatności wyjaśnia, w jaki sposób zbieramy, wykorzystujemy, ujawniamy i zabezpieczamy informacje, gdy odwiedzasz naszą stronę internetową lub przesyłasz zapytanie za pośrednictwem formularza kontaktowego.",
+    "footer_text": "wellneXfreQ © {{year}}. Wszelkie prawa zastrzeżone.",
+    "footer_link": "Skontaktuj się z nami w razie pytań",
+    "sections": [
+      {
+        "title": "Gromadzone informacje",
+        "body": "Gdy przesyłasz zapytanie za pośrednictwem naszego formularza kontaktowego, zbieramy następujące informacje: pełne imię i nazwisko, adres e-mail, numer telefonu (jeśli został podany), produkt lub usługę, którą jesteś zainteresowany, treść wiadomości oraz sposób, w jaki o nas usłyszałeś. Możemy również zbierać podstawowe dane analityczne, takie jak odwiedzone strony i czas spędzony w witrynie, za pomocą standardowych narzędzi analitycznych. Nie zbieramy informacji o płatnościach – wszystkie zakupy są obsługiwane poprzez bezpośrednie zapytanie, a nie przez koszyk online."
+      },
+      {
+        "title": "Jak wykorzystujemy Twoje informacje",
+        "body": "Podane przez Ciebie informacje są wykorzystywane wyłącznie w celu odpowiedzi na Twoje zapytanie, przekazania informacji o produktach oraz kontynuowania kontaktu w związku z Twoim zainteresowaniem naszą technologią wellness. Nie wykorzystujemy Twoich danych do automatycznych kampanii marketingowych bez Twojej zgody. Jeśli wyraziłeś chęć otrzymywania treści edukacyjnych lub aktualizacji od wellneXfreQ, możemy od czasu do czasu wysyłać wiadomości o nowych produktach, artykułach na blogu lub istotnych informacjach wellness. Możesz zrezygnować z subskrypcji w dowolnym momencie."
+      },
+      {
+        "title": "Udostępnianie informacji",
+        "body": "Nie sprzedajemy, nie handlujemy ani nie wynajmujemy Twoich danych osobowych stronom trzecim. Możemy udostępniać niezbędne informacje zaufanym dostawcom usług, którzy pomagają nam w prowadzeniu naszej strony internetowej lub działalności – na przykład dostawcom usług e-mail – pod warunkiem, że strony te zgodzą się zachować poufność Twoich informacji. Możemy ujawnić informacje, gdy jest to wymagane przez prawo lub w celu ochrony praw, własności lub bezpieczeństwa wellneXfreQ, naszych klientów lub innych osób."
+      },
+      {
+        "title": "Przechowywanie danych",
+        "body": "Przechowujemy Twoje dane osobowe tak długo, jak jest to konieczne do realizacji celów określonych w niniejszej polityce lub zgodnie z wymogami obowiązującego prawa. Dane z zapytań są przechowywane przez okres do 3 lat w celu wsparcia bieżących relacji z klientami i historii obsługi. Możesz zażądać usunięcia swoich danych w dowolnym momencie, kontaktując się z nami bezpośrednio pod adresem your@wellnexfreq.com."
+      },
+      {
+        "title": "Ciasteczka i śledzenie",
+        "body": "Nasza strona internetowa wykorzystuje ciasteczka (cookies) i podobne technologie śledzenia, aby poprawić komfort przeglądania. Niezbędne ciasteczka są wymagane do poprawnego działania witryny. Ciasteczka analityczne pomagają nam zrozumieć, w jaki sposób odwiedzający wchodzą w interakcję z naszymi treściami – dane te są zagregowane i anonimowe. Możesz kontrolować preferencje dotyczące ciasteczek w ustawieniach swojej przeglądarki. Wyłączenie niektórych ciasteczek może wpłynąć na funkcjonalność niektórych części serwisu."
+      },
+      {
+        "title": "Twoje prawa",
+        "body": "W zależności od lokalizacji, mogą przysługiwać Ci prawa wynikające z obowiązujących przepisów o ochronie danych, w tym: prawo do dostępu do Twoich danych osobowych, prawo do poprawiania nieścisłych informacji, prawo do żądania usunięcia danych, prawo do wycofania zgody na komunikację w dowolnym momencie oraz prawo do wniesienia skargi do właściwego organu nadzorczego. Aby skorzystać z któregokolwiek z tych praw, prosimy o kontakt pod adresem your@wellnexfreq.com."
+      },
+      {
+        "title": "Bezpieczeństwo",
+        "body": "Wdrażamy odpowiednie środki techniczne i organizacyjne, aby chronić Twoje dane osobowe przed nieuprawnionym dostępem, ujawnieniem, zmianą lub zniszczeniem. Choć poważnie traktujemy bezpieczeństwo Twoich danych, żadna metoda transmisji przez Internet ani elektronicznego przechowywania nie jest w 100% bezpieczna. Zachęcamy do zachowania ostrożności przy udostępnianiu danych osobowych online."
+      },
+      {
+        "title": "Linki stron trzecich",
+        "body": "Nasza strona internetowa może zawierać linki do stron internetowych osób trzecich, w tym platform mediów społecznościowych i zasobów zewnętrznych. Niniejsza Polityka Prywatności dotyczy wyłącznie informacji zbieranych na stronie wellneXfreQ. Nie ponosimy odpowiedzialności za praktyki ochrony prywatności stron zewnętrznych i zachęcamy do niezależnego zapoznania się z ich politykami prywatności."
+      },
+      {
+        "title": "Zmiany w niniejszej polityce",
+        "body": "Możemy od czasu do czasu aktualizować niniejszą Politykę Prywatności, aby odzwierciedlić zmiany w naszych praktykach lub obowiązującym prawie. W przypadku wprowadzenia istotnych zmian zaktualizujemy datę wejścia w życie na górze tej strony. Zachęcamy do okresowego przeglądania polityki. Dalsze korzystanie z naszej strony internetowej po wprowadzeniu jakichkolwiek zmian oznacza akceptację zaktualizowanej polityki."
+      },
+      {
+        "title": "Kontakt",
+        "body": "W razie jakichkolwiek pytań, wątpliwości lub próśb dotyczących niniejszej Polityki Prywatności lub postępowania z Twoimi danymi osobowymi, prosimy o kontakt pod adresem: your@wellnexfreq.com. Staramy się odpowiadać na wszystkie zapytania dotyczące prywatności w ciągu 10 dni roboczych."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Regulamin",
+    "effective_date": "Data wejścia w życie: ",
+    "date": "1 kwietnia 2026",
+    "back_to_home": "Powrót do strony głównej",
+    "badge": "Prawne",
+    "intro": "Witaj w wellneXfreQ. Uzyskując dostęp do naszej strony internetowej i korzystając z naszych usług, zgadzasz się na przestrzeganie poniższych warunków. Prosimy o uważne zapoznanie się z niniejszym regulaminem przed skorzystaniem z naszej witryny.",
+    "footer_text": "wellneXfreQ © {{year}}. Wszelkie prawa zastrzeżone.",
+    "footer_link": "Skontaktuj się z nami w razie pytań",
+    "sections": [
+      {
+        "title": "Zakres usług",
+        "body": "wellneXfreQ zapewnia dostęp do zaawansowanej technologii wellness częstotliwościowych oraz związanych z nią treści edukacyjnych. Nasze produkty są sprzedawane w modelu bezpośredniego zapytania i coachingu, aby zapewnić właściwe zastosowanie i edukację. Nie udzielamy porad medycznych ani nie prowadzimy leczenia."
+      },
+      {
+        "title": "Brak porad medycznych",
+        "body": "Treści na tej stronie oraz oferowane produkty służą wyłącznie celom edukacyjnym i wellness. Nie są one przeznaczone do diagnozowania, leczenia ani zapobiegania jakiejkolwiek chorobie. Zawsze zasięgnij porady lekarza lub innego wykwalifikowanego dostawcy usług zdrowotnych w przypadku jakichkolwiek pytań dotyczących stanu zdrowia. Nigdy nie lekceważ profesjonalnej porady medycznej ani nie zwlekaj z jej zasięgnięciem z powodu czegoś, co przeczytałeś na tej stronie."
+      },
+      {
+        "title": "Dostępność produktów",
+        "body": "Chociaż staramy się zachować dokładne opisy i dostępność produktów, zastrzegamy sobie prawo do ograniczenia ilości lub wycofania produktów w dowolnym momencie bez powiadomienia. Specyfikacje produktów mogą ulec zmianie w oparciu o postęp technologiczny."
+      },
+      {
+        "title": "Ceny i płatności",
+        "body": "Ceny naszych profesjonalnych urządzeń są podawane na zapytanie. Zastrzegamy sobie prawo do zmiany cen w dowolnym momencie. Wszystkie transakcje są obsługiwane bezpośrednio poprzez nasz bezpieczny proces fakturowania, a nie poprzez publiczny koszyk."
+      },
+      {
+        "title": "Własność intelektualna",
+        "body": "Wszelkie treści na tej stronie, w tym teksty, grafiki, logo, obrazy i oprogramowanie, są własnością wellneXfreQ lub jej dostawców treści i są chronione przez międzynarodowe prawo autorskie i prawo własności intelektualnej. Nieautoryzowane użycie jakichkolwiek materiałów jest surowo zabronione."
+      },
+      {
+        "title": "Zachowanie użytkownika",
+        "body": "Korzystając z naszej strony, zgadzasz się używać jej wyłącznie w celach zgodnych z prawem i nie podejmować żadnych działań, które mogłyby uszkodzić, wyłączyć lub osłabić funkcjonalność strony lub zakłócać dostęp innym użytkownikom."
+      },
+      {
+        "title": "Ograniczenie odpowiedzialności",
+        "body": "wellneXfreQ oraz jej urzędnicy, dyrektorzy i pracownicy nie ponoszą odpowiedzialności za jakiekolwiek szkody pośrednie, przypadkowe, szczególne lub wtórne wynikające z lub w związku z korzystaniem z naszej strony internetowej lub produktów."
+      },
+      {
+        "title": "Prawo właściwe",
+        "body": "Niniejsze warunki podlegają i będą interpretowane zgodnie z prawem jurysdykcji, w której działa wellneXfreQ, bez względu na konflikty zasad prawnych."
+      },
+      {
+        "title": "Rozwiązanie umowy",
+        "body": "Zastrzegamy sobie prawo do natychmiastowego zamknięcia lub zawieszenia dostępu do naszej strony i usług, bez uprzedniego powiadomienia, z jakiegokolwiek powodu, w tym bez ograniczeń w przypadku naruszenia przez Ciebie Regulaminu."
+      },
+      {
+        "title": "Kontakt",
+        "body": "Jeśli masz jakiekolwiek pytania dotyczące niniejszego Regulaminu, prosimy o kontakt pod adresem your@wellnexfreq.com."
+      }
+    ]
+  },
+  "not_found": {
+    "title": "Częstotliwość Nieodnaleziona",
+    "subtitle": "Strona, której szukasz, wypadła poza rezonans. Dostrójmy się z powrotem do głównego spektrum.",
+    "back": "Wróć",
+    "home": "Powróć do bazy"
+  },
+  "admin": {
+    "login": {
+      "title": "Portal Administratora",
+      "email": "Email",
+      "password": "Hasło",
+      "submit": "Zaloguj się",
+      "failed": "Logowanie nieudane"
+    },
+    "dashboard": {
+      "title": "Centrum Kontroli Administratora",
+      "status": "Uwierzytelnianie i ładowanie panelu...",
+      "go_to_site": "Przejdź do strony",
+      "logout": "Wyloguj się",
+      "tabs": {
+        "products": "Centrum Produktów",
+        "blogs": "Dziennik Bloga",
+        "inquiries": "Zapytania",
+        "orders": "Zamówienia"
+      },
+      "products": {
+        "title": "Zarządzaj produktami",
+        "new": "Nowy produkt",
+        "edit": "Edytuj",
+        "delete": "Usuń",
+        "view_live": "Zobacz na żywo",
+        "no_products": "Nie znaleziono produktów. Utwórz nowy.",
+        "delete_confirm": "Czy na pewno chcesz usunąć ten produkt?"
+      },
+      "blogs": {
+        "title": "Zarządzaj artykułami",
+        "new": "Nowy artykuł",
+        "edit": "Edytuj",
+        "delete": "Usuń",
+        "view_live": "Zobacz na żywo",
+        "no_articles": "Nie znaleziono artykułów. Utwórz pierwszy wpis!",
+        "delete_confirm": "Czy na pewno chcesz usunąć ten artykuł na stałe?"
+      },
+      "inquiries": {
+        "title": "Zapytania klientów",
+        "active": "Aktywne zapytania",
+        "archived": "Zarchiwizowane",
+        "no_active": "Brak aktywnych zapytań. Wszystko załatwione!",
+        "no_archived": "Brak zarchiwizowane zapytań.",
+        "mark_read": "Oznacz jako przeczytane",
+        "mark_unread": "Oznacz jako nieprzeczytane",
+        "archive": "Archiwizuj",
+        "unarchive": "Przywróć z archiwum",
+        "delete": "Usuń",
+        "delete_confirm": "Czy na pewno chcesz usunąć to zapytanie na stałe?",
+        "new_badge": "Nowe"
+      },
+      "upload": {
+        "too_large": "Obraz przekracza limit 500KB.",
+        "failed": "Przesyłanie nieudane"
+      },
+      "error_title": "Błąd ładowania konfiguracji",
+      "error_message": "Wystąpił nieznany błąd. Upewnij się, że reguły Firestore są ustawione.",
+      "retry": "Spróbuj ponownie",
+      "modals": {
+        "product": {
+          "title_new": "Utwórz nowy produkt",
+          "title_edit": "Edytuj produkt",
+          "description": "Wypełnij szczegóły produktu i zoptymalizuj galerię obrazów.",
+          "labels": {
+            "main_img": "Główny obraz produktu (Maks. 500KB)",
+            "gallery_img": "Obrazy galerii (Maks. 4, po 500KB)",
+            "name": "Nazwa produktu",
+            "slug": "Slug URL (np. nazwa-produktu)",
+            "image_fallback": "Bezpośredni link do obrazu (zapasowy)",
+            "price": "Cena",
+            "tagline": "Krótki tagline",
+            "desc": "Główny opis",
+            "how": "Jak to działa",
+            "who": "Dla kogo",
+            "science": "Nauka",
+            "benefits": "Korzyści (oddzielone przecinkami)"
+          },
+          "placeholders": {
+            "benefits": "np. Regeneracja snu, napięcie mięśniowe..."
+          },
+          "buttons": {
+            "cancel": "Anuluj",
+            "save": "Zapisz zmiany",
+            "create": "Utwórz produkt"
+          }
+        },
+        "blog": {
+          "title_new": "Szkicuj nowy artykuł",
+          "title_edit": "Edytuj artykuł",
+          "description": "Wypełnij bogate dane treści dla swojego bloga. Miniatury muszą mieć mniej niż 500 KB.",
+          "labels": {
+            "header_img": "Obraz nagłówka (Maks. 500KB)",
+            "title": "Tytuł",
+            "slug": "Slug URL (np. dlaczego-czestotliwosc)",
+            "category": "Kategoria",
+            "date": "Format daty",
+            "read_time": "Czas czytania",
+            "excerpt": "Krótki fragment podsumowania",
+            "body_title": "Strategia treści",
+            "intro": "Akapity wprowadzające",
+            "sections": "Tablica sekcji artykułu",
+            "add_section": "Dodaj sekcję",
+            "section_heading": "Nagłówek sekcji",
+            "section_body": "Akapity treści sekcji",
+            "no_sections": "Nie dodano żadnych sekcji. Kliknij „+ Dodaj sekcję” powyżej, aby rozpocząć budowanie treści.",
+            "conclusion": "Podsumowanie końcowe"
+          }
+        }
+      },
+      "orders": {
+        "title": "Zamówienia klientów",
+        "active": "Aktywne zamówienia",
+        "archived": "Zarchiwizowane",
+        "no_active": "Brak aktywnych zamówień. Wszystko załatwione!",
+        "no_archived": "Brak zarchiwizowanych zamówień.",
+        "no_orders": "Nie złożono jeszcze żadnych zamówień.",
+        "mark_read": "Oznacz jako przeczytane",
+        "mark_unread": "Oznacz jako nieprzeczytane",
+        "archive": "Archiwizuj",
+        "unarchive": "Przywróć z archiwum",
+        "delete": "Usuń",
+        "delete_confirm": "Czy na pewno chcesz usunąć to zamówienie na stałe?",
+        "new_badge": "Nowe",
+        "total": "Suma",
+        "line_total": "Suma pozycji",
+        "summary_subtotal": "Suma urządzeń",
+        "summary_ph": "Suma P&H",
+        "address": "Adres",
+        "view_details": "Zobacz szczegóły",
+        "modal_title": "Szczegóły zamówienia",
+        "modal_subtitle": "Pełne dane zgłoszenia dla",
+        "personal_info": "Dane osobowe",
+        "shipping_info": "Dane odbiorcy / wysyłki",
+        "ordered_products": "Zamówione produkty"
+      }
+    }
+  }
+}

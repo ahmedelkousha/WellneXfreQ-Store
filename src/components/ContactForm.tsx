@@ -19,28 +19,32 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useProducts } from "@/hooks/useProducts";
+// import { useProducts } from "@/hooks/useProducts";
 import { useAddInquiry } from "@/hooks/useInquiries";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
-
-const formSchema = z.object({
-  fullName: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Invalid email address." }),
-  phone: z.string().optional(),
-  productOfInterest: z.string().optional(),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-  source: z.string().optional(),
-});
+import { useTranslation } from "react-i18next";
 
 type ContactFormProps = {
   defaultProduct?: string;
+  centered?: boolean;
 };
 
-export default function ContactForm({ defaultProduct }: ContactFormProps) {
+export default function ContactForm({ defaultProduct, centered = false }: ContactFormProps) {
+  const { t } = useTranslation();
+  // const currentLang = i18n.language.split("-")[0];
   const { toast } = useToast();
-  const { data: products = [] } = useProducts();
-  
+  // const { data: products = [] } = useProducts();
+
+  const formSchema = z.object({
+    fullName: z.string().min(2, { message: t("common.form.validation.name") }),
+    email: z.string().email({ message: t("common.form.validation.email") }),
+    phone: z.string().optional(),
+    productOfInterest: z.string().optional(),
+    message: z.string().min(10, { message: t("common.form.validation.message") }),
+    source: z.string().optional(),
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -59,14 +63,14 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
     try {
       await addInquiry.mutateAsync(values);
       toast({
-        title: "Inquiry Sent Successfully",
-        description: "We've received your message and our team will be in touch shortly.",
+        title: t("common.form.success.title"),
+        description: t("common.form.success.desc"),
       });
       form.reset();
-    } catch(err) {
+    } catch (err) {
       toast({
-        title: "Error Sending",
-        description: "There was a problem sending your inquiry. Please try again.",
+        title: t("common.form.error.title"),
+        description: t("common.form.error.desc"),
         variant: "destructive",
       });
     }
@@ -81,9 +85,9 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
             name="fullName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white/80">Full Name</FormLabel>
+                <FormLabel className="text-white/80">{t("common.form.labels.name")}</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
+                  <Input className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -94,9 +98,9 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white/80">Email Address</FormLabel>
+                <FormLabel className="text-white/80">{t("common.form.labels.email")}</FormLabel>
                 <FormControl>
-                  <Input placeholder="john@example.com" type="email" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
+                  <Input type="email" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -110,9 +114,9 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white/80">Phone Number (Optional)</FormLabel>
+                <FormLabel className="text-white/80">{t("common.form.labels.phone")}</FormLabel>
                 <FormControl>
-                  <Input placeholder="+1 (555) 000-0000" type="tel" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
+                  <Input type="tel" className="bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -123,18 +127,22 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
             name="productOfInterest"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white/80">Product of Interest</FormLabel>
+                <FormLabel className="text-white/80">{t("contact.form.labels.interest") || t("common.form.labels.product")}</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger className="bg-black/50 border-white/10 focus-visible:ring-primary text-white">
-                      <SelectValue placeholder="Select a product" />
+                      <SelectValue />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="bg-card border-white/10 text-white">
-                    <SelectItem value="none">General Inquiry</SelectItem>
-                    {products.map(p => (
-                      <SelectItem key={p.id} value={p.id}>{p.name}</SelectItem>
-                    ))}
+                    <SelectItem className="focus:bg-[#008080]" value="none">1. {t("common.form.options.interests.general")}</SelectItem>
+                    <SelectItem className="focus:bg-[#008080]" value="buy">2. {t("common.form.options.interests.buy")}</SelectItem>
+                    <SelectItem className="focus:bg-[#008080]" value="consultation">3. {t("common.form.options.interests.consult")}</SelectItem>
+                    {/* <SelectItem value="affiliate">{t("common.form.options.interests.affiliate")}</SelectItem> */}
+                    <div className="hidden">{/* Divider for products if needed */}</div>
+                    {/* {products.map(p => (
+                      <SelectItem key={p.id} value={p.id}>{currentLang === "pl" ? (p.name_pl || p.name) : p.name}</SelectItem>
+                    ))} */}
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -148,12 +156,11 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white/80">Message / Query</FormLabel>
+              <FormLabel className="text-white/80">{t("common.form.labels.message")}</FormLabel>
               <FormControl>
-                <Textarea 
-                  placeholder="Tell us about your health goals or specific questions..." 
-                  className="min-h-[120px] bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white resize-none" 
-                  {...field} 
+                <Textarea
+                  className="min-h-[120px] bg-black/50 border-white/10 focus-visible:ring-primary focus-visible:border-primary text-white resize-none"
+                  {...field}
                 />
               </FormControl>
               <FormMessage />
@@ -161,36 +168,37 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
           )}
         />
 
-        <FormField
+        {/* <FormField
           control={form.control}
           name="source"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white/80">How did you hear about us? (Optional)</FormLabel>
+              <FormLabel className="text-white/80">{t("common.form.labels.source")}</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="bg-black/50 border-white/10 focus-visible:ring-primary text-white">
-                    <SelectValue placeholder="Select an option" />
+                    <SelectValue placeholder={t("common.form.placeholders.source")} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-card border-white/10 text-white">
-                  <SelectItem value="none">Select an option</SelectItem>
-                  <SelectItem value="instagram">Instagram</SelectItem>
-                  <SelectItem value="facebook">Facebook</SelectItem>
-                  <SelectItem value="friend">Friend / Referral</SelectItem>
-                  <SelectItem value="search">Search Engine</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                  <SelectItem value="none">{t("common.form.placeholders.source")}</SelectItem>
+                  <SelectItem value="instagram">{t("common.form.options.sources.instagram")}</SelectItem>
+                  <SelectItem value="facebook">{t("common.form.options.sources.facebook")}</SelectItem>
+                  <SelectItem value="friend">{t("common.form.options.sources.friend")}</SelectItem>
+                  <SelectItem value="search">{t("common.form.options.sources.search")}</SelectItem>
+                  <SelectItem value="other">{t("common.form.options.sources.other")}</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
             </FormItem>
           )}
-        />
-
-        <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-base font-semibold group">
-          Send Inquiry
-          <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-        </Button>
+        /> */}
+        <div className="flex justify-center w-full">
+          <Button type="submit" className="w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group">
+            {t("common.form.submit").toUpperCase()}
+            <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </div>
       </form>
     </Form>
   );

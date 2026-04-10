@@ -3,8 +3,19 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useProducts } from "@/hooks/useProducts";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, ArrowRight, Zap, Target, Loader2 } from "lucide-react";
-import coachJumpImg from "@assets/products-cover2.png";
+import { ChevronRight, ArrowRight, Zap, Loader2, Mouse } from "lucide-react";
+import { useTranslation } from "react-i18next";
+// import AffiliateCTA from "@/components/sections/AffiliateCTA";
+import featuredProductImgSm from "@assets/featured-product-sm.png";
+import featuredProductImgLg from "@assets/featured-product-lg.png";
+import featuredProductImgPhone from "@assets/featured-product-phone.png";
+
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -17,7 +28,10 @@ const staggerContainer = {
 };
 
 export default function Products() {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language.split("-")[0];
   const { data: products = [], isLoading } = useProducts();
+  const featuredId = products.find(p => p.isFeatured)?.id;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,108 +41,166 @@ export default function Products() {
     <div className="bg-background min-h-screen">
 
       {/* PRODUCTS HERO */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden h-screen">
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="absolute top-[82%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
+          onClick={() => scrollToSection("products-grid")}
+        >
+          {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
+          <div className="w-[22px] h-[34px] border border-white/20 rounded-full flex justify-center p-1 bg-black/60 backdrop-blur-sm transition-colors hover:border-primary/50">
+            <motion.div
+              animate={{
+                y: [0, 14, 0],
+                opacity: [1, 0.4, 1]
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="w-1 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
+            />
+          </div>
+        </motion.div>
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full scale-150 transform -translate-y-1/2"></div>
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/90 to-transparent h-2/3"></div>
-          <img src={coachJumpImg} alt="Products Hero" className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay grayscale" />
+          {/* <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-background via-background/90 to-transparent h-2/3"></div> */}
+
+          {/* <img src={coachJumpImg} alt="Products Hero" className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay grayscale" /> */}
+          {/* Large Image */}
+          <div className="hidden xl:block absolute inset-0 z-0 h-full w-full">
+            <div className="absolute inset-0 bg-linear-to-b from-[#0a0a0a] via-black/5 to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
+            <img
+              src={featuredProductImgLg}
+              alt="OlyLife THz Tera-P90+"
+              className="h-[940px] w-full object-cover object-fit transition-transform duration-1000 group-hover:scale-[1.03]"
+            />
+          </div>
+
+          {/* Small Image */}
+          <div className="xl:hidden sm:block hidden absolute inset-0 z-0 h-full w-full">
+            <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
+            <img
+              src={featuredProductImgSm}
+              alt="OlyLife THz Tera-P90+"
+              className="h-[940px] w-full object-cover object-[80%] transition-transform duration-1000 group-hover:scale-[1.03]"
+            />
+          </div>
+
+          {/* Mobile Image */}
+          <div className="sm:hidden block absolute inset-0 z-0 h-full w-full">
+            <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
+            <img
+              src={featuredProductImgPhone}
+              alt="OlyLife THz Tera-P90+"
+              className="h-[800px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]"
+            />
+          </div>
+
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6 backdrop-blur-md"
-          >
-            <Zap className="w-4 h-4" />
-            Biohacking Arsenal
-          </motion.div>
+        <div className="container relative z-10 text-left pl-6 pt-0 lg:pt-10 lg:pl-30">
+
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6"
+            className="text-[1.7rem] sm:text-3xl lg:text-4xl xl:text-7xl font-heading font-bold text-white sm:mb-6 mb-4"
           >
-            Our Complete <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#00CED1]">Collection</span>
+            {t("shop.hero.title")}<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]"><br />{t("shop.hero.title_highlight")}</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto font-light"
+            className="text-sm lg:text-lg text-white/60 max-w-88 lg:max-w-114 xl:max-w-2xl font-light"
           >
-            Explore our meticulously curated array of professional PEMF and Terahertz frequency devices engineered for total cellular mastery.
+            {t("shop.hero.subtitle")}
           </motion.p>
         </div>
       </section>
 
       {/* FULL PRODUCTS LISTING */}
-      <section className="py-20 relative z-10 border-t border-white/5 bg-black/40">
+      <section id="products-grid" className="py-20 relative z-10 border-t border-white/5 bg-black/40">
         <div className="container mx-auto px-4">
 
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-20 opacity-50">
               <Loader2 className="w-10 h-10 text-primary animate-spin mb-4" />
-              <span className="text-white/60 tracking-wider font-medium">Loading Products...</span>
+              <span className="text-white/60 tracking-wider font-medium">{t("shop.list.loading")}</span>
             </div>
           ) : (
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {products.map((product) => (
-                <motion.div
-                  key={product.id}
-                  variants={fadeIn}
-                  className="group rounded-2xl bg-card border border-white/5 overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-[0_0_40px_rgba(126,255,212,0.1)] flex flex-col"
-                >
-                  <Link to={`/product/${product.slug}`} className="block relative aspect-[4/3] overflow-hidden bg-black/50">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 transition-opacity group-hover:opacity-90"></div>
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                    />
-                    <div className="absolute top-4 left-4 z-20">
-                      <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-white/10 text-white backdrop-blur-md border border-white/10 group-hover:bg-primary/20 group-hover:text-primary transition-colors">
-                        High Tech
-                      </span>
+              {products.map((product) => {
+                const isFeatured = product.id === featuredId;
+
+                return (
+                  <motion.div
+                    key={product.id}
+                    variants={fadeIn}
+                    className="group bg-card border border-white/5 rounded-2xl overflow-hidden hover:border-primary/40 transition-[border-color,box-shadow,transform] duration-500 hover:shadow-[0_0_40px_rgba(126,255,212,0.08)] flex flex-col will-change-transform h-full"
+                  >
+                    <Link
+                      to={`/${currentLang}/product/${product.slug}`}
+                      className="block overflow-hidden relative aspect-video"
+                    >
+                      <div className="absolute inset-0 bg-linear-to-t from-card/80 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                      <img
+                        src={product.image}
+                        alt={currentLang === "pl" ? (product.name_pl || product.name) : product.name}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                      />
+                      {isFeatured && (
+                        <div className="absolute top-4 left-4 z-20">
+                          <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded bg-primary text-black/80 flex items-center gap-1.5">
+                            <Zap className="w-3 h-3" />
+                            FEATURED
+                          </span>
+                        </div>
+                      )}
+                    </Link>
+
+                    <div className="p-6 md:p-8 flex flex-col grow">
+                      <h3 className="text-xl font-heading font-bold text-white mb-4 group-hover:text-primary transition-colors">
+                        {currentLang === "pl" ? (product.name_pl || product.name) : product.name}
+                      </h3>
+
+                      <p className="text-sm text-white/50 group-hover:text-white/70 transition-colors line-clamp-3 leading-relaxed mb-8 grow">
+                        {currentLang === "pl" ? (product.shortDescription_pl || product.shortDescription) : product.shortDescription}
+                      </p>
+
+                      <div className="pt-6 border-t border-white/5 mt-auto flex items-center justify-between">
+                        <span className="font-mono uppercase tracking-widest text-white/20 group-hover:text-primary/50 transition-colors text-sm">
+                          {product.price || "$$$"}
+                        </span>
+                        <Button asChild variant="default" size="sm" className="font-bold uppercase tracking-widest text-xs px-4 bg-primary text-black hover:bg-primary/90 transition-colors">
+                          <Link to={`/${currentLang}/order`}>
+                            {t("nav.order-footer")} <ChevronRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
-                    <div className="absolute bottom-4 left-4 z-20 right-4">
-                      <h3 className="text-2xl font-heading font-bold text-white mb-1 group-hover:text-primary transition-colors">{product.name}</h3>
-                    </div>
-                  </Link>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <p className="text-white/60 text-sm leading-relaxed mb-6 flex-grow">
-                      {product.tagline || product.description?.slice(0, 100) + '...'}
-                    </p>
+                  </motion.div>
+                );
+              })}
 
-                    <ul className="mb-6 space-y-2 opacity-60 group-hover:opacity-100 transition-opacity">
-                      {product.benefits?.slice(0, 2).map((benefit, i) => (
-                        <li key={i} className="flex items-start text-xs text-white/80">
-                          <Target className="w-3.5 h-3.5 text-primary mr-2 shrink-0 mt-0.5" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <Button asChild className="w-full bg-white/5 hover:bg-primary hover:text-primary-foreground text-white border border-white/10 hover:border-primary transition-all group/btn">
-                      <Link to={`/product/${product.slug}`}>
-                        Explore Capabilities <ChevronRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
-                  </div>
-                </motion.div>
-              ))}
-
-              {products.length === 0 && (
+              {!isLoading && products.length === 0 && (
                 <div className="col-span-full text-center py-20 border border-white/5 rounded-3xl bg-white/5 text-white/40">
-                  No products currently available in the catalog.
+                  {t("shop.list.empty")}
                 </div>
               )}
             </motion.div>
@@ -137,8 +209,10 @@ export default function Products() {
         </div>
       </section>
 
+      {/* <AffiliateCTA /> */}
+
       {/* CTA SECTION */}
-      <section className="py-24 relative overflow-hidden bg-background">
+      {/* <section className="py-24 relative overflow-hidden bg-background">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -146,15 +220,39 @@ export default function Products() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto bg-card/40 border border-white/10 rounded-3xl p-10 md:p-16 text-center shadow-xl"
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Unsure Which Frequency Fits You?</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">{t("shop.cta.title")}</h2>
             <p className="text-lg text-white/60 mb-8 max-w-2xl mx-auto">
-              Our coaching team is ready to analyze your specific wellness goals to match you with the precise device protocol you need.
+              {t("shop.cta.subtitle")}
             </p>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 rounded-full shadow-[0_0_30px_rgba(126,255,212,0.3)] transition-all hover:scale-105 group">
-              <Link to="/contact">
-                Consult With A Coach <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <Link to={`/${currentLang}/contact`}>
+                {t("shop.cta.button")} <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
+          </motion.div>
+        </div>
+      </section> */}
+
+      {/* FULL PRODUCTS LISTING SECTION ENDS HERE */}
+
+      {/* MEDICAL AND REGULATORY NOTICE */}
+      <section className="py-24 relative z-10 border-t border-white/5 bg-background">
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto bg-black/40 border border-primary/20 p-10 md:p-16 rounded-[2.5rem] text-center shadow-[0_0_60px_rgba(126,255,212,0.03)] relative overflow-hidden group hover:border-primary/30 transition-all duration-500"
+          >
+            {/* Subtle inner glow */}
+            <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"></div>
+
+            <h2 className="text-xl sm:text-3xl font-heading font-medium text-white mb-10 tracking-tight">
+              {t("shop.medical_notice.title")}
+            </h2>
+            <p className="text-xs sm:text-sm text-white/50 leading-relaxed font-light max-w-4xl mx-auto">
+              {t("shop.medical_notice.text")}
+            </p>
           </motion.div>
         </div>
       </section>
