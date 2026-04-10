@@ -1,26 +1,28 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { 
-  Instagram, 
-  Facebook, 
-  Mail, 
-  ArrowUpRight, 
-  Phone, 
-  Activity, 
+import {
+  Instagram,
+  Facebook,
+  Mail,
+  ArrowUpRight,
+  Phone,
+  Activity,
   MessageCircle,
   Pin,
   Map,
   MapPin
 } from "lucide-react";
-import { 
-  Accordion, 
-  AccordionItem, 
-  AccordionTrigger, 
-  AccordionContent 
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent
 } from "@/components/ui/accordion";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import FloatingProductsCTA from "../sections/FloatingProductsCTA";
-import logo from "@assets/logo.png";
+import logo from "@assets/logo-icon.png";
+
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -55,9 +57,14 @@ export default function Footer() {
     }
   };
 
-  const socialLinks = [
-    { icon: Instagram, href: t("order.social.instagram") },
-    { icon: Facebook, href: t("order.social.facebook") },
+  const auSocialLinks = [
+    { icon: Facebook, href: "https://www.facebook.com/share/18CbZK1UyD/" },
+    { icon: Instagram, href: "https://www.instagram.com/wellnexfreq.au?igsh=MThrenBseWpzOWR1YQ==" },
+  ];
+
+  const plSocialLinks = [
+    { icon: Facebook, href: "https://www.facebook.com/share/1EE6TqJA6N/" },
+    { icon: Instagram, href: "https://www.instagram.com/wellnexfreq.pl?igsh=MWd4ajNlbWpka3Z5NQ==" },
   ];
 
   const TechLinks = () => (
@@ -113,32 +120,56 @@ export default function Footer() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeIn} 
-            className="lg:col-span-1 space-y-8"
+            variants={fadeIn}
+            className="lg:col-span-1 space-y-0"
           >
-            <a href={getPath("/")} onClick={handleHomeClick} className="inline-block">
-              <img src={logo} alt="logo" className="h-8" />
+            <a href={getPath("/")} onClick={handleHomeClick} className="inline-block mb-2">
+              <img src={logo} alt="logo" className="h-16" />
             </a>
-            <p className="text-white/50 leading-relaxed text-sm max-w-xs">
+            <p className="text-white/50 leading-relaxed text-sm max-w-xs mb-4">
               {t("footer.tagline")}
             </p>
-            
-            <div className="flex gap-4 md:hidden">
-              {socialLinks.map((link, i) => (
-                <a
-                  key={i}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-primary/10"
-                >
-                  <link.icon className="w-5 h-5" />
-                </a>
-              ))}
+
+            <div className="flex flex-col gap-6 pt-2">
+              <div className="flex items-center gap-4">
+                <div className="w-5 h-5 shadow-lg">
+                  <img className="w-full h-full object-cover" width="48" height="48" src="https://img.icons8.com/color/48/australia-flag--v1.png" alt="australia-flag--v1" />                </div>
+                <div className="flex gap-2">
+                  {auSocialLinks.map((link, i) => (
+                    <a
+                      key={i}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-primary/10"
+                    >
+                      <link.icon className="w-5 h-5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-5 h-5 shadow-lg">
+                  <img className="w-full h-full object-cover" width="48" height="48" src="https://img.icons8.com/color/48/poland.png" alt="poland" />                </div>
+                <div className="flex gap-2">
+                  {plSocialLinks.map((link, i) => (
+                    <a
+                      key={i}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-primary/10"
+                    >
+                      <link.icon className="w-5 h-5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -157,19 +188,6 @@ export default function Footer() {
             <h4 className="text-primary font-heading font-semibold mb-6 tracking-wider uppercase text-xs">{t("footer.connect")}</h4>
             <ConnectLinks />
 
-             <div className="hidden gap-4 pt-6 md:flex">
-              {socialLinks.map((link, i) => (
-                <a
-                  key={i}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-primary/10"
-                >
-                  <link.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Mobile Accordion */}

@@ -2,7 +2,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { useProducts } from "@/hooks/useProducts";
 import { ChevronDown, Home, Cpu, Mail, Leaf, ShoppingBag } from "lucide-react";
-import logoImg from "@assets/logo-icon.png";
+import logoImg from "@assets/logo.png";
+
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 // import Flag from "react-world-flags";
@@ -155,8 +156,8 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-black py-1"
-          : "bg-background/90 py-2"
+          ? "bg-black py-4"
+          : "bg-background/90 py-5"
           }`}
       >
         <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between">
@@ -164,7 +165,7 @@ export default function Navbar() {
             <img
               src={logoImg}
               alt="wellneXfreQ"
-              className={`md:h-20 h-14 w-auto`}
+              className={`md:h-8 h-6 w-auto`}
               style={{ mixBlendMode: "screen" }}
             />
           </button>
