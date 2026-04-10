@@ -8,6 +8,8 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
+const isHome = window.location.pathname === `/${i18n.language}`
+
   return (
     <div className="pt-28 pb-24 bg-background text-foreground relative overflow-hidden">
       {/* Background elements */}
@@ -25,7 +27,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
           </button>
         )}
 
-        <section className="mb-10">
+        <section className={`mb-10 ${isHome ? "flex justify-center flex-col items-center" : ""}`}>
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
             {t("contact.hero.badge") || "Get in Touch"}
           </p>
@@ -40,7 +42,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
         <div className="grid gap-10 grid-cols-1  items-start">
 
 
-          <aside className="space-y-6 flex flex-row lg:justify-start justify-center gap-6">
+          <aside className={`space-y-6 flex flex-row  gap-6 ${isHome ? "lg:justify-center justify-center" : "lg:justify-start justify-center"}`}>
             {/* <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}

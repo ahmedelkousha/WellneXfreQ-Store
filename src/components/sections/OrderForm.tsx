@@ -57,7 +57,7 @@ const formSchema = z.object({
     productId: z.string().min(1),
     quantity: z.number().min(0),
   })).min(1, "Please select at least one product").refine(items => items.some(i => i.quantity > 0), "Please select at least one product with quantity > 0"),
-  
+
   consent1: z.boolean().refine(v => v === true, "Confirmation is required"),
   consent2: z.boolean().refine(v => v === true, "Confirmation is required"),
 });
@@ -101,7 +101,7 @@ export default function OrderForm() {
   const { watch, setValue } = form;
   const isSameAddress = watch("isRecipientSameAsPersonal");
   const formItems = watch("items");
-  
+
   const [openPhoneCode, setOpenPhoneCode] = useState(false);
   const [openPersonalCountry, setOpenPersonalCountry] = useState(false);
   const [openRecipientCountry, setOpenRecipientCountry] = useState(false);
@@ -122,15 +122,15 @@ export default function OrderForm() {
       setValue("recipientPostalCode", values.personalPostalCode);
     }
   }, [
-    isSameAddress, 
-    watch("firstName"), 
-    watch("lastName"), 
-    watch("phoneNumber"), 
-    watch("personalStreetAddress"), 
-    watch("personalCity"), 
-    watch("personalState"), 
-    watch("personalCountry"), 
-    watch("personalPostalCode"), 
+    isSameAddress,
+    watch("firstName"),
+    watch("lastName"),
+    watch("phoneNumber"),
+    watch("personalStreetAddress"),
+    watch("personalCity"),
+    watch("personalState"),
+    watch("personalCountry"),
+    watch("personalPostalCode"),
     setValue
   ]);
 
@@ -734,9 +734,9 @@ export default function OrderForm() {
             <div className="h-px bg-white/10 flex-1" />
           </div>
 
-          <p className="text-sm text-white/50 bg-white/5 p-4 rounded-xl border border-white/10 leading-relaxed italic">
+          {/* <p className="text-sm text-white/50 bg-white/5 p-4 rounded-xl border border-white/10 leading-relaxed italic">
             {t("order.form.labels.bundles_disclaimer")}
-          </p>
+          </p> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {bundleProducts.map((product) => {
@@ -843,13 +843,15 @@ export default function OrderForm() {
             />
           </div>
 
-          <Button 
-            type="submit" 
-            disabled={createOrder.isPending}
-            className="w-full bg-primary text-black h-16 rounded-lg text-[0.65rem] sm:text-[0.8rem] font-semibold uppercase tracking-widest hover:bg-primary/90 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
-          >
-            {createOrder.isPending ? t("order.form.labels.submitting") : t("order.form.labels.submit")}
-          </Button>
+          <div className="flex justify-center w-full">
+            <Button
+              type="submit"
+              disabled={createOrder.isPending}
+              className="w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group rounded-lg uppercase tracking-widest transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+            >
+              {createOrder.isPending ? t("order.form.labels.submitting") : t("order.form.labels.submit")}
+            </Button>
+          </div>
         </div>
       </form>
     </Form>

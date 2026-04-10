@@ -57,14 +57,9 @@ export default function Footer() {
     }
   };
 
-  const auSocialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/share/18CbZK1UyD/" },
-    { icon: Instagram, href: "https://www.instagram.com/wellnexfreq.au?igsh=MThrenBseWpzOWR1YQ==" },
-  ];
-
-  const plSocialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/share/1EE6TqJA6N/" },
-    { icon: Instagram, href: "https://www.instagram.com/wellnexfreq.pl?igsh=MWd4ajNlbWpka3Z5NQ==" },
+  const socialLinks = [
+    { icon: Facebook, href: t("order.social.facebook") },
+    { icon: Instagram, href: t("order.social.instagram") },
   ];
 
   const TechLinks = () => (
@@ -127,49 +122,25 @@ export default function Footer() {
             variants={fadeIn}
             className="lg:col-span-1 space-y-0"
           >
-            <a href={getPath("/")} onClick={handleHomeClick} className="inline-block mb-2">
+            <a href={getPath("/")} onClick={handleHomeClick} className="inline-block mb-2 -mt-1">
               <img src={logo} alt="logo" className="h-16" />
             </a>
             <p className="text-white/50 leading-relaxed text-sm max-w-xs mb-4">
               {t("footer.tagline")}
             </p>
 
-            <div className="flex flex-col gap-6 pt-2">
-              <div className="flex items-center gap-4">
-                <div className="w-5 h-5 shadow-lg">
-                  <img className="w-full h-full object-cover" width="48" height="48" src="https://img.icons8.com/color/48/australia-flag--v1.png" alt="australia-flag--v1" />                </div>
-                <div className="flex gap-2">
-                  {auSocialLinks.map((link, i) => (
-                    <a
-                      key={i}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-primary/10"
-                    >
-                      <link.icon className="w-5 h-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-5 h-5 shadow-lg">
-                  <img className="w-full h-full object-cover" width="48" height="48" src="https://img.icons8.com/color/48/poland.png" alt="poland" />                </div>
-                <div className="flex gap-2">
-                  {plSocialLinks.map((link, i) => (
-                    <a
-                      key={i}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-primary/10"
-                    >
-                      <link.icon className="w-5 h-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
+            <div className="flex gap-4 pt-4">
+              {socialLinks.map((link, i) => (
+                <a
+                  key={i}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-primary hover:text-primary transition-all duration-300 bg-white/5 hover:bg-primary/10"
+                >
+                  <link.icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </motion.div>
 

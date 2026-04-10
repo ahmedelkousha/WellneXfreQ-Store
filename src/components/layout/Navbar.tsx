@@ -6,7 +6,7 @@ import logoImg from "@assets/logo.png";
 
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-// import Flag from "react-world-flags";
+import Flag from "react-world-flags";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -256,18 +256,23 @@ export default function Navbar() {
                 title={currentLang === "en" ? "Switch to Polish" : "Przełącz na Angielski"}
               >
                 {currentLang === "en" ? (
+                <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
+              ) : (
+                <Flag code="US" className="w-6 h-4 rounded-sm shadow-sm" />
+              )}
+                {/* {currentLang === "en" ? (
                   <span className="w-4 h-4 text-xs tracking-[0.2rem] rounded-sm shadow-sm text-primary hover:text-white">PL</span>
                 ) : (
                   <span className="w-4 h-4 text-xs tracking-[0.2rem] rounded-sm shadow-sm">EN</span>
-                )}
+                )} */}
               </button>
 
               <Button
                 asChild
                 variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="border-primary hover:bg-transparent hover:text-primary bg-primary text-primary-foreground"
               >
-                <Link className="text-[0.65rem] sm:text-[0.73rem]" to={getPath("/order")}>{t("nav.order").toUpperCase()}</Link>
+                <Link className="text-xs font-medium tracking-widest" to={getPath("/order")}>{t("nav.order").toUpperCase()}</Link>
               </Button>
             </div>
           </nav>
@@ -278,16 +283,16 @@ export default function Navbar() {
               onClick={toggleLanguage}
               className="flex items-center justify-center focus:outline-none"
             >
-              {currentLang === "en" ? (
+              {/* {currentLang === "en" ? (
                 <span className="w-4 h-4 text-xs rounded-sm shadow-sm text-white hover:text-primary">PL</span>
               ) : (
                 <span className="w-4 h-4 text-xs rounded-sm text-white hover:text-primary shadow-sm">EN</span>
-              )}
-              {/* {currentLang === "en" ? (
+              )} */}
+              {currentLang === "en" ? (
                 <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
               ) : (
                 <Flag code="US" className="w-6 h-4 rounded-sm shadow-sm" />
-              )} */}
+              )}
             </button>
             <Button
               asChild

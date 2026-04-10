@@ -8,7 +8,7 @@
     "products": "Products",
     "contact": "Contact",
     "inquire": "Inquire Now",
-    "order": "Get Started",
+    "order": "Order Now",
     "order-footer": "Order Now"
   },
   "home": {
@@ -70,7 +70,7 @@
       "text1": "As a health, wellness, and movement coach with 13 years of experience, I've helped people rebuild their bodies from the inside out. But it was my own battle with chronic pain, burnout, and low energy that changed everything.",
       "text2": "Traditional approaches kept working around the body. I needed something that worked with it. That search led me to PEMF and Terahertz frequency technology — and I've never looked back.",
       "coach_text": "My drive for longevity led me somewhere most people haven't looked yet. That's exactly why wellneXfreQ exists.",
-      "coach_text2": "Beyond frequency technology, I continue to help client move better, feel stronger, and build resilient bodies for longevity through",
+      "coach_text2": "Beyond frequency technology, I continue to help clients move better, feel stronger, and build resilient bodies for longevity through",
       "coach_text2_highlight": "FITIN2IT PT",
       "coach": "Patrycja W.",
       "learn_more": "Get in touch"
@@ -415,7 +415,7 @@
         "product_names": {
           "tera-p90": "Tera P90 ($1,000 USD)",
           "tera-p90-kit": "THZ Tera-P90+ ($1,500 USD)",
-          "shaken-massager": "Shaken Massage ($1,000 USD)",
+          "shaken-massager": "Shaken Massager ($1,000 USD)",
           "galaxy-g-one": "Galaxy G-One ($500 USD)",
           "vitality-wand": "Vitality Wand ($600 USD)",
           "h-plus-bar": "H+ Bar ($600 USD)",
@@ -490,7 +490,7 @@
       "back": "Back",
       "back_to_catalog": "Back to catalog",
       "back_to_journal": "Back to journal",
-      "view_products": "Explore product range",
+      "view_products": "Explore products",
       "products": "Products"
     },
     "form": {

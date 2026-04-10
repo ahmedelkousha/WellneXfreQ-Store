@@ -84,7 +84,6 @@ export default function Home() {
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
-  // Blogs DISABLED
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
@@ -276,9 +275,9 @@ export default function Home() {
                   </p>
                 </div>
 
-                 <div className="block lg:hidden border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
+                 <div className="block lg:hidden border-l-3 py-1 border-primary/50 pl-4 my-10">
                   <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
-                    "{t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>"
+                    {t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>
                   </p>
                 </div>
 

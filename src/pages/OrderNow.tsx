@@ -126,9 +126,9 @@ export default function OrderNow() {
         <div className="grid gap-10 lg:grid-cols-1 items-start max-w-4xl mx-auto">
           <section className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-7 shadow-xl shadow-black/40 relative overflow-hidden">
             <div className="absolute top-0 left-10 right-10 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
-            <h2 className="text-lg font-semibold mb-3 text-white">
+            {/* <h2 className="text-lg font-semibold mb-3 text-white">
               {t("order.form.title")}
-            </h2>
+            </h2> */}
             {/* <p className="text-xs text-white/60 mb-6">
               {t("order.form.description")}
             </p> */}

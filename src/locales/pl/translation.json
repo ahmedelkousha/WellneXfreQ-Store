@@ -8,7 +8,7 @@
     "products": "Produkty",
     "contact": "Kontakt",
     "inquire": "Zapytaj teraz",
-    "order": "Zaczynajmy",
+    "order": "Zamów teraz",
     "order-footer": "Zamów teraz"
   },
   "home": {
@@ -70,7 +70,7 @@
       "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z 13-letnim doświadczeniem pomagałem ludziom w odbudowie ciał od wewnątrz. Ale to moja własna walka z przewlekłym bólem, wypaleniem i niską energią zmieniła wszystko.",
       "text2": "Tradycyjne podejścia wciąż działały omijając ciało. Potrzebowałem czegoś, co z nim współpracuje. Te poszukiwania doprowadziły mnie do technologii częstotliwości PEMF i Teraherców – i nigdy nie oglądałem się za siebie.",
       "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość ludzi jeszcze nie spojrzała. Właśnie dlatego istnieje wellneXfreQ.",
-      "coach_text2": "Poza technologią częstotliwości, nadal pomagam klientom poruszać się lepiej, czuć się silniejszym i budować odporne ciała na długowieczność poprzez",
+      "coach_text2": "Oprócz technologii częstotliwości nadal pomagam klientom lepiej się poruszać, czuć się silniejszymi i budować wytrzymałe ciała na długie lata dzięki",
       "coach_text2_highlight": "FITIN2IT PT",
       "coach": "Patrycja W.",
       "learn_more": "Skontaktuj się"
@@ -433,7 +433,7 @@
         "product_names": {
           "tera-p90": "Tera P90 ($1,000 USD)",
           "tera-p90-kit": "THZ Tera-P90+ ($1,500 USD)",
-          "shaken-massager": "Shaken Massage ($1,000 USD)",
+          "shaken-massager": "Shaken Massager ($1,000 USD)",
           "galaxy-g-one": "Galaxy G-One ($500 USD)",
           "vitality-wand": "Vitality Wand ($600 USD)",
           "h-plus-bar": "H+ Bar ($600 USD)",
@@ -508,7 +508,7 @@
       "back": "Wstecz",
       "back_to_catalog": "Powrót do katalogu",
       "back_to_journal": "Powrót do dziennika",
-      "view_products": "Poznaj gamę produktów",
+      "view_products": "Poznaj produkty",
       "products": "Produkty"
     },
     "form": {

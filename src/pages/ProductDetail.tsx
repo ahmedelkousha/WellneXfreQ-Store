@@ -37,9 +37,9 @@ export default function ProductDetail() {
     return <NotFound />;
   }
 
-  const scrollToForm = () => {
-    document.getElementById("order-section")?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const scrollToForm = () => {
+  //   document.getElementById("order-section")?.scrollIntoView({ behavior: "smooth" });
+  // };
 
   return (
     <div className="bg-background min-h-screen pt-32 pb-20">
