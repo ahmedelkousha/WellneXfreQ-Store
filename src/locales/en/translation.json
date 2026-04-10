@@ -516,9 +516,9 @@
         "interests": {
           "label": "I am interested in",
           "placeholder": "Select an interest",
-          "general": "General inquiry",
-          "buy": "I want to buy",
-          "consult": "Book a consultation",
+          "general": "General Question",
+          "buy": "Order Device",
+          "consult": "Book A Consultation",
           "affiliate": "Become an affiliate"
         },
         "sources": {
@@ -529,7 +529,7 @@
           "other": "Other"
         }
       },
-      "submit": "Send message",
+      "submit": "Send",
       "success": {
         "title": "Message sent successfully",
         "desc": "We have received your message, our team will contact you shortly."

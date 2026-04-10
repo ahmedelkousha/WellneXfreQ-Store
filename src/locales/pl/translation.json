@@ -534,8 +534,8 @@
         "interests": {
           "label": "Interesuje mnie",
           "placeholder": "Wybierz zainteresowanie",
-          "general": "Zapytanie ogólne",
-          "buy": "Chcę kupić",
+          "general": "Ogólne pytanie",
+          "buy": "Zamów urządzenie",
           "consult": "Zarezerwuj konsultację",
           "affiliate": "Zostań partnerem"
         },
@@ -547,7 +547,7 @@
           "other": "Inne"
         }
       },
-      "submit": "Wyślij wiadomość",
+      "submit": "Wyślij",
       "success": {
         "title": "Wiadomość wysłana pomyślnie",
         "desc": "Otrzymaliśmy Twoją wiadomość, nasz zespół skontaktuje się z Tobą wkrótce."

@@ -40,8 +40,8 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
         <div className="grid gap-10 grid-cols-1  items-start">
 
 
-          <aside className="space-y-6 flex flex-row justify-center flex-wrap sm:flex-nowrap gap-6">
-            <motion.div
+          <aside className="space-y-6 flex flex-row lg:justify-start justify-center gap-6">
+            {/* <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -80,20 +80,32 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-6 space-y-4 sm:w-1/2 m-0 w-full"
+              className="border border-white/10 rounded-3xl p-5 md:p-6 space-y-4 w-full sm:w-[80%] lg:-translate-x-5 translate-x-0 lg:w-1/2"
             >
               {/* <h3 className="text-sm font-semibold text-white">
                 {t("order.social.title")}
               </h3>
               <p className="text-xs text-white/70">{t("order.social.subtitle")}</p> */}
 
-              <div className="grid grid-cols-2 gap-3 text-xs">
+              <div className="grid grid-cols-3 gap-3 text-xs">
+                <a
+                  href={t("order.social.whatsapp")}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:border-primary hover:bg-primary/10 transition-colors"
+                >
+                  <MessageCircle className="min-h-4 w-4 text-primary" />
+                  <div className="flex flex-col">
+                    <span className="font-medium text-white/90">WhatsApp</span>
+                    <span className="text-[10px] text-white/60">AU | PL</span>
+                  </div>
+                </a>
                 <a
                   href={t("order.social.facebook")}
                   target="_blank"
@@ -120,19 +132,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
                 </a>
               </div>
 
-              <div className="pt-2">
-                <a
-                  href={t("order.social.whatsapp")}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 text-xs text-white/80 hover:text-primary transition-colors group"
-                >
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                    <MessageCircle className="h-4 w-4 text-primary" />
-                  </div>
-                  <span>WhatsApp (AU & PL): {t("order.social.phone")}</span>
-                </a>
-              </div>
+
             </motion.div>
 
             {/* <motion.div 
