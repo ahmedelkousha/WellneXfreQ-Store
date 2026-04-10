@@ -43,29 +43,29 @@ export default function Products() {
       {/* PRODUCTS HERO */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden h-screen">
         {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            className="absolute top-[82%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
-            onClick={() => scrollToSection("products-grid")}
-          >
-            {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
-            <div className="w-[22px] h-[34px] border border-white/20 rounded-full flex justify-center p-1 bg-black/60 backdrop-blur-sm transition-colors hover:border-primary/50">
-              <motion.div
-                animate={{
-                  y: [0, 14, 0],
-                  opacity: [1, 0.4, 1]
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="w-1 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
-              />
-            </div>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="absolute top-[82%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
+          onClick={() => scrollToSection("products-grid")}
+        >
+          {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
+          <div className="w-[22px] h-[34px] border border-white/20 rounded-full flex justify-center p-1 bg-black/60 backdrop-blur-sm transition-colors hover:border-primary/50">
+            <motion.div
+              animate={{
+                y: [0, 14, 0],
+                opacity: [1, 0.4, 1]
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="w-1 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
+            />
+          </div>
+        </motion.div>
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full scale-150 transform -translate-y-1/2"></div>
           {/* <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-background via-background/90 to-transparent h-2/3"></div> */}
@@ -107,7 +107,7 @@ export default function Products() {
         </div>
 
         <div className="container relative z-10 text-left pl-6 pt-0 lg:pt-10 lg:pl-30">
-          
+
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -247,10 +247,10 @@ export default function Products() {
             {/* Subtle inner glow */}
             <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors"></div>
 
-            <h2 className="text-3xl md:text-4xl font-heading font-medium text-white mb-10 tracking-tight">
+            <h2 className="text-xl sm:text-3xl font-heading font-medium text-white mb-10 tracking-tight">
               {t("shop.medical_notice.title")}
             </h2>
-            <p className="text-base md:text-lg text-white/50 leading-relaxed font-light max-w-4xl mx-auto">
+            <p className="text-xs sm:text-sm text-white/50 leading-relaxed font-light max-w-4xl mx-auto">
               {t("shop.medical_notice.text")}
             </p>
           </motion.div>

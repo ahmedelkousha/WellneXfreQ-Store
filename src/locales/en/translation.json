@@ -2,8 +2,8 @@
   "nav": {
     "home": "Home",
     "technology": "Technology",
-    "philosophy": "The Journey",
-    "about": "About Us",
+    "philosophy": "About",
+    "about": "About",
     "blog": "Blog",
     "products": "Products",
     "contact": "Contact",
@@ -20,8 +20,8 @@
       "title2_highlight": "RHYTHM",
       "title3": "RECLAIM YOUR",
       "title3_highlight": "VITALITY",
-      "subtitle": "Where frequency meets biology. PEMF and terahertz technology, just as your body was designed to perform.",
-      "cta_tech": "Learn about the technology",
+      "subtitle": "Biohacking your health with PEMF and Terahertz technologies. Your daily ritual for longevity.",
+      "cta_tech": "About the technology",
       "cta_phil": "Start your ritual"
     },
     "blood_analysis": {
@@ -93,8 +93,8 @@
       "view_all": "View all articles"
     },
     "testimonials": {
-      "title": "Real people. ",
-      "title_highlight": "Real results.",
+      "title": "Real People. ",
+      "title_highlight": "Real Results.",
       "subtitle": "Frequency technology is transforming lives around the world. Listen to real people share their experiences.",
       "disclaimer": "Disclaimer: Individual results may vary. Consult your doctor before use.",
       "items": [
@@ -343,7 +343,7 @@
   "contact": {
     "hero": {
       "badge": "GET IN TOUCH",
-      "title": "Let's connect",
+      "title": "Let's Connect",
       "subtitle": "Have a question about our devices or want to book a consultation to discuss what’s right for you? Feel free to reach out."
     },
     "info": {
@@ -562,7 +562,7 @@
     "tech": "Products",
     "connect": "Connect",
     "serving": "Sourcing",
-    "philosophy": "The Journey",
+    "philosophy": "About",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "rights": "All rights reserved.",

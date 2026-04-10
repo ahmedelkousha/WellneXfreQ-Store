@@ -54,8 +54,8 @@ export default function Home() {
   const isActualFeatured = products.some(p => p.isFeatured);
 
   // Carousel State
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    align: 'start', 
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: 'start',
     loop: false,
     dragFree: true,
     containScroll: 'trimSnaps'
@@ -105,6 +105,34 @@ export default function Home() {
 
   return (
     <div className="bg-background min-h-screen overflow-hidden">
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
+        className="absolute top-[83%] lg:top-[90%] xl:top-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
+        onClick={() => scrollToSection("philosophy")}
+      >
+        {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
+        <div className="bg-white w-[24px] h-[40px] border border-white/20 rounded-full flex justify-center p-1 backdrop-blur-sm transition-colors hover:border-primary/50">
+          <motion.div
+            animate={{
+              y: [0, 24, 0],
+              opacity: [1, 0.4, 1]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-[0.3rem] h-[0.4rem] bg-primary rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
+          />
+        </div>
+      </motion.div>
+
+      
+
       {/* HERO SECTION */}
       <section id="hero" className="relative h-svh flex items-center justify-center overflow-hidden rounded-b-4xl md:rounded-b-[3rem] z-10 border-b border-white/10 shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
         <motion.div
@@ -116,12 +144,12 @@ export default function Home() {
           <img
             src={heroImg}
             alt="PEMF Therapy"
-            className="w-full h-full object-cover object-[12%] sm:object-bottom-left lg:object-bottom"
+            className="w-full h-full object-cover object-[0%] sm:object-[50%] lg:object-[63%]"
           />
         </motion.div>
 
-        <div className="container mx-auto px-4 relative z-20 text-center flex flex-col items-center">
-          <motion.div
+        <div className="container translate-y-10 md:translate-y-20 lg:translate-y-22 xl:translate-y-20 mx-auto px-4 relative z-20 text-center flex flex-col items-center">
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" as const }}
@@ -132,13 +160,13 @@ export default function Home() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
             {t("home.hero.tagline")}
-          </motion.div>
+          </motion.div> */}
           <div className="text-left">
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
               {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("home.hero.title1_highlight")}</span>
             </motion.h2>
@@ -146,7 +174,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
               {t("home.hero.title2")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("home.hero.title2_highlight")}</span>
             </motion.h2>
@@ -154,7 +182,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
               {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("home.hero.title3_highlight")}</span>
             </motion.h2>
@@ -164,7 +192,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm md:text-lg text-white/70 md:max-w-lg sm:max-w-sm max-w-88 mx-auto mt-10 font-light text-center"
+            className="text-sm md:text-lg text-white/70 md:max-w-md sm:max-w-sm max-w-[20rem] mx-auto mt-10 font-light text-center"
           >
             {t("home.hero.subtitle")}
           </motion.p>
@@ -177,37 +205,15 @@ export default function Home() {
           >
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 sm:px-4 px-2 sm:text-[0.8rem] text-[0.65rem] shadow-[0_0_30px_rgba(126,255,212,0.3)] border border-primary/50 transition-all hover:scale-105 cursor-pointer"
+              variant="outline"
+              className="text-sm sm:text-[0.98rem] px-4 sm:px-6 tracking-widest h-14 font-bold transition-colors uppercase border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               onClick={() => scrollToSection("technology")}
             >
               {t("home.hero.cta_tech").toUpperCase()}
             </Button>
 
 
-            {/* Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 1 }}
-              className="absolute top-[130px] lg:top-[180px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
-              onClick={() => scrollToSection("philosophy")}
-            >
-              {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
-              <div className="w-[22px] h-[34px] border border-white/20 rounded-full flex justify-center p-1 bg-black/20 backdrop-blur-sm transition-colors hover:border-primary/50">
-                <motion.div
-                  animate={{
-                    y: [0, 14, 0],
-                    opacity: [1, 0.4, 1]
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="w-1 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
-                />
-              </div>
-            </motion.div>
+
             {/* <Button
               variant="outline"
               size="lg"
@@ -242,7 +248,7 @@ export default function Home() {
                 <p className="text-sm md:text-lg text-white/70 mb-8 leading-relaxed">
                   {t("home.philosophy.text2")}
                 </p>
-                
+
                 {/* Mobile Image */}
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
@@ -275,7 +281,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                 <div className="block lg:hidden border-l-3 py-1 border-primary/50 pl-4 my-10">
+                <div className="block lg:hidden border-l-3 py-1 border-primary/50 pl-4 my-10">
                   <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
                     {t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>
                   </p>
@@ -438,7 +444,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.products.title")}<br /><span className="text-primary italic">{t("home.products.title_highlight")}</span>
             </h2>
-            <p className="text-sm md:text-lg text-center md:text-left text-white/60">
+            <p className="text-sm md:text-lg max-w-3xl mx-auto text-left text-white/60">
               {t("home.products.subtitle")}
             </p>
           </motion.div>
@@ -614,7 +620,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.blood_analysis.title")}<br /><span className="text-primary italic">{t("home.blood_analysis.title_highlight")}</span>
             </h2>
-            <p className="text-white/60 max-w-4xl mx-auto text-lg leading-relaxed text-sm md:text-lg text-center md:text-left">
+            <p className="text-white/60 max-w-3xl mx-auto text-sm leading-relaxed md:text-lg text-left">
               {t("home.blood_analysis.subtitle")}
             </p>
           </motion.div>
@@ -655,7 +661,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.testimonials.title")}<br /><span className="text-primary italic">{t("home.testimonials.title_highlight")}</span>
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto text-lg text-left text-sm md:text-lg text-center md:text-left">
+            <p className="text-white/60 max-w-3xl mx-auto text-sm md:text-lg text-left">
               {t("home.testimonials.subtitle")}
             </p>
           </motion.div>
@@ -695,7 +701,7 @@ export default function Home() {
 
             {/* Unified Navigation controls (Arrows and Dots) */}
             <div className="flex items-center justify-center gap-6 mt-12 mb-8">
-               <Button
+              <Button
                 size="icon"
                 variant="ghost"
                 onClick={scrollPrev}
@@ -704,7 +710,7 @@ export default function Home() {
               >
                 <ChevronLeft className="w-6 h-6" />
               </Button>
-              
+
               <div className="flex items-center gap-2">
                 {scrollSnaps.map((_, index) => (
                   <button
@@ -715,7 +721,7 @@ export default function Home() {
                 ))}
               </div>
 
-               <Button
+              <Button
                 size="icon"
                 variant="ghost"
                 onClick={scrollNext}

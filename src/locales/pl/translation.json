@@ -2,8 +2,8 @@
   "nav": {
     "home": "Strona",
     "technology": "Technologia",
-    "philosophy": "Podróż",
-    "about": "O nas",
+    "philosophy": "O NAS",
+    "about": "O NAS",
     "blog": "Blog",
     "products": "Produkty",
     "contact": "Kontakt",
@@ -20,8 +20,8 @@
       "title2_highlight": "RYTM",
       "title3": "ODZYSKAJ SWOJĄ",
       "title3_highlight": "WITALNOŚĆ",
-      "subtitle": "Gdzie częstotliwość spotyka biologię. Technologia PEMF i terahercowa, tak jak została zaprojektowana do działania Twojego organizmu.",
-      "cta_tech": "Dowiedz się o technologii",
+      "subtitle": "Biohacking Twojego zdrowia z wykorzystaniem technologii PEMF i terahercowych. Twój codzienny rytuał na długowieczność.",
+      "cta_tech": "O technologii",
       "cta_phil": "Zacznij swój rytuał"
     },
     "blood_analysis": {
@@ -580,7 +580,7 @@
     "tech": "Produkty",
     "connect": "Połącz się",
     "serving": "Pozyskiwanie",
-    "philosophy": "Podróż",
+    "philosophy": "O nas",
     "privacy": "Polityka Prywatności",
     "terms": "Regulamin",
     "rights": "Wszelkie prawa zastrzeżone.",

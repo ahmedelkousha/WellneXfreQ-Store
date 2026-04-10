@@ -74,7 +74,7 @@ export default function Footer() {
   );
 
   const CompanyLinks = () => (
-    <ul className="space-y-4 -translate-x-[0.9rem]">
+    <ul className="space-y-4 -translate-x-[0.9rem] uppercase">
       <li><a href={getPath("/")} onClick={handleHomeClick} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.home")}</a></li>
       {/* <li><Link to={getPath("/about")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.about")}</Link></li> */}
       <li><a href={`${getPath("/")}#philosophy`} onClick={scrollToPhilosophy} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("footer.philosophy")}</a></li>

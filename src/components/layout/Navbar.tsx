@@ -7,6 +7,7 @@ import logoImg from "@assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -168,23 +169,38 @@ export default function Navbar() {
               className={`md:h-8 h-6 w-auto`}
               style={{ mixBlendMode: "screen" }}
             />
+
+            { (location === `/${currentLang}` || location === `/${currentLang}/`) && (
+              <motion.div
+                initial={{ opacity: 0, scale: 1 }}
+                animate={{ opacity: isScrolled ? 0 : 1, scale: 1 }}
+                transition={{ duration: 0.3, ease: "easeOut" as const }}
+                className={`${isScrolled ? 'opacity-0' : 'opacity-100'} absolute top-16 z-20 left-0  text-black bg-white flex items-center gap-2 px-2 py-2 rounded-lg border border-primary/30 text-[0.58rem] md:text-xs font-medium backdrop-blur-md`}
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                {t("home.hero.tagline")}
+              </motion.div>
+            )}
+
           </button>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6">
 
 
-            <div className="relative">
 
 
-              <button
-                onClick={handleHomeClick}
-                className={`text-xs tracking-widest font-medium transition-colors uppercase ${isHomeActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
-              >
-                {t("nav.home")}
-              </button>
+            <button
+              onClick={handleHomeClick}
+              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isHomeActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+            >
+              {t("nav.home")}
+            </button>
 
-              {/* <div
+            {/* <div
                 className={`absolute top-full left-1/2 -translate-x-1/2 w-64 bg-card border border-white/10 rounded-lg shadow-xl overflow-hidden transition-all duration-200 origin-top ${productsDropdownOpen
                     ? "opacity-100 scale-y-100 pointer-events-auto"
                     : "opacity-0 scale-y-0 pointer-events-none"
@@ -204,7 +220,7 @@ export default function Navbar() {
                   ))}
                 </div>
               </div> */}
-            </div>
+            {/* </div> */}
 
             <button
               onClick={() => scrollToSection("philosophy")}
@@ -213,12 +229,12 @@ export default function Navbar() {
               {t("nav.philosophy")}
             </button>
             <button
-              className={`flex items-center gap-1 text-xs tracking-widest font-medium transition-colors py-2 uppercase ${isTechActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+              className={`flex items-center text-xs tracking-widest font-medium transition-colors uppercase ${isTechActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
               onClick={() => scrollToSection("technology")}
             // onMouseEnter={() => setProductsDropdownOpen(true)}
             // onMouseLeave={() => setProductsDropdownOpen(false)}
             >
-              {t("nav.technology")} <ChevronDown className="w-4 h-4 hidden" />
+              {t("nav.technology")}
             </button>
 
 
@@ -235,6 +251,7 @@ export default function Navbar() {
             >
               {t("nav.products")}
             </Link>
+
             <Link
               to={getPath("/contact")}
               className={`text-xs tracking-widest font-medium transition-colors uppercase ${isContactActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
@@ -256,10 +273,10 @@ export default function Navbar() {
                 title={currentLang === "en" ? "Switch to Polish" : "Przełącz na Angielski"}
               >
                 {currentLang === "en" ? (
-                <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
-              ) : (
-                <Flag code="AU" className="w-6 h-4 rounded-sm shadow-sm" />
-              )}
+                  <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
+                ) : (
+                  <Flag code="AU" className="w-6 h-4 rounded-sm shadow-sm" />
+                )}
                 {/* {currentLang === "en" ? (
                   <span className="w-4 h-4 text-xs tracking-[0.2rem] rounded-sm shadow-sm text-primary hover:text-white">PL</span>
                 ) : (

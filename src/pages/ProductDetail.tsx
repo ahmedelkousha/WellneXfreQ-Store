@@ -115,12 +115,22 @@ export default function ProductDetail() {
                   <div>
                     {/* <p className="text-xs text-white/40 uppercase tracking-widest font-semibold mb-0.5">{t("product_detail.headers.price")}</p> */}
                     <p className="text-3xl font-heading font-bold text-white">{product.price}</p>
+
                   </div>
+                  <Button
+                    onClick={() => navigate(`/${currentLang}/order`)}
+                    size="lg"
+                    className="ml-auto w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group rounded-lg uppercase tracking-widest transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+                  >
+                    {t("nav.order-footer")}
+                  </Button>
+
                   {/* <div className="ml-auto flex items-center gap-1.5 text-xs text-white/40">
                     <ShieldCheck className="w-4 h-4 text-primary/60" />
                     <span>{t("product_detail.pricing.direct")}</span>
                   </div> */}
                 </div>
+
               ) : (
                 <div className="flex items-center gap-4 bg-white/3 border border-white/10 rounded-2xl p-5">
                   <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
@@ -135,13 +145,14 @@ export default function ProductDetail() {
               )}
             </motion.div>
 
-            <Button
+            {/* <Button
               onClick={() => navigate(`/${currentLang}/order`)}
               size="lg"
-              className="w-full sm:w-auto bg-primary uppercase text-primary-foreground hover:bg-primary/90 h-14 px-8 text-[0.65rem] sm:text-[0.85rem] font-semibold shadow-[0_0_30px_rgba(126,255,212,0.2)]"
+              className="mx-auto w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group rounded-lg uppercase tracking-widest transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
             >
               {t("nav.order-footer")}
-            </Button>
+            </Button> */}
+
           </motion.div>
         </div>
 
