@@ -258,7 +258,7 @@ export default function Navbar() {
                 {currentLang === "en" ? (
                 <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
               ) : (
-                <Flag code="US" className="w-6 h-4 rounded-sm shadow-sm" />
+                <Flag code="AU" className="w-6 h-4 rounded-sm shadow-sm" />
               )}
                 {/* {currentLang === "en" ? (
                   <span className="w-4 h-4 text-xs tracking-[0.2rem] rounded-sm shadow-sm text-primary hover:text-white">PL</span>
@@ -270,7 +270,7 @@ export default function Navbar() {
               <Button
                 asChild
                 variant="outline"
-                className="border-primary hover:bg-transparent hover:text-primary bg-primary text-primary-foreground"
+                className="border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground"
               >
                 <Link className="text-xs font-medium tracking-widest" to={getPath("/order")}>{t("nav.order").toUpperCase()}</Link>
               </Button>
@@ -291,7 +291,7 @@ export default function Navbar() {
               {currentLang === "en" ? (
                 <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
               ) : (
-                <Flag code="US" className="w-6 h-4 rounded-sm shadow-sm" />
+                <Flag code="AU" className="w-6 h-4 rounded-sm shadow-sm" />
               )}
             </button>
             <Button

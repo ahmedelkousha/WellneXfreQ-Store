@@ -122,7 +122,7 @@ export default function Footer() {
             variants={fadeIn}
             className="lg:col-span-1 space-y-0"
           >
-            <a href={getPath("/")} onClick={handleHomeClick} className="inline-block mb-2 -mt-1">
+            <a href={getPath("/")} onClick={handleHomeClick} className="inline-block mb-2 -mt-4">
               <img src={logo} alt="logo" className="h-16" />
             </a>
             <p className="text-white/50 leading-relaxed text-sm max-w-xs mb-4">

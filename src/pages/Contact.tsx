@@ -8,7 +8,10 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
-const isHome = window.location.pathname === `/${i18n.language}`
+  const isHome = 
+    window.location.pathname === `/${i18n.language}` || 
+    window.location.pathname === `/${i18n.language}/` || 
+    window.location.pathname === "/";
 
   return (
     <div className="pt-28 pb-24 bg-background text-foreground relative overflow-hidden">
@@ -154,7 +157,7 @@ const isHome = window.location.pathname === `/${i18n.language}`
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-8 shadow-xl shadow-black/40 relative"
+            className={`bg-black/40 border border-white/10 rounded-3xl p-5 md:p-8 shadow-xl shadow-black/40 relative ${isHome ? "max-w-6xl text-left" : ""}`}
           >
             <div className="absolute top-0 left-10 right-10 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
             <h2 className="text-xl font-heading font-bold text-white mb-8">{t("contact.form.title")}</h2>

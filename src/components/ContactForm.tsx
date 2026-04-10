@@ -27,9 +27,10 @@ import { useTranslation } from "react-i18next";
 
 type ContactFormProps = {
   defaultProduct?: string;
+  centered?: boolean;
 };
 
-export default function ContactForm({ defaultProduct }: ContactFormProps) {
+export default function ContactForm({ defaultProduct, centered = false }: ContactFormProps) {
   const { t } = useTranslation();
   // const currentLang = i18n.language.split("-")[0];
   const { toast } = useToast();
