@@ -27,7 +27,7 @@
     },
     "blood_analysis": {
       "badge": "Wizualny Dowód",
-      "title": "Analiza Żywej Kropli ",
+      "title": "Analiza Żywej",
       "title_highlight": "Krwi",
       "subtitle": "Podziękowania dla Katriny Murray za udostępnienie skanów analizy krwi przed i po 20-minutowej sesji OlyLife P90+. Pokazuje to dramatyczną transformację krwi z zagęszczonych, lepkich kolumn komórek do wyraźnie odseparowanych i swobodnie płynących komórek."
     },
@@ -64,12 +64,12 @@
     },
     "philosophy": {
       "badge": "Historia",
-      "title": "Zbudowany, by się ",
-      "title_italic_1": "ruszać.",
-      "subtitle": "Stworzony, by ",
-      "subtitle_italic_2": "trwać.",
-      "title_3": "Zasilany u ",
-      "title_highlight_3": "źródła.",
+      "title": "Stworzona by się ",
+      "title_italic_1": "Poruszać.",
+      "subtitle": "Zbudowana by",
+      "subtitle_italic_2": "Trwać.",
+      "title_3": "Zasilana u",
+      "title_highlight_3": "Źródła.",
       "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z 13-letnim doświadczeniem pomagałem ludziom w odbudowie ciał od wewnątrz. Ale to moja własna walka z przewlekłym bólem, wypaleniem i niską energią zmieniła wszystko.",
       "text2": "Tradycyjne podejścia wciąż działały omijając ciało. Potrzebowałem czegoś, co z nim współpracuje. Te poszukiwania doprowadziły mnie do technologii częstotliwości PEMF i Teraherców – i nigdy nie oglądałem się za siebie.",
       "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość ludzi jeszcze nie spojrzała. Właśnie dlatego istnieje wellneXfreQ.",
@@ -79,8 +79,8 @@
       "learn_more": "Skontaktuj się"
     },
     "products": {
-      "badge": "Elitarne Urządzenia",
-      "title": "Poznaj nasze ",
+      "badge": "TECHNOLOGIA CZĘSTOTLIWOŚCI.",
+      "title": "Odkryj Nasze ",
       "title_highlight": "Urządzenia",
       "subtitle": "Każde urządzenie jest zaprojektowane dla określonego celu biologicznego. Technologia częstotliwości PEMF i Teraherców, przeznaczona do codziennego użytku i długoterminowych rezultatów.",
       "featured_badge": "WYRÓŻNIONE",
@@ -97,9 +97,9 @@
       "view_all": "Zobacz wszystkie artykuły"
     },
     "testimonials": {
-      "badge": "Wpływ na Społeczność",
-      "title": "Prawdziwi ludzie. ",
-      "title_highlight": "Prawdziwe efekty.",
+      "badge": "CO MÓWIĄ INNI",
+      "title": "Prawdziwi Ludzie.",
+      "title_highlight": "Prawdziwe Rezultaty.",
       "subtitle": "Technologia częstotliwości zmienia życie ludzi na całym świecie. Posłuchaj prawdziwych ludzi dzielących się swoimi doświadczeniami.",
       "disclaimer": "Zastrzeżenie: Indywidualne wyniki mogą się różnić. Przed użyciem skonsultuj się ze swoim lekarzem.",
       "items": [
@@ -178,9 +178,9 @@
       "subtitle": "Biohacking zdrowia i odbudowa od podstaw poprzez ruch i technologię częstotliwości."
     },
     "dual_tech_table": {
-      "badge": "Dlaczego podwójna technologia działa",
-      "title": "Przewaga ",
-      "title_highlight": "Podwójnego Działania",
+      "badge": "DWIE SIŁY. JEDNO URZĄDZENIE.",
+      "title": "Podwójna Przewaga",
+      "title_highlight": "Działania",
       "description": "Dzięki połączeniu technologii częstotliwości PEMF i Terahertz, oba systemy działają na organizm na jego najbardziej podstawowym poziomie – komórce. Jeden z nich ładuje napięcie komórkowe, drugi przywraca naturalny rytm komórek. Razem tworzą efekt kumulacji, który optymalizuje układy biologiczne pod kątem witalności, regeneracji i długofalowej wydajności.",
       "headers": {
         "feature": "Cecha",
@@ -584,7 +584,7 @@
     "tagline": "Technologia PEMF i częstotliwości Terahertz dla odnowy biologicznej komórek, regeneracji i długoterminowej wydajności. Niezależny dystrybutor technologii OlyLife.",
     "company": "Szybkie linki",
     "tech": "Produkty",
-    "connect": "Połącz się",
+    "connect": "Skontaktuj Się",
     "serving": "Pozyskiwanie",
     "philosophy": "O nas",
     "privacy": "Polityka Prywatności",

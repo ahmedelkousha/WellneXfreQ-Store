@@ -178,7 +178,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
-              {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic">{t("home.hero.title1_highlight")}</span>
+              {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title1_highlight")}</span>
             </motion.h2>
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
@@ -186,7 +186,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
-              {t("home.hero.title2")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic">{t("home.hero.title2_highlight")}</span>
+              {t("home.hero.title2")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title2_highlight")}</span>
             </motion.h2>
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
@@ -194,7 +194,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
-              {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic">{t("home.hero.title3_highlight")}</span>
+              {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title3_highlight")}</span>
             </motion.h2>
 
             <motion.p
