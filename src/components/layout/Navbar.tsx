@@ -161,7 +161,7 @@ export default function Navbar() {
           : "bg-background/90 py-5"
           }`}
       >
-        <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between">
+        <div className="mx-auto px-4 md:px-6 lg:px-12 flex items-center justify-between">
           <button onClick={handleHomeClick} className="flex items-center gap-2 z-50 relative">
             <img
               src={logoImg}
