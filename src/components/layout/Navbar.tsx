@@ -157,7 +157,7 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-black py-4"
+          ? "bg-background py-4"
           : "bg-background/90 py-5"
           }`}
       >
@@ -170,7 +170,7 @@ export default function Navbar() {
               style={{ mixBlendMode: "screen" }}
             />
 
-            { (location === `/${currentLang}` || location === `/${currentLang}/`) && (
+            {/* { (location === `/${currentLang}` || location === `/${currentLang}/`) && (
               <motion.div
                 initial={{ opacity: 0, scale: 1 }}
                 animate={{ opacity: isScrolled ? 0 : 1, scale: 1 }}
@@ -183,7 +183,7 @@ export default function Navbar() {
                 </span>
                 {t("home.hero.tagline")}
               </motion.div>
-            )}
+            )} */}
 
           </button>
 

@@ -21,7 +21,7 @@ import {
   CommandItem,
 } from "@/components/ui/command";
 import { toast } from "@/hooks/use-toast";
-import { ChevronsUpDown, Check } from "lucide-react";
+import { ChevronsUpDown, Check, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
@@ -843,13 +843,15 @@ export default function OrderForm() {
             />
           </div>
 
+
           <div className="flex justify-center w-full">
             <Button
               type="submit"
               disabled={createOrder.isPending}
-              className="w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group rounded-lg uppercase tracking-widest transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+              className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit"
             >
               {createOrder.isPending ? t("order.form.labels.submitting") : t("order.form.labels.submit")}
+              <Send className="w-4 h-4" />
             </Button>
           </div>
         </div>

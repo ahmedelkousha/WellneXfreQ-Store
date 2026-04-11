@@ -13,6 +13,7 @@
   },
   "home": {
     "hero": {
+      "badge": "Technologia Wellness Częstotliwości",
       "tagline": "Technologia Wellness Częstotliwości",
       "title1": "ZRESETUJ SWOJE",
       "title1_highlight": "KOMÓRKI",
@@ -25,6 +26,7 @@
       "cta_phil": "Zacznij swój rytuał"
     },
     "blood_analysis": {
+      "badge": "Wizualny Dowód",
       "title": "Analiza Żywej Kropli ",
       "title_highlight": "Krwi",
       "subtitle": "Podziękowania dla Katriny Murray za udostępnienie skanów analizy krwi przed i po 20-minutowej sesji OlyLife P90+. Pokazuje to dramatyczną transformację krwi z zagęszczonych, lepkich kolumn komórek do wyraźnie odseparowanych i swobodnie płynących komórek."
@@ -61,6 +63,7 @@
       "balance_desc": "Codzienne dbanie o dobre samopoczucie to nowy wymiar długoterminowego zdrowia."
     },
     "philosophy": {
+      "badge": "Historia wellneXfreQ",
       "title": "Zbudowany, by się ",
       "title_italic_1": "ruszać.",
       "subtitle": "Stworzony, by ",
@@ -76,14 +79,15 @@
       "learn_more": "Skontaktuj się"
     },
     "products": {
+      "badge": "Elitarne Urządzenia",
       "title": "Poznaj nasze ",
       "title_highlight": "Urządzenia",
       "subtitle": "Każde urządzenie jest zaprojektowane dla określonego celu biologicznego. Technologia częstotliwości PEMF i Teraherców, przeznaczona do codziennego użytku i długoterminowych rezultatów.",
       "featured_badge": "WYRÓŻNIONE",
       "featured_title": "THz Tera-P90+",
       "featured_desc": "Tera-P90+ nowej generacji oferujące ulepszone funkcje dla głębszej regeneracji komórkowej i wydajności.",
-      "learn_more": "Dowiedz się więcej →",
-      "view_all": "Zobacz wszystkie urządzenia →"
+      "learn_more": "Dowiedz się więcej",
+      "view_all": "Zobacz wszystkie urządzenia"
     },
     "blog": {
       "title": "Z Laboratorium ",
@@ -93,6 +97,7 @@
       "view_all": "Zobacz wszystkie artykuły"
     },
     "testimonials": {
+      "badge": "Wpływ na Społeczność",
       "title": "Prawdziwi ludzie. ",
       "title_highlight": "Prawdziwe efekty.",
       "subtitle": "Technologia częstotliwości zmienia życie ludzi na całym świecie. Posłuchaj prawdziwych ludzi dzielących się swoimi doświadczeniami.",

@@ -13,6 +13,7 @@
   },
   "home": {
     "hero": {
+      "badge": "Frequency Wellness Technology",
       "tagline": "Frequency Wellness Technology",
       "title1": "RESET YOUR",
       "title1_highlight": "CELLS",
@@ -25,6 +26,7 @@
       "cta_phil": "Start your ritual"
     },
     "blood_analysis": {
+      "badge": "Visual Proof",
       "title": "Live Blood ",
       "title_highlight": "Analysis",
       "subtitle": "Thanks to Katrina Murray for sharing her Blood Analysis scans before and after a 20 minute OlyLife P90+ session. Shows the dramatic transformation of the blood from clustered, sticky columns of cells to noticeably separate and flowing cells"
@@ -61,6 +63,7 @@
       "balance_desc": "Daily frequency wellness is the new frontier of long-term health."
     },
     "philosophy": {
+      "badge": "The wellneXfreQ Story",
       "title": "Built to ",
       "title_italic_1": "Move.",
       "subtitle": "Made to ",
@@ -76,14 +79,15 @@
       "learn_more": "Get in touch"
     },
     "products": {
+      "badge": "Elite Frequency Devices",
       "title": "Explore our",
       "title_highlight": "Devices",
       "subtitle": "Each device is engineered for a specific biological outcome. PEMF and Terahertz frequency technology, designed for daily use and long-term results.",
       "featured_badge": "FEATURED",
       "featured_title": "THz Tera-P90+",
       "featured_desc": "Next-generation Tera-P90+ delivering enhanced features for deeper cellular recovery and performance.",
-      "learn_more": "Learn more →",
-      "view_all": "View all devices →"
+      "learn_more": "Learn more",
+      "view_all": "View all devices"
     },
     "blog": {
       "title": "From the ",
@@ -93,6 +97,7 @@
       "view_all": "View all articles"
     },
     "testimonials": {
+      "badge": "Community Impact",
       "title": "Real People. ",
       "title_highlight": "Real Results.",
       "subtitle": "Frequency technology is transforming lives around the world. Listen to real people share their experiences.",
@@ -343,7 +348,8 @@
   "contact": {
     "hero": {
       "badge": "GET IN TOUCH",
-      "title": "Let's Connect",
+      "title": "Let's",
+      "title_highlight": "Connect",
       "subtitle": "Have a question about our devices or want to book a consultation to discuss what’s right for you? Feel free to reach out."
     },
     "info": {

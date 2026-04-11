@@ -34,8 +34,8 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
             {t("contact.hero.badge") || "Get in Touch"}
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
-            {t("contact.hero.title")}
+          <h1 className={`${isHome? 'text-center': ''} text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6`}>
+            {t("contact.hero.title")} {isHome ? <br /> : ""} <span className="text-primary italic">{t("contact.hero.title_highlight")}</span>
           </h1>
           <p className={`text-sm md:text-lg text-white/60 text-left ${isHome ? "max-w-3xl mx-auto" : "max-w-2xl"}`}>
             {t("contact.hero.subtitle")}

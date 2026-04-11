@@ -115,10 +115,10 @@ export default function Home() {
         onClick={() => scrollToSection("philosophy")}
       >
         {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
-        <div className="bg-white w-[24px] h-[40px] border border-white/20 rounded-full flex justify-center p-1 backdrop-blur-sm transition-colors hover:border-primary/50">
+        <div className="bg-background/20 w-[20px] h-[34px] border border-white rounded-full flex justify-center p-1 backdrop-blur-sm transition-colors hover:border-primary/50">
           <motion.div
             animate={{
-              y: [0, 24, 0],
+              y: [0, 20, 0],
               opacity: [1, 0.4, 1]
             }}
             transition={{
@@ -126,12 +126,12 @@ export default function Home() {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="w-[0.3rem] h-[0.4rem] bg-primary rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
+            className="w-[0.3rem] h-[0.4rem] bg-white rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
           />
         </div>
       </motion.div>
 
-      
+
 
       {/* HERO SECTION */}
       <section id="hero" className="relative h-svh flex items-center justify-center overflow-hidden rounded-b-4xl md:rounded-b-[3rem] z-10 border-b border-white/10 shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
@@ -161,7 +161,17 @@ export default function Home() {
             </span>
             {t("home.hero.tagline")}
           </motion.div> */}
-          <div className="text-left">
+          <div className="text-left max-w-[24rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-4"
+            >
+              <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold uppercase">
+                {t('home.hero.badge')}
+              </h3>
+            </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -186,16 +196,19 @@ export default function Home() {
             >
               {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("home.hero.title3_highlight")}</span>
             </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-[1.1rem] md:text-lg text-white md:max-w-md sm:max-w-sm mx-auto mt-10 font-light"
+            >
+              {t("home.hero.subtitle")}
+            </motion.p>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm md:text-lg text-white/70 md:max-w-md sm:max-w-sm max-w-[20rem] mx-auto mt-10 font-light text-center"
-          >
-            {t("home.hero.subtitle")}
-          </motion.p>
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -203,7 +216,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="relative flex flex-col sm:flex-row gap-2 sm:w-auto pt-8"
           >
-            <Button
+           <Button
               size="lg"
               variant="outline"
               className="text-sm sm:text-[0.98rem] px-4 sm:px-6 tracking-widest h-14 font-bold transition-colors uppercase border-primary text-primary hover:bg-primary hover:text-primary-foreground"
@@ -237,6 +250,9 @@ export default function Home() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeIn}>
+                <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
+                  {t('home.philosophy.badge')}
+                </h3>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-8 leading-tight">
                   {t("home.philosophy.title")} <span className="text-primary italic font-light">{t("home.philosophy.title_italic_1")}</span><br />
                   {t("home.philosophy.subtitle")} <span className="text-primary italic font-light">{t("home.philosophy.subtitle_italic_2")}</span><br />
@@ -288,9 +304,9 @@ export default function Home() {
                 </div>
 
 
-                <div className="flex flex-wrap items-center gap-8">
-                  <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 h-11 text-[0.65rem] sm:text-[0.8rem] px-6 rounded-lg shadow-[0_0_20px_rgba(126,255,212,0.2)] transition-all hover:scale-105 group">
-                    <Link to={`/${currentLang}/contact`}>{t("home.philosophy.learn_more").toUpperCase()} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" /></Link>
+                <div className="flex flex-wrap items-center justify-start gap-8">
+                  <Button asChild className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit">
+                    <Link to={`/${currentLang}/contact`}>{t("home.philosophy.learn_more").toUpperCase()} <ArrowRight className="w-4 h-4" /></Link>
                   </Button>
                 </div>
               </motion.div>
@@ -441,6 +457,9 @@ export default function Home() {
             variants={fadeIn}
             className="text-center max-w-3xl mx-auto mb-20"
           >
+            <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
+              {t('home.products.badge')}
+            </h3>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.products.title")}<br /><span className="text-primary italic">{t("home.products.title_highlight")}</span>
             </h2>
@@ -505,18 +524,22 @@ export default function Home() {
                   {t('home.products.featured_desc')}
                 </p>
 
+
+
+
                 <div className="flex flex-col gap-6 items-start w-fit">
                   <Link
                     to={featuredProduct ? `/${currentLang}/product/${featuredProduct.slug}` : `/${currentLang}/products`}
-                    className="sm:px-10 sm:py-4 px-0 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_30px_rgba(102,248,219,0.3)] hover:shadow-[0_0_40px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-full sm:w-auto"
+                    className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit"
                   >
-                    {t('home.products.learn_more')}
+                    {t('home.products.learn_more')}<ArrowRight className="w-4 h-4" />
                   </Link>
+
                   <Link
                     to={`/${currentLang}/products`}
-                    className="text-white/50 hover:text-primary transition-colors text-[10px] sm:text-[13px] font-semibold uppercase tracking-widest inline-flex items-center group/link w-full sm:w-auto justify-center sm:justify-start"
+                    className="text-white/50 gap-[6px] hover:text-primary transition-colors text-[10px] sm:text-[13px] font-semibold uppercase tracking-widest inline-flex items-center group/link w-full sm:w-auto justify-center sm:justify-start"
                   >
-                    {t('home.products.view_all')}
+                    {t('home.products.view_all')}<ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -617,6 +640,9 @@ export default function Home() {
             variants={fadeIn}
             className="text-center mb-16"
           >
+            <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
+              {t('home.blood_analysis.badge')}
+            </h3>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.blood_analysis.title")}<br /><span className="text-primary italic">{t("home.blood_analysis.title_highlight")}</span>
             </h2>
@@ -658,6 +684,9 @@ export default function Home() {
             variants={fadeIn}
             className="text-center mb-20"
           >
+            <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
+              {t('home.testimonials.badge')}
+            </h3>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
               {t("home.testimonials.title")}<br /><span className="text-primary italic">{t("home.testimonials.title_highlight")}</span>
             </h2>

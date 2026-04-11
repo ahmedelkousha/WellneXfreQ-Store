@@ -77,11 +77,11 @@ export default function BlogPost() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <button 
+            <button
               onClick={() => navigate(-1)}
               className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-primary transition-colors mb-6 group"
             >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> 
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               <span className="uppercase tracking-widest font-medium">{t("common.navigation.back_to_journal")}</span>
             </button>
             <div className="flex flex-wrap items-center gap-3 mb-4">
