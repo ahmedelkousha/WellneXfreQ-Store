@@ -148,7 +148,7 @@ export default function Home() {
           />
         </motion.div>
 
-        <div className="container translate-y-10 md:translate-y-20 lg:translate-y-22 xl:translate-y-34 mx-auto px-4 relative z-20 text-center flex flex-col items-center">
+        <div className="container translate-y-10 md:translate-y-20 lg:translate-y-22 xl:translate-y-34 px-4 relative z-20 text-left flex flex-col items-center">
           {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -161,7 +161,7 @@ export default function Home() {
             </span>
             {t("home.hero.tagline")}
           </motion.div> */}
-          <div className="text-left sm:max-w-[24rem] max-w-[18rem]">
+          <div className="text-left sm:max-w-[39rem] max-w-[18rem]">
             {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-4xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
               {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title1_highlight")}</span>
             </motion.h2>
@@ -184,7 +184,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-4xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
               {t("home.hero.title2")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title2_highlight")}</span>
             </motion.h2>
@@ -192,7 +192,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-4xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
               {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title3_highlight")}</span>
             </motion.h2>

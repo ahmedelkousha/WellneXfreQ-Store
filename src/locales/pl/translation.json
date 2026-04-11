@@ -366,7 +366,8 @@
   "contact": {
     "hero": {
       "badge": "SKONTAKTUJ SIĘ Z NAMI",
-      "title": "Połączmy się",
+      "title": "Połączmy",
+      "title_highlight": "Się",
       "subtitle": "Masz pytanie dotyczące naszych urządzeń lub chcesz umówić się na konsultację, aby omówić, co będzie dla Ciebie najlepsze? Skontaktuj się z nami."
     },
     "info": {

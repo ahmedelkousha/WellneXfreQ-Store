@@ -57,6 +57,8 @@ function AppShell() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <ScrollToTop />
+
+
       {!isAdminRoute && <Navbar />}
       <main className="grow pb-16 md:pb-0">
         <Routes>
@@ -66,24 +68,24 @@ function AppShell() {
           <Route path="/:lang/*" element={
 
             <LanguageWrapper>
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="products" element={<Products />} />
-              <Route path="product/:slug" element={<ProductDetail />} />
-              <Route path="order" element={<OrderNow />} />
-              {/* DISABLED BLOG FEATURE */}
-              <Route path="blog/*" element={<NotFound />} />
-              <Route path="blog/:slug" element={<BlogPost />} />
-              {/* END DISABLED BLOG FEATURE */}
-              <Route path="contact" element={<Contact />} />
-              <Route path="about" element={<About />} />
-              <Route path="privacy" element={<Privacy />} />
-              <Route path="terms" element={<Terms />} />
-              <Route path="admin" element={<AdminDashboard />} />
-              <Route path="admin/login" element={<AdminLogin />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </LanguageWrapper>} />
+              <Routes>
+                <Route index element={<Home />} />
+                <Route path="products" element={<Products />} />
+                <Route path="product/:slug" element={<ProductDetail />} />
+                <Route path="order" element={<OrderNow />} />
+                {/* DISABLED BLOG FEATURE */}
+                <Route path="blog/*" element={<NotFound />} />
+                <Route path="blog/:slug" element={<BlogPost />} />
+                {/* END DISABLED BLOG FEATURE */}
+                <Route path="contact" element={<Contact />} />
+                <Route path="about" element={<About />} />
+                <Route path="privacy" element={<Privacy />} />
+                <Route path="terms" element={<Terms />} />
+                <Route path="admin" element={<AdminDashboard />} />
+                <Route path="admin/login" element={<AdminLogin />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </LanguageWrapper>} />
 
           <Route path="*" element={<RootRedirect />} />
         </Routes>
