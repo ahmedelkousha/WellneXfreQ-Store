@@ -12,7 +12,7 @@ export default function OrderNow() {
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 lg:px-6 max-w-6xl relative z-10">
+      <div className="mx-auto px-4 lg:px-6 max-w-6xl relative z-10">
         <button
           onClick={() => navigate(-1)}
           className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors mb-10 group"
@@ -21,12 +21,12 @@ export default function OrderNow() {
           <span className="text-xs font-medium uppercase tracking-widest">{t("common.navigation.back")}</span>
         </button>
 
-        <section className="mb-10 flex flex-col items-center justify-center max-w-3xl mx-auto text-center">
+        <section className="mb-10 flex flex-col items-start justify-center max-w-3xl text-left">
           {/* <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
             {t("order.hero.badge")}
           </p> */}
           <h1 className="md:text-4xl text-2xl font-heading font-bold text-white mb-4">
-            {t("order.hero.title")}
+            {t("order.hero.title")} <span className="text-primary italic">{t("order.hero.title_highlight")}</span>
           </h1>
           <p className="text-sm md:text-base text-white/70 max-w-3xl">
             {t("order.hero.subtitle")}
@@ -123,7 +123,7 @@ export default function OrderNow() {
           </div>
         </aside>
 
-        <div className="grid gap-10 lg:grid-cols-1 items-start max-w-4xl mx-auto">
+        <div className="grid gap-10 lg:grid-cols-1 items-start max-w-6xl mx-auto">
           <section className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-7 shadow-xl shadow-black/40 relative overflow-hidden">
             <div className="absolute top-0 left-10 right-10 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
             {/* <h2 className="text-lg font-semibold mb-3 text-white">

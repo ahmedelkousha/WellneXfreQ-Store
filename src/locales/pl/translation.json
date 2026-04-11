@@ -22,7 +22,7 @@
       "title3": "ODZYSKAJ SWOJĄ",
       "title3_highlight": "WITALNOŚĆ",
       "subtitle": "Biohacking Twojego zdrowia z wykorzystaniem technologii PEMF i terahercowych. Twój codzienny rytuał na długowieczność.",
-      "cta_tech": "O technologii",
+      "cta_tech": "ODKRYJ TECHNOLOGIĘ",
       "cta_phil": "Zacznij swój rytuał"
     },
     "blood_analysis": {
@@ -63,7 +63,7 @@
       "balance_desc": "Codzienne dbanie o dobre samopoczucie to nowy wymiar długoterminowego zdrowia."
     },
     "philosophy": {
-      "badge": "Historia wellneXfreQ",
+      "badge": "Historia",
       "title": "Zbudowany, by się ",
       "title_italic_1": "ruszać.",
       "subtitle": "Stworzony, by ",
@@ -392,7 +392,8 @@
   "order": {
     "hero": {
       "badge": "Bezpośrednie zamówienie",
-      "title": "Zacznijmy Twoje zamówienie",
+      "title": "Zacznijmy składać",
+      "title_highlight": "Twoje zamówienie",
       "subtitle": "Powiedz nam, które produkty OlyLife chcesz zamówić, przesyłając poniżej swoje dane.",
       "help": "Jeśli masz jakiekolwiek pytania, skontaktuj się:"
     },

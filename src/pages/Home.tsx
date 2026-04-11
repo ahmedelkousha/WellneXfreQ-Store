@@ -148,7 +148,7 @@ export default function Home() {
           />
         </motion.div>
 
-        <div className="container translate-y-10 md:translate-y-20 lg:translate-y-22 xl:translate-y-20 mx-auto px-4 relative z-20 text-center flex flex-col items-center">
+        <div className="container translate-y-10 md:translate-y-20 lg:translate-y-22 xl:translate-y-34 mx-auto px-4 relative z-20 text-center flex flex-col items-center">
           {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -161,8 +161,8 @@ export default function Home() {
             </span>
             {t("home.hero.tagline")}
           </motion.div> */}
-          <div className="text-left max-w-[24rem]">
-            <motion.div
+          <div className="text-left sm:max-w-[24rem] max-w-[18rem]">
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -171,14 +171,14 @@ export default function Home() {
               <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold uppercase">
                 {t('home.hero.badge')}
               </h3>
-            </motion.div>
+            </motion.div> */}
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
-              {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("home.hero.title1_highlight")}</span>
+              {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic">{t("home.hero.title1_highlight")}</span>
             </motion.h2>
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
@@ -186,7 +186,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
-              {t("home.hero.title2")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("home.hero.title2_highlight")}</span>
+              {t("home.hero.title2")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic">{t("home.hero.title2_highlight")}</span>
             </motion.h2>
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
@@ -194,7 +194,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-3xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
             >
-              {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1]">{t("home.hero.title3_highlight")}</span>
+              {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic">{t("home.hero.title3_highlight")}</span>
             </motion.h2>
 
             <motion.p
@@ -202,7 +202,7 @@ export default function Home() {
 
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-[1.1rem] md:text-lg text-white md:max-w-md sm:max-w-sm mx-auto mt-10 font-light"
+              className="text-[1.1rem] md:text-lg text-white md:max-w-md sm:max-w-sm mx-auto mt-6 font-light"
             >
               {t("home.hero.subtitle")}
             </motion.p>
@@ -216,10 +216,10 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="relative flex flex-col sm:flex-row gap-2 sm:w-auto pt-8"
           >
-           <Button
+            <Button
               size="lg"
               variant="outline"
-              className="text-sm sm:text-[0.98rem] px-4 sm:px-6 tracking-widest h-14 font-bold transition-colors uppercase border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="md:px-8 px-4 text-xs tracking-widest font-medium transition-colors uppercase text-primary border-primary hover:bg-primary hover:text-primary-foreground"
               onClick={() => scrollToSection("technology")}
             >
               {t("home.hero.cta_tech").toUpperCase()}
@@ -253,10 +253,10 @@ export default function Home() {
                 <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
                   {t('home.philosophy.badge')}
                 </h3>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-8 leading-tight">
-                  {t("home.philosophy.title")} <span className="text-primary italic font-light">{t("home.philosophy.title_italic_1")}</span><br />
-                  {t("home.philosophy.subtitle")} <span className="text-primary italic font-light">{t("home.philosophy.subtitle_italic_2")}</span><br />
-                  {t("home.philosophy.title_3")} <span className="text-primary italic font-light">{t("home.philosophy.title_highlight_3")}</span>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-8 leading-tight">
+                  {t("home.philosophy.title")} <span className="text-primary italic font-normal">{t("home.philosophy.title_italic_1")}</span><br />
+                  {t("home.philosophy.subtitle")} <span className="text-primary italic font-normal">{t("home.philosophy.subtitle_italic_2")}</span><br />
+                  {t("home.philosophy.title_3")} <span className="text-primary italic font-normal">{t("home.philosophy.title_highlight_3")}</span>
                 </h2>
                 <p className="text-sm md:text-lg text-white/70 mb-8 leading-relaxed">
                   {t("home.philosophy.text1")}
@@ -460,8 +460,8 @@ export default function Home() {
             <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
               {t('home.products.badge')}
             </h3>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.products.title")}<br /><span className="text-primary italic">{t("home.products.title_highlight")}</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6">
+              {t("home.products.title")}<br /><span className="text-primary italic font-normal">{t("home.products.title_highlight")}</span>
             </h2>
             <p className="text-sm md:text-lg max-w-3xl mx-auto text-left text-white/60">
               {t("home.products.subtitle")}
@@ -643,8 +643,8 @@ export default function Home() {
             <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
               {t('home.blood_analysis.badge')}
             </h3>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.blood_analysis.title")}<br /><span className="text-primary italic">{t("home.blood_analysis.title_highlight")}</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6">
+              {t("home.blood_analysis.title")}<br /><span className="text-primary italic font-normal">{t("home.blood_analysis.title_highlight")}</span>
             </h2>
             <p className="text-white/60 max-w-3xl mx-auto text-sm leading-relaxed md:text-lg text-left">
               {t("home.blood_analysis.subtitle")}
@@ -687,8 +687,8 @@ export default function Home() {
             <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
               {t('home.testimonials.badge')}
             </h3>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.testimonials.title")}<br /><span className="text-primary italic">{t("home.testimonials.title_highlight")}</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6">
+              {t("home.testimonials.title")}<br /><span className="text-primary italic font-normal">{t("home.testimonials.title_highlight")}</span>
             </h2>
             <p className="text-white/60 max-w-3xl mx-auto text-sm md:text-lg text-left">
               {t("home.testimonials.subtitle")}

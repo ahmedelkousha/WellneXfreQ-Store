@@ -180,7 +180,7 @@ export default function OrderForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-12">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-12 w-full">
         {/* Section 1: Personal Details */}
         <div className="space-y-6">
           <div className="flex items-center gap-4 mb-8">

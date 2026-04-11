@@ -120,7 +120,7 @@ export default function ProductDetail() {
                   <Button
                     onClick={() => navigate(`/${currentLang}/order`)}
                     size="lg"
-                    className="ml-auto w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group rounded-lg uppercase tracking-widest transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+                    className="ml-auto sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit"
                   >
                     {t("nav.order-footer")}
                   </Button>

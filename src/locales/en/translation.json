@@ -63,7 +63,7 @@
       "balance_desc": "Daily frequency wellness is the new frontier of long-term health."
     },
     "philosophy": {
-      "badge": "The wellneXfreQ Story",
+      "badge": "The Story",
       "title": "Built to ",
       "title_italic_1": "Move.",
       "subtitle": "Made to ",
@@ -375,7 +375,8 @@
   "order": {
     "hero": {
       "badge": "Direct Order",
-      "title": "Let’s Get Your Order Started",
+      "title": "Let’s Get Your Order",
+      "title_highlight": "Started",
       "subtitle": "Tell us what OlyLife products you’d like by submitting your details below.",
       "help": "If you have any questions, please reach out:"
     },
