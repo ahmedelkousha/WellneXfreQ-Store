@@ -484,12 +484,12 @@
       "phone": "+61 450 334 543"
     },
     "success": {
-      "title": "Order inquiry sent",
-      "desc": "Thank you. Your inquiry has been received. We will contact you shortly to confirm details and next steps."
+      "title": "Order Received",
+      "desc": "Thank you. Your order has been received. We will contact you shortly to confirm details and next steps."
     },
     "error": {
       "title": "Order submission error",
-      "desc": "There was an issue submitting your order inquiry. Please try again or contact us directly."
+      "desc": "There was an issue submitting your order. Please try again or contact us directly."
     }
   },
   "common": {
@@ -497,7 +497,7 @@
       "back": "Back",
       "back_to_catalog": "Back to catalog",
       "back_to_journal": "Back to journal",
-      "view_products": "Explore products",
+      "view_products": "Explore Products",
       "products": "Products"
     },
     "form": {

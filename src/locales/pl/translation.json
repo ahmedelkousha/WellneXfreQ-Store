@@ -64,16 +64,16 @@
     },
     "philosophy": {
       "badge": "Historia",
-      "title": "Stworzona by się ",
+      "title": "Stworzona by się",
       "title_italic_1": "Poruszać.",
       "subtitle": "Zbudowana by",
       "subtitle_italic_2": "Trwać.",
       "title_3": "Zasilana u",
       "title_highlight_3": "Źródła.",
       "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z 13-letnim doświadczeniem pomagałem ludziom w odbudowie ciał od wewnątrz. Ale to moja własna walka z przewlekłym bólem, wypaleniem i niską energią zmieniła wszystko.",
-      "text2": "Tradycyjne podejścia wciąż działały omijając ciało. Potrzebowałem czegoś, co z nim współpracuje. Te poszukiwania doprowadziły mnie do technologii częstotliwości PEMF i Teraherców – i nigdy nie oglądałem się za siebie.",
-      "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość ludzi jeszcze nie spojrzała. Właśnie dlatego istnieje wellneXfreQ.",
-      "coach_text2": "Oprócz technologii częstotliwości nadal pomagam klientom lepiej się poruszać, czuć się silniejszymi i budować wytrzymałe ciała na długie lata dzięki",
+      "text2": "Jako trenerka zdrowia, ruchu i odnowy biologicznej z 13-letnim stażem, od lat pomagam odbudowywać sprawność od środka. Jednak to moja osobista walka z bólem i wypaleniem stała się impulsem do zmian.",
+      "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość jeszcze nie dotarła. Tak narodziło się wellneXfreQ.",
+      "coach_text2": "Dziś łączę moc częstotliwości z treningiem, by pomagać innym budować ciało silne, sprawne i gotowe na długie lata życia.Gotowa na ruch od środka? Zacznij od treningu.",
       "coach_text2_highlight": "FITIN2IT PT",
       "coach": "Patrycja W.",
       "learn_more": "Skontaktuj się"
@@ -502,12 +502,12 @@
       "phone": "+61 450 334 543"
     },
     "success": {
-      "title": "Zapytanie zamówieniowe wysłane",
-      "desc": "Dziękujemy. Twoje zapytanie zostało odebrane. Skontaktujemy się z Tobą wkrótce, aby potwierdzić szczegóły i kolejne kroki."
+      "title": "Zamówienie Otrzymane",
+      "desc": "Dziękujemy. Twoje zamówienie zostało odebrane. Skontaktujemy się z Tobą wkrótce, aby potwierdzić szczegóły i kolejne kroki."
     },
     "error": {
       "title": "Błąd wysyłania zamówienia",
-      "desc": "Wystąpił problem z wysłaniem zapytania zamówieniowego. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio."
+      "desc": "Wystąpił problem z wysłaniem zamówienia. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio."
     }
   },
   "common": {
@@ -515,7 +515,7 @@
       "back": "Wstecz",
       "back_to_catalog": "Powrót do katalogu",
       "back_to_journal": "Powrót do dziennika",
-      "view_products": "Poznaj produkty",
+      "view_products": "Produkty",
       "products": "Produkty"
     },
     "form": {
@@ -554,7 +554,7 @@
           "other": "Inne"
         }
       },
-      "submit": "Wyślij",
+      "submit": "WYŚLIJ",
       "success": {
         "title": "Wiadomość wysłana pomyślnie",
         "desc": "Otrzymaliśmy Twoją wiadomość, nasz zespół skontaktuje się z Tobą wkrótce."

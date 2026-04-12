@@ -21,22 +21,22 @@ export default function OrderNow() {
           <span className="text-xs font-medium uppercase tracking-widest">{t("common.navigation.back")}</span>
         </button>
 
-        <section className="mb-10 flex flex-col items-start justify-center max-w-3xl text-left">
-          {/* <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
+        <section className="mb-10 flex flex-col items-center justify-center max-w-6xl text-center">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
             {t("order.hero.badge")}
-          </p> */}
-          <h1 className="md:text-4xl text-2xl font-heading font-bold text-white mb-4">
-            {t("order.hero.title")} <span className="text-primary italic">{t("order.hero.title_highlight")}</span>
+          </p>
+          <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
+            {t("order.hero.title")} <br /> <span className="text-primary italic font-normal">{t("order.hero.title_highlight")}</span>
           </h1>
-          <p className="text-sm md:text-base text-white/70 max-w-3xl">
+          <p className="text-sm md:text-base text-white/70 max-w-3xl text-left">
             {t("order.hero.subtitle")}
           </p>
 
-          <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl py-6">
+          <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl py-6 text-left">
             {t("order.form.labels.products_disclaimer")}
           </p>
 
-          <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl">
+          <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl text-left">
             {t("order.hero.help")} <a target="_blank" rel="noreferrer" href="https://wa.me/61450334543" className="text-xs sm:text-sm md:text-base max-w-2xl text-primary hover:underline">+61 450 334 543</a>
           </p>
         </section>

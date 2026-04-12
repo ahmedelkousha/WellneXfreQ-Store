@@ -31,11 +31,14 @@ import bloodAnalysisVideo from "@assets/Livebloodanalysisfb.mp4";
 import videoPoster from "@assets/poster.png";
 // import OrderNow from "./OrderNow";
 import Contact from "./Contact";
+import i18n from "@/i18n";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
 };
+
+const isPoland = i18n.language === "pl";
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -106,30 +109,6 @@ export default function Home() {
   return (
     <div className="bg-background min-h-screen overflow-hidden">
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute top-[83%] lg:top-[90%] xl:top-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
-        onClick={() => scrollToSection("philosophy")}
-      >
-        {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
-        <div className="bg-background/20 w-[20px] h-[34px] border border-white rounded-full flex justify-center p-1 backdrop-blur-sm transition-colors hover:border-primary/50">
-          <motion.div
-            animate={{
-              y: [0, 20, 0],
-              opacity: [1, 0.4, 1]
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="w-[0.3rem] h-[0.4rem] bg-white rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
-          />
-        </div>
-      </motion.div>
 
 
 
@@ -139,6 +118,32 @@ export default function Home() {
           style={{ y, opacity }}
           className="absolute inset-0 w-full h-full"
         >
+
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="absolute top-[83%] lg:top-[90%] xl:top-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-30"
+            onClick={() => scrollToSection("philosophy")}
+          >
+            {/* <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-medium">Scroll</span> */}
+            <div className="bg-background/20 w-[20px] h-[34px] border border-white rounded-full flex justify-center p-1 backdrop-blur-sm transition-colors lg:translate-x-4 hover:border-primary/50">
+              <motion.div
+                animate={{
+                  y: [0, 20, 0],
+                  opacity: [1, 0.4, 1]
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="w-[0.3rem] h-[0.4rem] bg-white rounded-full shadow-[0_0_8px_rgba(126,255,212,0.8)]"
+              />
+            </div>
+          </motion.div>
+
           <div className="absolute inset-0 bg-linear-to-b from-background/50 via-background/45 to-background/40 z-10" />
           {/* <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-background/5 to-background/60 z-10" /> */}
           <img
@@ -148,7 +153,7 @@ export default function Home() {
           />
         </motion.div>
 
-        <div className="container translate-y-10 md:translate-y-20 lg:translate-y-22 xl:translate-y-34 px-4 relative z-20 lg:translate-x-6 text-left flex flex-col items-center">
+        <div className="container translate-y-16 sm:translate-y-26 md:translate-y-20 lg:translate-y-22 xl:translate-y-32 px-4 relative z-20 lg:translate-x-4 text-left flex flex-col items-center">
           {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -161,7 +166,7 @@ export default function Home() {
             </span>
             {t("home.hero.tagline")}
           </motion.div> */}
-          <div className="text-center sm:max-w-[39rem] max-w-[18rem]">
+          <div className="text-center max-w-[35rem] lg:max-w-[45rem]">
             {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -176,7 +181,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-center"} sm:text-3xl md:text-[2rem] lg:text-[2.7rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto`}
             >
               {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title1_highlight")}</span>
             </motion.h2>
@@ -184,7 +189,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-center"} sm:text-3xl md:text-[2rem] lg:text-[2.7rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto`}
             >
               {t("home.hero.title2")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title2_highlight")}</span>
             </motion.h2>
@@ -192,7 +197,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1.4rem] sm:text-3xl md:text-3xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto"
+              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-center"} sm:text-3xl md:text-[2rem] lg:text-[2.7rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto`}
             >
               {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title3_highlight")}</span>
             </motion.h2>
@@ -202,7 +207,7 @@ export default function Home() {
 
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-[1.1rem] md:text-lg text-white md:max-w-md sm:max-w-sm mx-auto mt-6 font-light"
+              className="text-[1rem] sm:text-[1.1rem] md:text-lg text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[34rem] text-left sm:text-center mx-auto sm:mt-6 mt-4 font-light"
             >
               {t("home.hero.subtitle")}
             </motion.p>
@@ -219,7 +224,7 @@ export default function Home() {
             <Button
               size="lg"
               variant="outline"
-              className="md:px-4 px-4 text-xs tracking-widest font-medium transition-colors uppercase text-primary border-primary hover:bg-primary hover:text-primary-foreground"
+              className="md:px-4 px-4 text-xs tracking-widest font-medium transition-colors uppercase text-primary border-primary hover:bg-primary hover:text-primary-foreground mt-3 sm:mt-6 xl:mt-8"
               onClick={() => scrollToSection("technology")}
             >
               {t("home.hero.cta_tech").toUpperCase()}
