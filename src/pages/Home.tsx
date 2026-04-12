@@ -462,7 +462,7 @@ export default function Home() {
 
       {/* PRODUCTS SECTION */}
       <section id="products" className="py-32  relative bg-white/2">
-        <div className="mx-auto px-1 sm:px-4 h-full w-full">
+        <div className="mx-auto sm:px-4 h-full w-full px-2">
           <motion.div
             variants={fadeIn}
             className="text-center max-w-3xl mx-auto mb-20"
@@ -473,7 +473,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6">
               {t("home.products.title")}<br /><span className="text-primary italic font-normal">{t("home.products.title_highlight")}</span>
             </h2>
-            <p className="text-sm md:text-lg max-w-3xl mx-auto text-left text-white/60">
+            <p className="text-sm md:text-lg max-w-3xl mx-auto text-left text-white/60 md:px-16 px-4">
               {t("home.products.subtitle")}
             </p>
           </motion.div>
