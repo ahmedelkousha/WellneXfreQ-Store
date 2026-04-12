@@ -9,6 +9,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: "website" | "article" | "product";
   schema?: any; // To support JSON-LD
+  noindex?: boolean;
 }
 
 const SEO = ({
@@ -17,12 +18,13 @@ const SEO = ({
   canonical,
   ogImage = "/og-main.png",
   ogType = "website",
-  schema
+  schema,
+  noindex = false
 }: SEOProps) => {
   const { i18n } = useTranslation();
   const { pathname } = useLocation();
   const currentLang = i18n.language.split("-")[0];
-  const siteName = "wellneXfreQ";
+  const siteName = "WellneXfreQ";
   
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   const baseUrl = "https://www.wellnexfreq.com";
@@ -38,6 +40,9 @@ const SEO = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
+
+      {/* Robots Meta Tag (Noindex/Nofollow) */}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* Language Alternates (SEO for Multi-language) */}
       <link rel="alternate" hrefLang={currentLang} href={fullUrl} />

@@ -109,9 +109,8 @@ export default function Home() {
 
   return (
     <div className="bg-background min-h-screen overflow-hidden">
-      <SEO 
-        title={t("seo.home.title")} 
-        description={t("seo.home.description")} 
+      <SEO
+        description={t("seo.home.description")}
       />
 
 

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { useTranslation } from "react-i18next";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function AdminLogin() {
   const { t, i18n } = useTranslation();
@@ -43,6 +44,7 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen pt-32 pb-20 flex items-center justify-center px-4">
+      <SEO title="Admin Login" noindex={true} />
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}

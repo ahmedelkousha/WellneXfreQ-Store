@@ -32,6 +32,7 @@ export default function About() {
       <SEO 
         title={t("seo.about.title")} 
         description={t("seo.about.description")} 
+        noindex={true}
       />
 
       {/* HERO */}

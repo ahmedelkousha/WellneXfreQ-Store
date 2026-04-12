@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /en/about
+Disallow: /pl/about
+Disallow: /en/blog
+Disallow: /pl/blog
+Disallow: /admin
+Disallow: /en/admin
+Disallow: /pl/admin
+Disallow: /login
 
 Sitemap: https://www.wellnexfreq.com/sitemap.xml

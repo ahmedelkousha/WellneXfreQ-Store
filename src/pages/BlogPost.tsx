@@ -70,6 +70,7 @@ export default function BlogPost() {
         title={localizedTitle} 
         description={localizedExcerpt}
         ogType="article"
+        noindex={true}
       />
       {/* Hero Image */}
       <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
