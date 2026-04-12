@@ -374,7 +374,7 @@
   },
   "order": {
     "hero": {
-      "badge": "Direct Order",
+      "badge": "Order Form",
       "title": "Let’s Get Your Order",
       "title_highlight": "Started",
       "subtitle": "Tell us what OlyLife products you’d like by submitting your details below.",
@@ -820,6 +820,40 @@
         "shipping_info": "Recipient / Shipping Information",
         "ordered_products": "Ordered Products"
       }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Reset Your Cells, Reclaim Your Vitality",
+      "description": "Biohacking your health with PEMF and Terahertz technologies. Reset your cells and reclaim your vitality with wellneXfreQ."
+    },
+    "products": {
+      "title": "Explore Frequency Technology Devices",
+      "description": "Browse our range of PEMF and Terahertz devices engineered for cellular repair, recovery, and long-term performance."
+    },
+    "about": {
+      "title": "13+ Years of Biohacking Experience",
+      "description": "Learn about Patrycja W. and the mission behind wellneXfreQ. Health biohacking and rebuilding from the ground up."
+    },
+    "contact": {
+      "title": "Contact Our Frequency Experts",
+      "description": "Have questions about our devices or want a consultation? Reach out to our team for personalized frequency wellness advice."
+    },
+    "order": {
+      "title": "Direct Orders - OlyLife Products",
+      "description": "Place a direct order for OlyLife PEMF and Terahertz technology. Secure inquiry for professional wellness devices."
+    },
+    "blog": {
+      "title": "Frequency Journal - Science of Wellness",
+      "description": "In-depth analyses of PEMF, Terahertz frequency, recovery, and biohacking based on field experience."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Our commitment to protecting your personal data and privacy at wellneXfreQ."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "description": "The terms and conditions for using wellneXfreQ services and technology devices."
     }
   }
 }

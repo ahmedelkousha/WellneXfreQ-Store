@@ -8,8 +8,8 @@
     "products": "Produkty",
     "contact": "Kontakt",
     "inquire": "Zapytaj teraz",
-    "order": "Zamów teraz",
-    "order-footer": "Zamów teraz"
+    "order": "Zamów",
+    "order-footer": "Zamów"
   },
   "home": {
     "hero": {
@@ -73,13 +73,13 @@
       "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z 13-letnim doświadczeniem pomagałem ludziom w odbudowie ciał od wewnątrz. Ale to moja własna walka z przewlekłym bólem, wypaleniem i niską energią zmieniła wszystko.",
       "text2": "Jako trenerka zdrowia, ruchu i odnowy biologicznej z 13-letnim stażem, od lat pomagam odbudowywać sprawność od środka. Jednak to moja osobista walka z bólem i wypaleniem stała się impulsem do zmian.",
       "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość jeszcze nie dotarła. Tak narodziło się wellneXfreQ.",
-      "coach_text2": "Dziś łączę moc częstotliwości z treningiem, by pomagać innym budować ciało silne, sprawne i gotowe na długie lata życia.Gotowa na ruch od środka? Zacznij od treningu.",
+      "coach_text2": "Dziś łączę moc częstotliwości z treningiem, by pomagać innym budować ciało silne, sprawne i gotowe na długie lata życia. Gotowa na ruch od środka? Zacznij od treningu.",
       "coach_text2_highlight": "FITIN2IT PT",
       "coach": "Patrycja W.",
       "learn_more": "Skontaktuj się"
     },
     "products": {
-      "badge": "TECHNOLOGIA CZĘSTOTLIWOŚCI.",
+      "badge": "TECHNOLOGIA CZĘSTOTLIWOŚCI",
       "title": "Odkryj Nasze ",
       "title_highlight": "Urządzenia",
       "subtitle": "Każde urządzenie jest zaprojektowane dla określonego celu biologicznego. Technologia częstotliwości PEMF i Teraherców, przeznaczona do codziennego użytku i długoterminowych rezultatów.",
@@ -178,7 +178,7 @@
       "subtitle": "Biohacking zdrowia i odbudowa od podstaw poprzez ruch i technologię częstotliwości."
     },
     "dual_tech_table": {
-      "badge": "DWIE SIŁY. JEDNO URZĄDZENIE.",
+      "badge": "DWIE SIŁY. JEDNO URZĄDZENIE",
       "title": "Podwójna Przewaga",
       "title_highlight": "Działania",
       "description": "Dzięki połączeniu technologii częstotliwości PEMF i Terahertz, oba systemy działają na organizm na jego najbardziej podstawowym poziomie – komórce. Jeden z nich ładuje napięcie komórkowe, drugi przywraca naturalny rytm komórek. Razem tworzą efekt kumulacji, który optymalizuje układy biologiczne pod kątem witalności, regeneracji i długofalowej wydajności.",
@@ -392,7 +392,7 @@
   },
   "order": {
     "hero": {
-      "badge": "Bezpośrednie zamówienie",
+      "badge": "Formularz zamówienia",
       "title": "Zacznijmy składać",
       "title_highlight": "Twoje zamówienie",
       "subtitle": "Powiedz nam, które produkty OlyLife chcesz zamówić, przesyłając poniżej swoje dane.",
@@ -838,6 +838,40 @@
         "shipping_info": "Dane odbiorcy / wysyłki",
         "ordered_products": "Zamówione produkty"
       }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Zresetuj Swoje Komórki, Odzyskaj Witalność",
+      "description": "Biohacking zdrowia dzięki technologiom PEMF i Teraherców. Zresetuj swoje komórki i odzyskaj witalność z wellneXfreQ."
+    },
+    "products": {
+      "title": "Poznaj Urządzenia Technologii Częstotliwości",
+      "description": "Przeglądaj naszą ofertę urządzeń PEMF i Teraherców zaprojektowanych dla naprawy komórkowej, regeneracji i długoterminowej wydajności."
+    },
+    "about": {
+      "title": "13+ Lat Doświadczenia w Biohackingu",
+      "description": "Dowiedz się więcej o Patrycji W. i misji wellneXfreQ. Biohacking zdrowia i odbudowa od podstaw."
+    },
+    "contact": {
+      "title": "Skontaktuj się z Ekspertami ds. Częstotliwości",
+      "description": "Masz pytania dotyczące naszych urządzeń lub chcesz konsultacji? Skontaktuj się z naszym zespołem, aby uzyskać spersonalizowaną poradę."
+    },
+    "order": {
+      "title": "Bezpośrednie Zamówienia - Produkty OlyLife",
+      "description": "Złóż bezpośrednie zamówienie na technologię PEMF i Teraherców OlyLife. Bezpieczne zapytanie o profesjonalne urządzenia wellness."
+    },
+    "blog": {
+      "title": "Dziennik Częstotliwości - Nauka o Dobrostanie",
+      "description": "Głębokie analizy PEMF, częstotliwości Teraherców, regeneracji i biohackingu oparte na doświadczeniu terenowym."
+    },
+    "privacy": {
+      "title": "Polityka Prywatności",
+      "description": "Nasze zobowiązanie do ochrony Twoich danych osobowych i prywatności w wellneXfreQ."
+    },
+    "terms": {
+      "title": "Regulamin Świadczenia Usług",
+      "description": "Zasady i warunki korzystania z usług wellneXfreQ oraz urządzeń technologicznych."
     }
   }
 }

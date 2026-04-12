@@ -5,6 +5,7 @@ import { ArrowLeft, Clock, Loader2, ArrowRight } from "lucide-react";
 import { useBlogBySlug, useBlogs } from "@/hooks/useBlogs";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import SEO from "@/components/SEO";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -60,9 +61,16 @@ export default function BlogPost() {
   const currentIndex = allBlogs.findIndex((p) => p.slug === params?.slug);
   const nextPost = allBlogs[currentIndex + 1] || null;
   const prevPost = allBlogs[currentIndex - 1] || null;
+  const localizedTitle = currentLang === 'pl' && post.title_pl ? post.title_pl : post.title;
+  const localizedExcerpt = currentLang === 'pl' && post.excerpt_pl ? post.excerpt_pl : post.excerpt;
 
   return (
     <div className="bg-background min-h-screen pb-20 md:pb-0">
+      <SEO 
+        title={localizedTitle} 
+        description={localizedExcerpt}
+        ogType="article"
+      />
       {/* Hero Image */}
       <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-background/30 z-10" />

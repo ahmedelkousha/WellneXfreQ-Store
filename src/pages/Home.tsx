@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { useProducts } from "@/hooks/useProducts";
 import { useTranslation } from "react-i18next";
@@ -108,6 +109,10 @@ export default function Home() {
 
   return (
     <div className="bg-background min-h-screen overflow-hidden">
+      <SEO 
+        title={t("seo.home.title")} 
+        description={t("seo.home.description")} 
+      />
 
 
 

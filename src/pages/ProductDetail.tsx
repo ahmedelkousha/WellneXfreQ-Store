@@ -6,6 +6,7 @@ import { CheckCircle2, ChevronRight, Tag, MessageCircle, ShieldCheck, Loader2, A
 // import ContactForm from "@/components/ContactForm";
 import NotFound from "@/pages/not-found";
 import { useTranslation } from "react-i18next";
+import SEO from "@/components/SEO";
 // import OrderForm from "@/components/sections/OrderForm";
 // import OrderNow from "./OrderNow";
 
@@ -37,12 +38,40 @@ export default function ProductDetail() {
     return <NotFound />;
   }
 
+  const localizedName = currentLang === "pl" ? (product.name_pl || product.name) : product.name;
+  const localizedDescription = currentLang === "pl" ? (product.shortDescription_pl || product.shortDescription) : product.shortDescription;
+
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": localizedName,
+    "image": product.image,
+    "description": localizedDescription,
+    "brand": {
+      "@type": "Brand",
+      "name": "wellneXfreQ"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": window.location.href,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   // const scrollToForm = () => {
   //   document.getElementById("order-section")?.scrollIntoView({ behavior: "smooth" });
   // };
 
   return (
     <div className="bg-background min-h-screen pt-32 pb-20">
+      <SEO 
+        title={localizedName} 
+        description={localizedDescription}
+        ogType="product"
+        ogImage={product.image}
+        schema={productSchema}
+      />
       <div className="container mx-auto px-4">
 
         <button

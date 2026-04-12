@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Activity, ShieldCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import SEO from "@/components/SEO";
 import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import coachPatrycjaImg from "@assets/patrycja-coach.png";
 import aboutCover from "@assets/about-cover.png";
@@ -28,6 +29,10 @@ export default function About() {
 
   return (
     <div className="bg-background min-h-screen pb-20 md:pb-0">
+      <SEO 
+        title={t("seo.about.title")} 
+        description={t("seo.about.description")} 
+      />
 
       {/* HERO */}
       <section className="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">

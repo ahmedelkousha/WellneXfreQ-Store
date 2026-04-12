@@ -2,6 +2,7 @@ import OrderForm from "@/components/sections/OrderForm";
 import { useTranslation } from "react-i18next";
 import { Instagram, Facebook, Mail, Phone, MessageCircle, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 export default function OrderNow() {
   const { t, i18n } = useTranslation();
@@ -9,6 +10,10 @@ export default function OrderNow() {
 
   return (
     <div className="pt-28 pb-24 bg-background text-foreground relative overflow-hidden">
+      <SEO 
+        title={t("seo.order.title")} 
+        description={t("seo.order.description")} 
+      />
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 

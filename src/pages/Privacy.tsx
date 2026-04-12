@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import SEO from "@/components/SEO";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -18,6 +19,10 @@ export default function Privacy() {
 
   return (
     <div className="bg-background min-h-screen pb-20 md:pb-0" id="privacy-policy-page">
+      <SEO 
+        title={t("seo.privacy.title")} 
+        description={t("seo.privacy.description")} 
+      />
       {/* Header */}
       <div className="pt-32 pb-16 relative border-b border-white/5">
         <div className="absolute inset-0 pointer-events-none">

@@ -3,6 +3,7 @@ import ContactForm from "@/components/ContactForm";
 import { Mail, Phone, MapPin, ArrowLeft, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 export default function Contact({ hideBackButton = false }: { hideBackButton?: boolean }) {
   const { t, i18n } = useTranslation();
@@ -15,6 +16,12 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
 
   return (
     <div className="pt-28 pb-24 bg-background text-foreground relative overflow-hidden">
+      {!isHome && (
+        <SEO 
+          title={t("seo.contact.title")} 
+          description={t("seo.contact.description")} 
+        />
+      )}
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 
