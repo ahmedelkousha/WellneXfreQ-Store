@@ -157,11 +157,11 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-black py-4"
+          ? "bg-background py-4"
           : "bg-background/90 py-5"
           }`}
       >
-        <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between">
+        <div className="mx-auto px-4 md:px-6 lg:px-12 flex items-center justify-between">
           <button onClick={handleHomeClick} className="flex items-center gap-2 z-50 relative">
             <img
               src={logoImg}
@@ -170,7 +170,7 @@ export default function Navbar() {
               style={{ mixBlendMode: "screen" }}
             />
 
-            { (location === `/${currentLang}` || location === `/${currentLang}/`) && (
+            {/* { (location === `/${currentLang}` || location === `/${currentLang}/`) && (
               <motion.div
                 initial={{ opacity: 0, scale: 1 }}
                 animate={{ opacity: isScrolled ? 0 : 1, scale: 1 }}
@@ -183,7 +183,7 @@ export default function Navbar() {
                 </span>
                 {t("home.hero.tagline")}
               </motion.div>
-            )}
+            )} */}
 
           </button>
 
@@ -325,7 +325,7 @@ export default function Navbar() {
 
       {/* Mobile Bottom Fixed Nav */}
       <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-white/10" style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
-        <div className="flex items-center justify-around py-2 px-1">
+        <div className="flex items-center py-2 px-1">
           {mobileNavItems.map((item) => {
             const Icon = item.icon;
 
@@ -334,13 +334,13 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.href as any}
-                  className={`flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all min-w-0 ${item.active
+                  className={`flex flex-col items-center gap-1 px-1 py-2 rounded-xl transition-all flex-1 min-w-0 ${item.active
                     ? "text-primary bg-primary/10"
                     : "text-foreground/40"
                     }`}
                 >
                   <Icon className="w-5 h-5 shrink-0" />
-                  <span className="text-[10px] font-medium leading-none">{item.label}</span>
+                  <span className="text-[10px] font-medium leading-none text-center">{item.label}</span>
                 </Link>
               );
             }
@@ -349,13 +349,13 @@ export default function Navbar() {
               <button
                 key={item.label}
                 onClick={item.action}
-                className={`flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all min-w-0 ${item.active
+                className={`flex flex-col items-center gap-1 px-1 py-2 rounded-xl transition-all flex-1 min-w-0 ${item.active
                   ? "text-primary bg-primary/10"
                   : "text-foreground/40"
                   }`}
               >
                 <Icon className="w-5 h-5 shrink-0" />
-                <span className="text-[10px] font-medium leading-none">{item.label}</span>
+                <span className="text-[10px] font-medium leading-none text-center">{item.label}</span>
               </button>
             );
           })}

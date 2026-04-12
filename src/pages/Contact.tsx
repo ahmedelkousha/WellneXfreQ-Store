@@ -3,6 +3,7 @@ import ContactForm from "@/components/ContactForm";
 import { Mail, Phone, MapPin, ArrowLeft, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 export default function Contact({ hideBackButton = false }: { hideBackButton?: boolean }) {
   const { t, i18n } = useTranslation();
@@ -15,6 +16,12 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
 
   return (
     <div className="pt-28 pb-24 bg-background text-foreground relative overflow-hidden">
+      {!isHome && (
+        <SEO 
+          title={t("seo.contact.title")} 
+          description={t("seo.contact.description")} 
+        />
+      )}
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 
@@ -30,14 +37,14 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
           </button>
         )}
 
-        <section className={`mb-10 ${isHome ? "flex justify-center flex-col items-center" : ""}`}>
+        <section className={`mb-10 ${isHome ? "flex justify-center flex-col items-center" : "flex justify-center flex-col items-center"}`}>
           <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
             {t("contact.hero.badge") || "Get in Touch"}
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
-            {t("contact.hero.title")}
+          <h1 className={`${isHome? 'text-center text-2xl md:text-3xl lg:text-4xl': 'text-center text-3xl md:text-4xl lg:text-5xl'} font-heading font-bold text-white mb-6`}>
+            {t("contact.hero.title")} <br /> <span className={`text-primary italic font-normal`}>{t("contact.hero.title_highlight")}</span>
           </h1>
-          <p className={`text-sm md:text-lg text-white/60 text-left ${isHome ? "max-w-3xl mx-auto" : "max-w-2xl"}`}>
+          <p className={`text-sm md:text-base text-white/60 text-left ${isHome ? "max-w-3xl mx-auto" : "max-w-2xl"}`}>
             {t("contact.hero.subtitle")}
           </p>
         </section>
@@ -45,7 +52,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
         <div className="grid gap-10 grid-cols-1  items-start">
 
 
-          <aside className={`space-y-6 flex flex-row  gap-6 ${isHome ? "lg:justify-center justify-center" : "lg:justify-start justify-center"}`}>
+          <aside className={`space-y-6 flex flex-row  gap-6 ${isHome ? "lg:justify-center justify-center" : "lg:justify-center justify-center"}`}>
             {/* <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}

@@ -5,6 +5,7 @@ import { useBlogs } from "@/hooks/useBlogs";
 import { useTranslation } from "react-i18next";
 import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import blogCoverImg from "@assets/blog-cover.png";
+import SEO from "@/components/SEO";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -39,6 +40,11 @@ export default function Blog() {
 
   return (
     <div className="bg-background min-h-screen pb-20 md:pb-0">
+      <SEO 
+        title={t("seo.blog.title")} 
+        description={t("seo.blog.description")} 
+        noindex={true}
+      />
       {/* BLOG HERO — cover image section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0">

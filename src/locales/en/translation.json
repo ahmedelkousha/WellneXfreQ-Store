@@ -13,6 +13,7 @@
   },
   "home": {
     "hero": {
+      "badge": "Frequency Wellness Technology",
       "tagline": "Frequency Wellness Technology",
       "title1": "RESET YOUR",
       "title1_highlight": "CELLS",
@@ -20,11 +21,12 @@
       "title2_highlight": "RHYTHM",
       "title3": "RECLAIM YOUR",
       "title3_highlight": "VITALITY",
-      "subtitle": "Biohacking your health with PEMF and Terahertz technologies. Your daily ritual for longevity.",
+      "subtitle": "Biohacking your health with PEMF and Terahertz Technology. Your daily ritual for longevity.",
       "cta_tech": "About the technology",
       "cta_phil": "Start your ritual"
     },
     "blood_analysis": {
+      "badge": "Visual Proof",
       "title": "Live Blood ",
       "title_highlight": "Analysis",
       "subtitle": "Thanks to Katrina Murray for sharing her Blood Analysis scans before and after a 20 minute OlyLife P90+ session. Shows the dramatic transformation of the blood from clustered, sticky columns of cells to noticeably separate and flowing cells"
@@ -61,6 +63,7 @@
       "balance_desc": "Daily frequency wellness is the new frontier of long-term health."
     },
     "philosophy": {
+      "badge": "The Story",
       "title": "Built to ",
       "title_italic_1": "Move.",
       "subtitle": "Made to ",
@@ -76,14 +79,15 @@
       "learn_more": "Get in touch"
     },
     "products": {
+      "badge": "Frequency Technology",
       "title": "Explore our",
       "title_highlight": "Devices",
       "subtitle": "Each device is engineered for a specific biological outcome. PEMF and Terahertz frequency technology, designed for daily use and long-term results.",
       "featured_badge": "FEATURED",
       "featured_title": "THz Tera-P90+",
       "featured_desc": "Next-generation Tera-P90+ delivering enhanced features for deeper cellular recovery and performance.",
-      "learn_more": "Learn more →",
-      "view_all": "View all devices →"
+      "learn_more": "Learn more",
+      "view_all": "View all devices"
     },
     "blog": {
       "title": "From the ",
@@ -93,6 +97,7 @@
       "view_all": "View all articles"
     },
     "testimonials": {
+      "badge": "True Stories",
       "title": "Real People. ",
       "title_highlight": "Real Results.",
       "subtitle": "Frequency technology is transforming lives around the world. Listen to real people share their experiences.",
@@ -173,7 +178,7 @@
       "subtitle": "Health biohacking and rebuilding from the ground up through movement and frequency technology."
     },
     "dual_tech_table": {
-      "badge": "Why Dual Technology Works",
+      "badge": "Two Forces. One Device.",
       "title": "The Dual Action ",
       "title_highlight": "Advantage",
       "description": "By combining PEMF and Terahertz frequency technology, both systems target the body at its most fundamental level, your cells. One recharges cellular voltage, the other restores natural cellular rhythm. Together they create a compounding effect that optimises your biological systems for vitality, recovery, and long-term performance.",
@@ -343,7 +348,8 @@
   "contact": {
     "hero": {
       "badge": "GET IN TOUCH",
-      "title": "Let's Connect",
+      "title": "Let's",
+      "title_highlight": "Connect",
       "subtitle": "Have a question about our devices or want to book a consultation to discuss what’s right for you? Feel free to reach out."
     },
     "info": {
@@ -368,8 +374,9 @@
   },
   "order": {
     "hero": {
-      "badge": "Direct Order",
-      "title": "Let’s Get Your Order Started",
+      "badge": "Order Form",
+      "title": "Let’s Get Your Order",
+      "title_highlight": "Started",
       "subtitle": "Tell us what OlyLife products you’d like by submitting your details below.",
       "help": "If you have any questions, please reach out:"
     },
@@ -477,12 +484,12 @@
       "phone": "+61 450 334 543"
     },
     "success": {
-      "title": "Order inquiry sent",
-      "desc": "Thank you. Your inquiry has been received. We will contact you shortly to confirm details and next steps."
+      "title": "Order Received",
+      "desc": "Thank you. Your order has been received. We will contact you shortly to confirm details and next steps."
     },
     "error": {
       "title": "Order submission error",
-      "desc": "There was an issue submitting your order inquiry. Please try again or contact us directly."
+      "desc": "There was an issue submitting your order. Please try again or contact us directly."
     }
   },
   "common": {
@@ -490,7 +497,7 @@
       "back": "Back",
       "back_to_catalog": "Back to catalog",
       "back_to_journal": "Back to journal",
-      "view_products": "Explore products",
+      "view_products": "Explore Products",
       "products": "Products"
     },
     "form": {
@@ -813,6 +820,40 @@
         "shipping_info": "Recipient / Shipping Information",
         "ordered_products": "Ordered Products"
       }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Reclaim Your Vitality",
+      "description": "Biohacking your health with PEMF and Terahertz technologies. Reset your cells and reclaim your vitality with wellneXfreQ."
+    },
+    "products": {
+      "title": "Explore Devices",
+      "description": "Browse our range of PEMF and Terahertz devices engineered for cellular repair, recovery, and long-term performance."
+    },
+    "about": {
+      "title": "13+ Years of Biohacking Experience",
+      "description": "Learn about Patrycja W. and the mission behind wellneXfreQ. Health biohacking and rebuilding from the ground up."
+    },
+    "contact": {
+      "title": "Contact Our Experts",
+      "description": "Have questions about our devices or want a consultation? Reach out to our team for personalized frequency wellness advice."
+    },
+    "order": {
+      "title": "Order Now",
+      "description": "Place a direct order for OlyLife PEMF and Terahertz technology. Secure inquiry for professional wellness devices."
+    },
+    "blog": {
+      "title": "Blog - Science of Wellness",
+      "description": "In-depth analyses of PEMF, Terahertz frequency, recovery, and biohacking based on field experience."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Our commitment to protecting your personal data and privacy at wellneXfreQ."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "description": "The terms and conditions for using wellneXfreQ services and technology devices."
     }
   }
 }

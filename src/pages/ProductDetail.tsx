@@ -6,6 +6,7 @@ import { CheckCircle2, ChevronRight, Tag, MessageCircle, ShieldCheck, Loader2, A
 // import ContactForm from "@/components/ContactForm";
 import NotFound from "@/pages/not-found";
 import { useTranslation } from "react-i18next";
+import SEO from "@/components/SEO";
 // import OrderForm from "@/components/sections/OrderForm";
 // import OrderNow from "./OrderNow";
 
@@ -37,12 +38,40 @@ export default function ProductDetail() {
     return <NotFound />;
   }
 
+  const localizedName = currentLang === "pl" ? (product.name_pl || product.name) : product.name;
+  const localizedDescription = currentLang === "pl" ? (product.shortDescription_pl || product.shortDescription) : product.shortDescription;
+
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": localizedName,
+    "image": product.image,
+    "description": localizedDescription,
+    "brand": {
+      "@type": "Brand",
+      "name": "wellneXfreQ"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": window.location.href,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   // const scrollToForm = () => {
   //   document.getElementById("order-section")?.scrollIntoView({ behavior: "smooth" });
   // };
 
   return (
     <div className="bg-background min-h-screen pt-32 pb-20">
+      <SEO 
+        title={localizedName} 
+        description={localizedDescription}
+        ogType="product"
+        ogImage={product.image}
+        schema={productSchema}
+      />
       <div className="container mx-auto px-4">
 
         <button
@@ -120,7 +149,7 @@ export default function ProductDetail() {
                   <Button
                     onClick={() => navigate(`/${currentLang}/order`)}
                     size="lg"
-                    className="ml-auto w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group rounded-lg uppercase tracking-widest transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+                    className="ml-auto sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit"
                   >
                     {t("nav.order-footer")}
                   </Button>

@@ -1,7 +1,0 @@
-src/components/layout/Navbar.tsx(1,10): error TS6133: 'href' is declared but its value is never read.
-src/components/layout/Navbar.tsx(4,34): error TS6133: 'BookOpen' is declared but its value is never read.
-src/components/sections/OrderForm.tsx(14,3): error TS6133: 'CommandInput' is declared but its value is never read.
-src/components/sections/OrderForm.tsx(85,9): error TS6133: 'total' is declared but its value is never read.
-src/components/sections/OrderForm.tsx(297,29): error TS6133: 'index' is declared but its value is never read.
-src/pages/ProductDetail.tsx(6,1): error TS6133: 'ContactForm' is declared but its value is never read.
-src/pages/ProductDetail.tsx(9,1): error TS6133: 'OrderForm' is declared but its value is never read.

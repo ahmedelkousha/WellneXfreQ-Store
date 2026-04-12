@@ -5,6 +5,7 @@ import { useProducts } from "@/hooks/useProducts";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, ArrowRight, Zap, Loader2, Mouse } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import SEO from "@/components/SEO";
 // import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from "@assets/featured-product-sm.png";
 import featuredProductImgLg from "@assets/featured-product-lg.png";
@@ -39,6 +40,10 @@ export default function Products() {
 
   return (
     <div className="bg-background min-h-screen">
+      <SEO 
+        title={t("seo.products.title")} 
+        description={t("seo.products.description")} 
+      />
 
       {/* PRODUCTS HERO */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden h-screen">

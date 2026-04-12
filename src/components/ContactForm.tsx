@@ -193,10 +193,12 @@ export default function ContactForm({ defaultProduct, centered = false }: Contac
             </FormItem>
           )}
         /> */}
+
+
         <div className="flex justify-center w-full">
-          <Button type="submit" className="w-32 sm:w-40 bg-primary text-primary-foreground hover:bg-primary/90 h-12 text-[0.65rem] sm:text-[0.8rem] font-semibold group">
+          <Button type="submit" className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit">
             {t("common.form.submit").toUpperCase()}
-            <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            <Send className="w-4 h-4" />
           </Button>
         </div>
       </form>

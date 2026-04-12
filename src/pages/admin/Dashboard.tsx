@@ -18,6 +18,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Edit2, Trash2, LogOut, Check, X, Loader2, UploadCloud, Eye, EyeOff, Archive, Globe, ExternalLink, Star, Zap } from "lucide-react";
+import SEO from "@/components/SEO";
 
 export default function AdminDashboard() {
   const { t, i18n } = useTranslation();
@@ -456,6 +457,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen pb-20 px-4 md:px-8 bg-background">
+      <SEO title="Admin Dashboard" noindex={true} />
       <div className="max-w-7xl mx-auto">
         <Tabs defaultValue="products" className="w-full">
           <div className="sticky top-0 z-40 bg-background/95 backdrop-blur-md pt-18 lg:pt-22 pb-4 mb-6 border-b border-white/5">

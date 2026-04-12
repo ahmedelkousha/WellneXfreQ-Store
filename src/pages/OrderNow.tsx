@@ -2,6 +2,7 @@ import OrderForm from "@/components/sections/OrderForm";
 import { useTranslation } from "react-i18next";
 import { Instagram, Facebook, Mail, Phone, MessageCircle, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 export default function OrderNow() {
   const { t, i18n } = useTranslation();
@@ -9,10 +10,14 @@ export default function OrderNow() {
 
   return (
     <div className="pt-28 pb-24 bg-background text-foreground relative overflow-hidden">
+      <SEO 
+        title={t("seo.order.title")} 
+        description={t("seo.order.description")} 
+      />
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 lg:px-6 max-w-6xl relative z-10">
+      <div className="mx-auto px-4 lg:px-6 max-w-6xl relative z-10">
         <button
           onClick={() => navigate(-1)}
           className="inline-flex items-center gap-2 text-white/50 hover:text-primary transition-colors mb-10 group"
@@ -21,22 +26,22 @@ export default function OrderNow() {
           <span className="text-xs font-medium uppercase tracking-widest">{t("common.navigation.back")}</span>
         </button>
 
-        <section className="mb-10 flex flex-col items-center justify-center max-w-3xl mx-auto text-center">
-          {/* <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
+        <section className="mb-10 flex flex-col items-center justify-center max-w-6xl text-center">
+          <p className="text-xs uppercase tracking-[0.2em] text-primary mb-3">
             {t("order.hero.badge")}
-          </p> */}
-          <h1 className="md:text-4xl text-2xl font-heading font-bold text-white mb-4">
-            {t("order.hero.title")}
+          </p>
+          <h1 className="text-center text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
+            {t("order.hero.title")} <br /> <span className="text-primary italic font-normal">{t("order.hero.title_highlight")}</span>
           </h1>
-          <p className="text-sm md:text-base text-white/70 max-w-3xl">
+          <p className="text-sm md:text-base text-white/70 max-w-3xl text-left">
             {t("order.hero.subtitle")}
           </p>
 
-          <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl py-6">
+          <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl py-6 text-left">
             {t("order.form.labels.products_disclaimer")}
           </p>
 
-          <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl">
+          <p className="text-xs sm:text-sm md:text-base text-white/70 max-w-2xl text-left">
             {t("order.hero.help")} <a target="_blank" rel="noreferrer" href="https://wa.me/61450334543" className="text-xs sm:text-sm md:text-base max-w-2xl text-primary hover:underline">+61 450 334 543</a>
           </p>
         </section>
@@ -123,7 +128,7 @@ export default function OrderNow() {
           </div>
         </aside>
 
-        <div className="grid gap-10 lg:grid-cols-1 items-start max-w-4xl mx-auto">
+        <div className="grid gap-10 lg:grid-cols-1 items-start max-w-6xl mx-auto">
           <section className="bg-black/40 border border-white/10 rounded-3xl p-5 md:p-7 shadow-xl shadow-black/40 relative overflow-hidden">
             <div className="absolute top-0 left-10 right-10 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
             {/* <h2 className="text-lg font-semibold mb-3 text-white">

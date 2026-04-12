@@ -41,7 +41,7 @@ export default function FloatingProductsCTA() {
         const rect = techSection.getBoundingClientRect();
         // The floating button usually sits near the bottom
         // We'll hide it if the tech section is within the visible window where the button sits
-        const buttonY = windowHeight * 0.85; 
+        const buttonY = windowHeight * 0.85;
         if (rect.top <= buttonY && rect.bottom >= buttonY) {
           isOverlappingTech = true;
         }
@@ -71,7 +71,7 @@ export default function FloatingProductsCTA() {
             <ShoppingBag className="sm:w-5 sm:h-5 w-4 h-4 shrink-0 group-hover:rotate-12 transition-transform" />
             <span className="text-[9px] -translate-x-8 sm:translate-x-0 sm:rotate-0 -rotate-90 sm:text-[10px] lg:text-xs uppercase tracking-widest leading-none font-bold">
               <span className="hidden sm:inline">{t("common.navigation.view_products")}</span>
-              <span className="sm:hidden">{ t("common.navigation.products")}</span>
+              <span className="sm:hidden">{t("common.navigation.products")}</span>
             </span>
           </Link>
         </motion.div>
