@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Strona",
+    "home": "START",
     "technology": "Technologia",
     "philosophy": "O NAS",
     "about": "O NAS",
@@ -22,7 +22,7 @@
       "title3": "ODZYSKAJ SWOJĄ",
       "title3_highlight": "WITALNOŚĆ",
       "subtitle": "Biohacking Twojego zdrowia z wykorzystaniem technologii PEMF i terahercowych. Twój codzienny rytuał na długowieczność.",
-      "cta_tech": "ODKRYJ TECHNOLOGIĘ",
+      "cta_tech": "POZNAJ TECHNOLOGIĘ",
       "cta_phil": "Zacznij swój rytuał"
     },
     "blood_analysis": {
