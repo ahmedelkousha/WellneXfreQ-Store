@@ -17,11 +17,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Edit2, Trash2, LogOut, Check, X, Loader2, UploadCloud, Eye, EyeOff, Archive, Globe, ExternalLink, Star, Zap } from "lucide-react";
+import { Plus, Edit2, Trash2, LogOut, Check, X, Loader2, UploadCloud, Eye, EyeOff, Archive, Globe, ExternalLink, Star, Zap, Copy } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
 
 export default function AdminDashboard() {
   const { t, i18n } = useTranslation();
+  const { toast } = useToast();
   const { lang } = useParams();
   const currentLang = lang || i18n.language || "en";
   const navigate = useNavigate();
@@ -372,6 +374,56 @@ export default function AdminDashboard() {
     }
   };
 
+  const handleCopyOrder = (order: any) => {
+    const items = Array.isArray(order.items) ? order.items : [];
+    const itemsText = items.map((item: any) => `- ${item.quantity}x ${item.name} ($${item.unitPrice?.toLocaleString()})`).join("\n");
+    
+    const subtotal = typeof order.subtotal === "number" ? order.subtotal : 0;
+    const totalPh = typeof order.totalPh === "number" ? order.totalPh : 0;
+    const total = typeof order.total === "number" ? order.total : subtotal + totalPh;
+
+    const text = `ORDER DETAILS: ${order.id}
+---------------------------
+DATE: ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeStyle: "short" }).format(new Date(order.createdAt))}
+STATUS: ${order.status || 'new'}
+
+--- CUSTOMER DETAILS ---
+FULL NAME: ${order.firstName} ${order.middleName ? order.middleName + ' ' : ''}${order.lastName}
+GENDER: ${order.gender}
+ID NUMBER: ${order.idNumber}
+EMAIL: ${order.email}
+PHONE: ${order.phoneCountryCode}${order.phoneNumber}
+
+--- PERSONAL ADDRESS ---
+STREET: ${order.personalStreetAddress}
+CITY: ${order.personalCity}
+STATE: ${order.personalState}
+COUNTRY: ${order.personalCountry}
+POSTAL CODE: ${order.personalPostalCode}
+
+--- SHIPPING DETAILS ---
+RECIPIENT: ${order.isRecipientSameAsPersonal ? 'Same as Personal' : (order.recipientName || 'Not Provided')}
+${!order.isRecipientSameAsPersonal ? `PHONE: ${order.recipientPhone || 'N/A'}
+STREET: ${order.recipientStreetAddress || 'N/A'}
+CITY: ${order.recipientCity || 'N/A'}
+STATE: ${order.recipientState || 'N/A'}
+COUNTRY: ${order.recipientCountry || 'N/A'}
+POSTAL CODE: ${order.recipientPostalCode || 'N/A'}` : ''}
+
+--- PRODUCTS ---
+${itemsText}
+
+--- TOTAL ---
+ESTIMATED TOTAL: ${order.currency || 'USD'} ${total.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+`;
+
+    navigator.clipboard.writeText(text);
+    toast({
+      title: t("admin.dashboard.orders.copied_title") || "Copied to clipboard",
+      description: t("admin.dashboard.orders.copied_desc") || "Order details formatted and ready to paste.",
+    });
+  };
+
   const renderInquiryCard = (inquiry: Inquiry) => (
     <motion.div
       key={inquiry.id}
@@ -475,7 +527,7 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            <TabsList className="bg-white/5 border border-white/10 p-1 w-full justify-start">
+            <TabsList className="bg-white/5 border border-white/10 p-1 w-full justify-start flex-wrap flex gap-2.5 h-auto">
               <TabsTrigger value="products" className="data-[state=active]:bg-primary data-[state=active]:text-black text-white/70 whitespace-nowrap">{t("admin.dashboard.tabs.products")}</TabsTrigger>
               <TabsTrigger value="blogs" className="data-[state=active]:bg-primary data-[state=active]:text-black text-white/70 whitespace-nowrap">{t("admin.dashboard.tabs.blogs")}</TabsTrigger>
               <TabsTrigger value="inquiries" className="data-[state=active]:bg-primary data-[state=active]:text-black text-white/70 flex items-center gap-2 whitespace-nowrap">
@@ -500,7 +552,7 @@ export default function AdminDashboard() {
           <TabsContent value="products">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold text-white">{t("admin.dashboard.products.title")}</h2>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center justify-end flex-wrap">
                 <Button onClick={syncFirebaseProducts} variant="destructive" className="bg-red-500/20 text-red-500 hover:bg-red-500/30 border border-red-500/50">
                   ⚠️ Reset & Sync Products
                 </Button>
@@ -755,6 +807,9 @@ export default function AdminDashboard() {
                       <div className="flex flex-col items-end gap-2">
                         <Button size="sm" variant="outline" onClick={() => setSelectedOrder(order)} className="border-primary/30 text-primary hover:bg-primary/10 mb-2">
                           <Eye className="w-4 h-4 mr-2" /> {t("admin.dashboard.orders.view_details")}
+                        </Button>
+                        <Button size="sm" variant="outline" onClick={() => handleCopyOrder(order)} className="border-white/20 text-white/80 hover:bg-white/5 mb-2">
+                          <Copy className="w-4 h-4 mr-2" /> {t("admin.dashboard.orders.copy_details") || "Copy Details"}
                         </Button>
                         <p className="text-xs text-white/60 uppercase tracking-[0.15em]">
                           {t("admin.dashboard.orders.total")}

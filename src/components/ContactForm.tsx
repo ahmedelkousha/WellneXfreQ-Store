@@ -27,10 +27,9 @@ import { useTranslation } from "react-i18next";
 
 type ContactFormProps = {
   defaultProduct?: string;
-  centered?: boolean;
 };
 
-export default function ContactForm({ defaultProduct, centered = false }: ContactFormProps) {
+export default function ContactForm({ defaultProduct }: ContactFormProps) {
   const { t } = useTranslation();
   // const currentLang = i18n.language.split("-")[0];
   const { toast } = useToast();
@@ -39,10 +38,11 @@ export default function ContactForm({ defaultProduct, centered = false }: Contac
   const formSchema = z.object({
     fullName: z.string().min(2, { message: t("common.form.validation.name") }),
     email: z.string().email({ message: t("common.form.validation.email") }),
-    phone: z.string().optional(),
-    productOfInterest: z.string().optional(),
+    phone: z.string().optional().refine(v => !v || /^\d+$/.test(v), { 
+      message: t("common.form.validation.numbers_only") || "Only numbers allowed" 
+    }),
+    productOfInterest: z.string().min(1, { message: "Please select an option" }),
     message: z.string().min(10, { message: t("common.form.validation.message") }),
-    source: z.string().optional(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -51,9 +51,8 @@ export default function ContactForm({ defaultProduct, centered = false }: Contac
       fullName: "",
       email: "",
       phone: "",
-      productOfInterest: defaultProduct || "none",
+      productOfInterest: defaultProduct || "General Question",
       message: "",
-      source: "none",
     },
   });
 
@@ -135,14 +134,10 @@ export default function ContactForm({ defaultProduct, centered = false }: Contac
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="bg-card border-white/10 text-white">
-                    <SelectItem className="focus:bg-[#008080]" value="none">1. {t("common.form.options.interests.general")}</SelectItem>
-                    <SelectItem className="focus:bg-[#008080]" value="buy">2. {t("common.form.options.interests.buy")}</SelectItem>
-                    <SelectItem className="focus:bg-[#008080]" value="consultation">3. {t("common.form.options.interests.consult")}</SelectItem>
-                    {/* <SelectItem value="affiliate">{t("common.form.options.interests.affiliate")}</SelectItem> */}
-                    <div className="hidden">{/* Divider for products if needed */}</div>
-                    {/* {products.map(p => (
-                      <SelectItem key={p.id} value={p.id}>{currentLang === "pl" ? (p.name_pl || p.name) : p.name}</SelectItem>
-                    ))} */}
+                    <SelectItem className="focus:bg-[#008080]" value="General Question">1. {t("common.form.options.interests.general")}</SelectItem>
+                    <SelectItem className="focus:bg-[#008080]" value="Buy Products">2. {t("common.form.options.interests.buy")}</SelectItem>
+                    <SelectItem className="focus:bg-[#008080]" value="Consultation">3. {t("common.form.options.interests.consult")}</SelectItem>
+                    <SelectItem className="focus:bg-[#008080]" value="Become an Affiliate">4. {t("common.form.options.interests.affiliate")}</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -168,32 +163,6 @@ export default function ContactForm({ defaultProduct, centered = false }: Contac
           )}
         />
 
-        {/* <FormField
-          control={form.control}
-          name="source"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-white/80">{t("common.form.labels.source")}</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger className="bg-black/50 border-white/10 focus-visible:ring-primary text-white">
-                    <SelectValue placeholder={t("common.form.placeholders.source")} />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent className="bg-card border-white/10 text-white">
-                  <SelectItem value="none">{t("common.form.placeholders.source")}</SelectItem>
-                  <SelectItem value="instagram">{t("common.form.options.sources.instagram")}</SelectItem>
-                  <SelectItem value="facebook">{t("common.form.options.sources.facebook")}</SelectItem>
-                  <SelectItem value="friend">{t("common.form.options.sources.friend")}</SelectItem>
-                  <SelectItem value="search">{t("common.form.options.sources.search")}</SelectItem>
-                  <SelectItem value="other">{t("common.form.options.sources.other")}</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        /> */}
-
 
         <div className="flex justify-center w-full">
           <Button type="submit" className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit">
@@ -203,5 +172,6 @@ export default function ContactForm({ defaultProduct, centered = false }: Contac
         </div>
       </form>
     </Form>
+
   );
 }

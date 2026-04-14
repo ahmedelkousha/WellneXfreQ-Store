@@ -25,48 +25,48 @@ import { ChevronsUpDown, Check, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
-const formSchema = z.object({
-  firstName: z.string().min(1, "First Name is required"),
-  middleName: z.string().optional(),
-  lastName: z.string().min(1, "Last Name is required"),
-  email: z.string().email("Invalid email address"),
-  phoneCountryCode: z.string().min(1, "Country code is required"),
-  phoneNumber: z.string().min(1, "Phone number is required"),
-  idNumber: z.string().min(1, "ID Number is required"),
-  gender: z.enum(["male", "female"], { required_error: "Please select a gender" }),
-
-  // Personal Address
-  personalStreetAddress: z.string().min(1, "Street address is required"),
-  personalCity: z.string().min(1, "City is required"),
-  personalState: z.string().min(1, "State is required"),
-  personalCountry: z.string().min(1, "Country is required"),
-  personalPostalCode: z.string().min(1, "Postal code is required"),
-
-  // Recipient info
-  isRecipientSameAsPersonal: z.boolean().default(true),
-  recipientName: z.string().optional(),
-  recipientPhone: z.string().optional(),
-  recipientStreetAddress: z.string().optional(),
-  recipientCity: z.string().optional(),
-  recipientState: z.string().optional(),
-  recipientCountry: z.string().optional(),
-  recipientPostalCode: z.string().optional(),
-
-  // Products
-  items: z.array(z.object({
-    productId: z.string().min(1),
-    quantity: z.number().min(0),
-  })).min(1, "Please select at least one product").refine(items => items.some(i => i.quantity > 0), "Please select at least one product with quantity > 0"),
-
-  consent1: z.boolean().refine(v => v === true, "Confirmation is required"),
-  consent2: z.boolean().refine(v => v === true, "Confirmation is required"),
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
 export default function OrderForm() {
   const { t } = useTranslation();
   const createOrder = useCreateOrder();
+
+  const formSchema = z.object({
+    firstName: z.string().min(1, "First Name is required"),
+    middleName: z.string().optional(),
+    lastName: z.string().min(1, "Last Name is required"),
+    email: z.string().email("Invalid email address"),
+    phoneCountryCode: z.string().min(1, "Country code is required"),
+    phoneNumber: z.string().min(1, "Phone number is required").regex(/^\d+$/, t("common.form.validation.numbers_only")),
+    idNumber: z.string().min(1, "ID Number is required").regex(/^\d+$/, t("common.form.validation.numbers_only")),
+    gender: z.enum(["male", "female"], { required_error: "Please select a gender" }),
+
+    // Personal Address
+    personalStreetAddress: z.string().min(1, "Street address is required"),
+    personalCity: z.string().min(1, "City is required"),
+    personalState: z.string().min(1, "State is required"),
+    personalCountry: z.string().min(1, "Country is required"),
+    personalPostalCode: z.string().min(1, "Postal code is required"),
+
+    // Recipient info
+    isRecipientSameAsPersonal: z.boolean().default(true),
+    recipientName: z.string().optional(),
+    recipientPhone: z.string().optional().refine(v => !v || /^\d+$/.test(v), t("common.form.validation.numbers_only")),
+    recipientStreetAddress: z.string().optional(),
+    recipientCity: z.string().optional(),
+    recipientState: z.string().optional(),
+    recipientCountry: z.string().optional(),
+    recipientPostalCode: z.string().optional(),
+
+    // Products
+    items: z.array(z.object({
+      productId: z.string().min(1),
+      quantity: z.number().min(0),
+    })).min(1, "Please select at least one product").refine(items => items.some(i => i.quantity > 0), "Please select at least one product with quantity > 0"),
+
+    consent1: z.boolean().refine(v => v === true, "Confirmation is required"),
+    consent2: z.boolean().refine(v => v === true, "Confirmation is required"),
+  });
+
+  type FormValues = z.infer<typeof formSchema>;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -350,7 +350,7 @@ export default function OrderForm() {
                     >
                       <FormItem className="flex items-center space-x-3 space-y-0">
                         <FormControl>
-                          <RadioGroupItem value="male" className="border-white/20 text-primary" />
+                          <RadioGroupItem value="undefined" className="border-white/20 text-primary" />
                         </FormControl>
                         <Label className="font-normal text-white/80 cursor-pointer">
                           {t("order.form.labels.male")}

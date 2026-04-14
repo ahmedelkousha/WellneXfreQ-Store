@@ -526,7 +526,7 @@
           "general": "General Question",
           "buy": "Order Device",
           "consult": "Book A Consultation",
-          "affiliate": "Become an affiliate"
+          "affiliate": "Become an Affiliate"
         },
         "sources": {
           "instagram": "Instagram",
@@ -548,7 +548,8 @@
       "validation": {
         "name": "Name must be at least 2 characters long.",
         "email": "Invalid email address.",
-        "message": "Message must be at least 10 characters long."
+        "message": "Message must be at least 10 characters long.",
+        "numbers_only": "Must contain only numbers"
       }
     },
     "affiliate": {
@@ -818,7 +819,10 @@
         "modal_subtitle": "Full submission details for",
         "personal_info": "Personal Information",
         "shipping_info": "Recipient / Shipping Information",
-        "ordered_products": "Ordered Products"
+        "ordered_products": "Ordered Products",
+        "copy_details": "Copy Details",
+        "copied_title": "Copied to clipboard",
+        "copied_desc": "Order details formatted and ready to paste."
       }
     }
   },
