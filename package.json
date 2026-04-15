@@ -4,10 +4,13 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
-    "dev": "vite --host",
+    "dev": "node api/index.js",
     "build": "vite build",
-    "start": "vite preview",
+    "start": "NODE_ENV=production node api/index.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
