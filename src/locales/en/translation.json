@@ -859,5 +859,12 @@
       "title": "Terms of Service",
       "description": "The terms and conditions for using wellneXfreQ services and technology devices."
     }
+  },
+  "cookie_consent": {
+    "title": "We use cookies",
+    "description": "We use cookies and tracking technologies to analyze site traffic and personalize your experience. By accepting, you allow third-party scripts (analytics, pixels) to run on this site.",
+    "accept": "Accept All",
+    "reject": "Reject Non-Essential",
+    "privacy_link": "Privacy Policy"
   }
 }

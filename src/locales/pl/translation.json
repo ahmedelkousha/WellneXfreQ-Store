@@ -877,5 +877,12 @@
       "title": "Regulamin Świadczenia Usług",
       "description": "Zasady i warunki korzystania z usług wellneXfreQ oraz urządzeń technologicznych."
     }
+  },
+  "cookie_consent": {
+    "title": "Używamy plików cookie",
+    "description": "Używamy plików cookie i technologii śledzących do analizy ruchu na stronie i personalizacji Twojego doświadczenia. Akceptując, zezwalasz na uruchomienie skryptów osób trzecich (analityka, piksele).",
+    "accept": "Zaakceptuj wszystkie",
+    "reject": "Odrzucić nieistotne",
+    "privacy_link": "Polityka Prywatności"
   }
 }
