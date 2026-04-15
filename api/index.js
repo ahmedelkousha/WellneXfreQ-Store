@@ -73,11 +73,12 @@ async function configureServer() {
 
   let vite;
   if (!isProd) {
-    // Dynamic import for Vite to avoid it in production
     const { createServer: createViteServer } = await import('vite');
     vite = await createViteServer({
       server: { middlewareMode: true },
-      appType: 'custom'
+      appType: 'custom',
+      // Since we are running from /api, we might need to tell vite where the root is
+      root: path.resolve(__dirname, '..')
     });
     server.use(vite.middlewares);
   } else {
@@ -103,9 +104,9 @@ async function configureServer() {
       } else {
         const prodPaths = [
           path.resolve(root, 'dist', 'index.html'),
-          path.resolve(__dirname, 'dist', 'index.html'),
+          path.resolve(__dirname, '..', 'dist', 'index.html'),
           path.join(root, 'index.html'),
-          '/var/task/dist/index.html' // Vercel specific common path
+          '/var/task/dist/index.html'
         ];
         
         console.log(`[SSI] Looking for index.html. Root: ${root}, __dirname: ${__dirname}`);
@@ -134,7 +135,7 @@ async function configureServer() {
     } catch (e) {
       if (!isProd && vite) vite.ssrFixStacktrace(e);
       console.error("[SSI] Request error:", e.message);
-      next(e);
+      res.status(500).end(e.message);
     }
   });
 

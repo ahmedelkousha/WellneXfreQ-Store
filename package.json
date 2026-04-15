@@ -8,9 +8,9 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "dev": "node server.js",
+    "dev": "node api/index.js",
     "build": "vite build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node api/index.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
