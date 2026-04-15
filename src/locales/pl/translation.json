@@ -566,7 +566,8 @@
       "validation": {
         "name": "Imię musi mieć co najmniej 2 znaki.",
         "email": "Niepoprawny adres email.",
-        "message": "Wiadomość musi mieć co najmniej 10 znaków."
+        "message": "Wiadomość musi mieć co najmniej 10 znaków.",
+        "numbers_only": "Musi zawierać tylko cyfry"
       }
     },
     "affiliate": {
@@ -836,7 +837,10 @@
         "modal_subtitle": "Pełne dane zgłoszenia dla",
         "personal_info": "Dane osobowe",
         "shipping_info": "Dane odbiorcy / wysyłki",
-        "ordered_products": "Zamówione produkty"
+        "ordered_products": "Zamówione produkty",
+        "copy_details": "Kopiuj szczegóły",
+        "copied_title": "Skopiowano do schowka",
+        "copied_desc": "Szczegóły zamówienia sformatowane i gotowe do wklejenia."
       }
     }
   },
@@ -873,5 +877,12 @@
       "title": "Regulamin Świadczenia Usług",
       "description": "Zasady i warunki korzystania z usług wellneXfreQ oraz urządzeń technologicznych."
     }
+  },
+  "cookie_consent": {
+    "title": "Używamy plików cookie",
+    "description": "Używamy plików cookie i technologii śledzących do analizy ruchu na stronie i personalizacji Twojego doświadczenia. Akceptując, zezwalasz na uruchomienie skryptów osób trzecich (analityka, piksele).",
+    "accept": "Zaakceptuj wszystkie",
+    "reject": "Odrzucić nieistotne",
+    "privacy_link": "Polityka Prywatności"
   }
 }

@@ -21,6 +21,8 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import AdminLogin from "@/pages/admin/Login";
 import AdminDashboard from "@/pages/admin/Dashboard";
+import TrackingInjector from "@/components/analytics/TrackingInjector";
+
 
 const queryClient = new QueryClient();
 
@@ -102,6 +104,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <BrowserRouter>
+            <TrackingInjector />
             <AppShell />
             <Toaster />
           </BrowserRouter>

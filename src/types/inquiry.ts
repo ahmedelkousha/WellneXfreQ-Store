@@ -5,9 +5,10 @@ export interface Inquiry {
   fullName: string;
   email: string;
   phone?: string;
-  productOfInterest?: string;
+  productOfInterest: string;
   message: string;
-  source?: string;
   status: InquiryStatus;
+  source: string;
+  currency?: string;
   createdAt: Date;
 }
