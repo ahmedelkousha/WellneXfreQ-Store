@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "node api/index.js",
-    "build": "vite build",
+    "build": "vite build && mv dist/index.html dist/template.html",
     "start": "NODE_ENV=production node api/index.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

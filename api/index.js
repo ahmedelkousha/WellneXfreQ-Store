@@ -103,13 +103,15 @@ async function configureServer() {
         template = await vite.transformIndexHtml(url, template);
       } else {
         const prodPaths = [
+          path.resolve(root, 'dist', 'template.html'),
           path.resolve(root, 'dist', 'index.html'),
+          path.resolve(__dirname, '..', 'dist', 'template.html'),
           path.resolve(__dirname, '..', 'dist', 'index.html'),
-          path.join(root, 'index.html'),
-          '/var/task/dist/index.html'
+          path.join(root, 'template.html'),
+          '/var/task/dist/template.html'
         ];
         
-        console.log(`[SSI] Looking for index.html. Root: ${root}, __dirname: ${__dirname}`);
+        console.log(`[SSI] Looking for template.html or index.html. Root: ${root}, __dirname: ${__dirname}`);
         
         for (const p of prodPaths) {
           if (fs.existsSync(p)) {
