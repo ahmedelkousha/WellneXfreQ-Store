@@ -39,7 +39,7 @@ export default function About() {
       <section className="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-linear-to-b from-background/50 via-background/85 to-background z-10" />
-          <img
+          <img loading="lazy"
             src={aboutCover}
             alt="About wellneXfreQ"
             className="w-full h-full object-cover object-center opacity-40 grayscale"
@@ -143,7 +143,7 @@ export default function About() {
               transition={{ duration: 1 }}
               className="relative h-[560px] lg:h-[680px] rounded-3xl overflow-hidden group"
             >
-              <img
+              <img loading="lazy"
                 src={coachPatrycjaImg}
                 alt="Strength & Movement Coach"
                 className="w-full h-full object-contain transition-transform duration-700 scale-100 group-hover:scale-105"

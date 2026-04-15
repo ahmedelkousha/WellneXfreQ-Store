@@ -2,7 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useProducts } from "@/hooks/useProducts";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ChevronRight, Tag, MessageCircle, ShieldCheck, Loader2, ArrowLeft } from "lucide-react";
+import { CheckCircle2, ChevronRight, Tag, MessageCircle, Loader2, ArrowLeft } from "lucide-react";
 // import ContactForm from "@/components/ContactForm";
 import NotFound from "@/pages/not-found";
 import { useTranslation } from "react-i18next";
@@ -99,7 +99,7 @@ export default function ProductDetail() {
             transition={{ duration: 0.8 }}
             className="relative rounded-3xl overflow-hidden bg-card border border-white/5 aspect-4/3 lg:aspect-square"
           >
-            <img src={product.image} alt={currentLang === "pl" ? (product.name_pl || product.name) : product.name} className="w-full h-full object-cover" />
+            <img loading="lazy" src={product.image} alt={currentLang === "pl" ? (product.name_pl || product.name) : product.name} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent"></div>
           </motion.div>
 
@@ -143,7 +143,7 @@ export default function ProductDetail() {
                   </div>
                   <div>
                     {/* <p className="text-xs text-white/40 uppercase tracking-widest font-semibold mb-0.5">{t("product_detail.headers.price")}</p> */}
-                    <p className="text-3xl font-heading font-bold text-white">{product.price}</p>
+                    <p className="text-[1.3rem] sm:text-3xl font-heading font-bold text-white">{product.price}</p>
 
                   </div>
                   <Button
@@ -200,7 +200,7 @@ export default function ProductDetail() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {product.gallery.map((imgUrl, i) => (
                 <div key={i} className="aspect-square rounded-2xl overflow-hidden border border-white/5 group">
-                  <img
+                  <img loading="lazy"
                     src={imgUrl}
                     alt={`${product.name} gallery ${i + 1}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

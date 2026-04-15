@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useProducts } from "@/hooks/useProducts";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, ArrowRight, Zap, Loader2, Mouse } from "lucide-react";
+import { ChevronRight, Zap, Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 // import AffiliateCTA from "@/components/sections/AffiliateCTA";
@@ -75,12 +75,12 @@ export default function Products() {
           <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full scale-150 transform -translate-y-1/2"></div>
           {/* <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-background via-background/90 to-transparent h-2/3"></div> */}
 
-          {/* <img src={coachJumpImg} alt="Products Hero" className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay grayscale" /> */}
+          {/* <img loading="lazy" src={coachJumpImg} alt="Products Hero" className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay grayscale" /> */}
           {/* Large Image */}
           <div className="hidden xl:block absolute inset-0 z-0 h-full w-full">
             <div className="absolute inset-0 bg-linear-to-b from-[#0a0a0a] via-black/5 to-transparent z-10" />
             <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-            <img
+            <img loading="lazy"
               src={featuredProductImgLg}
               alt="OlyLife THz Tera-P90+"
               className="h-[940px] w-full object-cover object-fit transition-transform duration-1000 group-hover:scale-[1.03]"
@@ -91,7 +91,7 @@ export default function Products() {
           <div className="xl:hidden sm:block hidden absolute inset-0 z-0 h-full w-full">
             <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
             <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-            <img
+            <img loading="lazy"
               src={featuredProductImgSm}
               alt="OlyLife THz Tera-P90+"
               className="h-[940px] w-full object-cover object-[80%] transition-transform duration-1000 group-hover:scale-[1.03]"
@@ -102,7 +102,7 @@ export default function Products() {
           <div className="sm:hidden block absolute inset-0 z-0 h-full w-full">
             <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
             <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-            <img
+            <img loading="lazy"
               src={featuredProductImgPhone}
               alt="OlyLife THz Tera-P90+"
               className="h-[800px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]"
@@ -164,7 +164,7 @@ export default function Products() {
                       className="block overflow-hidden relative aspect-video"
                     >
                       <div className="absolute inset-0 bg-linear-to-t from-card/80 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                      <img
+                      <img loading="lazy"
                         src={product.image}
                         alt={currentLang === "pl" ? (product.name_pl || product.name) : product.name}
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out"

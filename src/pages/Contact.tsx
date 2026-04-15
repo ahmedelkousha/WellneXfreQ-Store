@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import ContactForm from "@/components/ContactForm";
-import { Mail, Phone, MapPin, ArrowLeft, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { ArrowLeft, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import SEO from "@/components/SEO";
@@ -44,7 +44,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
           <h1 className={`${isHome? 'text-center text-2xl md:text-3xl lg:text-4xl': 'text-center text-3xl md:text-4xl lg:text-5xl'} font-heading font-bold text-white mb-6`}>
             {t("contact.hero.title")} <br /> <span className={`text-primary italic font-normal`}>{t("contact.hero.title_highlight")}</span>
           </h1>
-          <p className={`text-sm md:text-base text-white/60 text-left ${isHome ? "max-w-3xl mx-auto" : "max-w-2xl"}`}>
+          <p className={`text-sm md:text-base text-white/60 text-center ${isHome ? "max-w-3xl mx-auto" : "max-w-2xl"}`}>
             {t("contact.hero.subtitle")}
           </p>
         </section>

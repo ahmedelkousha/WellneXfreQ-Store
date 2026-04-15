@@ -571,7 +571,7 @@ ESTIMATED TOTAL: ${order.currency || 'USD'} ${total.toLocaleString(undefined, { 
                 >
                   <div className="flex gap-6 items-start">
                     {product.image ? (
-                      <img src={product.image} alt={product.name} className="w-24 h-24 object-cover rounded-lg bg-black/50 shrink-0" />
+                      <img loading="lazy" src={product.image} alt={product.name} className="w-24 h-24 object-cover rounded-lg bg-black/50 shrink-0" />
                     ) : (
                       <div className="w-24 h-24 rounded-lg bg-white/5 shrink-0 flex items-center justify-center text-white/20 text-xs text-center p-2">{t("admin.dashboard.products.no_img")}</div>
                     )}
@@ -633,7 +633,7 @@ ESTIMATED TOTAL: ${order.currency || 'USD'} ${total.toLocaleString(undefined, { 
                   >
                     <div className="flex gap-6 items-start">
                       {blog.image ? (
-                        <img src={blog.image} alt={blog.title} className="w-24 h-24 object-cover rounded-lg bg-black/50 shrink-0" />
+                        <img loading="lazy" src={blog.image} alt={blog.title} className="w-24 h-24 object-cover rounded-lg bg-black/50 shrink-0" />
                       ) : (
                         <div className="w-24 h-24 rounded-lg bg-white/5 shrink-0 flex items-center justify-center text-white/20 text-xs text-center p-2">{t("admin.dashboard.products.no_img")}</div>
                       )}
@@ -1139,7 +1139,7 @@ ESTIMATED TOTAL: ${order.currency || 'USD'} ${total.toLocaleString(undefined, { 
 
                 {formData.image && (
                   <div className="mt-4 relative w-24 h-24 rounded-lg overflow-hidden border border-white/10">
-                    <img src={formData.image} alt="Main" className="w-full h-full object-cover" />
+                    <img loading="lazy" src={formData.image} alt="Main" className="w-full h-full object-cover" />
                     <div className="absolute inset-x-0 bottom-0 bg-primary/80 text-black text-[10px] text-center font-bold">PRIMARY</div>
                   </div>
                 )}
@@ -1171,7 +1171,7 @@ ESTIMATED TOTAL: ${order.currency || 'USD'} ${total.toLocaleString(undefined, { 
                   <div className="flex flex-wrap gap-2 mt-4">
                     {formData.gallery.map((url, idx) => (
                       <div key={idx} className="relative w-16 h-16 rounded-lg overflow-hidden group border border-white/10">
-                        <img src={url} alt="Gallery" className="w-full h-full object-cover" />
+                        <img loading="lazy" src={url} alt="Gallery" className="w-full h-full object-cover" />
                         <button
                           onClick={() => removeGalleryImage(idx)}
                           className="absolute inset-0 bg-black/60 items-center justify-center opacity-0 group-hover:opacity-100 flex transition-opacity"
@@ -1272,7 +1272,7 @@ ESTIMATED TOTAL: ${order.currency || 'USD'} ${total.toLocaleString(undefined, { 
               {blogUploadProgress !== null && <div className="mt-4"><div className="w-full bg-white/10 h-1.5 rounded-full"><div className="bg-white h-full" style={{ width: `${blogUploadProgress}%` }}></div></div></div>}
               {blogFormData.image && (
                 <div className="mt-4 w-40 aspect-video rounded-lg overflow-hidden border border-white/10 relative">
-                  <img src={blogFormData.image} alt="Header" className="w-full h-full object-cover" />
+                  <img loading="lazy" src={blogFormData.image} alt="Header" className="w-full h-full object-cover" />
                 </div>
               )}
             </div>

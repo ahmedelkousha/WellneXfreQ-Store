@@ -21,7 +21,7 @@ import {
   CommandItem,
 } from "@/components/ui/command";
 import { toast } from "@/hooks/use-toast";
-import { ChevronsUpDown, Check, Send } from "lucide-react";
+import { ChevronsUpDown, Check, Send, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
@@ -350,7 +350,7 @@ export default function OrderForm() {
                     >
                       <FormItem className="flex items-center space-x-3 space-y-0">
                         <FormControl>
-                          <RadioGroupItem value="undefined" className="border-white/20 text-primary" />
+                          <RadioGroupItem value="male" className="border-white/20 text-primary" />
                         </FormControl>
                         <Label className="font-normal text-white/80 cursor-pointer">
                           {t("order.form.labels.male")}
@@ -848,10 +848,19 @@ export default function OrderForm() {
             <Button
               type="submit"
               disabled={createOrder.isPending}
-              className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit"
+              className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-[0_0_20px_rgba(102,248,219,0.3)]"
             >
-              {createOrder.isPending ? t("order.form.labels.submitting") : t("order.form.labels.submit")}
-              <Send className="w-4 h-4" />
+              {createOrder.isPending ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span className="ml-1">{t("order.form.labels.submitting", "SUBMITTING")}</span>
+                </>
+              ) : (
+                <>
+                  {t("order.form.labels.submit", "SUBMIT")}
+                  <Send className="w-4 h-4" />
+                </>
+              )}
             </Button>
           </div>
         </div>

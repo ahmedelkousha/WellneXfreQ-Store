@@ -5,22 +5,30 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/Home";
-import Products from "@/pages/Products";
-import ProductDetail from "@/pages/ProductDetail";
-import Contact from "@/pages/Contact";
-// import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
-import Privacy from "@/pages/Privacy";
-import Terms from "@/pages/Terms";
-import About from "@/pages/About";
-import OrderNow from "@/pages/OrderNow";
+import { lazy, Suspense } from "react";
+import { Loader2 } from "lucide-react";
+
+const NotFound = lazy(() => import("@/pages/not-found"));
+const Home = lazy(() => import("@/pages/Home"));
+const Products = lazy(() => import("@/pages/Products"));
+const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const Privacy = lazy(() => import("@/pages/Privacy"));
+const Terms = lazy(() => import("@/pages/Terms"));
+const About = lazy(() => import("@/pages/About"));
+const OrderNow = lazy(() => import("@/pages/OrderNow"));
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import AdminLogin from "@/pages/admin/Login";
-import AdminDashboard from "@/pages/admin/Dashboard";
+const AdminLogin = lazy(() => import("@/pages/admin/Login"));
+const AdminDashboard = lazy(() => import("@/pages/admin/Dashboard"));
+
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-[60vh]">
+    <Loader2 className="w-8 h-8 animate-spin text-primary" />
+  </div>
+);
 
 const queryClient = new QueryClient();
 
@@ -69,23 +77,25 @@ function AppShell() {
           <Route path="/:lang/*" element={
 
             <LanguageWrapper>
-              <Routes>
-                <Route index element={<Home />} />
-                <Route path="products" element={<Products />} />
-                <Route path="product/:slug" element={<ProductDetail />} />
-                <Route path="order" element={<OrderNow />} />
-                {/* DISABLED BLOG FEATURE */}
-                <Route path="blog/*" element={<NotFound />} />
-                <Route path="blog/:slug" element={<BlogPost />} />
-                {/* END DISABLED BLOG FEATURE */}
-                <Route path="contact" element={<Contact />} />
-                <Route path="about" element={<About />} />
-                <Route path="privacy" element={<Privacy />} />
-                <Route path="terms" element={<Terms />} />
-                <Route path="admin" element={<AdminDashboard />} />
-                <Route path="admin/login" element={<AdminLogin />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <Suspense fallback={<PageLoader />}>
+                <Routes>
+                  <Route index element={<Home />} />
+                  <Route path="products" element={<Products />} />
+                  <Route path="product/:slug" element={<ProductDetail />} />
+                  <Route path="order" element={<OrderNow />} />
+                  {/* DISABLED BLOG FEATURE */}
+                  <Route path="blog/*" element={<NotFound />} />
+                  <Route path="blog/:slug" element={<BlogPost />} />
+                  {/* END DISABLED BLOG FEATURE */}
+                  <Route path="contact" element={<Contact />} />
+                  <Route path="about" element={<About />} />
+                  <Route path="privacy" element={<Privacy />} />
+                  <Route path="terms" element={<Terms />} />
+                  <Route path="admin" element={<AdminDashboard />} />
+                  <Route path="admin/login" element={<AdminLogin />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
             </LanguageWrapper>} />
 
           <Route path="*" element={<RootRedirect />} />

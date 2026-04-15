@@ -36,7 +36,7 @@ const DualTechPanel = () => {
             {t('about.dual_tech_table.title')} <br />
             <span className="text-primary italic font-normal">{t('about.dual_tech_table.title_highlight')}</span>
           </h2>
-          <p className="text-white/60 max-w-3xl mx-auto text-sm md:text-lg text-left">
+          <p className="text-white/60 max-w-3xl mx-auto text-sm md:text-lg text-center">
             {t('about.dual_tech_table.description')}
           </p>
         </motion.div>

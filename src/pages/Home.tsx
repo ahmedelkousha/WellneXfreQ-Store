@@ -9,7 +9,6 @@ import useEmblaCarousel from 'embla-carousel-react';
 import DualTechPanel from '@/components/sections/DualAction';
 import DualTechFeatures from '@/components/sections/DualActionFeatures';
 import {
-  ArrowLeft,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
@@ -25,9 +24,9 @@ import {
 import featuredProductImgSm from "@assets/featured-product-sm.png";
 import featuredProductImgLg from "@assets/featured-product-lg.png";
 import featuredProductImgPhone from "@assets/featured-product-phone.png";
-import heroImg from "@assets/mountain.png";
+import heroImg from "@assets/mountain.webp";
 import coachBlankingImg from "@assets/patrycja-coach.png";
-// import coachBoulderImg from "@assets/Screen-Shot-2026-03-31-at-9.51.10-am_1775036665248.png";
+// import coachBoulderImg from "@assets/mountain.webp";
 import bloodAnalysisVideo from "@assets/Livebloodanalysisfb.mp4";
 import videoPoster from "@assets/poster.png";
 // import OrderNow from "./OrderNow";
@@ -153,7 +152,7 @@ export default function Home() {
           <img
             src={heroImg}
             alt="PEMF Therapy"
-            className="w-full h-full object-cover object-[0%] sm:object-[50%] lg:object-[63%]"
+            className="w-full h-full object-cover object-[0%] sm:object-[50%] lg:object-[50%] lg:scale-125 xl:scale-130 2xl:scale-100"
           />
         </motion.div>
 
@@ -211,7 +210,7 @@ export default function Home() {
 
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-[1rem] sm:text-[1.1rem] md:text-lg text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[34rem] text-left sm:text-center mx-auto sm:mt-6 mt-4 font-light"
+              className="text-[1rem] sm:text-[1.1rem] md:text-lg text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[34rem] text-center sm:text-center mx-auto sm:mt-6 mt-4 font-light"
             >
               {t("home.hero.subtitle")}
             </motion.p>
@@ -282,7 +281,7 @@ export default function Home() {
                   transition={{ duration: 1 }}
                   className="lg:hidden block relative rounded-3xl overflow-hidden group"
                 >
-                  <img
+                  <img loading="lazy"
                     src={coachBlankingImg}
                     alt="Coach jumping"
                     className="w-full h-full object-contain md:object-fit transition-transform duration-700 group-hover:scale-105"
@@ -302,7 +301,8 @@ export default function Home() {
 
                 <div className="border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
                   <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
-                    "{t("home.philosophy.coach_text")}"
+                    "{t("home.philosophy.coach_text")}" <br />
+                    <span className="text-primary italic text-base mt-2 inline-block font-normal">— Patrycja</span>
                   </p>
                 </div>
 
@@ -330,7 +330,7 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 className="lg:block hidden relative o rounded-3xl overflow-hidden group"
               >
-                <img
+                <img loading="lazy"
                   src={coachBlankingImg}
                   alt="Coach jumping"
                   className="w-full h-full object-contain md:object-fit transition-transform duration-700 group-hover:scale-105"
@@ -472,7 +472,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6">
               {t("home.products.title")}<br /><span className="text-primary italic font-normal">{t("home.products.title_highlight")}</span>
             </h2>
-            <p className="text-sm md:text-lg max-w-3xl mx-auto text-left text-white/60 md:px-16 px-4">
+            <p className="text-sm md:text-lg max-w-3xl mx-auto text-center text-white/60 md:px-16 px-4">
               {t("home.products.subtitle")}
             </p>
           </motion.div>
@@ -488,7 +488,7 @@ export default function Home() {
             <div className="hidden xl:block absolute inset-0 z-0 h-full w-full">
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-              <img
+              <img loading="lazy"
                 src={featuredProductImgLg}
                 alt="OlyLife THz Tera-P90+"
                 className="h-[940px] w-full object-cover object-bottom transition-transform duration-1000 group-hover:scale-[1.03]"
@@ -499,7 +499,7 @@ export default function Home() {
             <div className="sm:block hidden xl:hidden absolute inset-0 z-0 h-full w-full">
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-              <img
+              <img loading="lazy"
                 src={featuredProductImgSm}
                 alt="OlyLife THz Tera-P90+"
                 className="h-[940px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]"
@@ -510,7 +510,7 @@ export default function Home() {
             <div className="sm:hidden block absolute inset-0 z-0 h-full w-full">
               <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/5 via-black/5 to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a]/20 via-black/20 to-transparent z-10 lg:block hidden" />
-              <img
+              <img loading="lazy"
                 src={featuredProductImgPhone}
                 alt="OlyLife THz Tera-P90+"
                 className="h-[670px] w-full object-cover object-[72%] transition-transform duration-1000 group-hover:scale-[1.03]"
@@ -592,7 +592,7 @@ export default function Home() {
                   >
                     <Link to={`/${currentLang}/blog/${post.slug}`} className="block aspect-video overflow-hidden relative">
                       <div className="absolute inset-0 bg-linear-to-t from-card/80 to-transparent z-10 transition-opacity"></div>
-                      <img
+                      <img loading="lazy"
                         src={post.image}
                         alt={post.title}
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
@@ -655,7 +655,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6">
               {t("home.blood_analysis.title")}<br /><span className="text-primary italic font-normal">{t("home.blood_analysis.title_highlight")}</span>
             </h2>
-            <p className="text-white/60 max-w-3xl mx-auto text-sm leading-relaxed md:text-lg text-left">
+            <p className="text-white/60 max-w-3xl mx-auto text-sm leading-relaxed md:text-lg text-center">
               {t("home.blood_analysis.subtitle")}
             </p>
           </motion.div>
@@ -699,7 +699,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6">
               {t("home.testimonials.title")}<br /><span className="text-primary italic font-normal">{t("home.testimonials.title_highlight")}</span>
             </h2>
-            <p className="text-white/60 max-w-3xl mx-auto text-sm md:text-lg text-left">
+            <p className="text-white/60 max-w-3xl mx-auto text-sm md:text-lg text-center">
               {t("home.testimonials.subtitle")}
             </p>
           </motion.div>
@@ -822,7 +822,7 @@ export default function Home() {
       {/* CTA SECTION */}
       {/* <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={coachBoulderImg} alt="Background" className="w-full h-full object-cover object-center opacity-20 grayscale" />
+          <img loading="lazy" src={coachBoulderImg} alt="Background" className="w-full h-full object-cover object-center opacity-20 grayscale" />
           <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-background"></div>
         </div>
 

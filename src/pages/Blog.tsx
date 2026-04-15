@@ -50,7 +50,7 @@ export default function Blog() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full scale-150 transform -translate-y-1/2" />
           <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-background via-background/90 to-transparent h-2/3" />
-          <img
+          <img loading="lazy"
             src={blogCoverImg}
             alt="Blog cover"
             className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay grayscale"
@@ -110,7 +110,7 @@ export default function Blog() {
                     <div className="relative aspect-4/3 lg:aspect-auto overflow-hidden">
                       <div className="absolute inset-0 bg-linear-to-r from-transparent to-card/50 z-10 lg:block hidden" />
                       <div className="absolute inset-0 bg-linear-to-t from-card/80 to-transparent z-10 lg:hidden block" />
-                      <img
+                      <img loading="lazy"
                         src={featuredPost.image}
                         alt={currentLang === "pl" ? (featuredPost.title_pl || featuredPost.title) : featuredPost.title}
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
@@ -161,7 +161,7 @@ export default function Blog() {
                     <div className="rounded-2xl overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_0_40px_rgba(126,255,212,0.08)] bg-card flex flex-col h-full">
                       <div className="relative aspect-video overflow-hidden">
                       <div className="absolute inset-0 bg-linear-to-t from-card/80 to-transparent z-10" />
-                        <img
+                        <img loading="lazy"
                           src={post.image}
                           alt={currentLang === "pl" ? (post.title_pl || post.title) : post.title}
                           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"

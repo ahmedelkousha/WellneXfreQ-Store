@@ -5,10 +5,7 @@ import {
   Mail,
   ArrowUpRight,
   Phone,
-  Activity,
   MessageCircle,
-  Pin,
-  Map,
   MapPin
 } from "lucide-react";
 import {
@@ -123,7 +120,7 @@ export default function Footer() {
             className="lg:col-span-1 space-y-0"
           >
             <a href={getPath("/")} onClick={handleHomeClick} className="inline-block mb-2 -mt-4">
-              <img src={logo} alt="logo" className="h-16" />
+              <img loading="lazy" src={logo} alt="logo" className="h-16" />
             </a>
             <p className="text-white/50 leading-relaxed text-sm max-w-xs mb-4">
               {t("footer.tagline")}

@@ -1,13 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { useProducts } from "@/hooks/useProducts";
-import { ChevronDown, Home, Cpu, Mail, Leaf, ShoppingBag } from "lucide-react";
+import { Home, Cpu, Mail, Leaf, ShoppingBag } from "lucide-react";
 import logoImg from "@assets/logo.png";
 
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
-import { motion } from "framer-motion";
+
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -163,7 +163,7 @@ export default function Navbar() {
       >
         <div className="mx-auto px-4 md:px-6 lg:px-12 flex items-center justify-between">
           <button onClick={handleHomeClick} className="flex items-center gap-2 z-50 relative">
-            <img
+            <img loading="lazy"
               src={logoImg}
               alt="wellneXfreQ"
               className={`md:h-8 h-6 w-auto`}
