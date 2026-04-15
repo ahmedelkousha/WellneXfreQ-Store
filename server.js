@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
-import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
@@ -10,6 +9,7 @@ import { getFirestore, collection, getDocs, query, where } from 'firebase/firest
 dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = process.cwd();
 
 // Firebase setup for server-side injection
 const firebaseConfig = {
@@ -35,30 +35,24 @@ async function getTrackingScripts() {
     let bodyScripts = '';
 
     tools.forEach(tool => {
-      // Helper to generate the script tag
       const generateTag = (content, subId) => {
         if (!content) return '';
-        // Basic detection if it's a URL or script
         if (content.startsWith('http')) {
           return `<script id="tracking-${tool.id}-${subId}" src="${content}" async></script>\n`;
         }
         if (content.includes('<script')) {
-          // If it already has tags, just return it
           return content + '\n';
         }
-        // Otherwise wrap in script tag
         return `<script id="tracking-${tool.id}-${subId}" async>${content}</script>\n`;
       };
 
       const mainTag = generateTag(tool.content, 'main');
       const noscriptTag = tool.noscriptContent ? `\n${tool.noscriptContent}\n` : '';
 
-      // Placement logic
       if (tool.placement === 'head') headScripts += mainTag;
       else if (tool.placement === 'body_start') bodyScripts = mainTag + bodyScripts;
       else bodyScripts += mainTag;
 
-      // Noscript placement
       if (tool.noscriptPlacement === 'head') headScripts += noscriptTag;
       else if (tool.noscriptPlacement === 'body_start') bodyScripts = noscriptTag + bodyScripts;
       else bodyScripts += noscriptTag;
@@ -74,12 +68,13 @@ async function getTrackingScripts() {
 const server = express();
 
 async function configureServer() {
-  const isProd = process.env.NODE_ENV === 'production';
+  const isProd = process.env.NODE_ENV === 'production' || !!process.env.VERCEL;
   const port = process.env.PORT || 5173;
 
   let vite;
   if (!isProd) {
-    // Create Vite server in middleware mode
+    // Dynamic import for Vite to avoid it in production
+    const { createServer: createViteServer } = await import('vite');
     vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'custom'
@@ -87,13 +82,13 @@ async function configureServer() {
     server.use(vite.middlewares);
   } else {
     // In production, serve built assets
-    server.use(express.static(path.resolve(__dirname, 'dist'), { index: false }));
+    const distPath = path.resolve(root, 'dist');
+    server.use(express.static(distPath, { index: false }));
   }
 
   server.use(async (req, res, next) => {
     const url = req.originalUrl;
 
-    // Only handle HTML requests (ignore files with extensions like .js, .css, .png, etc.)
     if (url.includes('.') && !url.endsWith('.html')) {
       return next();
     }
@@ -101,10 +96,26 @@ async function configureServer() {
     try {
       let template;
       if (!isProd) {
-        template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+        template = fs.readFileSync(path.resolve(root, 'index.html'), 'utf-8');
         template = await vite.transformIndexHtml(url, template);
       } else {
-        template = fs.readFileSync(path.resolve(__dirname, 'dist', 'index.html'), 'utf-8');
+        // Try to find index.html in a few possible production paths
+        const prodPaths = [
+          path.resolve(root, 'dist', 'index.html'),
+          path.resolve(__dirname, 'dist', 'index.html'),
+          path.resolve(root, 'index.html')
+        ];
+        
+        for (const p of prodPaths) {
+          if (fs.existsSync(p)) {
+            template = fs.readFileSync(p, 'utf-8');
+            break;
+          }
+        }
+        
+        if (!template) {
+          throw new Error(`Could not find index.html in production. Root: ${root}`);
+        }
       }
 
       const { headScripts, bodyScripts } = await getTrackingScripts();
@@ -115,13 +126,13 @@ async function configureServer() {
 
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
     } catch (e) {
-      if (!isProd) vite.ssrFixStacktrace(e);
+      if (!isProd && vite) vite.ssrFixStacktrace(e);
+      console.error("[SSI] Request error:", e.message);
       next(e);
     }
   });
 
-  // Only start listening if we aren't being imported (like in Vercel)
-  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  if (!process.env.VERCEL) {
     server.listen(port, () => {
       console.log(`[SSI Server] (${isProd ? 'Production' : 'Development'}) Running at http://localhost:${port}`);
     });
