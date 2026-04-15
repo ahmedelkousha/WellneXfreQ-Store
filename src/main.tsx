@@ -5,7 +5,7 @@ import "./index.css";
 import TagManager from 'react-gtm-module';
 
 const tagManagerArgs = {
-    gtmId: import.meta.env.VITE_GTM_ID
+    gtmId: import.meta.env.PPV_GTM_ID
 };
 
 TagManager.initialize(tagManagerArgs);
