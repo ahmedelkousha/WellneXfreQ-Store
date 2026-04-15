@@ -95,26 +95,32 @@ async function configureServer() {
 
     try {
       let template;
+      const isProd = process.env.NODE_ENV === 'production' || !!process.env.VERCEL;
+
       if (!isProd) {
         template = fs.readFileSync(path.resolve(root, 'index.html'), 'utf-8');
         template = await vite.transformIndexHtml(url, template);
       } else {
-        // Try to find index.html in a few possible production paths
         const prodPaths = [
           path.resolve(root, 'dist', 'index.html'),
           path.resolve(__dirname, 'dist', 'index.html'),
-          path.resolve(root, 'index.html')
+          path.join(root, 'index.html'),
+          '/var/task/dist/index.html' // Vercel specific common path
         ];
+        
+        console.log(`[SSI] Looking for index.html. Root: ${root}, __dirname: ${__dirname}`);
         
         for (const p of prodPaths) {
           if (fs.existsSync(p)) {
+            console.log(`[SSI] Found template at: ${p}`);
             template = fs.readFileSync(p, 'utf-8');
             break;
           }
         }
         
         if (!template) {
-          throw new Error(`Could not find index.html in production. Root: ${root}`);
+          console.error("[SSI] ERROR: index.html not found in any of:", prodPaths);
+          throw new Error("Could not find index.html in production.");
         }
       }
 

@@ -6,19 +6,20 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "server.js"
+      "source": "/(.*)",
+      "destination": "/server.js"
     }
   ],
   "functions": {
     "server.js": {
-      "includeFiles": "dist/**"
+      "includeFiles": "dist/**",
+      "maxDuration": 10
     }
   }
 }
