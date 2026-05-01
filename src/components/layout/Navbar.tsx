@@ -117,21 +117,21 @@ export default function Navbar() {
       icon: Home,
       action: handleHomeClick,
       active: isHomeActive,
-      href: false
+      href: false,
     },
     {
       label: t("nav.philosophy"),
       icon: Leaf,
       action: () => scrollToSection("philosophy"),
       active: isPhilActive,
-      href: false
+      href: false,
     },
     {
       label: t("nav.technology"),
       icon: Cpu,
       action: () => scrollToSection("technology"),
       active: isTechActive,
-      href: false
+      href: false,
     },
 
     // {
@@ -143,23 +143,26 @@ export default function Navbar() {
     {
       label: t("nav.products"),
       icon: ShoppingBag,
-      action: 
-          location === getPath("/products")
-            ? () =>
-                document
-                  .getElementById("products-grid")
-                  ?.scrollIntoView({ behavior: "smooth" })
-            : () => handleClick("products")
-        ,
+      action:
+        location === getPath("/products")
+          ? () =>
+              document
+                .getElementById("products-grid")
+                ?.scrollIntoView({ behavior: "smooth" })
+          : () => handleClick("products"),
       active: isProductsActive,
-      href: false
+      href: false,
     },
     {
       label: t("nav.contact"),
       icon: Mail,
-      action: () => scrollToSection("contact"),
+      action:
+        location === getPath("/contact")
+          ? () =>
+              handleClick("contact")
+          : () => handleClick("contact"),
       active: isContactActive,
-      href: false
+      href: false,
     },
     // {
     //   label: t("nav.order"),
