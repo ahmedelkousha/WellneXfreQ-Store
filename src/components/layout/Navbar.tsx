@@ -18,6 +18,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("");
   const { pathname: location } = useLocation();
   const navigate = useNavigate();
+  
 
   const getPath = (path: string) => `/${currentLang}${path === "/" ? "" : path}`;
 
@@ -94,6 +95,14 @@ export default function Navbar() {
     }
   };
 
+   const handleClick = (slug: string) => {
+     if (location === `/${currentLang}/${slug}`) {
+       window.scrollTo({ top: 0, behavior: "smooth" });
+     } else {
+       navigate(`/${currentLang}/${slug}`);
+     }
+   };
+
   const isHomeActive = (location === `/${currentLang}` || location === `/${currentLang}/`) && !["technology", "philosophy", "blog", "products", "contact"].includes(activeSection);
   const isTechActive = activeSection === "technology"
   const isPhilActive = activeSection === "philosophy" || location.includes("/about");
@@ -134,7 +143,14 @@ export default function Navbar() {
     {
       label: t("nav.products"),
       icon: ShoppingBag,
-      action: () => scrollToSection("products"),
+      action: 
+          location === getPath("/products")
+            ? () =>
+                document
+                  .getElementById("products-grid")
+                  ?.scrollIntoView({ behavior: "smooth" })
+            : () => handleClick("products")
+        ,
       active: isProductsActive,
       href: false
     },
@@ -156,14 +172,15 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background py-4"
-          : "bg-background/90 py-5"
-          }`}
-      >
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-background py-4" : "bg-background/90 py-5"
+        }`}>
         <div className="mx-auto px-4 md:px-6 lg:px-12 flex items-center justify-between">
-          <button onClick={handleHomeClick} className="flex items-center gap-2 z-50 relative">
-            <img loading="lazy"
+          <button
+            onClick={handleHomeClick}
+            className="flex items-center gap-2 z-50 relative">
+            <img
+              loading="lazy"
               src={logoImg}
               alt="wellneXfreQ"
               className={`md:h-8 h-6 w-auto`}
@@ -184,19 +201,13 @@ export default function Navbar() {
                 {t("home.hero.tagline")}
               </motion.div>
             )} */}
-
           </button>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6">
-
-
-
-
             <button
               onClick={handleHomeClick}
-              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isHomeActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
-            >
+              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isHomeActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}>
               {t("nav.home")}
             </button>
 
@@ -224,19 +235,17 @@ export default function Navbar() {
 
             <button
               onClick={() => scrollToSection("philosophy")}
-              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isPhilActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
-            >
+              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isPhilActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}>
               {t("nav.philosophy")}
             </button>
             <button
               className={`flex items-center text-xs tracking-widest font-medium transition-colors uppercase ${isTechActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
               onClick={() => scrollToSection("technology")}
-            // onMouseEnter={() => setProductsDropdownOpen(true)}
-            // onMouseLeave={() => setProductsDropdownOpen(false)}
+              // onMouseEnter={() => setProductsDropdownOpen(true)}
+              // onMouseLeave={() => setProductsDropdownOpen(false)}
             >
               {t("nav.technology")}
             </button>
-
 
             {/* <button
               onClick={() => scrollToSection("blog")}
@@ -245,19 +254,24 @@ export default function Navbar() {
               {t("nav.blog")}
             </button> */}
 
-            <Link
-              to={getPath("/products")}
-              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isProductsActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
-            >
+            <button
+              onClick={
+                location === getPath("/products")
+                  ? () =>
+                      document
+                        .getElementById("products-grid")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                  : () => handleClick("products")
+              }
+              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isProductsActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}>
               {t("nav.products")}
-            </Link>
+            </button>
 
-            <Link
-              to={getPath("/contact")}
-              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isContactActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
-            >
+            <button
+              onClick={() => handleClick("contact")}
+              className={`text-xs tracking-widest font-medium transition-colors uppercase ${isContactActive ? "text-primary" : "text-foreground/80 hover:text-primary"}`}>
               {t("nav.contact")}
-            </Link>
+            </button>
             {/* 
             <Link
               to={getPath("/order")}
@@ -270,8 +284,11 @@ export default function Navbar() {
               <button
                 onClick={toggleLanguage}
                 className="flex items-center justify-center hover:scale-105 transition-transform focus:outline-none shrink-0"
-                title={currentLang === "en" ? "Switch to Polish" : "Przełącz na Angielski"}
-              >
+                title={
+                  currentLang === "en"
+                    ? "Switch to Polish"
+                    : "Przełącz na Angielski"
+                }>
                 {currentLang === "en" ? (
                   <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
                 ) : (
@@ -287,9 +304,11 @@ export default function Navbar() {
               <Button
                 asChild
                 variant="outline"
-                className="border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                <Link className="text-xs font-medium tracking-widest" to={getPath("/order")}>{t("nav.order").toUpperCase()}</Link>
+                onClick={() => handleClick("order")}
+                className="border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
+                <span className="text-xs font-medium tracking-widest cursor-pointer">
+                  {t("nav.order").toUpperCase()}
+                </span>
               </Button>
             </div>
           </nav>
@@ -298,8 +317,7 @@ export default function Navbar() {
           <div className="lg:hidden flex items-center gap-3">
             <button
               onClick={toggleLanguage}
-              className="flex items-center justify-center focus:outline-none"
-            >
+              className="flex items-center justify-center focus:outline-none">
               {/* {currentLang === "en" ? (
                 <span className="w-4 h-4 text-xs rounded-sm shadow-sm text-white hover:text-primary">PL</span>
               ) : (
@@ -313,18 +331,20 @@ export default function Navbar() {
             </button>
             <Button
               asChild
+              onClick={() => handleClick("order")}
               size="sm"
               variant="outline"
-              className="text-xs tracking-widest font-medium transition-colors uppercase border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              <Link to={getPath("/order")}>{t("nav.order")}</Link>
+              className="text-xs tracking-widest font-medium transition-colors uppercase border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              {t("nav.order")}
             </Button>
           </div>
         </div>
       </header>
 
       {/* Mobile Bottom Fixed Nav */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-white/10" style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
+      <nav
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-white/10"
+        style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}>
         <div className="flex items-center py-2 px-1">
           {mobileNavItems.map((item) => {
             const Icon = item.icon;
@@ -334,13 +354,15 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.href as any}
-                  className={`flex flex-col items-center gap-1 px-1 py-2 rounded-xl transition-all flex-1 min-w-0 ${item.active
-                    ? "text-primary bg-primary/10"
-                    : "text-foreground/40"
-                    }`}
-                >
+                  className={`flex flex-col items-center gap-1 px-1 py-2 rounded-xl transition-all flex-1 min-w-0 ${
+                    item.active
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground/40"
+                  }`}>
                   <Icon className="w-5 h-5 shrink-0" />
-                  <span className="text-[10px] font-medium leading-none text-center">{item.label}</span>
+                  <span className="text-[10px] font-medium leading-none text-center">
+                    {item.label}
+                  </span>
                 </Link>
               );
             }
@@ -349,13 +371,15 @@ export default function Navbar() {
               <button
                 key={item.label}
                 onClick={item.action}
-                className={`flex flex-col items-center gap-1 px-1 py-2 rounded-xl transition-all flex-1 min-w-0 ${item.active
-                  ? "text-primary bg-primary/10"
-                  : "text-foreground/40"
-                  }`}
-              >
+                className={`flex flex-col items-center gap-1 px-1 py-2 rounded-xl transition-all flex-1 min-w-0 ${
+                  item.active
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground/40"
+                }`}>
                 <Icon className="w-5 h-5 shrink-0" />
-                <span className="text-[10px] font-medium leading-none text-center">{item.label}</span>
+                <span className="text-[10px] font-medium leading-none text-center">
+                  {item.label}
+                </span>
               </button>
             );
           })}
@@ -364,3 +388,4 @@ export default function Navbar() {
     </>
   );
 }
+
