@@ -5,10 +5,7 @@ import {
   Mail,
   ArrowUpRight,
   Phone,
-  Activity,
   MessageCircle,
-  Pin,
-  Map,
   MapPin
 } from "lucide-react";
 import {
@@ -46,6 +43,14 @@ export default function Footer() {
     }
   };
 
+  const handleClick = (slug: string) => {
+    if (pathname === `/${currentLang}/${slug}`) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate(`/${currentLang}/${slug}`);
+    }
+  };
+
   const scrollToPhilosophy = (e: React.MouseEvent) => {
     e.preventDefault();
     if (pathname === `/${currentLang}` || pathname === `/${currentLang}/`) {
@@ -64,25 +69,155 @@ export default function Footer() {
 
   const TechLinks = () => (
     <ul className="space-y-4 -translate-x-[0.9rem]">
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> THz TERA-P90+</Link></li>
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> TERA-P90</Link></li>
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> GALAXY G-ONE</Link></li>
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> SHAKEN MASSAGER</Link></li>
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> VITALITY WAND</Link></li>
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> H+ BAR</Link></li>
+      <li>
+        <button
+          onClick={
+            pathname === getPath("/products")
+              ? () =>
+                  document
+                    .getElementById("products-grid")
+                    ?.scrollIntoView({ behavior: "smooth" })
+              : () => handleClick("products")
+          }
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          THz TERA-P90+
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={
+            pathname === getPath("/products")
+              ? () =>
+                  document
+                    .getElementById("products-grid")
+                    ?.scrollIntoView({ behavior: "smooth" })
+              : () => handleClick("products")
+          }
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          TERA-P90
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={
+            pathname === getPath("/products")
+              ? () =>
+                  document
+                    .getElementById("products-grid")
+                    ?.scrollIntoView({ behavior: "smooth" })
+              : () => handleClick("products")
+          }
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          GALAXY G-ONE
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={
+            pathname === getPath("/products")
+              ? () =>
+                  document
+                    .getElementById("products-grid")
+                    ?.scrollIntoView({ behavior: "smooth" })
+              : () => handleClick("products")
+          }
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          SHAKEN MASSAGER
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={
+            pathname === getPath("/products")
+              ? () =>
+                  document
+                    .getElementById("products-grid")
+                    ?.scrollIntoView({ behavior: "smooth" })
+              : () => handleClick("products")
+          }
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          VITALITY WAND
+        </button>
+      </li>
+      <li>
+        <button
+          onClick={
+            pathname === getPath("/products")
+              ? () =>
+                  document
+                    .getElementById("products-grid")
+                    ?.scrollIntoView({ behavior: "smooth" })
+              : () => handleClick("products")
+          }
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          H+ BAR
+        </button>
+      </li>
     </ul>
   );
 
   const CompanyLinks = () => (
     <ul className="space-y-4 -translate-x-[0.9rem] uppercase">
-      <li><a href={getPath("/")} onClick={handleHomeClick} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.home")}</a></li>
+      <li>
+        <a
+          href={getPath("/")}
+          onClick={handleHomeClick}
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          {t("nav.home")}
+        </a>
+      </li>
       {/* <li><Link to={getPath("/about")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.about")}</Link></li> */}
-      <li><a href={`${getPath("/")}#philosophy`} onClick={scrollToPhilosophy} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("footer.philosophy")}</a></li>
-      <li><a href={`${getPath("/")}#technology`} onClick={scrollToPhilosophy} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.technology")}</a></li>
-      <li><Link to={getPath("/products")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.products")}</Link></li>
+      <li>
+        <a
+          href={`${getPath("/")}#philosophy`}
+          onClick={scrollToPhilosophy}
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          {t("footer.philosophy")}
+        </a>
+      </li>
+      <li>
+        <a
+          href={`${getPath("/")}#technology`}
+          onClick={scrollToPhilosophy}
+          className="hover:text-primary transition-colors text-sm flex items-center group">
+          <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+          {t("nav.technology")}
+        </a>
+      </li>
+      <li
+        onClick={
+          pathname === getPath("/products")
+            ? () =>
+                document
+                  .getElementById("products-grid")
+                  ?.scrollIntoView({ behavior: "smooth" })
+            : () => handleClick("products")
+        }
+        className="cursor-pointer hover:text-primary transition-colors text-sm flex items-center group">
+        <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+        {t("nav.products")}
+      </li>
       {/* <li><Link to={getPath("/blog")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.blog")}</Link></li> */}
-      <li><Link to={getPath("/contact")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.contact")}</Link></li>
-      <li><Link to={getPath("/order")} className="hover:text-primary transition-colors text-sm flex items-center group"><ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" /> {t("nav.order-footer")}</Link></li>
+      <li
+        onClick={() => handleClick("contact")}
+        className="cursor-pointer hover:text-primary transition-colors text-sm flex items-center group">
+        <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+        {t("nav.contact")}
+      </li>
+      <li
+        onClick={() => handleClick("order")}
+        className="cursor-pointer hover:text-primary transition-colors text-sm flex items-center group">
+        <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
+        {t("nav.order-footer")}
+      </li>
     </ul>
   );
 
@@ -123,7 +258,7 @@ export default function Footer() {
             className="lg:col-span-1 space-y-0"
           >
             <a href={getPath("/")} onClick={handleHomeClick} className="inline-block mb-2 -mt-4">
-              <img src={logo} alt="logo" className="h-16" />
+              <img loading="lazy" src={logo} alt="logo" className="h-16" />
             </a>
             <p className="text-white/50 leading-relaxed text-sm max-w-xs mb-4">
               {t("footer.tagline")}

@@ -22,7 +22,7 @@ import {
 // import { useProducts } from "@/hooks/useProducts";
 import { useAddInquiry } from "@/hooks/useInquiries";
 import { useToast } from "@/hooks/use-toast";
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 type ContactFormProps = {
@@ -165,9 +165,22 @@ export default function ContactForm({ defaultProduct }: ContactFormProps) {
 
 
         <div className="flex justify-center w-full">
-          <Button type="submit" className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit">
-            {t("common.form.submit").toUpperCase()}
-            <Send className="w-4 h-4" />
+          <Button 
+            type="submit" 
+            disabled={form.formState.isSubmitting}
+            className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-[0_0_20px_rgba(102,248,219,0.3)]"
+          >
+            {form.formState.isSubmitting ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                <span className="ml-1">{t("common.form.submitting", "SUBMITTING")}</span>
+              </>
+            ) : (
+              <>
+                {t("common.form.submit").toUpperCase()}
+                <Send className="w-4 h-4" />
+              </>
+            )}
           </Button>
         </div>
       </form>

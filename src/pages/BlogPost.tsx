@@ -75,7 +75,7 @@ export default function BlogPost() {
       {/* Hero Image */}
       <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-background/30 z-10" />
-        <img
+        <img loading="lazy"
           src={post.image}
           alt={currentLang === "pl" ? (post.title_pl || post.title) : post.title}
           className="w-full h-full object-cover object-center"
