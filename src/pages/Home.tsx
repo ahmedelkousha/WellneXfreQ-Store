@@ -152,6 +152,8 @@ export default function Home() {
           <img
             src={heroImg}
             alt="PEMF Therapy"
+            fetchPriority="high"
+            loading="eager"
             className="w-full h-full object-cover object-[0%] sm:object-[50%] lg:object-[50%] lg:scale-125 xl:scale-130 2xl:scale-100"
           />
         </motion.div>

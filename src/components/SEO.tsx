@@ -28,11 +28,12 @@ const SEO = ({
   
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   const baseUrl = "https://www.wellnexfreq.com";
-  const fullUrl = `${baseUrl}${pathname}`;
+  const cleanPathname = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+  const fullUrl = `${baseUrl}${cleanPathname}`;
   const canonicalUrl = canonical || fullUrl;
 
   const alternateLang = currentLang === "en" ? "pl" : "en";
-  const alternateUrl = `${baseUrl}/${alternateLang}${pathname.replace(`/${currentLang}`, "")}`;
+  const alternateUrl = `${baseUrl}/${alternateLang}${cleanPathname.replace(`/${currentLang}`, "")}`;
 
   return (
     <Helmet>

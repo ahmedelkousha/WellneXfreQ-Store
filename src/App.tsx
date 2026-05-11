@@ -9,7 +9,7 @@ import { lazy, Suspense } from "react";
 import { Loader2 } from "lucide-react";
 
 const NotFound = lazy(() => import("@/pages/not-found"));
-const Home = lazy(() => import("@/pages/Home"));
+import Home from "@/pages/Home";
 const Products = lazy(() => import("@/pages/Products"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
 const Contact = lazy(() => import("@/pages/Contact"));
