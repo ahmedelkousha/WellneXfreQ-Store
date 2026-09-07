@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 // import { useProducts } from "@/hooks/useProducts";
 import { Home, Cpu, Mail, Leaf, ShoppingBag } from "lucide-react";
 import logoImg from "@assets/logo.png";
+import plFlag from "@assets/pl.svg";
+import auFlag from "@assets/au.svg";
 
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import Flag from "react-world-flags";
+// Removed react-world-flags to save 10MB bundle size and using FlagCDN instead
 
 
 export default function Navbar() {
@@ -293,9 +295,9 @@ export default function Navbar() {
                     : "Przełącz na Angielski"
                 }>
                 {currentLang === "en" ? (
-                  <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
+                  <img src={plFlag} alt="PL" className="w-6 h-4 rounded-sm shadow-sm" />
                 ) : (
-                  <Flag code="AU" className="w-6 h-4 rounded-sm shadow-sm" />
+                  <img src={auFlag} alt="AU" className="w-6 h-4 rounded-sm shadow-sm" />
                 )}
                 {/* {currentLang === "en" ? (
                   <span className="w-4 h-4 text-xs tracking-[0.2rem] rounded-sm shadow-sm text-primary hover:text-white">PL</span>
@@ -307,11 +309,14 @@ export default function Navbar() {
               <Button
                 asChild
                 variant="outline"
-                onClick={() => handleClick("order")}
                 className="border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground">
-                <span className="text-xs font-medium tracking-widest cursor-pointer">
-                  {t("nav.order").toUpperCase()}
-                </span>
+                <a
+                  href={t("order.social.whatsapp")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium tracking-widest cursor-pointer uppercase">
+                  {t("nav.order")}
+                </a>
               </Button>
             </div>
           </nav>
@@ -327,18 +332,22 @@ export default function Navbar() {
                 <span className="w-4 h-4 text-xs rounded-sm text-white hover:text-primary shadow-sm">EN</span>
               )} */}
               {currentLang === "en" ? (
-                <Flag code="PL" className="w-6 h-4 rounded-sm shadow-sm" />
+                <img src={plFlag} alt="PL" className="w-6 h-4 rounded-sm shadow-sm" />
               ) : (
-                <Flag code="AU" className="w-6 h-4 rounded-sm shadow-sm" />
+                <img src={auFlag} alt="AU" className="w-6 h-4 rounded-sm shadow-sm" />
               )}
             </button>
             <Button
               asChild
-              onClick={() => handleClick("order")}
               size="sm"
               variant="outline"
               className="text-xs tracking-widest font-medium transition-colors uppercase border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              {t("nav.order")}
+              <a
+                href={t("order.social.whatsapp")}
+                target="_blank"
+                rel="noopener noreferrer">
+                {t("nav.order")}
+              </a>
             </Button>
           </div>
         </div>

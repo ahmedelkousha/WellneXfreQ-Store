@@ -6,8 +6,9 @@ import { Button } from "@/components/ui/button";
 import { useProducts } from "@/hooks/useProducts";
 import { useTranslation } from "react-i18next";
 import useEmblaCarousel from 'embla-carousel-react';
-import DualTechPanel from '@/components/sections/DualAction';
-import DualTechFeatures from '@/components/sections/DualActionFeatures';
+import { lazy, Suspense } from 'react';
+const DualTechPanel = lazy(() => import('@/components/sections/DualAction'));
+const DualTechFeatures = lazy(() => import('@/components/sections/DualActionFeatures'));
 import {
   ArrowRight,
   ChevronLeft,
@@ -22,23 +23,21 @@ import {
 // } from "@/components/ui/accordion";
 // import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from "@assets/featured-product-sm.png";
-import featuredProductImgLg from "@assets/featured-product-lg.png";
+import featuredProductImgLg from "@assets/featured-product-lg.webp";
 import featuredProductImgPhone from "@assets/featured-product-phone.png";
-import heroImg from "@assets/mountain.webp";
+import heroImg from "@assets/hero-scale.jpeg";
 import coachBlankingImg from "@assets/patrycja-coach.png";
 // import coachBoulderImg from "@assets/mountain.webp";
 import bloodAnalysisVideo from "@assets/Livebloodanalysisfb.mp4";
 import videoPoster from "@assets/poster.png";
 // import OrderNow from "./OrderNow";
-import Contact from "./Contact";
-import i18n from "@/i18n";
+const Contact = lazy(() => import("./Contact"));
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
 };
 
-const isPoland = i18n.language === "pl";
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -55,6 +54,7 @@ export default function Home() {
   const { data: products = [] } = useProducts();
   const featuredProduct = products.find(p => p.isFeatured) || products[0];
   const isActualFeatured = products.some(p => p.isFeatured);
+  const isPoland = i18n.language === "pl";
 
   // Carousel State
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -87,8 +87,7 @@ export default function Home() {
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "250%"]);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -118,9 +117,19 @@ export default function Home() {
       {/* HERO SECTION */}
       <section id="hero" className="relative h-svh flex items-center justify-center overflow-hidden rounded-b-4xl md:rounded-b-[3rem] z-10 border-b border-white/10 shadow-[0_10px_50px_rgba(0,0,0,0.5)]">
         <motion.div
-          style={{ y, opacity }}
+          style={{ y }}
           className="absolute inset-0 w-full h-full"
         >
+           <div className="absolute inset-0 bg-linear-to-b from-background/50 via-background/45 to-background/40 z-10" />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-background/5 to-background/60 z-10" /> */}
+          <img
+            src={heroImg}
+            alt="PEMF Therapy"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="w-full h-full object-cover object-[80%_0%] sm:object-[80%] lg:object-[80%]"
+          />
 
           {/* Scroll Indicator */}
           <motion.div
@@ -147,18 +156,10 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="absolute inset-0 bg-linear-to-b from-background/50 via-background/45 to-background/40 z-10" />
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-background/5 to-background/60 z-10" /> */}
-          <img
-            src={heroImg}
-            alt="PEMF Therapy"
-            fetchPriority="high"
-            loading="eager"
-            className="w-full h-full object-cover object-[0%] sm:object-[50%] lg:object-[50%] lg:scale-125 xl:scale-130 2xl:scale-100"
-          />
+         
         </motion.div>
 
-        <div className="container translate-y-16 sm:translate-y-26 md:translate-y-20 lg:translate-y-22 xl:translate-y-32 px-4 relative z-20 lg:translate-x-4 text-left flex flex-col items-center">
+        <div className="container px-4 relative z-20 lg:translate-x-4 text-left flex flex-col items-start">
           {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -171,7 +172,7 @@ export default function Home() {
             </span>
             {t("home.hero.tagline")}
           </motion.div> */}
-          <div className="text-center max-w-[35rem] lg:max-w-[45rem]">
+          <div className="text-left max-w-[35rem] lg:max-w-[45rem]">
             {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -185,16 +186,16 @@ export default function Home() {
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-center"} sm:text-3xl md:text-[2rem] lg:text-[2.7rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto`}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-left"} sm:text-3xl md:text-[2rem] lg:text-[2.4rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl`}
             >
               {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title1_highlight")}</span>
             </motion.h2>
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-center"} sm:text-3xl md:text-[2rem] lg:text-[2.7rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto`}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-left"} sm:text-3xl md:text-[2rem] lg:text-[2.4rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl`}
             >
               {t("home.hero.title2")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title2_highlight")}</span>
             </motion.h2>
@@ -202,17 +203,17 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-center"} sm:text-3xl md:text-[2rem] lg:text-[2.7rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl mx-auto`}
+              className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-left"} sm:text-3xl md:text-[2rem] lg:text-[2.4rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl`}
             >
               {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title3_highlight")}</span>
             </motion.h2>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
 
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-[1rem] sm:text-[1.1rem] md:text-lg text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[34rem] text-center sm:text-center mx-auto sm:mt-6 mt-4 font-light"
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="text-[0.8rem] sm:text-[1.1rem] md:text-base text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[34rem] text-left sm:text-left sm:mt-6 mt-4 font-light"
             >
               {t("home.hero.subtitle")}
             </motion.p>
@@ -221,18 +222,20 @@ export default function Home() {
 
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0,  }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
             className="relative flex flex-col sm:flex-row gap-2 sm:w-auto pt-8"
           >
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="md:px-4 px-4 text-xs tracking-widest font-medium transition-colors uppercase text-primary border-primary hover:bg-primary hover:text-primary-foreground mt-3 sm:mt-6 xl:mt-8"
-              onClick={() => scrollToSection("technology")}
             >
-              {t("home.hero.cta_tech").toUpperCase()}
+              <Link to={`/${currentLang}/contact`}>
+                {t("home.hero.cta_tech").toUpperCase()}
+              </Link>
             </Button>
 
 
@@ -249,122 +252,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* THE JOURNEY SECTION */}
-      <section id="philosophy" className="py-32 bg-white/2 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
-            >
-              <motion.div variants={fadeIn}>
-                <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
-                  {t('home.philosophy.badge')}
-                </h3>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-8 leading-tight">
-                  {t("home.philosophy.title")} <span className="text-primary italic font-normal">{t("home.philosophy.title_italic_1")}</span><br />
-                  {t("home.philosophy.subtitle")} <span className="text-primary italic font-normal">{t("home.philosophy.subtitle_italic_2")}</span><br />
-                  {t("home.philosophy.title_3")} <span className="text-primary italic font-normal">{t("home.philosophy.title_highlight_3")}</span>
-                </h2>
-                <p className="text-sm md:text-lg text-white/70 mb-8 leading-relaxed">
-                  {t("home.philosophy.text1")}
-                </p>
-                <p className="text-sm md:text-lg text-white/70 mb-8 leading-relaxed">
-                  {t("home.philosophy.text2")}
-                </p>
-
-                {/* Mobile Image */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1 }}
-                  className="lg:hidden block relative rounded-3xl overflow-hidden group"
-                >
-                  <img loading="lazy"
-                    src={coachBlankingImg}
-                    alt="Coach jumping"
-                    className="w-full h-full object-contain md:object-fit transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  {/* Floating card */}
-                  <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary text-xs font-bold bg-primary/5">
-                        13+
-                      </div>
-                      <span className="text-sm uppercase tracking-widest text-white/40 font-medium">{t("home.philosophy.coach")}</span>
-                    </div>
-                  </div>
-                </motion.div>
-                {/* End of mobile image */}
-
-                <div className="border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
-                  <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
-                    "{t("home.philosophy.coach_text")}" <br />
-                    <span className="text-primary italic text-base mt-2 inline-block font-normal">— Patrycja</span>
-                  </p>
-                </div>
-
-                <div className="block lg:hidden border-l-3 py-1 border-primary/50 pl-4 my-10">
-                  <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
-                    {t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>
-                  </p>
-                </div>
-
-
-                <div className="flex flex-wrap items-center justify-start gap-8">
-                  <Button asChild className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit">
-                    <Link to={`/${currentLang}/contact`}>{t("home.philosophy.learn_more").toUpperCase()} <ArrowRight className="w-4 h-4" /></Link>
-                  </Button>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* large screen image */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-                className="lg:block hidden relative o rounded-3xl overflow-hidden group"
-              >
-                <img loading="lazy"
-                  src={coachBlankingImg}
-                  alt="Coach jumping"
-                  className="w-full h-full object-contain md:object-fit transition-transform duration-700 group-hover:scale-105"
-                />
-
-
-                {/* Floating card */}
-                <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary text-xs font-bold bg-primary/5">
-                      13+
-                    </div>
-                    <span className="text-sm uppercase tracking-widest text-white/40 font-medium">{t("home.philosophy.coach")}</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              <div className="hidden lg:block border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
-                <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
-                  "{t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>"
-                </p>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       <div id="technology">
-        <DualTechPanel />
-        <DualTechFeatures />
+        <Suspense fallback={<div className="h-[50vh] w-full" />}>
+          <DualTechPanel />
+          <DualTechFeatures />
+        </Suspense>
       </div>
 
 
@@ -678,6 +572,7 @@ export default function Home() {
             <video
               src={bloodAnalysisVideo}
               controls
+              preload="none"
               poster={videoPoster}
               className="w-full h-full aspect-video p-2 rounded-4xl object-cover transition-transform duration-700 group-hover:scale-[101%]"
             />
@@ -851,9 +746,124 @@ export default function Home() {
         </div>
       </section> */}
 
+ {/* THE JOURNEY SECTION */}
+      <section id="philosophy" className="py-32 bg-white/2 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              <motion.div variants={fadeIn}>
+                <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
+                  {t('home.philosophy.badge')}
+                </h3>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-8 leading-tight">
+                  {t("home.philosophy.title")} <span className="text-primary italic font-normal">{t("home.philosophy.title_italic_1")}</span><br />
+                  {t("home.philosophy.subtitle")} <span className="text-primary italic font-normal">{t("home.philosophy.subtitle_italic_2")}</span><br />
+                  {t("home.philosophy.title_3")} <span className="text-primary italic font-normal">{t("home.philosophy.title_highlight_3")}</span>
+                </h2>
+                <p className="text-sm md:text-lg text-white/70 mb-8 leading-relaxed">
+                  {t("home.philosophy.text1")}
+                </p>
+                <p className="text-sm md:text-lg text-white/70 mb-8 leading-relaxed">
+                  {t("home.philosophy.text2")}
+                </p>
+
+                {/* Mobile Image */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1 }}
+                  className="lg:hidden block relative rounded-3xl overflow-hidden group"
+                >
+                  <img loading="lazy"
+                    src={coachBlankingImg}
+                    alt="Coach jumping"
+                    className="w-full h-full object-contain md:object-fit transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  {/* Floating card */}
+                  <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary text-xs font-bold bg-primary/5">
+                        13+
+                      </div>
+                      <span className="text-sm uppercase tracking-widest text-white/40 font-medium">{t("home.philosophy.coach")}</span>
+                    </div>
+                  </div>
+                </motion.div>
+                {/* End of mobile image */}
+
+                <div className="border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
+                  <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
+                    "{t("home.philosophy.coach_text")}" <br />
+                    <span className="text-primary italic text-base mt-2 inline-block font-normal">— Patrycja</span>
+                  </p>
+                </div>
+
+                <div className="block lg:hidden border-l-3 py-1 border-primary/50 pl-4 my-10">
+                  <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
+                    {t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>
+                  </p>
+                </div>
+
+
+                <div className="flex flex-wrap items-center justify-start gap-8">
+                  <Button asChild className="sm:px-4 gap-[6px] sm:py-4 px-3 py-3 rounded-lg bg-primary text-black font-bold uppercase tracking-widest text-[0.65rem] sm:text-[0.8rem] hover:bg-white transition-all text-center inline-flex items-center justify-center shadow-[0_0_20px_rgba(102,248,219,0.3)] hover:shadow-[0_0_15px_rgba(102,248,219,0.5)] hover:-translate-y-1 w-fit">
+                    <Link to={`/${currentLang}/contact`}>{t("home.philosophy.learn_more").toUpperCase()} <ArrowRight className="w-4 h-4" /></Link>
+                  </Button>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* large screen image */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="lg:block hidden relative o rounded-3xl overflow-hidden group"
+              >
+                <img loading="lazy"
+                  src={coachBlankingImg}
+                  alt="Coach jumping"
+                  className="w-full h-full object-contain md:object-fit transition-transform duration-700 group-hover:scale-105"
+                />
+
+
+                {/* Floating card */}
+                <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary text-xs font-bold bg-primary/5">
+                      13+
+                    </div>
+                    <span className="text-sm uppercase tracking-widest text-white/40 font-medium">{t("home.philosophy.coach")}</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <div className="hidden lg:block border-l-3 py-1 border-primary/50 pl-4 my-10 italic">
+                <p className="text-sm md:text-lg text-left text-white/70 leading-relaxed">
+                  "{t("home.philosophy.coach_text2")} <a target="_blank" rel="noreferrer" href="https://www.fitin2it.com/" className="text-primary text-sm md:text-lg text-left leading-relaxed">{t("home.philosophy.coach_text2_highlight")}.</a>"
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* <AffiliateCTA /> */}
       <div id="contact">
-        <Contact hideBackButton={true} />
+        <Suspense fallback={<div className="h-[50vh] w-full" />}>
+          <Contact hideBackButton={true} />
+        </Suspense>
       </div>
     </div>
   );

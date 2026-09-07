@@ -36,7 +36,7 @@ export default function OrderForm() {
     email: z.string().email("Invalid email address"),
     phoneCountryCode: z.string().min(1, "Country code is required"),
     phoneNumber: z.string().min(1, "Phone number is required").regex(/^\d+$/, t("common.form.validation.numbers_only")),
-    idNumber: z.string().min(1, "ID Number is required").regex(/^\d+$/, t("common.form.validation.numbers_only")),
+    idNumber: z.string().min(1, "ID Number is required").regex(/^[a-zA-Z0-9]+$/, t("common.form.validation.alphanumeric_only")),
     gender: z.enum(["male", "female"], { required_error: "Please select a gender" }),
 
     // Personal Address

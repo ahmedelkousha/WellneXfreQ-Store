@@ -8,21 +8,21 @@
     "products": "Products",
     "contact": "Contact",
     "inquire": "Inquire Now",
-    "order": "Order Now",
-    "order-footer": "Order Now"
+    "order": "Chat with us",
+    "order-footer": "Submit Order Request"
   },
   "home": {
     "hero": {
       "badge": "Frequency Wellness Technology",
       "tagline": "Frequency Wellness Technology",
-      "title1": "RESET YOUR",
-      "title1_highlight": "CELLS",
-      "title2": "RESTORE YOUR",
-      "title2_highlight": "RHYTHM",
-      "title3": "RECLAIM YOUR",
-      "title3_highlight": "VITALITY",
-      "subtitle": "Biohacking your health with PEMF and Terahertz Technology. Your daily ritual for longevity.",
-      "cta_tech": "About the technology",
+      "title1": "BOOST",
+      "title1_highlight": "ENERGY",
+      "title2": "RESTORE",
+      "title2_highlight": "VITALITY",
+      "title3": "ACCELERATE",
+      "title3_highlight": "RECOVERY",
+      "subtitle": "A biohacking essential for longevity and everyday vitality. Dual-action PEMF and Terahertz frequency therapy designed to ease everyday discomfort, support joint mobility, and help you recharge.",
+      "cta_tech": "Free Consultation",
       "cta_phil": "Start your ritual"
     },
     "blood_analysis": {
@@ -549,7 +549,8 @@
         "name": "Name must be at least 2 characters long.",
         "email": "Invalid email address.",
         "message": "Message must be at least 10 characters long.",
-        "numbers_only": "Must contain only numbers"
+        "numbers_only": "Must contain only numbers",
+        "alphanumeric_only": "Must contain only letters and numbers"
       }
     },
     "affiliate": {

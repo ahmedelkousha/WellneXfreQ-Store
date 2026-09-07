@@ -1,35 +1,35 @@
 {
   "nav": {
-    "home": "START",
+    "home": "Home",
     "technology": "Technologia",
-    "philosophy": "O NAS",
+    "philosophy": "O nas",
     "about": "O NAS",
     "blog": "Blog",
     "products": "Produkty",
     "contact": "Kontakt",
     "inquire": "Zapytaj teraz",
-    "order": "Zamów",
-    "order-footer": "Zamów"
+    "order": "POROZMAWIAJMY",
+    "order-footer": "Złóż wniosek o zamówienie"
   },
   "home": {
     "hero": {
       "badge": "Technologia Wellness Częstotliwości",
       "tagline": "Technologia Wellness Częstotliwości",
-      "title1": "ZRESETUJ SWOJE",
-      "title1_highlight": "KOMÓRKI",
-      "title2": "PRZYWRÓĆ SWÓJ",
-      "title2_highlight": "RYTM",
-      "title3": "ODZYSKAJ SWOJĄ",
-      "title3_highlight": "WITALNOŚĆ",
-      "subtitle": "Biohacking Twojego zdrowia z wykorzystaniem technologii PEMF i terahercowych. Twój codzienny rytuał na długowieczność.",
-      "cta_tech": "POZNAJ TECHNOLOGIĘ",
+      "title1": "",
+      "title1_highlight": "ENERGIA",
+      "title2": "",
+      "title2_highlight": "WITALNOŚĆ",
+      "title3": "",
+      "title3_highlight": "REGENERACJA",
+      "subtitle": "Ważny element biohackingu wspierającego długowieczność i codzienną witalność. Technologia o podwójnym działaniu, łącząca PEMF i częstotliwości terahercowe, opracowana z myślą o zmniejszaniu codziennego dyskomfortu oraz wspieraniu mobilności stawów i naturalnych procesów regeneracyjnych organizmu.",
+      "cta_tech": "BEZPŁATNA KONSULTACJA",
       "cta_phil": "Zacznij swój rytuał"
     },
     "blood_analysis": {
       "badge": "Wizualny Dowód",
       "title": "Analiza Żywej",
       "title_highlight": "Krwi",
-      "subtitle": "Podziękowania dla Katriny Murray za udostępnienie skanów analizy krwi przed i po 20-minutowej sesji OlyLife P90+. Pokazuje to dramatyczną transformację krwi z zagęszczonych, lepkich kolumn komórek do wyraźnie odseparowanych i swobodnie płynących komórek."
+      "subtitle": "Podziękowania dla Katriny Murray za udostępnienie obrazów z analizy żywej krwi wykonanych przed i po 20-minutowej sesji z wykorzystaniem OlyLife P90+. Obrazy pokazują wyraźną zmianę w wyglądzie krwi — od bardziej zgrupowanych struktur komórkowych do bardziej rozdzielonych i swobodniej przemieszczających się komórek. To wizualny przykład obserwacji wykonanej przed i po sesji."
     },
     "tech": {
       "science_title": "Przyszłość ",
@@ -50,30 +50,30 @@
         "Przywraca biologiczną spójność i siły witalne"
       ],
       "repair": "NAPRAWA KOMÓRKOWA",
-      "repair_desc": "Twoje ciało się odbudowuje. Codzienne stosowanie przyspiesza ten proces.",
+      "repair_desc": "Twoje ciało nieustannie się regeneruje. Regularne stosowanie wspiera jego naturalne procesy odbudowy.",
       "recovery": "GŁĘBOKA REGENERACJA",
-      "recovery_desc": "Mniej bólu. Mniej napięcia. Więcej sprężystości.",
+      "recovery_desc": "Mniej napięcia. Więcej swobody. Większy komfort ruchu.",
       "oxygenate": "ENERGIA I WITALNOŚĆ",
-      "oxygenate_desc": "Obudź się z uczuciem regeneracji. Poruszaj się swobodnie przez dzień.",
+      "oxygenate_desc": "Obudź się bardziej wypoczęta i pełna energii. Poruszaj się swobodnie przez cały dzień.",
       "activate": "JASNOŚĆ UMYSŁU",
-      "activate_desc": "Kiedy Twoje komórki funkcjonują lepiej, Twój umysł również.",
+      "activate_desc": "Lepsze funkcjonowanie organizmu może wspierać również koncentrację i klarowność umysłu.",
       "flow": "LEPSZY SEN",
-      "flow_desc": "Zrównoważony układ nerwowy śpi głębiej i regeneruje się szybciej.",
+      "flow_desc": "Wsparcie równowagi układu nerwowego może sprzyjać głębszemu snu i naturalnej regeneracji.",
       "balance": "DŁUGOWIECZNOŚĆ",
-      "balance_desc": "Codzienne dbanie o dobre samopoczucie to nowy wymiar długoterminowego zdrowia."
+      "balance_desc": "Codzienne dbanie o dobre samopoczucie to nowy sposób na wspieranie zdrowia i sprawności na lata."
     },
     "philosophy": {
       "badge": "Historia",
-      "title": "Stworzona by się",
+      "title": "Stworzona, by się",
       "title_italic_1": "Poruszać.",
-      "subtitle": "Zbudowana by",
-      "subtitle_italic_2": "Trwać.",
+      "subtitle": "Zbudowana na",
+      "subtitle_italic_2": "lata.",
       "title_3": "Zasilana u",
       "title_highlight_3": "Źródła.",
-      "text1": "Jako trener zdrowia, odnowy biologicznej i ruchu z 13-letnim doświadczeniem pomagałem ludziom w odbudowie ciał od wewnątrz. Ale to moja własna walka z przewlekłym bólem, wypaleniem i niską energią zmieniła wszystko.",
-      "text2": "Jako trenerka zdrowia, ruchu i odnowy biologicznej z 13-letnim stażem, od lat pomagam odbudowywać sprawność od środka. Jednak to moja osobista walka z bólem i wypaleniem stała się impulsem do zmian.",
+      "text1": "Jako trenerka zdrowia, ruchu i odnowy biologicznej z 14-letnim doświadczeniem od lat pomagam ludziom odzyskiwać sprawność i budować silniejsze ciało od wewnątrz. Jednak to moja osobista walka z przewlekłym bólem, wypaleniem i niskim poziomem energii zmieniła wszystko.",
+      "text2": "Tradycyjne metody skupiały się na ciele, ale brakowało mi podejścia, które wspierałoby jego naturalne procesy. Potrzebowałam czegoś, co współpracowałoby z organizmem, zamiast działać wyłącznie z zewnątrz. Te poszukiwania doprowadziły mnie do technologii PEMF i częstotliwości terahercowych — i od tamtej pory już nie oglądałam się za siebie.",
       "coach_text": "Moje dążenie do długowieczności zaprowadziło mnie tam, gdzie większość jeszcze nie dotarła. Tak narodziło się wellneXfreQ.",
-      "coach_text2": "Dziś łączę moc częstotliwości z treningiem, by pomagać innym budować ciało silne, sprawne i gotowe na długie lata życia. Gotowa na ruch od środka? Zacznij od treningu.",
+      "coach_text2": "Dziś łączę moc częstotliwości z treningiem, aby pomagać innym budować ciało silne, sprawne i gotowe na długie lata życia. Gotowa zacząć od środka? Zacznij od treningu.",
       "coach_text2_highlight": "FITIN2IT PT",
       "coach": "Patrycja W.",
       "learn_more": "Skontaktuj się"
@@ -82,10 +82,10 @@
       "badge": "TECHNOLOGIA CZĘSTOTLIWOŚCI",
       "title": "Odkryj Nasze ",
       "title_highlight": "Urządzenia",
-      "subtitle": "Każde urządzenie jest zaprojektowane dla określonego celu biologicznego. Technologia częstotliwości PEMF i Teraherców, przeznaczona do codziennego użytku i długoterminowych rezultatów.",
+      "subtitle": "Każde urządzenie zostało zaprojektowane z myślą o konkretnych potrzebach organizmu. Technologie PEMF i terahercowe zostały stworzone z myślą o regularnym użytkowaniu i długofalowym wspieraniu naturalnych procesów organizmu.",
       "featured_badge": "WYRÓŻNIONE",
       "featured_title": "THz Tera-P90+",
-      "featured_desc": "Tera-P90+ nowej generacji oferujące ulepszone funkcje dla głębszej regeneracji komórkowej i wydajności.",
+      "featured_desc": "Tera-P90+ oferuje zaawansowane funkcje zaprojektowane z myślą o głębszym wsparciu regeneracji komórkowej, witalności i sprawności organizmu.",
       "learn_more": "Dowiedz się więcej",
       "view_all": "Zobacz wszystkie urządzenia"
     },
@@ -179,9 +179,9 @@
     },
     "dual_tech_table": {
       "badge": "DWIE SIŁY. JEDNO URZĄDZENIE",
-      "title": "Podwójna Przewaga",
+      "title": "Podwójna Moc",
       "title_highlight": "Działania",
-      "description": "Dzięki połączeniu technologii częstotliwości PEMF i Terahertz, oba systemy działają na organizm na jego najbardziej podstawowym poziomie – komórce. Jeden z nich ładuje napięcie komórkowe, drugi przywraca naturalny rytm komórek. Razem tworzą efekt kumulacji, który optymalizuje układy biologiczne pod kątem witalności, regeneracji i długofalowej wydajności.",
+      "description": "Połączenie technologii PEMF i częstotliwości terahercowych pozwala wspierać organizm na jego najbardziej podstawowym poziomie — poziomie komórkowym. Jedna technologia wspiera potencjał energetyczny komórek, druga wspiera ich naturalne procesy i rytm. Razem tworzą synergiczne podejście, które może wspierać naturalne funkcje organizmu, regenerację, witalność i długofalową sprawność.",
       "headers": {
         "feature": "Cecha",
         "pemf": "Technologia PEMF",
@@ -195,24 +195,24 @@
       },
       "pemf_values": {
         "badge": "TECHNOLOGIA PEMF",
-        "tagline": "Ładowarka Akumulatorów",
+        "tagline": "Ładowarka Energetyczna",
         "bullets": [
-          "Twoje komórki się wyczerpują. PEMF je ładuje",
-          "Pierwotnie opracowany przez NASA",
-          "Zmniejsza stan zapalny i napięcie fizyczne",
-          "Zwiększa krążenie i dostarczanie tlenu",
-          "Delikatny, nieinwazyjny, stworzony do codziennego użytku"
+          "PEMF wspiera naturalny potencjał energetyczny komórek.",
+          "Rozwijana w ramach badań NASA.",
+          "Wspiera naturalną regenerację organizmu.",
+          "Wspiera krążenie i dotlenienie tkanek.",
+          "Delikatna, nieinwazyjna, do codziennego użytku."
         ]
       },
       "terahertz_values": {
         "badge": "REZONANS TERAHERCOWY",
-        "tagline": "Precyzyjny Stroiciel",
+        "tagline": "Precyzyjne dostrojenie",
         "bullets": [
-          "Twoje ciało ma naturalny rytm. To ją przywraca",
-          "Znana jako Fala Życia",
-          "Rozpuszcza blokady i na nowo rozpala energię",
-          "Aktywuje komórki, które przestały działać",
-          "Efekty są na początku subtelne — potem niepodważalne"
+          "Wspiera naturalny rytm i równowagę ciała.",
+          "Znana jako “Fala Życia”.",
+          "Wspiera przepływ energii w organizmie",
+          "Wspiera aktywność komórkową.",
+          "Efekty są subtelne na początku, wyraźne z czasem."
         ]
       }
     },
@@ -567,7 +567,8 @@
         "name": "Imię musi mieć co najmniej 2 znaki.",
         "email": "Niepoprawny adres email.",
         "message": "Wiadomość musi mieć co najmniej 10 znaków.",
-        "numbers_only": "Musi zawierać tylko cyfry"
+        "numbers_only": "Musi zawierać tylko cyfry",
+        "alphanumeric_only": "Musi zawierać tylko litery i cyfry"
       }
     },
     "affiliate": {

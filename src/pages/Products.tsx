@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 // import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from "@assets/featured-product-sm.png";
-import featuredProductImgLg from "@assets/featured-product-lg.png";
+import featuredProductImgLg from "@assets/featured-product-lg.webp";
 import featuredProductImgPhone from "@assets/featured-product-phone.png";
 
 

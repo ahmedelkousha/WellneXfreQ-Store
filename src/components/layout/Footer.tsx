@@ -61,6 +61,16 @@ export default function Footer() {
       navigate(`/${currentLang}`);
     }
   };
+  const scrollToTechnology = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (pathname === `/${currentLang}` || pathname === `/${currentLang}/`) {
+      const el = document.getElementById("technology");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      sessionStorage.setItem("pendingScroll", "technology");
+      navigate(`/${currentLang}`);
+    }
+  };
 
   const socialLinks = [
     { icon: Facebook, href: t("order.social.facebook") },
@@ -186,7 +196,7 @@ export default function Footer() {
       <li>
         <a
           href={`${getPath("/")}#technology`}
-          onClick={scrollToPhilosophy}
+          onClick={scrollToTechnology}
           className="hover:text-primary transition-colors text-sm flex items-center group">
           <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all mr-1" />{" "}
           {t("nav.technology")}
