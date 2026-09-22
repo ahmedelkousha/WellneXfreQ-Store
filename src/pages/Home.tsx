@@ -191,7 +191,7 @@ export default function Home() {
             >
               {t("home.hero.title1")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title1_highlight")}</span>
             </motion.h2>
-            <motion.h2
+            {/* <motion.h2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
@@ -206,7 +206,7 @@ export default function Home() {
               className={`${isPoland ? "text-[1.4rem] text-left" : "text-[1.7rem] text-left"} sm:text-3xl md:text-[2rem] lg:text-[2.4rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl`}
             >
               {t("home.hero.title3")} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">{t("home.hero.title3_highlight")}</span>
-            </motion.h2>
+            </motion.h2> */}
 
             <motion.p
               initial={{ opacity: 0, y: 40 }}
@@ -621,7 +621,7 @@ export default function Home() {
                       </p>
                       <div className="flex items-center gap-4 mt-auto">
                         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0 border border-primary/20">
-                          {item.name[0]}
+                          {'0'+(idx+1)}
                         </div>
                         <div>
                           <h4 className="text-white font-bold tracking-tight">{item.name}</h4>

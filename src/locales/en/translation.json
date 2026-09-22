@@ -15,13 +15,13 @@
     "hero": {
       "badge": "Frequency Wellness Technology",
       "tagline": "Frequency Wellness Technology",
-      "title1": "BOOST",
-      "title1_highlight": "ENERGY",
+      "title1": "RECLAIM YOUR",
+      "title1_highlight": "POWER",
       "title2": "RESTORE",
       "title2_highlight": "VITALITY",
       "title3": "ACCELERATE",
       "title3_highlight": "RECOVERY",
-      "subtitle": "A biohacking essential for longevity and everyday vitality. Dual-action PEMF and Terahertz frequency therapy designed to ease everyday discomfort, support joint mobility, and help you recharge.",
+      "subtitle": "Advanced PEMF and Terahertz technology. One device. Limitless possibilities.",
       "cta_tech": "Free Consultation",
       "cta_phil": "Start your ritual"
     },
@@ -98,35 +98,35 @@
     },
     "testimonials": {
       "badge": "True Stories",
-      "title": "Real People. ",
+      "title": "Tested Cases.",
       "title_highlight": "Real Results.",
-      "subtitle": "Frequency technology is transforming lives around the world. Listen to real people share their experiences.",
+      "subtitle": "Recovery and performance observations, documented by Biomechanics Master Trainer Andrej Cícer at Roges Performance. Powered by OlyLife.",
       "disclaimer": "Disclaimer: Individual results may vary. Consult your doctor before use.",
       "items": [
         {
-          "name": "Kirsty Robertson",
-          "role": "QUEENSLAND, AUSTRALIA",
-          "quote": "After one session on that machine, I had a month of traveling, doing a lot of sitting, and my hip was absolutely fine. It blew me away."
+          "name": "Overloaded Biceps",
+          "role": "Roges Performance, Slovakia",
+          "quote": "After approximately one week of biceps discomfort, I experienced a significant reduction in pain after a single 20-minute session. After the second session the following day, the pain was no longer present."
         },
         {
-          "name": "Brian Caccaniga",
-          "role": "AUSTRALIA",
-          "quote": "Pop, I feel like I can twist my back. It's not hurting. I can bend down."
+          "name": "Heel Pain / Heel Spur",
+          "role": "Roges Performance, Slovakia",
+          "quote": "The pain that had been present with every step for several weeks disappeared after a series of six 20-minute sessions."
         },
         {
-          "name": "Ethan Leeds",
-          "role": "BRAZIL",
-          "quote": "I like to think of the P90 in its very simple form as a human battery charger. We being the battery, the P90 being the charger."
+          "name": "Hamstring Injury",
+          "role": "Roges Performance, Slovakia",
+          "quote": "After the recovery session, I could no longer feel the pain during sprinting or dynamic movement."
         },
         {
-          "name": "Luigi",
-          "role": "VERIFIED USER",
-          "quote": "I have the strength of Hercules to be able to do all these little changes in my life."
+          "name": "Frozen Shoulder",
+          "role": "Roges Performance, Slovakia",
+          "quote": "After two sessions, I experienced a noticeable reduction in pain and improved comfort around the shoulder"
         },
         {
-          "name": "Jim Feldman",
-          "role": "SYDNEY, AUSTRALIA",
-          "quote": "Something I'd struggled with for over 20 years — just gone. My monthly psychologist visits, gone. Medication I'd relied on for years, gone."
+          "name": "Knee Swelling",
+          "role": "Roges Performance, Slovakia",
+          "quote": "After one 20-minute application, my knee felt significantly more mobile the following day and the swelling was no longer limiting my movement."
         }
       ]
     },
@@ -181,7 +181,7 @@
       "badge": "Two Forces. One Device.",
       "title": "The Dual Action ",
       "title_highlight": "Advantage",
-      "description": "By combining PEMF and Terahertz frequency technology, both systems target the body at its most fundamental level, your cells. One recharges cellular voltage, the other restores natural cellular rhythm. Together they create a compounding effect that optimises your biological systems for vitality, recovery, and long-term performance.",
+      "description": "Combining PEMF and Terahertz technology, both systems work together to support your body's natural recovery processes. One supports microcirculation and tissue tone, the other harmonies your body's natural rhythm. Together: renewed strength, faster recovery, better performance.",
       "headers": {
         "feature": "Feature",
         "pemf": "PEMF Technology",

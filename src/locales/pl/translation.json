@@ -15,13 +15,13 @@
     "hero": {
       "badge": "Technologia Wellness Częstotliwości",
       "tagline": "Technologia Wellness Częstotliwości",
-      "title1": "",
-      "title1_highlight": "ENERGIA",
+      "title1": "ODZYSKAJ PEŁNIĘ",
+      "title1_highlight": "ENERGII",
       "title2": "",
       "title2_highlight": "WITALNOŚĆ",
       "title3": "",
       "title3_highlight": "REGENERACJA",
-      "subtitle": "Ważny element biohackingu wspierającego długowieczność i codzienną witalność. Technologia o podwójnym działaniu, łącząca PEMF i częstotliwości terahercowe, opracowana z myślą o zmniejszaniu codziennego dyskomfortu oraz wspieraniu mobilności stawów i naturalnych procesów regeneracyjnych organizmu.",
+      "subtitle": "Wykorzystaj moc technologii PEMF i Terahertz. Jedno urządzenie. Nieograniczone możliwości.",
       "cta_tech": "BEZPŁATNA KONSULTACJA",
       "cta_phil": "Zacznij swój rytuał"
     },
@@ -97,36 +97,36 @@
       "view_all": "Zobacz wszystkie artykuły"
     },
     "testimonials": {
-      "badge": "CO MÓWIĄ INNI",
-      "title": "Prawdziwi Ludzie.",
-      "title_highlight": "Prawdziwe Rezultaty.",
-      "subtitle": "Technologia częstotliwości zmienia życie ludzi na całym świecie. Posłuchaj prawdziwych ludzi dzielących się swoimi doświadczeniami.",
+      "badge": "Doświadczenia z Praktyki",
+      "title": "Rzeczywiste przypadki.",
+      "title_highlight": "Udokumentowane efekty.",
+      "subtitle": "Poznaj historie zwykłych ludzi i sportowców, u których zastosowano technologię OlyLife. Raporty przygotowane przez Andreja Cícera, eksperta ds. biomechaniki, z Roges Performance.",
       "disclaimer": "Zastrzeżenie: Indywidualne wyniki mogą się różnić. Przed użyciem skonsultuj się ze swoim lekarzem.",
       "items": [
         {
-          "name": "Kirsty Robertson",
-          "role": "QUEENSLAND, AUSTRALIA",
-          "quote": "Po jednej sesji na tej maszynie miałam miesiąc podróży, dużo siedzenia i moje biodro było absolutnie w porządku. To mnie oszołomiło."
+          "name": "Przeciążony biceps",
+          "role": "Roges Performance, Słowacja",
+          "quote": "Ból w bicepsie, utrzymujący się od około tygodnia, znacząco zmniejszył się już po jednej 20-minutowej sesji. Po drugiej sesji następnego dnia całkowicie ustąpił."
         },
         {
-          "name": "Brian Caccaniga",
-          "role": "AUSTRALIA",
-          "quote": "Puk, czuję, że mogę skręcić plecy. Nie boli. Mogę się schylić."
+          "name": "Ból pięty / ostroga piętowa",
+          "role": "Roges Performance, Słowacja",
+          "quote": "Ból, który towarzyszył każdemu krokowi przez kilka tygodni, ustąpił po serii sześciu 20-minutowych sesji."
         },
         {
-          "name": "Ethan Leeds",
-          "role": "BRAZIL",
-          "quote": "Lubię myśleć o P90 w jego bardzo prostej formie jako o ludzkiej ładowarce akumulatorów. My jesteśmy akumulatorem, P90 ładowarką."
+          "name": "Kontuzja mięśnia dwugłowego uda",
+          "role": "Roges Performance, Słowacja",
+          "quote": "Po sesji regeneracyjnej ból podczas sprintu i dynamicznych ruchów całkowicie ustąpił."
         },
         {
-          "name": "Luigi",
-          "role": "VERIFIED USER",
-          "quote": "Mam siłę Herkulesa, aby móc wprowadzić te wszystkie małe zmiany w moim życiu."
+          "name": "Zamrożony bark",
+          "role": "Roges Performance, Słowacja",
+          "quote": "Po dwóch sesjach nastąpiło wyraźne zmniejszenie bólu oraz poprawa komfortu w okolicy barku."
         },
         {
-          "name": "Jim Feldman",
-          "role": "SYDNEY, AUSTRALIA",
-          "quote": "Coś, z czym zmagałem się przez ponad 20 lat – po prostu zniknęło. Moje comiesięczne wizyty u psychologa, zniknęły. Leki, na których polegałem przez lata, zniknęły."
+          "name": "Obrzęk kolana",
+          "role": "Roges Performance, Słowacja",
+          "quote": "Po jednej 20-minutowej sesji moje kolano było następnego dnia znacznie bardziej mobilne, a obrzęk przestał ograniczać ruch."
         }
       ]
     },
@@ -181,7 +181,7 @@
       "badge": "DWIE SIŁY. JEDNO URZĄDZENIE",
       "title": "Podwójna Moc",
       "title_highlight": "Działania",
-      "description": "Połączenie technologii PEMF i częstotliwości terahercowych pozwala wspierać organizm na jego najbardziej podstawowym poziomie — poziomie komórkowym. Jedna technologia wspiera potencjał energetyczny komórek, druga wspiera ich naturalne procesy i rytm. Razem tworzą synergiczne podejście, które może wspierać naturalne funkcje organizmu, regenerację, witalność i długofalową sprawność.",
+      "description": "Dzięki połączeniu technologii częstotliwości PEMF i Terahertz, oba systemy współdziałają, aby wspierać naturalne procesy regeneracyjne organizmu. Jeden wspomaga mikrokrążenie i napięcie tkanek, drugi harmonizuje naturalny rytm ciała. Razem tworzą efekt synergii, wspierający witalność, regenerację i długofalowe działanie.",
       "headers": {
         "feature": "Cecha",
         "pemf": "Technologia PEMF",
