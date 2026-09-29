@@ -30,6 +30,8 @@ const PageLoader = () => (
   </div>
 );
 
+
+
 const queryClient = new QueryClient();
 
 function LanguageWrapper({ children }: { children: React.ReactNode }) {
