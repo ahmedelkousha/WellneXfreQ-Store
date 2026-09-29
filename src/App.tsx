@@ -9,7 +9,7 @@ import { lazy, Suspense } from "react";
 import { Loader2 } from "lucide-react";
 
 const NotFound = lazy(() => import("@/pages/not-found"));
-const Home = lazy(() => import("@/pages/Home"));
+import Home from "@/pages/Home";
 const Products = lazy(() => import("@/pages/Products"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -18,8 +18,8 @@ const Privacy = lazy(() => import("@/pages/Privacy"));
 const Terms = lazy(() => import("@/pages/Terms"));
 const About = lazy(() => import("@/pages/About"));
 const OrderNow = lazy(() => import("@/pages/OrderNow"));
+const Footer = lazy(() => import("@/components/layout/Footer"));
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 const AdminLogin = lazy(() => import("@/pages/admin/Login"));
 const AdminDashboard = lazy(() => import("@/pages/admin/Dashboard"));
