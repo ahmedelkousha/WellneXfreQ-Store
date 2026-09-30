@@ -8,7 +8,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import { Loader2 } from "lucide-react";
 
-const NotFound = lazy(() => import("@/pages/not-found"));
 import Home from "@/pages/Home";
 const Products = lazy(() => import("@/pages/Products"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
@@ -23,6 +22,7 @@ import Navbar from "@/components/layout/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 const AdminLogin = lazy(() => import("@/pages/admin/Login"));
 const AdminDashboard = lazy(() => import("@/pages/admin/Dashboard"));
+const NotFound = lazy(() => import("@/pages/not-found"));
 
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-[60vh]">

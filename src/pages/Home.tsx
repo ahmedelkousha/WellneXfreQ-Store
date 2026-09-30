@@ -6,29 +6,17 @@ import { Button } from '@/components/ui/button';
 import { useProducts } from '@/hooks/useProducts';
 import { useTranslation } from 'react-i18next';
 import useEmblaCarousel from 'embla-carousel-react';
-import { lazy, Suspense } from 'react';
-const DualTechPanel = lazy(() => import('@/components/sections/DualAction'));
-const DualTechFeatures = lazy(
-  () => import('@/components/sections/DualActionFeatures')
-);
+import DualTechPanel from '@/components/sections/DualAction';
+import DualTechFeatures from '@/components/sections/DualActionFeatures';
 import { ArrowRight, ChevronLeft, ChevronRight, Star } from 'lucide-react';
-// import {
-//   Accordion,
-//   AccordionContent,
-//   AccordionItem,
-//   AccordionTrigger,
-// } from "@/components/ui/accordion";
-// import AffiliateCTA from "@/components/sections/AffiliateCTA";
 import featuredProductImgSm from '@assets/featured-product-sm.png';
 import featuredProductImgLg from '@assets/featured-product-lg.webp';
 import featuredProductImgPhone from '@assets/featured-product-phone.png';
 import heroImg from '@assets/hero-scale.jpeg';
 import coachBlankingImg from '@assets/patrycja-coach.png';
-// import coachBoulderImg from "@assets/mountain.webp";
 import bloodAnalysisVideo from '@assets/Livebloodanalysisfb.mp4';
 import videoPoster from '@assets/poster.png';
-// import OrderNow from "./OrderNow";
-const Contact = lazy(() => import('./Contact'));
+import Contact from './Contact';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -162,29 +150,7 @@ export default function Home() {
         </motion.div>
 
         <div className="container px-4 relative z-20 lg:translate-x-4 text-left flex flex-col items-start">
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" as const }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full -translate-y-10 md:-translate-y-8 border border-primary/30 bg-primary/10 text-primary text-sm font-medium backdrop-blur-md"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            {t("home.hero.tagline")}
-          </motion.div> */}
           <div className="text-left max-w-[35rem] lg:max-w-[45rem]">
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-4"
-            >
-              <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold uppercase">
-                {t('home.hero.badge')}
-              </h3>
-            </motion.div> */}
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -192,7 +158,7 @@ export default function Home() {
               className={`${isPoland ? 'text-[2.3rem] text-left' : 'text-[2.6rem] text-left'} sm:text-[2.7rem] md:text-[2.8rem] lg:text-[3.6rem] font-heading font-bold text-white tracking-tight leading-tight max-w-7xl`}
             >
               {t('home.hero.title1')} <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-1">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-[#00CED1] italic pr-2">
                 {t('home.hero.title1_highlight')}
               </span>
             </motion.h2>
@@ -217,9 +183,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="text-[0.9rem] sm:text-[1rem] md:text-base text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[36rem] text-left sm:text-left sm:mt-6 mt-4 font-light"
+              className="text-[0.9rem] sm:text-[1rem] md:text-[1.1rem] text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[36rem] text-left sm:text-left sm:mt-6 mt-4 font-light"
             >
-              {t('home.hero.subtitle')}
+              {t('home.hero.subtitle')} <br />
+              {t('home.hero.subtitle2')}
             </motion.p>
           </div>
 
@@ -239,125 +206,21 @@ export default function Home() {
                 {t('home.hero.cta_tech').toUpperCase()}
               </Link>
             </Button>
-
-            {/* <Button
-              variant="outline"
-              size="lg"
-              className="h-14 border-white/20 text-white sm:px-4 px-2 sm:text-base text-sm hover:bg-white/5 transition-all cursor-pointer"
-              onClick={() => scrollToSection("philosophy")}
-            >
-              {t("home.hero.cta_phil")}
-            </Button> */}
           </motion.div>
         </div>
       </section>
 
       <div id="technology">
-        <Suspense fallback={<div className="h-[50vh] w-full" />}>
-          <DualTechPanel />
-          <DualTechFeatures />
-        </Suspense>
+        <DualTechPanel />
+        <DualTechFeatures />
       </div>
 
-      {/* SCIENCE/TECH EXPLAINER */}
-      {/* <section id="technology" className="py-32 relative border-b border-white/5">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-            className="text-center mb-20"
-          >
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.tech.science_title")}<br /><span className="text-primary italic font-light">{t("home.tech.science_title_italic")}</span>
-            </h2>
-            <p className="text-white/60 max-w-3xl mx-auto text-lg text-left">
-              {t("home.tech.science_subtitle")}
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeIn}
-              className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:border-primary/30 transition-colors group"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <Zap className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-heading font-semibold text-white mb-4">{t("home.tech.pemf_title")}</h3>
-              <p className="text-white/70 leading-relaxed mb-6">
-                {t("home.tech.pemf_desc")}
-              </p>
-              <ul className="space-y-3">
-                {(t("home.tech.pemf_benefits", { returnObjects: true }) as string[]).map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-white/80">
-                    <ShieldCheck className="w-5 h-5 text-primary shrink-0" /> {benefit}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeIn}
-              className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:border-primary/30 transition-colors group"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <Activity className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-heading font-semibold text-white mb-4">{t("home.tech.thz_title")}</h3>
-              <p className="text-white/70 leading-relaxed mb-6">
-                {t("home.tech.thz_desc")}
-              </p>
-              <ul className="space-y-3">
-                {(t("home.tech.thz_benefits", { returnObjects: true }) as string[]).map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-white/80">
-                    <ShieldCheck className="w-5 h-5 text-primary shrink-0" /> {benefit}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div> */}
-
-      {/* Benefits Grid */}
-
-      {/* <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mt-20"
-          >
-            {[
-              { icon: ShieldCheck, title: t("home.tech.repair"), desc: t("home.tech.repair_desc") },
-              { icon: Activity, title: t("home.tech.recovery"), desc: t("home.tech.recovery_desc") },
-              { icon: Battery, title: t("home.tech.oxygenate"), desc: t("home.tech.oxygenate_desc") },
-              { icon: Zap, title: t("home.tech.activate"), desc: t("home.tech.activate_desc") },
-              { icon: Star, title: t("home.tech.flow"), desc: t("home.tech.flow_desc") },
-              { icon: Quote, title: t("home.tech.balance"), desc: t("home.tech.balance_desc") },
-            ].map((benefit, i) => (
-              <div key={i} className="p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-primary/5 hover:border-primary/20 transition-all backdrop-blur-sm">
-                <benefit.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                <h4 className="text-white font-bold text-[10px] md:text-[11px] mb-2 tracking-widest uppercase">{benefit.title}</h4>
-                <p className="text-white/40 text-[11px] md:text-xs leading-relaxed font-medium transition-colors group-hover:text-white/60">{benefit.desc}</p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section> */}
-
       {/* PRODUCTS SECTION */}
-      <section id="products" className="py-32  relative bg-white/2">
+      <section id="products" className="py-20 relative bg-white/2">
         <div className="mx-auto sm:px-4 h-full w-full px-2">
           <motion.div
             variants={fadeIn}
-            className="text-center max-w-3xl mx-auto mb-20"
+            className="text-center max-w-3xl mx-auto pb-20"
           >
             <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
               {t('home.products.badge')}
@@ -460,87 +323,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BLOG SECTION */}
-      {/* <section id="blog" className="py-32 relative">
-        <div className="container mx-auto px-4">
-          <motion.div
-            variants={fadeIn}
-            className="text-center max-w-3xl mx-auto mb-20"
-          >
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.blog.title")}<br /><span className="text-primary italic">{t("home.blog.title_highlight")}</span>
-            </h2>
-            <p className="text-lg text-white/60">
-              {t("home.blog.subtitle")}
-            </p>
-          </motion.div>
-
-          {blogsLoading ? (
-            <div className="flex justify-center py-20"><Loader2 className="w-8 h-8 text-primary animate-spin" /></div>
-          ) : (
-            <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 pb-4 scrollbar-hide">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={staggerContainer}
-                className="flex gap-6 w-max md:w-auto md:grid md:grid-cols-3"
-              >
-                {blogs.slice(0, 3).map((post, idx) => (
-                  <motion.div
-                    key={post.id}
-                    variants={fadeIn}
-                    transition={{ delay: idx * 0.1 }}
-                    className="group bg-card border border-white/5 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-[0_0_40px_rgba(126,255,212,0.08)] w-80 md:w-auto shrink-0 md:shrink flex flex-col h-full"
-                  >
-                    <Link to={`/${currentLang}/blog/${post.slug}`} className="block aspect-video overflow-hidden relative">
-                      <div className="absolute inset-0 bg-linear-to-t from-card/80 to-transparent z-10 transition-opacity"></div>
-                      <img loading="lazy"
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute top-3 left-3 z-20">
-                        <span className="text-xs font-semibold px-2.5 py-1 rounded-full border bg-primary/10 text-primary border-primary/30">
-                          {currentLang === "pl" ? (post.category_pl || post.category) : post.category}
-                        </span>
-                      </div>
-                    </Link>
-                    <div className="p-6 flex flex-col grow">
-                      <h3 className="text-xl font-heading font-bold text-white mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                        {currentLang === "pl" ? (post.title_pl || post.title) : post.title}
-                      </h3>
-                      <p className="text-white/50 text-sm mb-6 line-clamp-3 leading-relaxed grow">
-                        {currentLang === "pl" ? (post.excerpt_pl || post.excerpt) : post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between text-xs text-white/30 border-t border-white/5 pt-4">
-                        <span className="flex items-center gap-1.5">
-                          <Activity className="w-3 h-3 text-primary" />
-                          {currentLang === "pl" ? (post.readTime_pl || post.readTime) : post.readTime}
-                        </span>
-                        <span>{currentLang === "pl" ? (post.date_pl || post.date) : post.date}</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          )}
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center mt-12"
-          >
-            <Button asChild variant="ghost" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all hover:scale-105 shadow-[0_0_20px_rgba(126,255,212,0.15)] group h-12 px-8">
-              <Link to={`/${currentLang}/blog`}>
-                {t("home.blog.view_all")} <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section> */}
 
       {/* TESTIMONIALS SECTION */}
       <section className="py-32 relative border-t border-white/5">
@@ -575,11 +357,7 @@ export default function Home() {
           className="flex justify-center"
         >
           <div className="relative group max-w-4xl w-full aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-            {/* <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors z-10 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/50 flex items-center justify-center group-hover:scale-110 transition-transform cursor-pointer">
-                  <Activity className="w-10 h-10 text-primary fill-primary" />
-                </div>
-              </div> */}
+          
             <video
               src={bloodAnalysisVideo}
               controls
@@ -701,72 +479,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ SECTION */}
-      {/* <section className="md:py-26 py-10 relative">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.faqs.title")}<br /><span className="text-primary">{t("home.faqs.title_highlight")}</span>
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-          >
-            <Accordion type="single" collapsible className="w-full">
-              {(t("home.faqs.items", { returnObjects: true }) as any[]).map((item, idx) => (
-                <AccordionItem key={idx} value={`item-${idx}`} className="border-b border-white/10 py-2">
-                  <AccordionTrigger className="text-left md:text-lg text-sm font-medium text-white hover:text-primary transition-colors">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-white/70 leading-relaxed md:text-base text-sm">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
-        </div>
-      </section> */}
-
-      {/* CTA SECTION */}
-      {/* <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img loading="lazy" src={coachBoulderImg} alt="Background" className="w-full h-full object-cover object-center opacity-20 grayscale" />
-          <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-background"></div>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto bg-card/60 backdrop-blur-2xl border border-primary/20 rounded-[3rem] p-10 md:p-20 text-center"
-          >
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-              {t("home.cta.title")}<span className="text-primary">{t("home.cta.title_highlight")}</span>
-            </h2>
-            <p className="md:text-xl text-md text-white/70 mb-10 max-w-2xl mx-auto">
-              {t("home.cta.subtitle")}
-            </p>
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-10 text-lg rounded-full shadow-[0_0_40px_rgba(126,255,212,0.4)] transition-all hover:scale-105 group">
-              <Link to={`/${currentLang}/products`}>
-                {t("home.cta.button")} <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section> */}
 
       {/* THE JOURNEY SECTION */}
       <section
@@ -924,9 +636,7 @@ export default function Home() {
 
       {/* <AffiliateCTA /> */}
       <div id="contact">
-        <Suspense fallback={<div className="h-[50vh] w-full" />}>
-          <Contact hideBackButton={true} />
-        </Suspense>
+        <Contact hideBackButton={true} />
       </div>
     </div>
   );
