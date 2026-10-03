@@ -75,7 +75,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-[0.9rem] sm:text-[1rem] md:text-[1.1rem] text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[36rem] text-left sm:text-left sm:mt-6 mt-4 font-light"
+            className="text-[0.98rem] sm:text-[1rem] md:text-[1.1rem] text-white max-w-[22rem] sm:max-w-[28rem] lg:max-w-[36rem] text-left sm:text-left sm:mt-6 mt-4 font-light"
           >
             {t('home.hero.subtitle')} <br />
             {t('home.hero.subtitle2')}

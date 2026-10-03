@@ -57,14 +57,14 @@ export default function Testimonials() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="pt-16 pb-32 relative">
+    <section className="py-20 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeIn}
-          className="text-center mb-20"
+          className="text-center pb-20"
         >
           <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
             {t('home.testimonials.badge')}

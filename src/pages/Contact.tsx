@@ -15,7 +15,7 @@ export default function Contact({ hideBackButton = false }: { hideBackButton?: b
     window.location.pathname === "/";
 
   return (
-    <div className="pt-28 pb-24 bg-background text-foreground relative overflow-hidden">
+    <div className="py-20 bg-background text-foreground relative overflow-hidden">
       {!isHome && (
         <SEO 
           title={t("seo.contact.title")} 

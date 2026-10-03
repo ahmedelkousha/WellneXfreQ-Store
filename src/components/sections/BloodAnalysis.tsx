@@ -16,14 +16,14 @@ export default function BloodAnalysis() {
   const { t } = useTranslation();
 
   return (
-    <section className="pt-32 pb-16 relative border-t border-white/5">
+    <section className="py-20 relative border-t border-white/5">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeIn}
-          className="text-center mb-16"
+          className="text-center pb-20"
         >
           <h3 className="font-heading text-primary text-xs tracking-[0.2em] font-semibold mb-4 uppercase">
             {t('home.blood_analysis.badge')}
